@@ -1,0 +1,49 @@
+---
+title: "Identidad 360°"
+slug: "identidad-360"
+summary: "Sistema de inteligencia de identidad para equipos de riesgo crediticio en LatAm. Combina verificación documental (Truora), señales web públicas (Tavily) y síntesis por LLM para producir un perfil de riesgo accionable en segundos."
+role: "Product & Engineering"
+stack: ["Next.js 16", "TypeScript", "Vercel AI SDK", "Truora", "Tavily", "OpenRouter", "Zod", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-04-15"
+featured: true
+repoUrl: "https://github.com/mdeasis27/identidad-360"
+tags: ["fintech", "riesgo-crediticio", "KYC", "AI", "LatAm"]
+---
+
+## El problema
+
+Los equipos de crédito en LatAm toman decisiones de onboarding con información parcial. Las verificaciones de identidad (sanciones, PEP, registros judiciales) son necesarias pero no suficientes: no capturan señales de reputación pública, noticias de fraude ni presencia digital que un analista experimentado buscaría manualmente.
+
+El resultado es un cuello de botella operativo: analistas revisando fuentes dispersas, tiempos de aprobación elevados y criterios inconsistentes entre revisores.
+
+## El enfoque
+
+Identidad 360° orquesta tres fuentes en paralelo y produce un perfil sintetizado:
+
+1. **Truora** — verificación documental: sanciones OFAC, listas PEP, registros judiciales en bases de datos de LatAm
+2. **Tavily** — búsqueda semántica web: noticias de fraude, deudas públicas, menciones en medios
+3. **LLM (OpenRouter)** — síntesis: combina ambas fuentes en un score 0–100, nivel de riesgo (bajo/medio/alto), red flags concretos y señales positivas
+
+El analista recibe un resumen ejecutivo en lugar de datos crudos de tres APIs distintas.
+
+## Decisiones de diseño
+
+**Por qué un LLM para síntesis y no reglas fijas:** Las señales web no son estructuradas. Un sistema de reglas clasificaría mal casos ambiguos (homónimos, noticias antiguas, contexto geográfico). El LLM puede razonar sobre contexto; el trade-off es que no es determinista — por eso el score numérico complementa el razonamiento con una señal más estable.
+
+**Por qué mock determinista para la demo:** El proyecto es un MVP funcional con integración real disponible. El modo mock (activable con `TRUORA_MOCK=true`) permite evaluar la UI y el flujo completo sin consumir créditos de API, y usa un hash del nombre/documento para que el mismo input siempre genere el mismo perfil — facilitando demos reproducibles.
+
+**Por qué validación con Zod en el output del LLM:** Los LLMs pueden devolver JSON malformado o con tipos incorrectos. `generateObject` del Vercel AI SDK + un schema Zod garantizan que el perfil retornado siempre tiene la estructura correcta antes de llegar al cliente.
+
+## Estado actual
+
+El sistema funciona end-to-end en modo demo. La integración con Tavily y OpenRouter es real; Truora usa mock determinista. Para llevarlo a producción se requiere:
+
+- Activar la integración real de Truora (clave API + ajuste de mapeo de respuesta)
+- Agregar autenticación (el endpoint actual es público)
+- Persistencia de perfiles para auditoría (requerimiento regulatorio en crédito)
+
+## Lo que demuestra
+
+Este proyecto no es un ejercicio técnico — refleja cómo pienso sobre automatización en operaciones financieras: qué se puede sistematizar, dónde el juicio humano sigue siendo necesario (escalamiento por confianza baja) y cómo presentar inteligencia compleja de forma que un analista pueda actuar en segundos.
