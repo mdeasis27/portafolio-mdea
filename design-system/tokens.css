@@ -1,0 +1,60 @@
+/* design-system/tokens.css
+ * MDEA brand tokens — source of truth for CSS variables.
+ * Imported by src/app/globals.css. Copied to sibling projects via brand:sync.
+ */
+
+:root {
+  /* Grayscale (zinc) — light */
+  --background: #fafafa;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --foreground: #09090b;
+  --muted: #71717a;
+
+  /* Single accent — blue-700 */
+  --accent: #1D4ED8;
+  --ring: #1D4ED8;
+
+  /* shadcn compatibility — keep semantic names mapped to brand tokens */
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: var(--foreground);
+  --muted-foreground: var(--muted);
+  --accent-foreground: var(--foreground);
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --input: var(--border);
+  --destructive: #dc2626;
+
+  /* Radius — uniform 8px */
+  --radius: 8px;
+}
+
+.dark {
+  /* Grayscale (zinc) — dark */
+  --background: #09090b;
+  --surface: #18181b;
+  --border: #27272a;
+  --foreground: #fafafa;
+  --muted: #a1a1aa;
+
+  /* Accent — blue-500 for contrast on dark */
+  --accent: #3B82F6;
+  --ring: #3B82F6;
+
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
+  --secondary: #27272a;
+  --secondary-foreground: var(--foreground);
+  --muted-foreground: var(--muted);
+  --accent-foreground: var(--foreground);
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --input: var(--border);
+  --destructive: #ef4444;
+}
