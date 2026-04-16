@@ -114,7 +114,7 @@ export default async function ProjectPage({
             {publishedDate}
           </span>
         </div>
-        <h1 className="mt-6 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h1 className="font-serif mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-[48px]">
           {frontmatter.title}
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-foreground/75">
