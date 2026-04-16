@@ -1,6 +1,11 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 
+import { Callout } from "@/design-system/mdx/callout";
+import { Metric } from "@/design-system/mdx/metric";
+import { MetricGroup } from "@/design-system/mdx/metric-group";
+import { Tradeoff } from "@/design-system/mdx/tradeoff";
+
 function isInternal(href: string | undefined): boolean {
   if (!href) return false;
   return href.startsWith("/") || href.startsWith("#");
@@ -101,4 +106,8 @@ export const mdxComponents = {
   strong: (props: HTMLAttributes<HTMLElement>) => (
     <strong className="font-semibold text-foreground" {...props} />
   ),
+  Metric,
+  MetricGroup,
+  Tradeoff,
+  Callout,
 };
