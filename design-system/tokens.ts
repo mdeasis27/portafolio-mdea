@@ -1,27 +1,21 @@
-/**
- * MDEA Brand Design Tokens
- * Source of truth for all projects in this repo.
- * Copy to each project/[name] branch when creating a new project.
- */
+// design-system/tokens.ts
+// Source of truth for the MDEA brand palette.
+// CSS variables live in tokens.css; this file mirrors them for TS consumption.
 
 export const brand = {
-  primary:       '#6366f1',  // Indigo — identidad principal
-  accent:        '#22d3ee',  // Cyan   — highlights, CTAs secundarios
-  dark:          '#0f172a',  // Slate 900 — fondos oscuros / texto principal
-  surface:       '#1e293b',  // Slate 800 — cards, componentes
-  muted:         '#334155',  // Slate 700 — bordes, separadores
-  textPrimary:   '#f1f5f9',  // Slate 100
-  textSecondary: '#94a3b8',  // Slate 400
+  // Grayscale (zinc)
+  background:   { light: "#fafafa", dark: "#09090b" },
+  surface:      { light: "#ffffff", dark: "#18181b" },
+  border:       { light: "#e4e4e7", dark: "#27272a" },
+  foreground:   { light: "#09090b", dark: "#fafafa" },
+  muted:        { light: "#71717a", dark: "#a1a1aa" },
+
+  // Single accent (blue-700 on light, blue-500 on dark for WCAG AA)
+  accent:       { light: "#1D4ED8", dark: "#3B82F6" },
 } as const;
 
-/**
- * OKLCH equivalents for Tailwind 4 (used in globals.css @theme)
- * primary:  oklch(0.5886 0.2397 278.6)
- * accent:   oklch(0.8297 0.1378 208.5)
- */
-export const brandOklch = {
-  primary: 'oklch(0.5886 0.2397 278.6)',
-  accent:  'oklch(0.8297 0.1378 208.5)',
+export const radius = {
+  base: "8px", // uniform across all components
 } as const;
 
-export type BrandColor = keyof typeof brand;
+export type BrandToken = keyof typeof brand;
