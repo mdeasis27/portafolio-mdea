@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Manuel De Asís
 
-## Getting Started
+Personal portfolio site and design system hub. Built with Next.js 16, Tailwind CSS v4, and MDX.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js 16 (App Router, static export)
+- TypeScript
+- Tailwind CSS v4
+- base-ui components (base-nova theme)
+- MDX for case studies (next-mdx-remote)
+
+## Structure
+
+```
+src/app/          — pages (home, /projects, /projects/[slug], /about)
+src/components/   — UI components (Nav, Footer, ProjectCard, etc.)
+src/lib/          — data fetching, types, site config
+content/projects/ — MDX case studies (one file per project)
+design-system/    — brand tokens and documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding a case study
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `content/projects/[slug].mdx` with this frontmatter:
 
-## Learn More
+```yaml
+---
+title: "Project Name"
+slug: "project-slug"
+summary: "One-sentence description"
+role: "Product & Engineering"
+stack: ["Next.js", "TypeScript"]
+status: "shipped" # shipped | beta | archived
+year: 2026
+publishedAt: "2026-01-01"
+featured: true
+repoUrl: "https://github.com/..."   # optional
+liveUrl: "https://..."              # optional
+---
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+pnpm dev        # localhost:3000
+pnpm build      # production build
+pnpm lint       # ESLint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project branches
 
-## Deploy on Vercel
+Each project lives in its own branch for isolated development:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Create new project from template
+git checkout -b project/name project/template
+git worktree add ../mdea-name project/name
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `design-system/README.md` for brand token usage and update workflow.
