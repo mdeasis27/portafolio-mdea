@@ -1,0 +1,51 @@
+---
+title: "Agente de Riesgo"
+slug: "agente-riesgo"
+summary: "Motor de decisión crediticia, laboral y KYC impulsado por AI. Orquesta verificación de identidad (Truora), evidencia web semántica (Exa) y razonamiento LLM para aprobar, rechazar o escalar casos en segundos — con umbrales de confianza que determinan cuándo interviene un humano."
+role: "Product & Engineering"
+stack: ["Next.js 16", "TypeScript", "Vercel AI SDK", "Truora", "Exa", "OpenRouter", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-04-16"
+featured: false
+tags: ["fintech", "riesgo-crediticio", "KYC", "hiring", "AI", "LatAm"]
+---
+
+## El problema
+
+Las decisiones de riesgo en crédito, contratación y onboarding comparten el mismo cuello de botella: un analista consultando fuentes dispersas — bases de sanciones, búsquedas manuales, reportes de identidad — para construir un criterio que debería ser sistematizable.
+
+El costo no es solo tiempo. Es inconsistencia: dos analistas frente al mismo caso pueden llegar a conclusiones distintas dependiendo de qué fuentes consultaron y cómo interpretaron señales ambiguas.
+
+## El enfoque
+
+El agente ejecuta tres pasos en paralelo y produce una decisión estructurada:
+
+1. **Truora** — verificación de identidad: sanciones OFAC, listas PEP, antecedentes judiciales en LatAm
+2. **Exa** — búsqueda semántica web: la estrategia de búsqueda cambia según el tipo de caso (deuda/fraude para crédito; litigios laborales para contratación; registros PEP/sanciones para KYC)
+3. **LLM (OpenRouter)** — razonamiento: integra ambas fuentes y produce `{ decision, confidence, red_flags, positive_signals, evidence_sources }`
+
+Si la confianza del modelo cae por debajo del 65%, el caso se escala automáticamente a revisión humana en lugar de forzar una decisión incierta.
+
+## Decisiones de diseño
+
+**Por qué escalamiento por umbral de confianza y no solo aprobar/rechazar:** Un sistema binario obliga al modelo a tomar posición en casos ambiguos. El escalamiento reconoce que hay casos donde la información disponible no es suficiente para decidir — y que pretender lo contrario genera riesgo operativo real. El umbral del 65% es configurable; en producción debería calibrarse contra datos históricos de cada operación.
+
+**Por qué búsqueda diferenciada por tipo de caso:** Una búsqueda genérica sobre una persona mezcla señales irrelevantes. Para crédito busco indicadores de deuda y fraude; para contratación busco litigios laborales y conducta profesional; para KYC busco exposición política y sanciones internacionales. La misma API de Exa, con queries construidas por el contexto del caso.
+
+**Por qué fallback dinámico de modelos en OpenRouter:** OpenRouter permite usar modelos gratuitos, pero con límites de tasa variables. En lugar de hardcodear un modelo, el sistema consulta en tiempo real los modelos disponibles y elige el primero funcional — con caché de 10 minutos para no ralentizar cada evaluación. El trade-off es menor control sobre qué modelo razona el caso; aceptable en prototipo, no en producción donde la trazabilidad del modelo es un requerimiento de auditoría.
+
+**Por qué casos demo pre-computados:** El modo demo (María, Carlos, Ana) corre sin ninguna API key y produce resultados reproducibles. Permite evaluar el flujo completo — incluyendo la UI de timeline — sin consumir créditos ni depender de disponibilidad de servicios externos durante una presentación.
+
+## Estado actual
+
+Funcional end-to-end en modo demo. Las integraciones con Exa y OpenRouter son reales; Truora usa mock determinista. Para producción:
+
+- Activar integración real de Truora con mapeo de respuesta por jurisdicción
+- Agregar autenticación y control de acceso por tipo de decisión
+- Persistencia de decisiones para auditoría (requerimiento regulatorio en crédito y KYC)
+- Calibrar umbral de escalamiento contra datos históricos de cada operación
+
+## Lo que demuestra
+
+La escalabilidad de este patrón: el mismo motor — verificación + evidencia web + razonamiento LLM — aplica a crédito, contratación y onboarding con cambios de configuración, no de arquitectura. Eso refleja cómo pienso sobre automatización: no como soluciones puntuales, sino como plataformas que resuelven una clase de problema operativo.
