@@ -13,7 +13,7 @@ export const fontSans = Inter({
 export const fontSerif = Fraunces({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["500"],
+  weight: "variable",
   axes: ["opsz"],
   display: "swap",
 });
