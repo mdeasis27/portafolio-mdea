@@ -1,2 +1,3 @@
-// design-system/components/index.ts — barrel exports (populated as components move)
-export {};
+// design-system/components/index.ts
+export { Button, buttonVariants } from "./button";
+export type { ButtonProps } from "./button";
