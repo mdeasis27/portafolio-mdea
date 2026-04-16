@@ -1,61 +1,59 @@
-# MDEA Design System
+# MDEA Design System (Brand Kit)
 
-Source of truth for brand tokens used across all projects in this repo.
+Source of truth for visual identity across the portfolio hub and every project repo.
 
-## Paleta de marca
+## Tokens
 
-| Token         | Hex       | Uso                            |
-|---------------|-----------|--------------------------------|
-| `primary`     | `#6366f1` | Botones, links, identidad      |
-| `accent`      | `#22d3ee` | Highlights, CTAs secundarios   |
-| `dark`        | `#0f172a` | Fondos oscuros, texto principal|
-| `surface`     | `#1e293b` | Cards, componentes             |
-| `muted`       | `#334155` | Bordes, separadores            |
-| `textPrimary` | `#f1f5f9` | Texto sobre fondo oscuro       |
-| `textSecondary`| `#94a3b8`| Texto secundario / subtítulos  |
+| Token | Light | Dark | Purpose |
+|---|---|---|---|
+| `--background` | `#fafafa` | `#09090b` | Page background |
+| `--surface` | `#ffffff` | `#18181b` | Cards, panels |
+| `--border` | `#e4e4e7` | `#27272a` | Subtle borders |
+| `--foreground` | `#09090b` | `#fafafa` | Primary text |
+| `--muted` | `#71717a` | `#a1a1aa` | Secondary text |
+| `--accent` | `#1D4ED8` | `#3B82F6` | Links, focus, single accent |
+| `--radius` | `8px` (uniform) | — | All component corners |
 
-## Cómo usar
+Defined in `tokens.css`; mirrored as TS constants in `tokens.ts`.
 
-Import en JS/TS:
-```ts
-import { brand } from '@/design-system/tokens'
-// brand.primary === '#6366f1'
-```
+## Fonts
 
-En CSS (Tailwind 4 — ya configurado en globals.css):
-```css
-/* Variables disponibles en toda la app */
---brand-primary  /* #6366f1 indigo */
---brand-accent   /* #22d3ee cyan   */
---primary        /* mismo indigo — conectado al sistema de componentes */
-```
+Configured in `fonts.ts`:
+- **Inter** (variable) — body, UI, nav
+- **Fraunces** (variable, opsz) — hero H1 and case-study H1 only
+- **JetBrains Mono** — code, eyebrows, tag chips
 
-En Tailwind classes:
-```html
-<div class="bg-brand-primary text-white">...</div>
-<span class="text-brand-accent">...</span>
-```
+## Components
 
-## Crear un proyecto nuevo
+In `components/`:
+- `Button` — `default` / `outline` / `ghost` / `link`, sizes `default`/`sm`/`lg`/`icon`
+- `Badge` — `default` / `outline` / `status-shipped` / `status-beta` / `status-archived`
+- `Card` — container with 8px radius + subtle border
+- `Separator` — 1px border line
+- `StatusDot` — dot + label (`live`/`beta`/`archived`)
+
+## MDX-only components (hub-exclusive)
+
+In `mdx/`:
+- `<Metric value="65%" label="…" description="…" />`
+- `<MetricGroup cols={2|3|4}>…</MetricGroup>`
+- `<Tradeoff title="…">…</Tradeoff>`
+- `<Callout type="note|warn">…</Callout>`
+
+These are NOT part of the portable kit — only projects with case-study MDX use them.
+
+## Usage in sibling projects
 
 ```bash
-# 1. Crear rama desde la plantilla
-git checkout -b project/nombre-proyecto project/template
-
-# 2. Abrir en worktree para desarrollo paralelo
-git worktree add ../mdea-nombre-proyecto project/nombre-proyecto
+# From inside a sibling repo under proyectos-portafolio/
+pnpm brand:sync
 ```
 
-La rama `project/template` ya tiene los tokens copiados y Next.js configurado.
+This copies the entire `design-system/` from `portafolio-mdea/` into the current repo. It writes a `.brand-sync-manifest.json` to record which version was applied.
 
-## Actualizar la paleta
+## Updating the palette
 
-1. Editar `design-system/tokens.ts`
-2. Actualizar `src/app/globals.css` (variables CSS)
-3. Agregar entrada en `design-system/CHANGELOG.md`
-4. Notificar a las ramas `project/*` para que apliquen el diff en su propio `globals.css`
-
-## Componentes UI
-
-Los componentes atómicos viven en `src/components/ui/` (Badge, Button, Card, Separator).
-Están construidos con base-ui y usan los tokens de `globals.css` automáticamente.
+1. Edit `design-system/tokens.css` and `design-system/tokens.ts` in the hub.
+2. Update `globals.css` consumers if needed.
+3. Add an entry to `CHANGELOG.md`.
+4. Run `pnpm brand:sync` in each sibling project (or `pnpm brand:propagate` when that script exists — Plan 2).
