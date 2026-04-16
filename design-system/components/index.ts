@@ -12,3 +12,4 @@ export {
   CardFooter,
 } from "./card";
 export { Separator } from "./separator";
+export { StatusDot } from "./status-dot";
