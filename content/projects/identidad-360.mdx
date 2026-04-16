@@ -29,13 +29,25 @@ Identidad 360° orquesta tres fuentes en paralelo y produce un perfil sintetizad
 
 El analista recibe un resumen ejecutivo en lugar de datos crudos de tres APIs distintas.
 
+<MetricGroup cols={3}>
+  <Metric value="3" label="Fuentes integradas" description="Truora + Tavily + LLM." />
+  <Metric value="0–100" label="Score sintetizado" description="Perfil de riesgo accionable en segundos." />
+  <Metric value="Zod" label="Validación estricta" description="Schema-typed output del LLM, garantía de shape." />
+</MetricGroup>
+
 ## Decisiones de diseño
 
-**Por qué un LLM para síntesis y no reglas fijas:** Las señales web no son estructuradas. Un sistema de reglas clasificaría mal casos ambiguos (homónimos, noticias antiguas, contexto geográfico). El LLM puede razonar sobre contexto; el trade-off es que no es determinista — por eso el score numérico complementa el razonamiento con una señal más estable.
+<Tradeoff title="Por qué un LLM para síntesis y no reglas fijas">
+Las señales web no son estructuradas. Un sistema de reglas clasificaría mal casos ambiguos (homónimos, noticias antiguas, contexto geográfico). El LLM puede razonar sobre contexto; el trade-off es que no es determinista — por eso el score numérico complementa el razonamiento con una señal más estable.
+</Tradeoff>
 
-**Por qué mock determinista para la demo:** El proyecto es un MVP funcional con integración real disponible. El modo mock (activable con `TRUORA_MOCK=true`) permite evaluar la UI y el flujo completo sin consumir créditos de API, y usa un hash del nombre/documento para que el mismo input siempre genere el mismo perfil — facilitando demos reproducibles.
+<Tradeoff title="Por qué mock determinista para la demo">
+El proyecto es un MVP funcional con integración real disponible. El modo mock (activable con `TRUORA_MOCK=true`) permite evaluar la UI y el flujo completo sin consumir créditos de API, y usa un hash del nombre/documento para que el mismo input siempre genere el mismo perfil — facilitando demos reproducibles.
+</Tradeoff>
 
-**Por qué validación con Zod en el output del LLM:** Los LLMs pueden devolver JSON malformado o con tipos incorrectos. `generateObject` del Vercel AI SDK + un schema Zod garantizan que el perfil retornado siempre tiene la estructura correcta antes de llegar al cliente.
+<Tradeoff title="Por qué validación con Zod en el output del LLM">
+Los LLMs pueden devolver JSON malformado o con tipos incorrectos. `generateObject` del Vercel AI SDK + un schema Zod garantizan que el perfil retornado siempre tiene la estructura correcta antes de llegar al cliente.
+</Tradeoff>
 
 ## Estado actual
 
