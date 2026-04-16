@@ -11,3 +11,4 @@ export {
   CardContent,
   CardFooter,
 } from "./card";
+export { Separator } from "./separator";
