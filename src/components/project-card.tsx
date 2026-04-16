@@ -31,7 +31,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <Card className="h-full transition-all duration-300 hover:border-foreground/30 hover:shadow-sm group-focus-visible:ring-2 group-focus-visible:ring-foreground/40">
         <CardHeader className="gap-3">
           <div className="flex items-center justify-between gap-3">
-            <Badge variant="secondary" className="font-mono text-[10px] uppercase tracking-wider">
+            <Badge variant={`status-${frontmatter.status}` as const}>
               {statusLabels[frontmatter.status]} · {frontmatter.year}
             </Badge>
             <ArrowUpRight className="size-4 text-foreground/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />

@@ -107,10 +107,7 @@ export default async function ProjectPage({
 
       <header className="mt-10">
         <div className="flex flex-wrap items-center gap-3">
-          <Badge
-            variant="secondary"
-            className="font-mono text-[10px] uppercase tracking-wider"
-          >
+          <Badge variant={`status-${frontmatter.status}` as const}>
             {statusLabels[frontmatter.status]} · {frontmatter.year}
           </Badge>
           <span className="font-mono text-xs text-foreground/50">
