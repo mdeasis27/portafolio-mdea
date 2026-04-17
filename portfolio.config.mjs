@@ -11,7 +11,6 @@
 /** @type {{ siblings: SiblingEntry[] }} */
 export default {
   siblings: [
-    // Populated as siblings are migrated (see Plan 2).
-    // Example: { name: 'identidad-360', kits: ['brand', 'ai'] },
+    { name: 'identidad-360', kits: ['brand'] },
   ],
 };
