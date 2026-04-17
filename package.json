@@ -9,6 +9,8 @@
     "lint": "eslint",
     "brand:sync": "node scripts/brand-sync.mjs",
     "ai:sync": "node scripts/ai-sync.mjs",
+    "brand:propagate": "node scripts/brand-propagate.mjs",
+    "ai:propagate": "node scripts/ai-propagate.mjs",
     "test:scripts": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
