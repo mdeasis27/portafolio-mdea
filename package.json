@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "brand:sync": "node scripts/brand-sync.mjs",
+    "ai:sync": "node scripts/ai-sync.mjs",
     "test:scripts": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
