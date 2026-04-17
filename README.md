@@ -49,14 +49,25 @@ pnpm build      # production build
 pnpm lint       # ESLint
 ```
 
-## Project branches
+## Portfolio structure
 
-Each project lives in its own branch for isolated development:
+This repo lives inside the meta-folder `C:/Proyectos/proyectos-portafolio/` alongside every active portfolio project. Each project is its own independent git repo and Vercel deploy.
 
-```bash
-# Create new project from template
-git checkout -b project/name project/template
-git worktree add ../mdea-name project/name
+```
+proyectos-portafolio/
+├── portafolio-mdea/      ← this repo (hub + design-system + ai-kit)
+├── agente-riesgo/        ← consumes design-system + ai-kit via sync
+└── identidad-360/        ← consumes design-system + ai-kit via sync
 ```
 
-See `design-system/README.md` for brand token usage and update workflow.
+## Design system + AI kit
+
+The hub owns two shared kits:
+- `design-system/` — visual identity (always synced to every sibling).
+- `ai-kit/` — AI primitives (optional — only for projects with LLMs).
+
+Siblings run `pnpm brand:sync` (and optionally `pnpm ai:sync`) to pull updates from the hub. See `design-system/README.md` and `ai-kit/README.md` for details.
+
+## Spec
+
+Full system rationale: `docs/superpowers/specs/2026-04-16-mdea-brand-design-system.md`.
