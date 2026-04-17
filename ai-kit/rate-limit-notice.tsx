@@ -1,15 +1,13 @@
-// ai-kit/rate-limit.tsx
+"use client";
+
+// ai-kit/rate-limit-notice.tsx
 // UI helper: show a recoverable message when the live mode hits rate limit
 // and invite the user to fall back to demo mode.
-"use client";
 
 import type { HTMLAttributes } from "react";
 
 type RateLimitNoticeProps = HTMLAttributes<HTMLDivElement> & {
   onSwitchToDemo?: () => void;
-  /**
-   * Optional retry-after hint in seconds; rendered if provided.
-   */
   retryAfterSeconds?: number;
 };
 

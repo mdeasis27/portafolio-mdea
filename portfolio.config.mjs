@@ -11,7 +11,7 @@
 /** @type {{ siblings: SiblingEntry[] }} */
 export default {
   siblings: [
-    { name: 'identidad-360', kits: ['brand'] },
+    { name: 'identidad-360', kits: ['brand', 'ai'] },
     { name: 'agente-riesgo', kits: ['brand', 'ai'] },
   ],
 };
