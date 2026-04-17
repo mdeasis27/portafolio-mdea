@@ -19,14 +19,26 @@ function walk(dir, rel = "") {
   return out;
 }
 
-export function syncKit({ source, target, kitName = "brand" }) {
+export function syncKit({ source, target, kitName = "brand", dryRun = false }) {
   if (!existsSync(source)) throw new Error(`Source not found: ${source}`);
-  if (!existsSync(target)) mkdirSync(target, { recursive: true });
+  if (!dryRun && !existsSync(target)) mkdirSync(target, { recursive: true });
 
   const sourceFiles = new Set(walk(source));
   const targetFiles = existsSync(target)
     ? new Set(walk(target).filter((f) => !f.endsWith("-sync-manifest.json")))
     : new Set();
+
+  const wouldDelete = [...targetFiles].filter((f) => !sourceFiles.has(f));
+
+  if (dryRun) {
+    return {
+      kit: kitName,
+      dryRun: true,
+      sourcePath: source,
+      files: [...sourceFiles].sort(),
+      wouldDelete: wouldDelete.sort(),
+    };
+  }
 
   for (const rel of sourceFiles) {
     const src = path.join(source, rel);
@@ -35,10 +47,8 @@ export function syncKit({ source, target, kitName = "brand" }) {
     copyFileSync(src, dst);
   }
 
-  for (const rel of targetFiles) {
-    if (!sourceFiles.has(rel)) {
-      rmSync(path.join(target, rel), { force: true });
-    }
+  for (const rel of wouldDelete) {
+    rmSync(path.join(target, rel), { force: true });
   }
 
   const manifest = {
