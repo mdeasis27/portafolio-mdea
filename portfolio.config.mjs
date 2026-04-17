@@ -12,5 +12,6 @@
 export default {
   siblings: [
     { name: 'identidad-360', kits: ['brand'] },
+    { name: 'agente-riesgo', kits: ['brand', 'ai'] },
   ],
 };
