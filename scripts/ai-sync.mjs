@@ -3,7 +3,7 @@
 import path from "node:path";
 import { existsSync } from "node:fs";
 import { parseArgs } from "node:util";
-import { syncKit } from "./brand-sync.mjs";
+import { syncKit } from "./lib/sync-kit.mjs";
 
 const { values } = parseArgs({
   options: {

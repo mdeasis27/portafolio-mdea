@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { mkdtempSync, rmSync, existsSync, writeFileSync, readFileSync, mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { syncKit } from "./brand-sync.mjs";
+import { syncKit } from "./lib/sync-kit.mjs";
 
 test("syncKit copies all files from source to target", () => {
   const source = mkdtempSync(path.join(tmpdir(), "src-"));
