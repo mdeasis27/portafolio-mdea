@@ -1,0 +1,67 @@
+---
+title: "Agente de Cobranzas"
+slug: "agente-cobranzas"
+summary: "Agente autónomo que automatiza el ciclo completo de cobranza: lee el core bancario (Neon Postgres), segmenta clientes por días de mora, genera mensajes personalizados con IA (OpenRouter) y los envía por Telegram. Todo orquestado por Vercel Cron — sin intervención humana."
+role: "Product & Engineering"
+stack: ["Next.js 16", "TypeScript", "Neon Postgres", "Drizzle ORM", "OpenRouter", "Telegram Bot API", "Vercel Cron", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-04-12"
+featured: false
+repoUrl: "https://github.com/mdeasis27/agente-cobranzas"
+tags: ["fintech", "cobranzas", "automatización", "AI", "LatAm"]
+---
+
+## El problema
+
+Los equipos de cobranza en instituciones financieras LatAm siguen patrones manuales: un analista revisa la cartera en mora, decide a quién llamar o mensajear y redacta o copia un mensaje estándar. El resultado es un proceso caro en tiempo, inconsistente en tono y que no escala cuando la cartera crece.
+
+El costo real no es solo operativo. Los mensajes genéricos tienen tasas de respuesta bajas — y un cliente con 5 días de mora recibiendo el mismo tono que uno con 45 días activa resistencia en lugar de cooperación.
+
+## El enfoque
+
+El agente ejecuta un pipeline en cuatro pasos cada mañana a las 9:00 am:
+
+1. **Core bancario (Neon Postgres)** — consulta clientes con mora activa (`dias_vencidos > 0`), con segmentación por días y monto
+2. **Filtro por estrategia** — clasifica la urgencia: tono suave (1–7 días), firme (8–30 días) o urgente (31+ días)
+3. **Agente IA (OpenRouter)** — genera un mensaje personalizado por cliente, adaptando tono, monto y segmento
+4. **Canal (Telegram Bot)** — envía el mensaje y registra la acción en el activity log
+
+El ciclo completo corre dentro del mismo proyecto Next.js, sin servicios externos adicionales.
+
+<MetricGroup cols={3}>
+  <Metric value="3" label="Segmentos de mora" description="Suave (1–7d) · Firme (8–30d) · Urgente (31+d)." />
+  <Metric value="9:00 am" label="Trigger diario" description="Vercel Cron — sin infraestructura adicional." />
+  <Metric value=">90%" label="Tasa de apertura Telegram" description="vs ~20% email. El cliente abre el chat una sola vez." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Por qué Telegram y no WhatsApp">
+WhatsApp Business API requiere aprobación de Meta, un número verificado, una empresa registrada y tiempo de activación. Telegram Bot API es gratuita, funciona en minutos y no requiere aprobaciones. Para un prototipo funcional, el time-to-value de Telegram es órdenes de magnitud menor. El trade-off es penetración: en mercados como Colombia y México, WhatsApp tiene mayor adopción — migrar el canal es trabajo de configuración, no de arquitectura.
+</Tradeoff>
+
+<Tradeoff title="Por qué el LLM personaliza cada mensaje y no hay templates fijos">
+Los templates generan mensajes predecibles que los usuarios aprenden a ignorar. El LLM recibe el perfil del cliente (nombre, días de mora, monto, segmento) y genera un mensaje con contexto específico. El trade-off es costo por mensaje (llamada al LLM por cliente) — aceptable en carteras medianas; para millones de clientes se necesitaría batch processing con un modelo más económico.
+</Tradeoff>
+
+<Tradeoff title="Por qué todo en un proyecto Next.js (sin colas, sin workers)">
+La arquitectura mínima que resuelve el problema es la más fácil de mantener. Vercel Cron + API Routes reemplazan una cola de mensajes para volúmenes de hasta ~500 clientes por ejecución. Por encima de eso, la solución correcta es migrar el pipeline a una cola durable (Vercel Queues o similar) — pero esa complejidad no está justificada para un prototipo.
+</Tradeoff>
+
+<Tradeoff title="Por qué activity log en la base de datos">
+El log no es solo observabilidad — en cobranza es un requerimiento regulatorio. Cada mensaje enviado debe estar registrado con timestamp, contenido y resultado para auditoría. La implementación actual usa Drizzle ORM sobre Neon Postgres para garantizar que cada acción del agente deja trazabilidad, incluso si el canal falla.
+</Tradeoff>
+
+## Estado actual
+
+Funcional end-to-end en modo demo con clientes simulados en Neon Postgres. La integración con OpenRouter y Telegram Bot es real. Para producción:
+
+- Conectar al core bancario real (mapeo de esquema + autenticación de solo lectura)
+- Agregar lógica de opt-out (cliente puede rechazar mensajes; requerimiento regulatorio en muchos mercados)
+- Control de frecuencia por cliente (evitar enviar múltiples mensajes el mismo día)
+- Panel de supervisión para que el equipo de cobranza vea el log y sobreescriba decisiones
+
+## Lo que demuestra
+
+Este agente muestra el patrón completo de automatización de un proceso operativo con LLM: leer datos estructurados, tomar una decisión de segmentación, generar contenido contextualizado y actuar sobre un canal externo — con trazabilidad de cada paso. El mismo patrón aplica a recordatorios de renovación, seguimiento post-venta o cualquier proceso de comunicación proactiva basado en datos.

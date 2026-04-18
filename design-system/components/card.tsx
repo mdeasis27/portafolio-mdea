@@ -7,7 +7,7 @@ export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
     <div
       data-slot="card"
       className={cn(
-        "flex flex-col gap-4 rounded-[var(--radius)] border border-border bg-surface p-6 transition-colors",
+        "flex flex-col gap-4 rounded-[var(--radius-md)] bg-surface p-6 shadow-[var(--shadow-card)] transition-shadow",
         className,
       )}
       {...props}

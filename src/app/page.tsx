@@ -19,7 +19,7 @@ export default async function HomePage() {
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/50">
           {site.author.role}
         </p>
-        <h1 className="font-serif mt-6 text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-[64px]">
+        <h1 className="mt-6 text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-[64px]">
           {site.thesis.headline}
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-foreground/70 sm:text-xl">

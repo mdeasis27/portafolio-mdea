@@ -1,0 +1,61 @@
+---
+title: "Radar de Proveedores"
+slug: "radar-proveedores"
+summary: "Motor de due diligence para equipos de compras y riesgo operativo. Ingresa el nombre de un proveedor, recibe en segundos un score de riesgo reputacional, alertas críticas, señales positivas y fuentes verificadas — impulsado por búsqueda semántica (Exa) y razonamiento LLM."
+role: "Product & Engineering"
+stack: ["Next.js 16", "TypeScript", "Exa", "OpenRouter", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-04-14"
+featured: false
+repoUrl: "https://github.com/mdeasis27/radar-proveedores"
+tags: ["fintech", "riesgo-operativo", "due-diligence", "AI", "LatAm"]
+---
+
+## El problema
+
+Los equipos de compras y riesgo operativo hacen due diligence de proveedores de forma manual: búsquedas en Google, revisión de listas negras, lectura de noticias de prensa. El proceso tarda horas por proveedor y el resultado depende de qué tan buena fue la búsqueda del analista.
+
+El riesgo no es solo operativo. Contratar un proveedor con sanciones activas o historial de fraude expone a la empresa a riesgo regulatorio, de reputación y de continuidad del negocio.
+
+## El enfoque
+
+El motor ejecuta dos pasos en secuencia y produce un reporte estructurado:
+
+1. **Exa** — búsqueda semántica web: recupera las fuentes más relevantes sobre el proveedor (noticias de fraude, sanciones, litigios, menciones de riesgo)
+2. **LLM (OpenRouter)** — razonamiento: lee las fuentes y produce `{ risk_level, risk_score, executive_summary, critical_alerts, positive_signals, recommendation, sources }`
+
+La recomendación final tiene tres valores posibles: *aprobar*, *investigar más* o *rechazar* — directamente accionable sin que el analista lea cada fuente cruda.
+
+<MetricGroup cols={3}>
+  <Metric value="3" label="Niveles de riesgo" description="Bajo / Medio / Alto — con score numérico 0–100." />
+  <Metric value="Exa" label="Búsqueda semántica" description="Recupera fuentes relevantes, no solo coincidencias de palabra clave." />
+  <Metric value="~10 s" label="Tiempo de análisis" description="Desde nombre de proveedor hasta reporte estructurado." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Por qué búsqueda semántica (Exa) y no Google Search API">
+Las listas negras y alertas de riesgo rara vez usan el nombre exacto del proveedor como keyword. Exa devuelve resultados por similitud semántica, lo que captura artículos con frases como "empresa relacionada con fraude fiscal" donde el nombre aparece en contexto, no solo como query literal. El trade-off es costo por búsqueda (Exa es de pago); aceptable para due diligence de alto valor.
+</Tradeoff>
+
+<Tradeoff title="Por qué el LLM razona sobre las fuentes y no solo las lista">
+Un analista no quiere 10 URLs — quiere saber si hay algo preocupante y por qué. El LLM extrae señales de riesgo de texto no estructurado y las convierte en alertas concretas. El trade-off es que el modelo puede interpretar mal contexto cultural o jerga local; por eso las fuentes originales están siempre disponibles como respaldo.
+</Tradeoff>
+
+<Tradeoff title="Por qué recomendación ternaria (aprobar / investigar / rechazar)">
+Un score numérico solo no es accionable — requiere que el analista decida qué umbral usar. La recomendación ternaria convierte el score en una decisión operativa concreta, mientras que el nivel "investigar más" captura la zona gris donde la información es ambigua.
+</Tradeoff>
+
+## Estado actual
+
+Funcional end-to-end. La integración con Exa y OpenRouter es real; el modo demo usa proveedores de ejemplo con respuestas pre-computadas para funcionar sin API keys. Para producción:
+
+- Agregar caché de reportes (misma empresa → mismo reporte por N horas, reducir costo de API)
+- Persistencia de historial por empresa para comparar riesgo en el tiempo
+- Autenticación y control de acceso (hoy el endpoint es público)
+- Calibrar el prompt del LLM contra casos reales de due diligence fallido
+
+## Lo que demuestra
+
+La misma arquitectura de búsqueda semántica + razonamiento LLM aplica a múltiples procesos de inteligencia de riesgo: due diligence de proveedores, screening de contrapartes, monitoreo continuo de noticias. Cambiar el tipo de análisis es una cuestión de prompt, no de arquitectura. Eso refleja cómo pienso sobre automatización: plataformas reutilizables, no soluciones puntuales.

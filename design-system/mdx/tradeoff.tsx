@@ -11,7 +11,7 @@ export function Tradeoff({ title, children, className, ...props }: TradeoffProps
     <div
       data-slot="tradeoff"
       className={cn(
-        "my-6 border-l-2 border-accent bg-muted/10 py-4 pl-5 pr-4",
+        "my-6 bg-muted/10 py-4 pl-5 pr-4 shadow-[inset_4px_0_0_var(--accent)]",
         className,
       )}
       {...props}

@@ -22,7 +22,7 @@ export default async function ProjectsPage() {
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/50">
           Projects
         </p>
-        <h1 className="font-serif mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-[52px]">
+        <h1 className="mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-[52px]">
           Case studies from the builder&apos;s desk.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-foreground/70">
