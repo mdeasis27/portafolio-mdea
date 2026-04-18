@@ -42,7 +42,7 @@ export default function AboutPage() {
       <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/50">
         About
       </p>
-      <h1 className="font-serif mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
+      <h1 className="mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
         Finance and operations executive who ships the software.
       </h1>
 

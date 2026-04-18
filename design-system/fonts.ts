@@ -1,32 +1,20 @@
 // design-system/fonts.ts
-// Source of truth for portfolio fonts.
+// Source of truth for portfolio fonts — v3.0.0 (Vercel/Geist).
 // Consumed by the hub and any project that runs brand:sync.
-import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
-export const fontSans = Inter({
+export const geist = Geist({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
 });
 
-export const fontSerif = Fraunces({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: "variable",
-  axes: ["opsz"],
-  display: "swap",
-});
-
-export const fontMono = JetBrains_Mono({
+export const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
-export const fontVariables = [
-  fontSans.variable,
-  fontSerif.variable,
-  fontMono.variable,
-].join(" ");
+export const fontVariables = `${geist.variable} ${geistMono.variable}`;
