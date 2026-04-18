@@ -1,0 +1,67 @@
+---
+title: "KYC Antifraude"
+slug: "kyc-antifraude"
+summary: "Flujo de onboarding KYC que combina verificación documental, comparación biométrica facial y síntesis por IA para emitir una decisión en segundos. Diseñado para equipos de riesgo que necesitan escalar onboarding sin escalar revisores manuales."
+role: "Product & Engineering"
+stack: ["Next.js 16", "TypeScript", "Truora", "LLaMA 3.1", "OpenRouter", "Zod", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-04-13"
+featured: false
+repoUrl: "https://github.com/mdeasis27/kyc-antifraude"
+tags: ["fintech", "KYC", "onboarding", "antifraude", "AI", "LatAm"]
+---
+
+## El problema
+
+El KYC manual es un cuello de botella en dos dimensiones. Por un lado, el proceso tarda días: documento enviado por email, analista lo revisa a mano, cruza en bases de sanciones, toma una decisión. Por otro lado, no escala: a medida que crece el volumen de onboarding, el equipo de compliance crece proporcionalmente.
+
+El resultado es uno de dos: aprobaciones lentas que pierden usuarios en el funnel, o aprobaciones rápidas pero sin verificación real — ambas con riesgo regulatorio.
+
+## El enfoque
+
+El flujo ejecuta cuatro pasos de verificación y produce una decisión estructurada:
+
+1. **Validación documental** — el usuario sube su documento de identidad; el sistema extrae y valida campos estructurados
+2. **Biometría facial** — comparación entre la foto del documento y el selfie del usuario
+3. **Listas de sanciones** — consulta OFAC, listas PEP y registros judiciales en LatAm vía Truora
+4. **Síntesis por IA** — LLaMA 3.1 (OpenRouter) integra los tres resultados y produce `{ decision, confidence, reasoning, next_action }`
+
+La decisión tiene tres estados: *APROBADO*, *REVISIÓN MANUAL* o *RECHAZADO* — con el razonamiento visible para el analista.
+
+<MetricGroup cols={3}>
+  <Metric value="4" label="Pasos de verificación" description="Documento → biometría → sanciones → síntesis IA." />
+  <Metric value="3" label="Estados de decisión" description="Aprobado / Revisión manual / Rechazado." />
+  <Metric value="24 h" label="SLA de escalamiento" description="Casos en revisión manual resueltos por analista en 24h hábiles." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Por qué tres estados y no dos (aprobado / rechazado)">
+Un sistema binario fuerza al modelo a decidir en casos ambiguos — lo que genera tanto falsos negativos (usuarios legítimos rechazados) como falsos positivos (riesgo aprobado). El estado de revisión manual reconoce que hay casos donde la confianza del sistema no es suficiente para automatizar la decisión, y los redirige a un analista humano en lugar de forzar una respuesta incierta.
+</Tradeoff>
+
+<Tradeoff title="Por qué el LLM sintetiza y no solo suma puntajes">
+Cada fuente de verificación puede dar señales contradictorias: biometría OK, pero el nombre aparece en lista PEP con baja probabilidad de coincidencia. Una suma de puntajes no captura esa ambigüedad. El LLM puede razonar sobre el contexto del caso y explicar por qué la coincidencia en lista PEP no es determinante — o por qué sí lo es.
+</Tradeoff>
+
+<Tradeoff title="Por qué mock determinista para la demo">
+El modo demo (escenarios: aprobado, revisión manual, rechazado) funciona sin ninguna API key y produce resultados reproducibles. Truora usa un mock determinista basado en el escenario seleccionado. Permite evaluar el flujo completo — incluyendo el stepper de onboarding y el panel de admin — sin consumir créditos ni depender de disponibilidad de servicios externos.
+</Tradeoff>
+
+<Tradeoff title="Por qué un panel de admin además del flujo de usuario">
+El flujo de onboarding es la vista del solicitante. El panel de admin es la vista del equipo de compliance: listado de casos, estado, historial de decisiones. La separación refleja que KYC tiene dos usuarios distintos con necesidades distintas — no es un solo producto.
+</Tradeoff>
+
+## Estado actual
+
+Funcional end-to-end en modo demo. La integración con OpenRouter es real; Truora usa mock determinista con mapeo de escenarios. Para producción:
+
+- Activar integración real de Truora (clave API, mapeo de respuesta por jurisdicción)
+- Agregar almacenamiento seguro de documentos y selfies (con retención mínima para auditoría)
+- Autenticación en el panel de admin (hoy es público)
+- Calibrar el prompt de síntesis con feedback de analistas reales
+
+## Lo que demuestra
+
+Este proyecto expone el patrón completo de onboarding automatizado: flujo de usuario (stepper de N pasos), integración con proveedor de identidad, síntesis por LLM y panel operativo. El mismo esquema aplica a onboarding de empleados, apertura de cuentas bancarias o alta de contrapartes comerciales — con ajustes de configuración, no de arquitectura.
