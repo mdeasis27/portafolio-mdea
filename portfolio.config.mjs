@@ -28,5 +28,6 @@ export default {
     { name: 'traductor', kits: ['brand', 'ai'] },
     { name: 'ensayo', kits: ['brand', 'ai'] },
     { name: 'arbitro', kits: ['brand', 'ai'] },
+    { name: 'escaneo', kits: ['brand', 'ai'] },
   ],
 };
