@@ -1,0 +1,74 @@
+---
+title: "Fabrica"
+slug: "fabrica"
+summary: "Auto-generador de datasets de eval desde logs de producción: dedupe por similitud de texto, clustering por intención y muestreo. 30 logs → 18 casos de eval con 100% de cobertura y 20% de duplicados eliminados, sin labeling manual."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/fabrica"
+liveUrl: "https://fabrica-2imnnix3q-manueldeasis27-2515s-projects.vercel.app"
+tags: ["eval", "data", "dedupe", "clustering", "dataset", "AI"]
+---
+
+## El problema
+
+Un eval set que no crece se queda atrás del producto: los casos nuevos que rompen el sistema
+son exactamente los que no están en el set, y etiquetarlos a mano no escala. Pero producción ya
+ve esos casos — están en los logs, mezclados con miles de duplicados y sin estructura.
+
+Fabrica mina esos logs y los convierte en casos de eval automáticamente: deduplica lo
+repetido, agrupa por intención y muestrea un set representativo.
+
+## El enfoque
+
+Tres pasos sobre una muestra de logs committed:
+
+1. **Dedupe** — Jaccard de tokens con umbral; un log se conserva solo si no es similar a
+   ninguno ya conservado.
+2. **Clustering por intención** — agrupación por etiqueta (proxy documentado de un
+   clasificador real).
+3. **Muestreo** — N casos por intención para el eval set.
+
+<MetricGroup cols={3}>
+  <Metric value="100%" label="Cobertura de intenciones" description="6/6 intenciones representadas en el eval set." />
+  <Metric value="20%" label="Dedupe rate" description="6 de 30 logs son near-duplicados y se descartan." />
+  <Metric value="18" label="Casos de eval" description="30 logs → 24 únicos → 6 intenciones × 3 muestras." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Dedupe greedy y orden-preservante">
+Un log se conserva solo si no es similar a uno ya conservado. Determinista y barato; el costo
+es que el duplicado que aparece primero es el "canónico", un sesgo razonable para un
+first-seen.
+</Tradeoff>
+
+<Tradeoff title="Jaccard de tokens, no embeddings">
+Los embeddings cazan paráfrasis pero necesitan un modelo; Jaccard caza el near-duplicado común
+(query repetida con una edición pequeña) de forma determinista. Producción sumaría una pasada
+de embeddings para paráfrasis.
+</Tradeoff>
+
+<Tradeoff title="Clustering = etiqueta committed, dedupe = matemática real">
+El demo separa el dedupe (matemática real) de la intención (etiqueta committed que sustituye
+al clasificador), de modo que la métrica de cobertura es honesta sobre qué se computa y qué se
+provee.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 7 tests de Vitest (TS) y 3 de pytest (Python), ambos contra los
+fixtures compartidos `generator.json`. Deployable en Vercel sin claves. Para producción:
+
+- Pasada de embeddings para dedupe a nivel de paráfrasis
+- Clasificador de intención real en vez de la etiqueta committed
+- Muestreo no uniforme (sobre-muestrear intenciones raras o de alto riesgo)
+
+## Lo que demuestra
+
+Que un eval set no necesita labeling manual para crecer: producción ya trae la señal, y la
+diferencia entre un log y un caso de eval es deduplicar lo repetido y muestrear lo
+representativo — matemática determinista, compartida entre TS y Python.

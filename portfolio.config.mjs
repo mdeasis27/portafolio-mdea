@@ -30,5 +30,6 @@ export default {
     { name: 'arbitro', kits: ['brand', 'ai'] },
     { name: 'escaneo', kits: ['brand', 'ai'] },
     { name: 'bandera', kits: ['brand', 'ai'] },
+    { name: 'fabrica', kits: ['brand', 'ai'] },
   ],
 };
