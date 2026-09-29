@@ -1,0 +1,79 @@
+---
+title: "Traductor"
+slug: "traductor"
+summary: "Text-to-SQL con guardrails: plantillas parametrizadas (el modelo no emite SQL crudo), detector de alucinaciones contra un schema fijo y allowlist SELECT-only. 100% del SQL shippeado es válido, con 3/3 alucinaciones cazadas antes de ejecutar y 0 falsos positivos."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/traductor"
+liveUrl: "https://traductor-mqi6zbj5c-manueldeasis27-2515s-projects.vercel.app"
+tags: ["text-to-sql", "guardrails", "hallucination", "safety", "validación", "AI"]
+---
+
+## El problema
+
+Un modelo que traduce lenguaje natural a SQL puede alucinar de dos formas: referenciar
+tablas o columnas que no existen, o emitir DDL/DML cuando solo querías un SELECT. El daño no
+se ve en la generación — se ve en la base de datos, cuando la query inválida ya se ejecutó.
+Y el patrón más común (dejar que el modelo emita SQL crudo) hace ese riesgo estructural:
+cada prompt es una oportunidad de inventar una columna.
+
+Traductor ataca las dos raíces: el modelo deja de emitir SQL crudo, y todo lo que se ejecuta
+pasa antes por un validador contra el schema.
+
+## El enfoque
+
+Dos defensas para dos modos de fallo:
+
+1. **Plantillas parametrizadas** — el generador llena una plantilla pre-validada; el modelo
+   solo elige template y provee valores. Una tabla o columna inexistente es estructuralmente
+   imposible desde este camino.
+2. **Detector de alucinaciones** — un extractor de referencias determinista revisa cada
+   tabla/columna contra el schema y aplica una allowlist SELECT-only. Corre sobre cualquier
+   SQL (generado o externo) antes de ejecutar.
+
+<MetricGroup cols={3}>
+  <Metric value="100%" label="SQL válido (guardado)" description="10/10 exact-match contra gold; el template arquitectura lo hace por construcción." />
+  <Metric value="3 / 3" label="Alucinaciones cazadas" description="Columna, tabla y DML — rechazados antes de llegar a la base de datos." />
+  <Metric value="70% → 100%" label="Naive → guardado" description="El baseline raw-SQL alucina en 3 de 10; el guardrail lo sube a 100% válido, 0 FP." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="El modelo llena params, nunca emite SQL crudo">
+El SQL crudo es donde viven las alucinaciones. Una plantilla se valida una vez contra el
+schema y se reutiliza para siempre. El costo es que una forma nueva de pregunta requiere una
+plantilla nueva; el beneficio es que el generador no puede inventar una columna.
+</Tradeoff>
+
+<Tradeoff title="Extractor determinista, no un parser SQL real">
+Un parser/planner real resuelve subqueries, WITH y ambigüedad de columnas en un JOIN. El demo
+usa un extractor determinista — proxy documentado, igual que el retriever léxico lo era de
+embeddings — que cubre la gramática acotada exactamente y reporta falsos positivos con
+honestidad.
+</Tradeoff>
+
+<Tradeoff title="El baseline naive es output committed, no un strawman">
+Acierta 7 de 10 — suficiente para mostrar el valor del guardrail sin fingir que el modelo es
+inútil. Sus tres alucinaciones (columna, tabla y un UPDATE) son exactamente lo que un modelo
+raw sin validación produce en producción.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 43 tests de Vitest (TS) y 5 de pytest (Python), ambos contra los
+fixtures compartidos `benchmark.json` y `validation.json`. Deployable en Vercel sin claves.
+Para producción:
+
+- Un planner real (o `EXPLAIN`) en vez del extractor determinista
+- Comparación por result-set en vez de exact-match de strings
+- Ampliar la gramática a subqueries, `WITH` y resolución de ambigüedad en `JOIN`
+
+## Lo que demuestra
+
+Que la seguridad de un Text-to-SQL no es el prompt, es la arquitectura: sacar el SQL crudo del
+camino del modelo y validar cada referencia contra el schema antes de ejecutar convierte una
+alucinación de "bug en producción" en "rechazo visible en la demo".

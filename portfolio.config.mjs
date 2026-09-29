@@ -25,5 +25,6 @@ export default {
     { name: 'grafo', kits: ['brand', 'ai'] },
     { name: 'compuerta', kits: ['brand', 'ai'] },
     { name: 'asedio', kits: ['brand', 'ai'] },
+    { name: 'traductor', kits: ['brand', 'ai'] },
   ],
 };
