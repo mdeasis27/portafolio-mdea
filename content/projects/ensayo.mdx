@@ -1,0 +1,79 @@
+---
+title: "Ensayo"
+slug: "ensayo"
+summary: "Prompt versioning + A/B testing con un test estadístico real: Welch's t-test para el lift de calidad, p-value e intervalo de confianza. El rollout solo avanza cuando la variante es significativamente mejor — no 'me pareció mejor'."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/ensayo"
+liveUrl: "https://ensayo-jxj7c2up6-manueldeasis27-2515s-projects.vercel.app"
+tags: ["prompt-engineering", "A/B testing", "estadística", "evaluación", "rollout", "AI"]
+---
+
+## El problema
+
+Cambiar un prompt es un salto a ciegas: se ve "mejor" en tres ejemplos y se shippea, sin
+saber si la diferencia es señal o ruido de muestreo. El resultado es un rollout que revierte
+en producción o, peor, una regresión que nadie mide. El equipo necesita un número, no una
+impresión: ¿el lift es real, con qué confianza, y cuándo hay evidencia suficiente para
+avanzar?
+
+Ensayo convierte ese "me pareció mejor" en un p-value y un intervalo de confianza, y deja
+avanzar al rollout solo cuando la evidencia lo respalda.
+
+## El enfoque
+
+Prompts como artefactos versionados, un juez determinista (proxy de un LLM-as-judge) y un
+test estadístico real que corre en TS y Python con la misma matemática:
+
+1. **Welch's t-test** — compara medias de calidad sin asumir varianzas iguales, con
+   grados de libertad de Satterthwaite.
+2. **p-value + IC exactos** — computados desde la distribución t vía la función beta
+   incompleta regularizada, sin dependencias (espejo línea a línea en ambos lenguajes).
+3. **Rollout gate de tres estados** — avanza / revierte / mantiene; un variante
+   significativamente peor también se caza.
+
+<MetricGroup cols={3}>
+  <Metric value="+15.0%" label="Lift de calidad" description="0.727 → 0.836 con p < 0.001 e IC 95% [0.081, 0.137] que no cruza el 0." />
+  <Metric value="p < 0.001" label="Significancia" description="El gate avanza: la variante es estadísticamente mejor." />
+  <Metric value="hold" label="Paráfrasis descartada" description="+1.9% pero p = 0.293 e IC [-0.013, 0.041]: sin evidencia, no se shippea." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Welch, no t-test pooled">
+Las varianzas de los scores rara vez son iguales entre versiones. Welch no asume igualdad y
+es correcto; el costo es algo menos de potencia cuando las varianzas coinciden, lo que el demo
+acepta por exactitud.
+</Tradeoff>
+
+<Tradeoff title="El juez es determinista, la estadística es real">
+Un LLM-as-judge real es una llamada no determinista; el demo pine los scores para que el test
+sea la estrella. La estadística (lgamma, beta incompleta, t CDF/quantile) es real y pinada por
+fixtures, no aproximada.
+</Tradeoff>
+
+<Tradeoff title="Dos colas y un 'hold' explícito">
+Un test de una cola puede disfrazar una regresión de no-resultado. Tres estados — avanza /
+revierte / mantiene — garantizan que una variante significativamente peor se detecta, no se
+ignora.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 12 tests de Vitest (TS) y 3 de pytest (Python), ambos contra los
+fixtures compartidos `experiments.json` (p-value, IC y decisión pinados a ~1e-10). Deployable
+en Vercel sin claves. Para producción:
+
+- Juez LLM real detrás de la misma interfaz `Experiment`
+- Corrección por comparaciones múltiples cuando hay más de una variante
+- Sequential testing / early stopping para no quemar tráfico en experimentos obvios
+
+## Lo que demuestra
+
+Que experimentar con prompts es un problema estadístico, no de gusto: el lift, el p-value y el
+intervalo de confianza son el contrato que separa un cambio que avanza de uno que se descarta
+— y la matemática, compartida entre TS y Python, es la que lo firma.
