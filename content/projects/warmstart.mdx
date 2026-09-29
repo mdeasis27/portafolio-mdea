@@ -1,0 +1,58 @@
+---
+title: "Warmstart"
+slug: "warmstart"
+summary: "Caché de tres capas para LLM APIs (exacta + semántica + prefix) con hit rate, ahorro de coste y tasa de falsos hits medidos, y una curva de precisión que convierte el umbral de similitud en una decisión de negocio. 82.5% de hit rate con 0% de falsos hits; bajar el umbral a 0.4 sube a 86.7% pero introduce 30% de falsos hits."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-28"
+featured: false
+repoUrl: "https://github.com/mdeasis27/warmstart"
+liveUrl: "https://warmstart-manueldeasis27-2515s-projects.vercel.app"
+tags: ["caching", "coste", "latencia", "semántica", "LLMOps", "AI"]
+---
+
+## El problema
+
+Una marca de ecommerce responde 400.000 preguntas al mes con un modelo de frontera. Seis de cada diez son la misma media docena de preguntas reformuladas: "¿dónde está mi pedido?", "¿cómo funcionan las devoluciones?", "¿envían a Canadá?". Pagan precio de modelo de frontera por responder lo mismo una y otra vez, y la latencia p95 castiga la conversión en el checkout.
+
+El problema no es solo el gasto: es que una caché mal diseñada responde mal. Si la clave es solo la pregunta, dos clientes con historial distinto reciben la misma respuesta — y en vez de una optimización, shipas una fuga de datos.
+
+## El enfoque
+
+Warmstart implementa la caché en tres capas y mide lo que importa:
+
+1. **Exacta** — la clave incluye modelo, temperatura, tier, versión del prompt y la query.
+2. **Semántica** — similitud (Dice sobre trigramas) por encima de un umbral ajustable, con la tasa de falsos hits medida contra etiquetas de intención.
+3. **Prefix caching** — del proveedor, modelada como constante.
+
+Y la pieza clave: una **curva de precisión** que convierte el umbral en una decisión explícita.
+
+<MetricGroup cols={3}>
+  <Metric value="82.5%" label="Hit rate" description="A umbral 0.8, con 0% de falsos hits." />
+  <Metric value="74%" label="Ahorro de coste" description="Sobre 120 consultas con forma de producción." />
+  <Metric value="0" label="Hits v4 vs v3" description="Cambiar el prompt invalida la caché por completo." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Por qué la versión del prompt vive en la clave">
+Incluir la versión del system prompt en la clave exacta es el detalle que evita servir "el comportamiento de ayer". Una consulta v4 nunca acierta contra una entrada v3. Es la diferencia entre una caché y una máquina de regresiones.
+</Tradeoff>
+
+<Tradeoff title="Por qué la similitud determinista (Dice), no un embedding">
+La demo offline no puede cargar un embedder, así que la similitud es Dice sobre trigramas de caracteres. Su techo es la cobertura de paráfrasis; lo que transfiere a producción es el harness y la curva de precisión, no la métrica concreta.
+</Tradeoff>
+
+<Tradeoff title="Por qué la tasa de falsos hits se mide contra etiquetas de intención">
+Un cache semántico es un sistema de retrieval con un problema de precisión. Sin etiquetas de intención no puedes saber si un hit semántico fue correcto. La demo las tiene porque es la única forma honesta de validar la caché antes de desplegarla.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional: 10 tests de Vitest y 6 de pytest, deployable en Vercel sin claves. Para producción: embeddings reales para la capa semántica, TTL + invalidación explícita por reindex y cambio de política, y un dashboard de hit-rate/ahorro que el jefe de soporte pueda leer sin ti en la sala.
+
+## Lo que demuestra
+
+Que la optimización de coste se valida, no se presume. La diferencia entre "puse una caché" y "probé que ahorra 74% sin servir respuestas equivocadas" es la que separa a un ingeniero de alguien que siguió un tutorial.

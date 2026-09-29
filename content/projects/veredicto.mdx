@@ -1,0 +1,63 @@
+---
+title: "Veredicto"
+slug: "veredicto"
+summary: "Evaluation harness para Q&A documental con retrieval: golden set, métricas de retrieval (recall@k, MRR, nDCG), calibración de LLM-as-judge contra etiquetas humanas (kappa), auditoría de sesgos y gate de regresión en CI. Implementa la misma matemática en TypeScript y Python, pinada a una referencia de scikit-learn."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "scikit-learn (reference)", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-28"
+featured: true
+repoUrl: "https://github.com/mdeasis27/veredicto"
+liveUrl: "https://veredicto-manueldeasis27-2515s-projects.vercel.app"
+tags: ["evaluación", "RAG", "LLM-as-judge", "evals", "fintech", "AI"]
+---
+
+## El problema
+
+Todo cambio de prompt, modelo o retrieval en un asistente documental se sube a ciegas: nadie puede demostrar si la versión del mes pasado era mejor. En un dominio donde una métrica mal citada es un problema de compliance, la opinión no es evidencia aceptable.
+
+Veredicto ataca ese hueco: convierte "creo que mejoró" en "recall@5 subió 0.8 puntos y el kappa del juez no cayó".
+
+## El enfoque
+
+Un harness con golden set que separa **retrieval** de **generación** — la distinción que la mayoría de los equipos no hace y que los estanca en calidad de demo:
+
+1. **Golden set** versionado y estratificado (single-hop, multi-hop, agregación, fuera de alcance) sobre un corpus de políticas de crédito e identidad.
+2. **Métricas de retrieval** — `recall@k`, `MRR`, `nDCG@k` — comparando tres configuraciones (sparse / dense / híbrido RRF).
+3. **Calibración del juez** — `weighted kappa` juez↔humano contra el techo humano↔humano, por criterio, más ECE y Brier.
+4. **Auditoría de sesgos** — posición (flip rate), longitud (correlación score↔longitud), auto-preferencia.
+5. **Gate de regresión** — compara dos runs y bloquea si el pass-rate cae más de 8 puntos.
+
+<MetricGroup cols={3}>
+  <Metric value="87.5%" label="Recall@5 · BM25" description="El sparse gana en este corpus factual — hallazgo honesto, no escondido." />
+  <Metric value="κ 0.61" label="Juez ↔ humano" description="Quadratic weighted kappa, con techo humano por criterio." />
+  <Metric value="−66.7pp" label="Regresión detectada" description="Un retriever degradado lo detecta el gate como critical." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="La matemática vive en dos lenguajes, pinada a un fixture común">
+Vercel no corre Python, así que la demo pública necesita las métricas en TypeScript; el harness autoritativo es Python. Ambas implementaciones se fijan al mismo `fixtures/agreement.json` generado con scikit-learn: si divergen, los tests fallan en ambos lados. El costo es mantener dos implementaciones; el beneficio es que la demo pública es real y el backend es auditable.
+</Tradeoff>
+
+<Tradeoff title="Demo mode con juez léxico y 'dense' como proxy TF-IDF">
+Sin descargas de modelos ni API keys, el dashboard calcula números reales offline. El juez léxico es deliberadamente ingenuo: su brecha frente al techo humano (0.56 vs 1.00 en corrección) es lo que hace la calibración medible. Es una simplificación documentada, no escondida.
+</Tradeoff>
+
+<Tradeoff title="Reportar kappa por criterio, no agregado">
+Agrupar criterios con marginales sesgadas produce la paradoja de kappa (acuerdo alto, kappa bajo). Reportar por criterio mantiene el número interpretable y apunta la mejora al criterio débil, no a la rúbrica entera.
+</Tradeoff>
+
+## Estado actual
+
+Harness funcional end-to-end: 30 tests de Vitest (TS) y 18 de pytest (Python) verdes, ambos contra referencia sklearn/scipy. Demo desplegable en Vercel sin claves. Para producción:
+
+- Golden set más grande (cientos de queries) con etiquetado humano de dos anotadores independientes
+- Juez LLM real detrás de la misma interfaz `Judge`
+- CI gate real en GitHub Actions que corre pytest por PR
+- Re-calibración periódica del juez (el kappa deriva cuando el sistema cambia)
+
+## Lo que demuestra
+
+Separar fallo de retrieval de fallo de generación, y medir un juez contra humanos antes de confiar en él. Son las dos habilidades que separan a quien lee sobre RAG de quien lo ha depurado — y ambas quedan reflejadas en un número reproducible, no en una opinión.

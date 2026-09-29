@@ -28,6 +28,12 @@
   --color-ring:                var(--ring);
   --color-destructive:         var(--destructive);
 
+  /* Semantic status colors */
+  --color-success:             var(--success);
+  --color-warning:             var(--warning);
+  --color-danger:              var(--danger);
+  --color-info:                var(--info);
+
   /* Radius scale */
   --radius-sm:   var(--radius-sm);
   --radius:      var(--radius);

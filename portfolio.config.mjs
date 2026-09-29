@@ -13,5 +13,12 @@ export default {
   siblings: [
     { name: 'identidad-360', kits: ['brand', 'ai'] },
     { name: 'agente-riesgo', kits: ['brand', 'ai'] },
+    { name: 'radar-proveedores', kits: ['brand', 'ai'] },
+    { name: 'kyc-antifraude', kits: ['brand', 'ai'] },
+    { name: 'agente-cobranzas', kits: ['brand', 'ai'] },
+    { name: 'veredicto', kits: ['brand', 'ai'] },
+    { name: 'evidencia', kits: ['brand', 'ai'] },
+    { name: 'doorman', kits: ['brand', 'ai'] },
+    { name: 'warmstart', kits: ['brand', 'ai'] },
   ],
 };
