@@ -1,0 +1,83 @@
+---
+title: "Grafo"
+slug: "grafo"
+summary: "Knowledge-graph RAG con ontología restringida, entity resolution (exacto → alias → trigram) y traversals parametrizados. Sube la accuracy multi-hop de 0% a 100% frente a un baseline vector-only, con paridad en 1-hop (100% vs 100%)."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/grafo"
+liveUrl: "https://grafo-mezmbjhgz-manueldeasis27-2515s-projects.vercel.app"
+tags: ["RAG", "knowledge-graph", "entity-resolution", "retrieval", "multi-hop", "AI"]
+---
+
+## El problema
+
+El vector RAG responde bien preguntas de un solo hecho, pero falla en lo que los
+entrevistadores preguntan: "en qué región opera el competidor de Acme". Esa respuesta
+requiere cruzar dos o tres aristas, y un retriever vectorial no tiene grafo que recorrer:
+puede traer chunks que *mencionan* a Acme, pero no puede encadenar la relación. El
+resultado es paridad en 1-hop y un colapso silencioso a partir de ahí.
+
+Grafo ataca las tres causas estructurales: ontología abierta (grafo inconsultable), entity
+resolution salteado (la misma empresa en cuatro nodos) y retrieval que no cita.
+
+## El enfoque
+
+Ontología restringida antes de escribir una línea (6 tipos de entidad, 10 de relación),
+extracción con schema estricto + reintento, entity resolution real, y traversals
+parametrizados que comparten chunk id con el índice vectorial:
+
+1. **Entity resolution** — "Acme Corp", "ACME" y "Acme Corporation" colapsan en un nodo
+   (exacto → alias → trigram similarity sobre umbral 0.6); un typo también resuelve.
+2. **Extracción validada** — cada triple valida tipo y relación contra la ontología; un
+   verbo desconocido reintenta por el mapa de sinónimos.
+3. **Cypher parametrizado** — el grafo se recorre con templates tipados; nunca se emite
+   una query cruda. Cada arista lleva su chunk id, que es la cita de cada hop.
+4. **Router determinista** — conexión/agregación → grafo; hecho único → vector; fallback
+   low-confidence corre ambos.
+
+<MetricGroup cols={3}>
+  <Metric value="+46pp" label="Δ overall" description="Graph 100% vs vector-only 53.8% sobre 13 preguntas estratificadas." />
+  <Metric value="0% → 100%" label="Multi-hop (2+)" description="El baseline vector-only no puede encadenar ni contar; el grafo lo resuelve con citas." />
+  <Metric value="1:1" label="Paridad 1-hop" description="100% vs 100% — el grafo no sacrifica las preguntas fáciles." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="El grafo y el índice comparten el mismo chunk id">
+Esa clave cruzada es el truco entero: permite pasar de un path del grafo al texto original,
+y de un pasaje recuperado al vecindario del grafo. El costo es disciplina de ingestión —
+cada arista debe llevar su chunk id o las citas mienten.
+</Tradeoff>
+
+<Tradeoff title="Ontología restringida antes que extracción libre">
+Un prompt "extrae todas las entidades" produce un grafo que nadie puede consultar. Limitar a
+6/10 tipos de antemano hace las traversals reproducibles. El costo: entidades fuera del
+schema se descartan, lo que exige conocer el dominio antes de indexar.
+</Tradeoff>
+
+<Tradeoff title="Baseline vector-only es un single-passage reader">
+El baseline recupera chunks y lee el hecho almacenado en uno solo; no tiene grafo, así que
+estructuralmente no puede encadenar hops ni contar. Es un baseline honesto, no un strawman:
+es exactamente lo que un vector RAG sin capa de razonamiento puede hacer.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 48 tests de Vitest (TS) y 6 de pytest (Python), ambos contra los
+fixtures compartidos `resolution.json` y `benchmark.json`. Deployable en Vercel sin claves.
+Para producción:
+
+- Extracción LLM real detrás de la misma interfaz `Extractor` (la demo usa un parser determinista)
+- Embeddings reales en vez del retriever léxico (proxy documentado)
+- Neo4j real en vez del grafo en memoria
+- Un router LLM barato que rellene los mismos parámetros de template
+
+## Lo que demuestra
+
+Que "RAG" se gana o se pierde en las preguntas que cruzan entidades, no en las de un hecho.
+Resolver entidades, restringir la ontología y recorrer con citas son tres decisiones que
+separan a quien indexó documentos de quien construyó un grafo que se puede consultar.

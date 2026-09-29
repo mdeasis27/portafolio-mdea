@@ -22,5 +22,8 @@ export default {
     { name: 'warmstart', kits: ['brand', 'ai'] },
     { name: 'mesa', kits: ['brand', 'ai'] },
     { name: 'destilacion', kits: ['brand', 'ai'] },
+    { name: 'grafo', kits: ['brand', 'ai'] },
+    { name: 'compuerta', kits: ['brand', 'ai'] },
+    { name: 'asedio', kits: ['brand', 'ai'] },
   ],
 };
