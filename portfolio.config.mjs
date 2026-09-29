@@ -27,5 +27,6 @@ export default {
     { name: 'asedio', kits: ['brand', 'ai'] },
     { name: 'traductor', kits: ['brand', 'ai'] },
     { name: 'ensayo', kits: ['brand', 'ai'] },
+    { name: 'arbitro', kits: ['brand', 'ai'] },
   ],
 };

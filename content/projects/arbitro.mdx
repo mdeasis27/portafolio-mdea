@@ -1,0 +1,73 @@
+---
+title: "Arbitro"
+slug: "arbitro"
+summary: "Arbitraje de salidas de modelos: tres modelos votan, un árbitro determinista elige o escala a humano. 66.7% de acuerdo entre modelos, 88.9% de precisión donde arbitra y 18.2% escalado — el coste honesto de no saber."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/arbitro"
+liveUrl: "https://arbitro-14q6lo9f1-manueldeasis27-2515s-projects.vercel.app"
+tags: ["arbitration", "multi-model", "agreement", "escalation", "evaluación", "AI"]
+---
+
+## El problema
+
+Cuando varios modelos responden lo mismo, ¿quién decide? La respuesta por defecto es "el que
+suene más seguro" o "el primero de la lista", y ambas fallan exactamente donde importa: en los
+casos donde los modelos no se ponen de acuerdo. Sin una regla de arbitraje, el desacuerdo se
+resuelve por azar y el coste de equivocarse se paga en silencio.
+
+Arbitro convierte el desacuerdo en una decisión explícita: mayoría con umbral de confianza, o
+escalado a humano cuando no hay consenso.
+
+## El enfoque
+
+Tres modelos emiten un veredicto por caso; un árbitro determinista aplica una regla con tres
+salidas:
+
+1. **Unánime** → arbitra directamente.
+2. **Mayoría 2-vs-1** → arbitra solo si la confianza media de la etiqueta ganadora supera el
+   umbral; si la mayoría es frágil, escala.
+3. **Empate a tres vías** → escala.
+
+<MetricGroup cols={3}>
+  <Metric value="66.7%" label="Acuerdo entre modelos" description="Pairwise medio sobre las 3 parejas de modelos; no siempre coinciden." />
+  <Metric value="88.9%" label="Precisión del arbitraje" description="16/18 correctos donde arbitra; los 2 errores son mayorías confiadas que se equivocan." />
+  <Metric value="18.2%" label="Escalado a humano" description="4/22: mayorías frágiles y empates, exactamente donde una apuesta sería un riesgo." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Mayoría con umbral de confianza, no mayoría a secas">
+Una mayoría simple arbitraría cada 2-vs-1. El umbral hace que una mayoría frágil (confianza
+baja) escale en vez de shippear una apuesta disfrazada de decisión. El costo es algo más de
+carga humana; el beneficio es no actuar cuando no se sabe.
+</Tradeoff>
+
+<Tradeoff title="Pairwise agreement, no Fleiss' kappa">
+El pairwise es más simple de interpretar y honesto sobre la concordancia. Producción
+reportaría kappa (corregido por azar); se anota como upgrade, no se esconde.
+</Tradeoff>
+
+<Tradeoff title="El escalado es una feature, no un fallo">
+Enrutar los casos ambiguos a un humano es exactamente donde el arbitraje se paga solo. La
+métrica lo expone en vez de enterrarlo.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 11 tests de Vitest (TS) y 4 de pytest (Python), ambos contra los
+fixtures compartidos `benchmark.json`. Deployable en Vercel sin claves. Para producción:
+
+- Modelos reales detrás de la misma interfaz de veredicto
+- Fleiss' kappa como métrica de acuerdo corregida por azar
+- Un árbitro/referee independiente que detecte una mayoría confiada pero incorrecta
+
+## Lo que demuestra
+
+Que arbitrar entre modelos no es "quedarse con el más seguro": es una regla explícita que
+sabe cuándo decidir y cuándo escalar. La precisión del arbitraje y la tasa de escalado juntas
+cuentan la historia — decidir bien donde se puede, y pagar el coste de no saber donde no.
