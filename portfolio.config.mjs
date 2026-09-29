@@ -31,5 +31,6 @@ export default {
     { name: 'escaneo', kits: ['brand', 'ai'] },
     { name: 'bandera', kits: ['brand', 'ai'] },
     { name: 'fabrica', kits: ['brand', 'ai'] },
+    { name: 'vigia', kits: ['brand', 'ai'] },
   ],
 };
