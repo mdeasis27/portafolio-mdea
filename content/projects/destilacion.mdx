@@ -1,0 +1,62 @@
+---
+title: "Destilación"
+slug: "destilacion"
+summary: "Fine-tuning LoRA vs un teacher de frontera en una tarea de extracción a esquema estricto (facturas): calidad por exact-match medible, coste y latencia comparados, y el volumen de break-even donde self-host gana. 90.0% de accuracy student vs 97.5% teacher, a 40× menos latencia y con break-even en 300k req/mes."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-28"
+featured: false
+repoUrl: "https://github.com/mdeasis27/destilacion"
+liveUrl: "https://destilacion-6l3ttdj33-manueldeasis27-2515s-projects.vercel.app"
+tags: ["fine-tuning", "LoRA", "break-even", "coste", "extracción", "AI"]
+---
+
+## El problema
+
+Todo el mundo dice "un LoRA es más barato que un modelo de frontera" como si fuera un hecho, sin un número que lo respalde. Pero self-host no es más barato por token: es un coste fijo (la GPU), y solo gana a partir de un volumen. Sin medir calidad, coste y latencia del student contra el teacher, "destilar" es una decisión de fe.
+
+Además, la mayoría de las tareas de destilación se validan con "se ve bien": un juez subjetivo. La extracción a esquema estricto no necesita juez — cada campo es correcto o no lo es.
+
+## El enfoque
+
+Una tarea de extracción de facturas a esquema estricto, donde la corrección es validable por construcción:
+
+1. **Schema estricto** — 5 campos (`invoiceNumber`, `date`, `vendor`, `total`, `currency`). Correcto = exact-match, sin fuzzy.
+2. **Split versionado** — 6 train / 3 val / 4 test, con el test **intacto** (las reglas se escriben sobre train/val).
+3. **Comparación en 3 ejes** — calidad (exact-match por campo), coste ($/1k) y latencia (p95), student vs teacher.
+4. **Break-even** — el volumen donde `gpuMonthlyCost / teacherCostPerRequest` se cruza, calculado no asumido.
+
+<MetricGroup cols={3}>
+  <Metric value="90.0%" label="Student accuracy" description="Exact-match por campo, medido sobre el test intacto." />
+  <Metric value="300k" label="Break-even" description="req/mes donde self-host empata al API ($1,800 GPU fija)." />
+  <Metric value="40×" label="Latencia" description="45ms self-host vs 1,800ms p95 del teacher de frontera." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="Self-host se modela como coste fijo, no como 'tokens más baratos'">
+El encuadre de break-even — la tesis entera del proyecto — sale de una fórmula. Presentar self-host como más barato por token esconde la decisión real: solo gana por encima de un volumen. El margen marginal del student es ≈ $0/1k porque la GPU ya está pagada.
+</Tradeoff>
+
+<Tradeoff title="El student de la demo es un extractor determinista, no un LoRA neural">
+Sin descargas ni keys, el número de calidad es real porque se mide, pero el valor absoluto pertenece al proxy. Lo que transfiere a producción es el harness (split, métrica, break-even), no el extractor concreto. Documentado, no escondido.
+</Tradeoff>
+
+<Tradeoff title="El test está intacto, incluso sin gradientes">
+Las reglas se escriben sobre train/val y el test solo se mide. Con un extractor rule-based es una garantía blanda, pero mantiene el eval honesto igual que lo haría una corrida real de fine-tuning.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 17 tests de Vitest (TS) y 4 de pytest (Python), ambos contra el fixture compartido `breakEven.json`. Deployable en Vercel sin claves. Para producción:
+
+- Un LoRA 8B real detrás de la misma interfaz `Extractor`
+- Coste de GPU real (el de la demo es un placeholder de $2.5/hora)
+- Teacher evaluado sobre el mismo split (hoy es una constante precomputada)
+- Re-entrenamiento con más variedad de formatos (fechas, monedas, layouts)
+
+## Lo que demuestra
+
+Que "destilar es más barato" se convierte en una decisión con un número de corte. Separar el coste fijo del marginal, medir calidad con exact-match en lugar de un juez, y respetar un test intacto son las tres cosas que separan a quien repite el meme de "LoRA barato" de quien ha corrido los números.

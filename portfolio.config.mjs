@@ -20,5 +20,7 @@ export default {
     { name: 'evidencia', kits: ['brand', 'ai'] },
     { name: 'doorman', kits: ['brand', 'ai'] },
     { name: 'warmstart', kits: ['brand', 'ai'] },
+    { name: 'mesa', kits: ['brand', 'ai'] },
+    { name: 'destilacion', kits: ['brand', 'ai'] },
   ],
 };
