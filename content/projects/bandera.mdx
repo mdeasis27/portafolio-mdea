@@ -1,0 +1,75 @@
+---
+title: "Bandera"
+slug: "bandera"
+summary: "Feature flags para features de IA: rollout gradual (10% → 25% → 50% → 100%) que solo avanza cuando la variante es estadísticamente no-peor, con kill-switch ante regresión. 0 regresiones en el rollout bueno; 1 regresión cazada en el malo."
+role: "AI Engineering"
+stack: ["Next.js 16", "TypeScript", "Python", "Vitest", "pytest", "Tailwind CSS v4"]
+status: "beta"
+year: 2026
+publishedAt: "2026-09-29"
+featured: false
+repoUrl: "https://github.com/mdeasis27/bandera"
+liveUrl: "https://bandera-qgx0vd1tn-manueldeasis27-2515s-projects.vercel.app"
+tags: ["feature-flags", "rollout", "kill-switch", "estadística", "deploy", "AI"]
+---
+
+## El problema
+
+Shippear una feature de IA a todo el tráfico de golpe es apostar el producto a una corazonada.
+El rollout gradual existe, pero la mayoría avanza por calendario ("el martes subimos al 50%"),
+no por evidencia: una regresión de calidad se detecta cuando los usuarios ya la sufrieron, y
+no hay un mecanismo que revierta automáticamente.
+
+Bandera convierte el rollout en un control loop: la fracción de tráfico solo se mueve cuando
+la variante es estadísticamente no-peor, y un kill-switch revierte ante una regresión.
+
+## El enfoque
+
+Un feature flag con etapas graduales y un gate estadístico que reutiliza el Welch t-test de
+`ensayo`, más una política de kill-switch:
+
+1. **Rollout gradual** — 10% → 25% → 50% → 100% del tráfico al experimento.
+2. **Gate por CI** — cada etapa muestrea calidad de baseline y variante (simulación con LCG
+   sembrado, determinista en TS y Python) y decide: avanza si el IC no cae bajo el margen;
+   mata si el IC entero cae bajo el margen.
+3. **Kill-switch** — una regresión detectada revierte a 0% automáticamente.
+
+<MetricGroup cols={3}>
+  <Metric value="100%" label="Rollout completado" description="10% → 100% en 4 etapas, 0 regresiones, p < 0.001 en cada una." />
+  <Metric value="0" label="Regresiones (variante buena)" description="Ningún etapa revierte: el IC nunca cae bajo el margen." />
+  <Metric value="kill @ 10%" label="Kill-switch (variante mala)" description="IC entero bajo el margen en la 1ª etapa: 1 regresión cazada, tráfico a 0." />
+</MetricGroup>
+
+## Decisiones de diseño
+
+<Tradeoff title="El gate reutiliza el test estadístico, no un umbral a mano">
+"No-peor" es una afirmación unilateral respaldada por el mismo Welch t-test que gatea el A/B de
+`ensayo`. El margen (0.02) es una banda de tolerancia: la variante puede ser un poco peor y aún
+avanzar, siempre que no sea *confiadamente* peor.
+</Tradeoff>
+
+<Tradeoff title="LCG sembrado en vez de scores committed">
+Bandera necesita muestras frescas en cada etapa, así que la simulación las genera
+determinísticamente: el mismo generador, la misma semilla, las mismas decisiones en ambos
+lenguajes — bit a bit.
+</Tradeoff>
+
+<Tradeoff title="Kill-switch = regla de CI, no alerta de dashboard">
+`ciHigh < -margin` mata automáticamente; nadie tiene que mirar. El costo es que una etapa
+ruidosa puede matar antes de lo que un humano decidiría, y eso es justo lo que el margen afina.
+</Tradeoff>
+
+## Estado actual
+
+Demo funcional end-to-end: 8 tests de Vitest (TS) y 4 de pytest (Python), ambos contra los
+fixtures compartidos `rollout.json`. Deployable en Vercel sin claves. Para producción:
+
+- Streaming de métricas reales en vez de simulación sembrada
+- Bayesian stopping / early stopping para no quemar tráfico en regresiones obvias
+- Rollback automático con registro de la etapa y el CI que lo disparó
+
+## Lo que demuestra
+
+Que un rollout de IA es una decisión estadística, no un calendario: mover el tráfico solo
+cuando la evidencia lo respalda, y matar automáticamente cuando no, es lo que separa shippear
+una mejora de shippear una regresión.

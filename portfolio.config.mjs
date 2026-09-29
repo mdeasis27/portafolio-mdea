@@ -29,5 +29,6 @@ export default {
     { name: 'ensayo', kits: ['brand', 'ai'] },
     { name: 'arbitro', kits: ['brand', 'ai'] },
     { name: 'escaneo', kits: ['brand', 'ai'] },
+    { name: 'bandera', kits: ['brand', 'ai'] },
   ],
 };
