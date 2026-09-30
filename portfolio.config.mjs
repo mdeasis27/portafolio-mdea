@@ -9,7 +9,7 @@
  */
 
 /** @type {{ siblings: SiblingEntry[] }} */
-export default {
+const config = {
   siblings: [
     { name: 'identidad-360', kits: ['brand', 'ai'] },
     { name: 'agente-riesgo', kits: ['brand', 'ai'] },
@@ -34,3 +34,5 @@ export default {
     { name: 'vigia', kits: ['brand', 'ai'] },
   ],
 };
+
+export default config;

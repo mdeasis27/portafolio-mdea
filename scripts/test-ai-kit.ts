@@ -15,7 +15,6 @@ const PROMPT: ChatOptions["messages"] = [
 ];
 
 async function testProvider(name: string, opts: ChatOptions) {
-  const start = Date.now();
   try {
     const res = await chat(opts);
     console.log(`✅ [${name}] provider=${res.provider} model=${res.model} latency=${res.latency_ms}ms`);
