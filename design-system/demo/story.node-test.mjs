@@ -58,6 +58,9 @@ test('outcome tape exposes one cell per request with its status and a legend', (
   const html = renderToStaticMarkup(h(OutcomeTape, { cells: ['served', 'rerouted', 'lost', 'pending'], labels: { served: 'served', rerouted: 'rerouted', lost: 'lost' }, ariaLabel: 'Requests' }));
   assert.equal((html.match(/data-tape-cell=/g) ?? []).length, 4);
   assert.match(html, /data-tape-cell="lost"/);
+  // Lost cells carry a non-color mark so red/green colorblind visitors can tell them apart.
+  assert.match(html, /data-tape-cell="lost"[^>]*><span aria-hidden="true">×<\/span>/);
+  assert.doesNotMatch(html, /data-tape-cell="served"[^>]*><span aria-hidden="true">×/);
   assert.match(html, /aria-label="Requests"/);
   assert.match(html, />rerouted</);
 });
