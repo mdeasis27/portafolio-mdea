@@ -3,22 +3,24 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 import type { ReactNode } from 'react';
 import type { TraceEvent } from './types';
 import type { Locale } from '../i18n/locale';
-import { advancePlayback, currentPlayback, playbackFrame, type PlaybackFrame, type PlaybackState } from './playback';
+import { advancePlayback, autoPlayback, currentPlayback, playbackFrame, type PlaybackFrame, type PlaybackState } from './playback';
 function subscribeMotion(callback: () => void) { const media = window.matchMedia('(prefers-reduced-motion: reduce)'); media.addEventListener('change', callback); return () => media.removeEventListener('change', callback); }
-export function TracePlayer({ trace, locale = 'en', executionMs, translate, renderStage, collapsible = false }: {
+export function TracePlayer({ trace, locale = 'en', executionMs, translate, renderStage, collapsible = false, autoPlay = false }: {
     trace: TraceEvent[];
     locale?: Locale;
     executionMs?: number;
     collapsible?: boolean;
+    /** Start playback as soon as a new trace arrives. */
+    autoPlay?: boolean;
     translate: (key: string) => string;
     renderStage?: (frame: PlaybackFrame<TraceEvent>) => ReactNode;
 }) {
     const reducedMotion = useSyncExternalStore(subscribeMotion, () => window.matchMedia('(prefers-reduced-motion: reduce)').matches, () => false);
-    const [state, setState] = useState<PlaybackState<TraceEvent>>({ trace, visible: 1, playing: false });
+    const [state, setState] = useState<PlaybackState<TraceEvent>>(() => { const initial = { trace, visible: 1, playing: false }; return autoPlay ? autoPlayback(initial) : initial; });
     const [speed, setSpeed] = useState(1);
     const current = currentPlayback(state, trace);
     if (current !== state)
-        setState(current);
+        setState(autoPlay ? autoPlayback(current) : current);
     useEffect(() => { if (!current.playing || reducedMotion)
         return; const timer = setInterval(() => setState(value => advancePlayback(currentPlayback(value, trace))), 800 / speed); return () => clearInterval(timer); }, [current.playing, speed, trace, reducedMotion]);
     const count = reducedMotion ? trace.length : Math.min(current.visible, trace.length);
