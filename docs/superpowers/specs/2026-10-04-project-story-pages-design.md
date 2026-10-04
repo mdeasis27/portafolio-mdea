@@ -36,11 +36,11 @@ Success means a non-technical visitor can, in about two minutes: explain the pro
 ### Draft copy (ES; EN equivalent required)
 
 - **00:** "Compuerta. Un desvío automático para cuando el servicio de IA del que depende tu empresa deja de contestar."
-- **01:** "Piensa en tu ruta al trabajo. Un día hay un choque en la autopista y Waze te saca por la lateral antes de que llegues al tráfico. Llegas cinco minutos tarde, pero llegas. Compuerta hace lo mismo con un asistente de IA: cuando el proveedor principal falla, manda las solicitudes a uno de respaldo, y cuando el principal se recupera, regresa." Dictionary: cada coche = un cliente · la autopista = el proveedor principal · el choque = la caída · la lateral = el respaldo · Waze = Compuerta.
+- **01:** "Piensa en tu ruta al trabajo. Un día hay un choque en la autopista y la app de mapas del celular te saca por la lateral antes de que llegues al tráfico. Llegas cinco minutos tarde, pero llegas. Compuerta hace lo mismo con un asistente de IA: cuando el proveedor principal falla, manda las solicitudes a uno de respaldo, y cuando el principal se recupera, regresa." Dictionary: cada coche = un cliente · la autopista = el proveedor principal · el choque = la caída · la lateral = el respaldo · la app de mapas = Compuerta.
 - **02 prompt:** "Antes de correrlo, apuesta: con una caída de la solicitud 8 a la 20, ¿se atiende a 24 de 30 clientes o no?"
-- **03:** "Con respaldo se atendió a {on} clientes. Sin respaldo, a {off}. Son {diff} personas que se quedaron viendo un 'intenta más tarde'." Numbers come from the simulation result, never hard-coded.
-- **04 worth it:** "Cuando hay alguien esperando la respuesta: el chat de soporte de un banco, la aprobación de una compra, una línea de atención que no cierra." **Not needed:** "Si el trabajo puede esperar a mañana: un reporte nocturno, una clasificación de documentos por lotes."
-- **05:** "Diseñé esto empezando por la pregunta incómoda (¿y si el proveedor se cae?) en lugar de asumir que todo funciona. Y lo medí en clientes atendidos, que es como lo mediría un director de operaciones, no en códigos de error."
+- **03:** "Con respaldo se atendió a {on} clientes. Sin respaldo, a {off}. Son {diff} personas que se quedaron viendo un 'intenta más tarde'." Numbers come from `runMission`'s `comparison.enabled` / `comparison.disabled`, which run the same `simulate` with only `failover` toggled (not `simulateBaseline`), so 02 and 03 always agree. Never hard-coded.
+- **04 worth it:** "Cuando hay alguien esperando la respuesta del otro lado. Pienso en el chat de soporte de un banco a las once de la noche, o en una compra en línea que se queda girando mientras el cliente decide si mejor se va." **Not needed:** "Si el trabajo puede esperar a mañana, como un reporte que corre de madrugada."
+- **05:** "Empecé por la pregunta incómoda: ¿qué pasa el día que el proveedor se cae? Luego lo medí en clientes atendidos, porque así lo mide un director de operaciones cuando le preguntan cómo le fue al servicio."
 - **Why I built it:** provided by Manuel. Not drafted or invented.
 
 ## Writing rules (all story copy)
@@ -48,7 +48,7 @@ Success means a non-technical visitor can, in about two minutes: explain the pro
 1. First person, Manuel's voice. Sentence length varies. No slogans.
 2. Forbidden: triads with bold lead-ins; "not X but Y" constructions; em dashes; filler words ("potenciar", "robusto", "de un vistazo", "seamless", "leverage", "en tiempo real" unless literally true).
 3. At least one concrete detail per section: a number, a place, or a recognizable situation.
-4. Analogies may reference everyday brands or situations as context (e.g., Waze). Business use cases do not name companies.
+4. No company or brand names anywhere in public copy, analogies included (consistent with `DESIGN.md`). Use the generic thing ("la app de mapas del celular"). Changing this requires amending `DESIGN.md` first.
 5. The analogy must map piece by piece (3–5 dictionary entries). If it cannot, choose another analogy.
 6. "Why I built it" comes from Manuel; the assistant only edits it.
 7. Every copy change passes the AI-tell checklist (rule 2 + read-aloud test) before publishing.
@@ -83,7 +83,7 @@ Reused as-is: `ScenarioPicker`, `MissionPrompt`, `MissionComparison`, `TracePlay
 
 ### Hub
 
-- Project frontmatter gains `oneLiner` (EN and ES files). The project card shows it and its primary action goes to `liveUrl`; the case study becomes a secondary link.
+- Project frontmatter gains `oneLiner` (EN and ES files). The project card shows it and its primary action goes to the demo in the visitor's locale: `{liveUrl origin}/{locale}/app` (Compuerta's `proxy.ts` redirects a locale-less `/app` to `/en/app`, so a Spanish visitor would otherwise land in English). The case study becomes a secondary link.
 - Meta-folder `CLAUDE.md` rule 4 (mandatory 5-H2 case study) is updated: projects using a story page keep their technical content under "For engineers" instead.
 
 ## Data flow
@@ -111,7 +111,7 @@ User picks scenario / moves controls → `useDemoRun.execute(input)` → simulat
 ## Out of scope
 
 - The other 20 projects.
-- Committing the uncommitted work in the other 19 sibling repos (tracked separately).
+- Committing the uncommitted work in the other 20 sibling repos (tracked separately).
 - Visual restyle of colors/typography of the hub.
 - Production deploy and `main` merges (owner runs `git push origin main`).
 
