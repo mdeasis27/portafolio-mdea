@@ -1,4 +1,5 @@
 import {isLocale} from '@/design-system/i18n/locale';
+import { demoHref } from "@/lib/demo-href";
 import {dictionary} from '@/lib/i18n';
 import {site} from '@/lib/site';
 import type { Metadata } from "next";
@@ -151,7 +152,7 @@ export default async function ProjectPage({
           <div className="mt-6 flex flex-wrap gap-3">
             {frontmatter.liveUrl ? (
               <a
-                href={new URL(`/${lang}/app`, frontmatter.liveUrl).toString()}
+                href={demoHref(frontmatter.liveUrl, lang)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ size: "sm", variant: "outline" })}

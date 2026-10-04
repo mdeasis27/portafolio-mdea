@@ -14,12 +14,38 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Project } from "@/lib/projects";
+import { demoHref } from "@/lib/demo-href";
 
 
 export function ProjectCard({ project, locale = "en" }: { project: Project; locale?: Locale }) {
   const { frontmatter } = project;
   const c = dictionary(locale);
   const href = `/${locale}/projects/${frontmatter.slug}`;
+
+  if (frontmatter.oneLiner && frontmatter.liveUrl) {
+    const demo = demoHref(frontmatter.liveUrl, locale);
+    return (
+      <Card className="relative h-full transition-all duration-300 hover:border-foreground/30 hover:shadow-sm focus-within:ring-2 focus-within:ring-foreground/40">
+        <div className="relative mx-3 aspect-[16/9] overflow-hidden rounded-lg border border-border/60 bg-muted">
+          <Image src={`/project-captures/${frontmatter.slug}.stage${locale === "es" ? ".es" : ""}.png`} alt={locale === "en" ? `${frontmatter.title}: actual interactive demo` : `${frontmatter.title}: demo interactiva real`} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover object-top" />
+        </div>
+        <CardHeader className="gap-3">
+          <div className="flex items-center justify-between gap-3">
+            <Badge variant={`status-${frontmatter.status}` as const}>{c.status[frontmatter.status]} · {frontmatter.year}</Badge>
+            <ArrowUpRight className="size-4 text-foreground/40" />
+          </div>
+          <CardTitle className="text-xl leading-snug">
+            <a href={demo} className="after:absolute after:inset-0 focus-visible:outline-none">{frontmatter.title}</a>
+          </CardTitle>
+          <CardDescription className="text-[15px] leading-6 text-foreground/70">{frontmatter.oneLiner}</CardDescription>
+        </CardHeader>
+        <CardFooter className="flex flex-wrap items-center justify-between gap-3">
+          <span className="text-sm font-medium text-accent">{c.demo} →</span>
+          <Link href={href} className="relative z-10 text-sm text-foreground/60 underline-offset-4 hover:underline">{c.caseStudy}</Link>
+        </CardFooter>
+      </Card>
+    );
+  }
 
   return (
     <Link

@@ -11,6 +11,7 @@ export interface ProjectFrontmatter {
   title: string;
   slug: string;
   summary: string;
+  oneLiner?: string;
   role?: string;
   stack: string[];
   status: ProjectStatus;
