@@ -1,0 +1,91 @@
+---
+title: Extraction cost tradeoff
+slug: destilacion
+summary: >-
+  Edit an invoice and monthly request volume to compare extracted fields and
+  cost crossover.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/destilacion'
+liveUrl: 'https://destilacion-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - fine-tuning
+  - LoRA
+  - break-even
+  - coste
+  - extracción
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Product owner
+businessDecision: Use an API rate or local capacity.
+businessValue: Makes the cost crossover inspectable before recurring spend.
+visualMechanism: Invoice fields flow into two cost curves.
+scenarios:
+  - title: Pilot
+    input: 120000 requests
+    observation: API cost is lower.
+  - title: Scale
+    input: 1000000 requests
+    observation: Local capacity is lower.
+---
+## The problem
+
+Extraction costs become opaque as volume changes.
+
+**Who uses it:** Product owner.
+
+**The decision:** Use an API rate or local capacity.
+
+## The approach
+
+Enter invoice evidence, choose a demand preset, then compare computed costs.
+
+### Try the decision
+
+**Pilot:** 120000 requests API cost is lower.
+
+**Scale:** 1000000 requests Local capacity is lower.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Invoice fields flow into two cost curves.
+
+A rule-based student proxy and an assumed cost model, not a trained model benchmark.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Try the exact break-even volume of 300,000 monthly requests, predict which option is cheaper, calculate and reveal the full trace.
+
+Compute API and local-capacity monthly costs for the same invoice and demand. At 300,000 requests both cost $1,800 under the illustrative assumptions; neither is cheaper. All calculations use integer cents.
+
+**Why this approach:** A transparent capacity model exposes the crossover before an infrastructure decision. Rule-based extraction is a student proxy and does not demonstrate a trained distilled model or equal extraction quality.
+
+**Before production:** Measure labeled-invoice quality, real throughput, utilization, operating expenses and data privacy. The illustrative $6 per 1,000 requests and $1,800 monthly capacity exclude maintenance, staffing and quality differences.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+The mission pilot updates this implementation. Existing screenshots and browser reports document the previous stage; fresh browser interaction checks and captures are pending because the current environment blocked them.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Makes the cost crossover inspectable before recurring spend.
+
+**Limits:** Rule-based local proxy; it is not a production quote. These portfolio prototypes do not claim measured production impact.

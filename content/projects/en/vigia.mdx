@@ -1,0 +1,73 @@
+---
+title: Documentation drift
+slug: vigia
+summary: Edit local source and document snapshots and provide rename mappings.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/vigia'
+liveUrl: 'https://vigia-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - documentation
+  - dev-tools
+  - CI
+  - self-healing
+  - staleness
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Documentation owner
+businessDecision: Apply a reviewed documentation correction.
+businessValue: Separates safe proposals from references needing review.
+visualMechanism: Reference lines connect to symbols and highlight a proposed edit.
+scenarios:
+  - title: Known rename
+    input: 'oldName:newName'
+    observation: A replacement is proposed.
+  - title: Unknown reference
+    input: removedName
+    observation: Review is requested.
+---
+## The problem
+
+Renamed code leaves stale references in documentation.
+
+**Who uses it:** Documentation owner.
+
+**The decision:** Apply a reviewed documentation correction.
+
+## The approach
+
+Choose a snapshot, connect references to symbols, and preview a proposed diff.
+
+### Try the decision
+
+**Known rename:** oldName:newName A replacement is proposed.
+
+**Unknown reference:** removedName Review is requested.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Reference lines connect to symbols and highlight a proposed edit.
+
+Highlighted references and a proposed diff; no files are written and no external PR is opened.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Separates safe proposals from references needing review.
+
+**Limits:** No files are changed by the preview. These portfolio prototypes do not claim measured production impact.

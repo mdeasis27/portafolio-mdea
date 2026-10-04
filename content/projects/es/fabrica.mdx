@@ -1,0 +1,75 @@
+---
+title: Fabrica
+slug: fabrica
+summary: >-
+  Pega logs anónimos y ajusta similitud y muestra para inspeccionar agrupación y
+  selección.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/fabrica'
+liveUrl: 'https://fabrica-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - eval
+  - data
+  - dedupe
+  - clustering
+  - dataset
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de evaluación
+businessDecision: Usar un conjunto compacto de evaluación.
+businessValue: Muestra por qué cada caso representa una intención distinta.
+visualMechanism: Líneas de registro convergen mediante deduplicación en casos.
+scenarios:
+  - title: Registros repetidos
+    input: Reembolsos casi duplicados
+    observation: Se eliminan duplicados.
+  - title: Más etiquetas
+    input: Múltiples intenciones
+    observation: La cobertura se hace visible.
+---
+## El problema
+
+Los registros crudos repiten frases y ocultan la cobertura por intención.
+
+**Quién lo usa:** Responsable de evaluación.
+
+**La decisión:** Usar un conjunto compacto de evaluación.
+
+## El enfoque
+
+Elige registros, deduplica, inspecciona cobertura y selecciona casos.
+
+### Prueba la decisión
+
+**Registros repetidos:** Reembolsos casi duplicados Se eliminan duplicados.
+
+**Más etiquetas:** Múltiples intenciones La cobertura se hace visible.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Líneas de registro convergen mediante deduplicación en casos.
+
+Deduplicación, grupos y casos seleccionados; entradas vacías no afirman cobertura completa.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Muestra por qué cada caso representa una intención distinta.
+
+**Límites:** La similitud es local y léxica. Estos prototipos de portafolio no afirman impacto medido en producción.

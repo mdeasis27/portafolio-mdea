@@ -1,0 +1,178 @@
+[
+  {
+    "repository": "portafolio-mdea",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 84,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/portafolio-mdea 3c861c9 [feat/recruiter-portfolio-experience]",
+    "base": "3c861c9 fix: point go-live links directly to the /app demo (skip landing)"
+  },
+  {
+    "repository": "agente-cobranzas",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 41,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/agente-cobranzas 0fd92e3 [feat/recruiter-portfolio-experience]",
+    "base": "0fd92e3 chore: untrack tsconfig.tsbuildinfo (build artifact)"
+  },
+  {
+    "repository": "agente-riesgo",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 39,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/agente-riesgo ca0cabe [feat/recruiter-portfolio-experience]",
+    "base": "ca0cabe Merge branch 'feat/design-v3-sync'"
+  },
+  {
+    "repository": "arbitro",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/arbitro 395cad4 [feat/recruiter-portfolio-experience]",
+    "base": "395cad4 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "asedio",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/asedio d178a9f [feat/recruiter-portfolio-experience]",
+    "base": "d178a9f feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "bandera",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/bandera 358d9d0 [feat/recruiter-portfolio-experience]",
+    "base": "358d9d0 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "compuerta",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/compuerta c227eb0 [feat/recruiter-portfolio-experience]",
+    "base": "c227eb0 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "destilacion",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/destilacion 97b1b3e [feat/recruiter-portfolio-experience]",
+    "base": "97b1b3e feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "doorman",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/doorman 1819a44 [feat/recruiter-portfolio-experience]",
+    "base": "1819a44 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "ensayo",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/ensayo 8f67719 [feat/recruiter-portfolio-experience]",
+    "base": "8f67719 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "escaneo",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/escaneo 0474339 [feat/recruiter-portfolio-experience]",
+    "base": "0474339 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "evidencia",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 32,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/evidencia d85606e [feat/recruiter-portfolio-experience]",
+    "base": "d85606e feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "fabrica",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/fabrica 4710ad6 [feat/recruiter-portfolio-experience]",
+    "base": "4710ad6 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "grafo",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 36,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/grafo 70eb330 [feat/recruiter-portfolio-experience]",
+    "base": "70eb330 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "identidad-360",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/identidad-360 e148494 [feat/recruiter-portfolio-experience]",
+    "base": "e148494 Merge branch 'feat/design-v3-sync'"
+  },
+  {
+    "repository": "kyc-antifraude",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 43,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/kyc-antifraude a0b8f79 [feat/recruiter-portfolio-experience]",
+    "base": "a0b8f79 Merge branch 'feat/design-v3-sync'"
+  },
+  {
+    "repository": "mesa",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/mesa 3453d49 [feat/recruiter-portfolio-experience]",
+    "base": "3453d49 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "radar-proveedores",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 38,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/radar-proveedores 5d6999b [feat/recruiter-portfolio-experience]",
+    "base": "5d6999b Merge branch 'feat/design-v3-sync'"
+  },
+  {
+    "repository": "traductor",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/traductor 823be56 [feat/recruiter-portfolio-experience]",
+    "base": "823be56 fix: bilingual (EN/ES) question router for the live SQL demo"
+  },
+  {
+    "repository": "veredicto",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 33,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/veredicto 8f0ef6a [feat/recruiter-portfolio-experience]",
+    "base": "8f0ef6a feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "vigia",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 34,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/vigia 782d326 [feat/recruiter-portfolio-experience]",
+    "base": "782d326 feat: real backend + Postgres persistence + live dashboard"
+  },
+  {
+    "repository": "warmstart",
+    "previousBranch": "feat/recruiter-portfolio-experience",
+    "branch": "feat/memorable-decision-labs",
+    "preservedChanges": 35,
+    "worktrees": "C:/Proyectos/proyectos-portafolio/warmstart fd6a3ef [feat/recruiter-portfolio-experience]",
+    "base": "fd6a3ef feat: real backend + Postgres persistence + live dashboard"
+  }
+]

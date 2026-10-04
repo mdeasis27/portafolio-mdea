@@ -20,7 +20,7 @@ Estoy construyendo un portafolio de proyectos con IA para mostrar a reclutadores
 Cuando el reclutador entra a la demo, funciona sin pedirle nada. Uso proveedores con tier gratuito generoso, con fallback en cadena.
 
 ### Capa 2 — BYOK opcional (Bring Your Own Key)
-Un campo opcional donde el usuario puede pegar su propia API key (OpenAI, Anthropic, Gemini) para probar con modelos premium. La key **nunca** toca mi backend: se guarda solo en el cliente.
+Un campo opcional donde el usuario puede pegar su propia API key (Provider A, Provider B, Provider C) para probar con modelos premium. La key **nunca** toca mi backend: se guarda solo en el cliente.
 
 ---
 
@@ -28,34 +28,34 @@ Un campo opcional donde el usuario puede pegar su propia API key (OpenAI, Anthro
 
 Ordenados por prioridad (el #1 es el default, los demás son fallback):
 
-### 1. Google Gemini API (AI Studio)
+### 1. Provider C API (AI Studio)
 - **Modelos:** `gemini-2.5-flash`, `gemini-2.0-flash`
 - **Tier gratis:** ~15 req/min, ~1M tokens/día
 - **Por qué primero:** mejor calidad/límites del lote, muy estable
 - **Endpoint:** `https://generativelanguage.googleapis.com/v1beta/`
-- **Formato:** propio de Google (o compatible OpenAI via endpoint específico)
+- **Formato:** propio de Google (o compatible Provider A via endpoint específico)
 
-### 2. Groq
+### 2. LLM API
 - **Modelos:** `llama-3.3-70b-versatile`, `llama-3.1-8b-instant`, `mixtral-8x7b`
 - **Tier gratis:** ~30 req/min, ~14.400 req/día
 - **Por qué:** velocidad de inferencia brutal, buen fallback
 - **Endpoint:** `https://api.groq.com/openai/v1/`
-- **Formato:** compatible OpenAI
+- **Formato:** compatible Provider A
 
 ### 3. Cerebras
 - **Modelos:** `llama-3.3-70b`, `qwen-3-*`
 - **Tier gratis:** limitado pero usable como tercer fallback
 - **Endpoint:** `https://api.cerebras.ai/v1/`
-- **Formato:** compatible OpenAI
+- **Formato:** compatible Provider A
 
-### 4. OpenRouter (modelos `:free`)
+### 4. LLM API (modelos `:free`)
 - **Modelos:** `meta-llama/llama-3.3-70b-instruct:free`, `deepseek/deepseek-chat:free`, etc.
 - **Tier gratis:** ~20 req/min, ~200 req/día por cuenta
 - **Por qué último:** límites más restrictivos, pero sirve como red de seguridad
 - **Endpoint:** `https://openrouter.ai/api/v1/`
-- **Formato:** compatible OpenAI
+- **Formato:** compatible Provider A
 
-**Nota importante:** todos los proveedores arriba (excepto Gemini nativo) hablan formato OpenAI. Eso simplifica muchísimo la implementación — una sola clase cliente sirve para todos cambiando solo `baseURL` y `apiKey`.
+**Nota importante:** todos los proveedores arriba (excepto Provider C nativo) hablan formato Provider A. Eso simplifica muchísimo la implementación — una sola clase cliente sirve para todos cambiando solo `baseURL` y `apiKey`.
 
 ---
 
@@ -65,9 +65,9 @@ Si el usuario pega su propia key, detectar el proveedor por el prefijo:
 
 | Prefijo de la key | Proveedor | SDK |
 |-------------------|-----------|-----|
-| `sk-ant-` | Anthropic (Claude) | `@anthropic-ai/sdk` |
-| `sk-proj-` o `sk-` | OpenAI (GPT) | `openai` |
-| `AIza` | Google (Gemini) | `@google/genai` |
+| `sk-ant-` | Provider B (Claude) | `@anthropic-ai/sdk` |
+| `sk-proj-` o `sk-` | Provider A (GPT) | `openai` |
+| `AIza` | Google (Provider C) | `@google/genai` |
 
 ---
 
@@ -84,9 +84,9 @@ src/
 │       ├── router.ts             # Decide qué provider usar, maneja fallbacks
 │       ├── providers/
 │       │   ├── base.ts           # Interfaz LLMProvider
-│       │   ├── openai-compat.ts  # Cliente genérico para APIs OpenAI-compatible
-│       │   ├── gemini.ts         # Cliente específico de Gemini
-│       │   └── anthropic.ts      # Cliente específico de Anthropic (solo BYOK)
+│       │   ├── openai-compat.ts  # Cliente genérico para APIs Chat API-compatible
+│       │   ├── gemini.ts         # Cliente específico de Provider C
+│       │   └── anthropic.ts      # Cliente específico de Provider B (solo BYOK)
 │       ├── config.ts             # Configuración de providers y prioridades
 │       └── errors.ts             # Errores custom (RateLimitError, etc.)
 ├── app/
@@ -134,16 +134,16 @@ export interface LLMProvider {
 }
 ```
 
-### Cliente OpenAI-compatible (sirve para Groq, Cerebras, OpenRouter, OpenAI)
+### Cliente Chat API-compatible (sirve para LLM API, Cerebras, LLM API, Provider A)
 
 ```typescript
 // lib/llm/providers/openai-compat.ts
-import OpenAI from 'openai';
+import Provider A from 'openai';
 import type { LLMProvider } from './base';
 import type { ChatOptions, ChatResponse } from '../types';
 
 export class OpenAICompatProvider implements LLMProvider {
-  private client: OpenAI;
+  private client: Provider A;
 
   constructor(
     public name: string,
@@ -153,7 +153,7 @@ export class OpenAICompatProvider implements LLMProvider {
     private defaultModel: string,
   ) {
     if (apiKey) {
-      this.client = new OpenAI({ baseURL, apiKey });
+      this.client = new Provider A({ baseURL, apiKey });
     }
   }
 
@@ -395,10 +395,10 @@ OPENROUTER_API_KEY=sk-or-...
 ```
 
 **Dónde obtener cada key (todas gratis):**
-- Gemini: https://aistudio.google.com/apikey
-- Groq: https://console.groq.com/keys
+- Provider C: https://aistudio.google.com/apikey
+- LLM API: https://console.groq.com/keys
 - Cerebras: https://cloud.cerebras.ai/
-- OpenRouter: https://openrouter.ai/keys
+- LLM API: https://openrouter.ai/keys
 
 ---
 

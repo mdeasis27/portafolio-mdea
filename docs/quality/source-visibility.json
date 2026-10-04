@@ -1,0 +1,47 @@
+[
+  {
+    "isPrivate": true,
+    "name": "agente-cobranzas",
+    "url": "https://github.com/mdeasis27/agente-cobranzas"
+  },
+  {
+    "isPrivate": true,
+    "name": "agente-riesgo",
+    "url": "https://github.com/mdeasis27/agente-riesgo"
+  },
+  {
+    "isPrivate": true,
+    "name": "doorman",
+    "url": "https://github.com/mdeasis27/doorman"
+  },
+  {
+    "isPrivate": true,
+    "name": "evidencia",
+    "url": "https://github.com/mdeasis27/evidencia"
+  },
+  {
+    "isPrivate": true,
+    "name": "identidad-360",
+    "url": "https://github.com/mdeasis27/identidad-360"
+  },
+  {
+    "isPrivate": true,
+    "name": "kyc-antifraude",
+    "url": "https://github.com/mdeasis27/kyc-antifraude"
+  },
+  {
+    "isPrivate": true,
+    "name": "radar-proveedores",
+    "url": "https://github.com/mdeasis27/radar-proveedores"
+  },
+  {
+    "isPrivate": true,
+    "name": "veredicto",
+    "url": "https://github.com/mdeasis27/veredicto"
+  },
+  {
+    "isPrivate": true,
+    "name": "warmstart",
+    "url": "https://github.com/mdeasis27/warmstart"
+  }
+]

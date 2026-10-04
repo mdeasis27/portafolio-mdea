@@ -227,9 +227,9 @@ import { cn } from "@/design-system/utils";
 
 const STACK = [
   "Next.js 16",
-  "OpenRouter",
-  "Exa.ai",
-  "Truora",
+  "LLM API",
+  "Web search API",
+  "Identity verification API",
   "TypeScript",
   "Tailwind v4",
 ];
@@ -323,7 +323,7 @@ git commit -m "feat(landing): simplify to hub-aligned layout with ThemeToggle"
 git push origin feat/design-v3-sync
 ```
 
-- [ ] **Step 4: Verificar Vercel preview**
+- [ ] **Step 4: Verificar deployment platform preview**
 
 Abrir la URL del PR de agente-riesgo: https://github.com/mdeasis27/agente-riesgo/pull/1
 
@@ -334,7 +334,7 @@ Confirmar:
 - [ ] Stack badges y botones "Ver demo" / "GitHub" visibles
 - [ ] `/app` carga el demo sin errores al hacer clic en "Ver demo"
 
-Si todo pasa → continuar con Tasks 5–8. Si hay error → revisar el build log del PR en Vercel antes de continuar.
+Si todo pasa → continuar con Tasks 5–8. Si hay error → revisar el build log del PR en deployment platform antes de continuar.
 
 ---
 
@@ -433,7 +433,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Identidad 360° — Perfiles de Riesgo Crediticio",
   description:
-    "Inteligencia de identidad para equipos de riesgo. Combina verificación documental (Truora), señales web (Tavily) y síntesis por IA para un perfil 360° de crédito.",
+    "Inteligencia de identidad para equipos de riesgo. Combina verificación documental (Identity verification API), señales web (Web search API) y síntesis por IA para un perfil 360° de crédito.",
 };
 
 export default function RootLayout({
@@ -475,8 +475,8 @@ import { cn } from "@/design-system/utils";
 
 const STACK = [
   "Next.js 16",
-  "Truora",
-  "Tavily",
+  "Identity verification API",
+  "Web search API",
   "TypeScript",
   "Tailwind v4",
 ];
@@ -695,7 +695,7 @@ import { cn } from "@/design-system/utils";
 
 const STACK = [
   "Next.js 16",
-  "Vercel AI SDK",
+  "AI SDK",
   "TypeScript",
   "Tailwind v4",
   "Zod",
@@ -915,7 +915,7 @@ import { cn } from "@/design-system/utils";
 
 const STACK = [
   "Next.js 16",
-  "Vercel AI SDK",
+  "AI SDK",
   "TypeScript",
   "Tailwind v4",
   "Zod",
@@ -1135,8 +1135,8 @@ import { cn } from "@/design-system/utils";
 
 const STACK = [
   "Next.js 16",
-  "OpenAI",
-  "Neon Postgres",
+  "Provider A",
+  "PostgreSQL",
   "Drizzle ORM",
   "TypeScript",
   "Tailwind v4",
@@ -1221,7 +1221,7 @@ git push origin feat/design-v3-sync
 
 ## Task 9: QA visual y merge de los 6 PRs
 
-Antes de mergear, confirmar visualmente cada preview de Vercel. Los PRs son:
+Antes de mergear, confirmar visualmente cada preview de deployment platform. Los PRs son:
 
 | PR | Repo | URL |
 |----|------|-----|

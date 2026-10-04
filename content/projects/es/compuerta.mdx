@@ -1,0 +1,94 @@
+---
+title: Compuerta
+slug: compuerta
+summary: >-
+  Cambia una ventana de falla, carga y política de rutas para comparar
+  disponibilidad.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/compuerta'
+liveUrl: 'https://compuerta-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - LLMOps
+  - gateway
+  - circuit-breaker
+  - failover
+  - hedging
+  - observabilidad
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de continuidad de servicio
+businessDecision: Activar enrutamiento de continuidad o depender de la ruta principal.
+businessValue: >-
+  Muestra la consecuencia operativa de la configuración antes de un simulacro de
+  caída.
+visualMechanism: El tráfico pasa por un breaker hacia carriles principal o alterno.
+scenarios:
+  - title: Failover activado
+    input: 'Caída principal de tick 8 a 20; respaldo activado, hedging desactivado.'
+    observation: El tráfico puede redirigirse tras eventos de breaker.
+  - title: Failover desactivado
+    input: Misma caída de tick 8 a 20; respaldo desactivado.
+    observation: La disponibilidad sigue solo la ruta principal.
+---
+## El problema
+
+Una caída del proveedor principal deja tráfico sin una decisión explícita de enrutamiento.
+
+**Quién lo usa:** Responsable de continuidad de servicio.
+
+**La decisión:** Activar enrutamiento de continuidad o depender de la ruta principal.
+
+## El enfoque
+
+Elige failover activado o desactivado, simula eventos de breaker e inspecciona la ruta seleccionada.
+
+### Prueba la decisión
+
+**Failover activado:** Caída principal de tick 8 a 20; respaldo activado, hedging desactivado. El tráfico puede redirigirse tras eventos de breaker.
+
+**Failover desactivado:** Misma caída de tick 8 a 20; respaldo desactivado. La disponibilidad sigue solo la ruta principal.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+El tráfico pasa por un breaker hacia carriles principal o alterno.
+
+Carriles de solicitudes y transiciones de circuit breaker en ticks simulados, no solicitudes reales.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Prueba una caída prolongada sin respaldo, predice si se completarán 24 de 30 solicitudes, simula y revela la traza completa.
+
+Compara el respaldo activado y desactivado con la misma caída, interruptor de circuito y semilla. Cada ruta consume de forma distinta la secuencia de errores. Es una simulación controlada, no disponibilidad real de un servicio.
+
+**Por qué este enfoque:** La máquina de estados del interruptor de circuito hace inspeccionables los fallos y la recuperación. El respaldo puede preservar continuidad, pero añade límites de capacidad y riesgo de fallos correlacionados.
+
+**Antes de producción:** Validar errores correlacionados, tiempos de espera, límites de capacidad, observabilidad y recuperación con pruebas de carga e incidentes. Los campos monetarios del simulador y API usan centavos enteros explícitos: cada llamada exitosa y de cobertura se redondea una vez hacia arriba; los intentos fallidos no se cobran. Son supuestos de facturación ilustrativos.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Muestra la consecuencia operativa de la configuración antes de un simulacro de caída.
+
+**Límites:** Los eventos de caída y rutas son simulaciones locales, no señales de salud del proveedor. Estos prototipos de portafolio no afirman impacto medido en producción.

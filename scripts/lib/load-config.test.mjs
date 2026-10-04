@@ -13,18 +13,22 @@ function setupHub(configSource) {
 }
 
 test("loadPortfolioConfig returns siblings array from a valid config", async () => {
-  const hubDir = setupHub(`export default { siblings: [{ name: "x", kits: ["brand"] }] };`);
-  // Sibling directory must exist for validation to pass.
-  mkdirSync(path.join(hubDir, "..", "x"), { recursive: true });
-
-  const config = await loadPortfolioConfig(hubDir);
-
-  assert.equal(config.siblings.length, 1);
-  assert.equal(config.siblings[0].name, "x");
-  assert.deepEqual(config.siblings[0].kits, ["brand"]);
-
-  rmSync(hubDir, { recursive: true, force: true });
-  rmSync(path.join(hubDir, "..", "x"), { recursive: true, force: true });
+  const fixture = mkdtempSync(path.join(tmpdir(), "portfolio-config-"));
+  const hubDir = path.join(fixture, "hub");
+  mkdirSync(hubDir);
+  mkdirSync(path.join(fixture, "x"));
+  writeFileSync(path.join(hubDir, "portfolio.config.mjs"),
+    'export default { siblings: [{ name: "x", kits: ["brand"] }] };');
+  try {
+    const config = await loadPortfolioConfig(hubDir);
+    assert.equal(config.siblings.length, 1);
+    assert.equal(config.siblings[0].name, "x");
+    assert.deepEqual(config.siblings[0].kits, ["brand"]);
+  } finally {
+    assert.equal(path.dirname(path.resolve(fixture)), path.resolve(tmpdir()));
+    assert.ok(path.basename(fixture).startsWith("portfolio-config-"));
+    rmSync(fixture, { recursive: true, force: true });
+  }
 });
 
 test("loadPortfolioConfig rejects missing siblings array", async () => {

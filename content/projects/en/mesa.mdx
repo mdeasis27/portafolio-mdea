@@ -1,0 +1,95 @@
+---
+title: Bounded agent workflow
+slug: mesa
+summary: >-
+  Change a task, execution budget and rejection cap to inspect handoffs and
+  termination.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/mesa'
+liveUrl: 'https://mesa-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - multi-agente
+  - orquestación
+  - observabilidad
+  - budgets
+  - tracing
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Automation workflow owner
+businessDecision: Grant more agent budget or stop the workflow boundary.
+businessValue: Makes the relationship between handoffs and a bounded report visible.
+visualMechanism: >-
+  Agent nodes appear one handoff at a time in the actual local execution
+  sequence; the budget and termination reason stay inspectable.
+scenarios:
+  - title: Enough budget
+    input: >-
+      Assess identity risk controls: 12 steps, 10,000 tokens, one review
+      allowance.
+    observation: Agents complete their configured handoffs within budget.
+  - title: Minimal budget
+    input: Same task with one step and 100 tokens.
+    observation: The graph stops at its configured boundary.
+---
+## The problem
+
+A multi-agent report can exceed its allowed work budget before reaching a usable conclusion.
+
+**Who uses it:** Automation workflow owner.
+
+**The decision:** Grant more agent budget or stop the workflow boundary.
+
+## The approach
+
+Choose enough or minimal budget, trace agent handoffs, and inspect where the graph completes or stops.
+
+### Try the decision
+
+**Enough budget:** Assess identity risk controls: 12 steps, 10,000 tokens, one review allowance. Agents complete their configured handoffs within budget.
+
+**Minimal budget:** Same task with one step and 100 tokens. The graph stops at its configured boundary.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Agent nodes appear one handoff at a time in the actual local execution sequence; the budget and termination reason stay inspectable.
+
+Deterministic agent proxies, budget consumption and bounded review loops.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Load the one-step challenge with 10,000 modeled token units and one revision allowance. Optionally predict approval, budget stop or review, then reveal the handoffs.
+
+Compare the selected step cap with 12 steps on the same task, token cap and revision allowance. Both may stop when another limit binds. Show consumed steps, modeled token units, draft availability and termination; a draft is not approval.
+
+**Why this approach:** A bounded local agent graph explains handoffs without live models. Budgets are checked before each step, so a step can exceed the token cap before the next check. These units and latencies are simulation assumptions, not usage billing.
+
+**Before production:** Reserve resources before real calls, meter actual usage, constrain tools, persist traces and evaluate output quality with reviewers.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Makes the relationship between handoffs and a bounded report visible.
+
+**Limits:** Agent handoffs and budget units are local workflow models, not live usage accounting. These portfolio prototypes do not claim measured production impact.

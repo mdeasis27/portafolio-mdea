@@ -1,0 +1,73 @@
+---
+title: Asedio
+slug: asedio
+summary: Elige familias de ataques y compara políticas vulnerables y endurecidas.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/asedio'
+liveUrl: 'https://asedio-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - safety
+  - red-team
+  - adversarial
+  - security
+  - evaluación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Probador de seguridad previo al lanzamiento
+businessDecision: Corregir el objetivo antes de lanzar o continuar la validación.
+businessValue: Conecta un caso de ataque con una decisión concreta previa al lanzamiento.
+visualMechanism: Sondas de ataque convergen en un escudo objetivo y señales de fallo.
+scenarios:
+  - title: Proxy endurecido
+    input: Familia jailbreak contra el objetivo local endurecido.
+    observation: Los casos de ataque seleccionados pasan el proxy endurecido.
+  - title: Proxy vulnerable
+    input: La misma familia jailbreak contra el objetivo local vulnerable.
+    observation: La misma familia de ataques expone fallos.
+---
+## El problema
+
+Un cambio puede pasar comprobaciones comunes mientras una familia de ataques conocida aún funciona.
+
+**Quién lo usa:** Probador de seguridad previo al lanzamiento.
+
+**La decisión:** Corregir el objetivo antes de lanzar o continuar la validación.
+
+## El enfoque
+
+Elige proxy endurecido o vulnerable, ejecuta la familia de ataques seleccionada e inspecciona fallos por caso.
+
+### Prueba la decisión
+
+**Proxy endurecido:** Familia jailbreak contra el objetivo local endurecido. Los casos de ataque seleccionados pasan el proxy endurecido.
+
+**Proxy vulnerable:** La misma familia jailbreak contra el objetivo local vulnerable. La misma familia de ataques expone fallos.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Sondas de ataque convergen en un escudo objetivo y señales de fallo.
+
+Matriz de ataques contra proxies deterministas; la simulación es explícita.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Conecta un caso de ataque con una decisión concreta previa al lanzamiento.
+
+**Límites:** El proxy y los casos de ataque son fixtures deterministas, no una certificación de seguridad. Estos prototipos de portafolio no afirman impacto medido en producción.

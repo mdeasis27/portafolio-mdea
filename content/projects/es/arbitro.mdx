@@ -1,0 +1,77 @@
+---
+title: Arbitro
+slug: arbitro
+summary: >-
+  Introduce etiquetas y confianza de candidatos y cambia el umbral de
+  escalamiento.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/arbitro'
+liveUrl: 'https://arbitro-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - arbitration
+  - multi-model
+  - agreement
+  - escalation
+  - evaluación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Operador de decisiones que atiende casos ambiguos
+businessDecision: Resolver un caso localmente o enviarlo a revisión humana.
+businessValue: >-
+  Muestra por qué un desacuerdo ambiguo se escala en vez de ocultarse tras una
+  sola respuesta.
+visualMechanism: Boletas candidatas convergen en un nodo de arbitraje y una rama de revisión.
+scenarios:
+  - title: Consenso
+    input: 'Tres votos de aprobar con confianza 0.90, 0.80, 0.70; umbral 0.60.'
+    observation: Boletas alineadas se resuelven localmente.
+  - title: Desacuerdo
+    input: Aprobar / denegar / revisión con 0.90 / 0.55 / 0.55; umbral 0.80.
+    observation: Boletas divergentes se escalan a revisión.
+---
+## El problema
+
+Recomendaciones candidatas pueden discrepar sin una resolución automática segura.
+
+**Quién lo usa:** Operador de decisiones que atiende casos ambiguos.
+
+**La decisión:** Resolver un caso localmente o enviarlo a revisión humana.
+
+## El enfoque
+
+Elige consenso o desacuerdo, inspecciona boletas locales y etiquetas de confianza, y resuelve o escala el caso.
+
+### Prueba la decisión
+
+**Consenso:** Tres votos de aprobar con confianza 0.90, 0.80, 0.70; umbral 0.60. Boletas alineadas se resuelven localmente.
+
+**Desacuerdo:** Aprobar / denegar / revisión con 0.90 / 0.55 / 0.55; umbral 0.80. Boletas divergentes se escalan a revisión.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Boletas candidatas convergen en un nodo de arbitraje y una rama de revisión.
+
+Distribuciones de votos y ramas de revisión; la confianza suministrada no es probabilidad calibrada.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Muestra por qué un desacuerdo ambiguo se escala en vez de ocultarse tras una sola respuesta.
+
+**Límites:** Las etiquetas de confianza son valores de escenario y no probabilidades calibradas. Estos prototipos de portafolio no afirman impacto medido en producción.

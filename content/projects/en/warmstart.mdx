@@ -1,0 +1,93 @@
+---
+title: Cache decision lab
+slug: warmstart
+summary: >-
+  Edit query batches, similarity thresholds and prompt versions to inspect cache
+  paths.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/warmstart'
+liveUrl: 'https://warmstart-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - caching
+  - coste
+  - latencia
+  - semántica
+  - LLMOps
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Product owner managing prompt changes
+businessDecision: Retain a cache entry or invalidate it for the new prompt.
+businessValue: Makes cache cost and prompt-version compatibility visible before reuse.
+visualMechanism: >-
+  Queries split into exact, semantic and miss branches with computed counts.
+  Final totals show prompt-version invalidations and prototype costs.
+scenarios:
+  - title: Prompt version v1
+    input: '48 generated queries, similarity 0.65, prompt version v1.'
+    observation: Seeded entries can follow the exact cache path.
+  - title: Prompt version v2
+    input: Same 48 queries and similarity; prompt changes to v2.
+    observation: The version change invalidates seeded entries.
+---
+## The problem
+
+A cache entry can be cheap to reuse but invalid after a prompt version changes.
+
+**Who uses it:** Product owner managing prompt changes.
+
+**The decision:** Retain a cache entry or invalidate it for the new prompt.
+
+## The approach
+
+Choose prompt version v1 or v2, inspect the seeded cache key, then read the hit or invalidation path.
+
+### Try the decision
+
+**Prompt version v1:** 48 generated queries, similarity 0.65, prompt version v1. Seeded entries can follow the exact cache path.
+
+**Prompt version v2:** Same 48 queries and similarity; prompt changes to v2. The version change invalidates seeded entries.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Queries split into exact, semantic and miss branches with computed counts. Final totals show prompt-version invalidations and prototype costs.
+
+Exact hits, semantic hits, misses and invalidation; costs are disclosed assumptions in integer cents.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Load lookalike intents, inspect query | intent pairs, optionally predict a false hit, then replay and compare your similarity threshold with 0.95. Custom queries replace the generated batch.
+
+The challenge uses three labeled queries. At similarity 0.35 it produces one false semantic hit and a 1¢ batch cost; at 0.95 it produces zero false semantic hits and a 2¢ batch cost. Queries, order, seeded cache and prompt version stay fixed. A miss inserts an entry, so later cache paths can diverge.
+
+**Why this approach:** Lexical similarity and fictional intent labels expose why a cheap cache hit can reuse the wrong answer. The 0.95 reference is not a correctness guarantee, and this is not embedding or live model output.
+
+**Before production:** Validate real labeled queries, false exact/semantic hits, tenant isolation, permissions, expiry and invalidation. Rates are illustrative: 100¢ per 1,000 hits and 1,000¢ per 1,000 misses, aggregated with one final rounding up to an integer cent per batch; actual prices and latency require separate measurement.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+The mission pilot updates this implementation. Existing screenshots and browser reports document the previous stage; fresh browser interaction checks and captures are pending because the current environment blocked them.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Makes cache cost and prompt-version compatibility visible before reuse.
+
+**Limits:** Cache keys and costs are local examples; cache performance and quality are not measured. These portfolio prototypes do not claim measured production impact.

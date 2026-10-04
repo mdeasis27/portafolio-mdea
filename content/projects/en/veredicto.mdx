@@ -1,0 +1,92 @@
+---
+title: Retrieval evaluation
+slug: veredicto
+summary: >-
+  Compare retrieval configurations and query subsets to inspect rankings and
+  quality gates.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - scikit-learn (reference)
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: true
+repoUrl: 'https://github.com/mdeasis27/veredicto'
+liveUrl: 'https://veredicto-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - evaluación
+  - RAG
+  - LLM-as-judge
+  - evals
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Internal support search owner
+businessDecision: Release or block a retrieval configuration for internal policy search.
+businessValue: Lets a reviewer see the ranked evidence before changing the search path.
+visualMechanism: Ranked policy passages converge into a retrieval gate.
+scenarios:
+  - title: Hybrid retrieval
+    input: 'Hybrid retriever, first benchmark question, top 3 results.'
+    observation: A ranked policy result remains available.
+  - title: Degraded retrieval
+    input: 'Degraded retriever, same question and top 3 limit.'
+    observation: The retrieval gate blocks the path.
+---
+## The problem
+
+A support answer can cite a poorly ranked policy passage.
+
+**Who uses it:** Internal support search owner.
+
+**The decision:** Release or block a retrieval configuration for internal policy search.
+
+## The approach
+
+Choose hybrid or degraded retrieval, rank local passages, inspect the top result and release gate.
+
+### Try the decision
+
+**Hybrid retrieval:** Hybrid retriever, first benchmark question, top 3 results. A ranked policy result remains available.
+
+**Degraded retrieval:** Degraded retriever, same question and top 3 limit. The retrieval gate blocks the path.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Ranked policy passages converge into a retrieval gate.
+
+Per-query rankings and calibration over a disclosed local corpus.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Load empty retrieval, inspect the same benchmark query and top-3 limit, optionally predict the local gate and reveal the terminal ranking comparison.
+
+Selected retrieval and the BM25 reference use identical question, committed corpus and k. Precision counts relevant retrieved slots divided by k; recall divides relevant retrieved passages by the labeled relevant set. Degraded retrieval is an explicitly empty-ranking negative control. Equal outcomes remain equal. The local gate also requires recall of at least 0.5; no relevant labels means unscored, never approved.
+
+**Why this approach:** Local BM25, TF-IDF and rank fusion make the calculation inspectable without credentials. A one-question gate is not a release certification; existing calibration is reference data rather than evidence of this execution.
+
+**Before production:** Evaluate a representative labeled query set, segment regressions, citation quality, privacy and production latency before releasing retrieval changes.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Lets a reviewer see the ranked evidence before changing the search path.
+
+**Limits:** Local rankings are deterministic examples, not relevance measurements from live support traffic. These portfolio prototypes do not claim measured production impact.

@@ -1,0 +1,55 @@
+{
+  "scope": "Actual server-rendered initial React components, not browser checks.",
+  "checks": [
+    {
+      "repository": "veredicto",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "veredicto",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "mesa",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "mesa",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "doorman",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "doorman",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    }
+  ],
+  "sceneChecks": [
+    {
+      "repository": "doorman",
+      "locale": "en",
+      "check": "classification before tool authorization",
+      "passed": true
+    },
+    {
+      "repository": "doorman",
+      "locale": "es",
+      "check": "classification before tool authorization",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "scope": "Real components with controlled navigation; Next routes and publication not verified.",
+  "checks": [
+    {
+      "repository": "evidencia",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nStrict citations\n\nRefused\n\nRequires full coverage of the question terms.\n\nFlexible citations\n\nAnswered\n\nAllows partial coverage; this does not mean complete support.\n\nSame question, corpus and retrievers. Only the coverage requirement changes. Both policies refuse when matching evidence is absent. This lexical check does not establish whether a claim is true.\n\nThis run challenges your prediction. Refuses under the selected policy.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "evidencia",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nCitas estrictas\n\nRechaza\n\nExige cobertura completa de los términos de la pregunta.\n\nCitas flexibles\n\nResponde\n\nPermite cobertura parcial; no significa respaldo completo.\n\nMisma pregunta, mismo corpus y mismos recuperadores. Solo cambia la exigencia de cobertura. Ambas políticas rechazan si no hay evidencia compatible. Esta comprobación léxica no demuestra que una afirmación sea verdadera.\n\nEsta ejecución contradice tu predicción. Rechaza con la política elegida.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "compuerta",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nBackup enabled\n\n30 / 30\n\n100.0% simulated availability.\n\nBackup disabled\n\n11 / 30\n\n36.7% simulated availability.\n\nThe outage, 30 requests, circuit breaker and seed stay fixed. Only the backup route changes. The simulator is deterministic, but routing consumes its error sequence differently; this is not a measurement of a real service.\n\nThis run challenges your prediction. Your configuration completes 11 of 30 requests.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "compuerta",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nRespaldo activado\n\n30 / 30\n\n100.0% de disponibilidad simulada.\n\nRespaldo desactivado\n\n11 / 30\n\n36.7% de disponibilidad simulada.\n\nSe conserva la caída, las 30 solicitudes, el interruptor de circuito y la semilla. Solo cambia la ruta de respaldo. El simulador es determinista, pero las rutas consumen su secuencia de errores de forma distinta; esto no es una medición de un servicio real.\n\nEsta ejecución contradice tu predicción. Tu configuración completa 11 de 30 solicitudes.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "destilacion",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nPer-request API\n\n$1,800.00\n\nComputed monthly cost for your volume.\n\nFixed local capacity\n\n$1,800.00\n\nComputed monthly cost under the local-capacity assumption.\n\nSame invoice and monthly volume. Only the cost model changes. Difference: $0.00 per month. This excludes maintenance, staffing, capacity constraints and quality differences.\n\nThis run challenges your prediction. Both options have equal costs.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "destilacion",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nAPI por solicitud\n\n$1,800.00\n\nCosto mensual calculado para tu volumen.\n\nCapacidad local fija\n\n$1,800.00\n\nCosto mensual calculado bajo el supuesto de capacidad local.\n\nMisma factura y volumen mensual. Solo cambia el modelo de costo. Diferencia: $0.00 al mes. No incluye mantenimiento, personal, límites de capacidad ni diferencias de calidad.\n\nEsta ejecución contradice tu predicción. Ambas opciones tienen costos iguales.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "en",
+      "threeSteps": true,
+      "caseAndDemoLinks": true,
+      "reviewedProgressAndReset": true,
+      "mobileNoOverflow": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "es",
+      "threeSteps": true,
+      "caseAndDemoLinks": true,
+      "reviewedProgressAndReset": true,
+      "mobileNoOverflow": true,
+      "errors": [],
+      "externalRequests": []
+    }
+  ]
+}

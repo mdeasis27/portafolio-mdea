@@ -1,0 +1,41 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import type { Locale } from "@/design-system/i18n/locale";
+const chapters = {
+    en: [
+        { slug: "evidencia", name: "Evidencia", theme: "TRUST", title: "Would you answer without enough evidence?", role: "You lead a support team.", challenge: "Try partial evidence, predict the answer, then compare strict and flexible citation policies.", takeaway: "Inspect how an answer can be withheld when the available evidence is incomplete." },
+        { slug: "compuerta", name: "Compuerta", theme: "CONTINUITY", title: "Can your assistant survive a provider outage?", role: "You own service continuity.", challenge: "Extend the outage, choose whether to enable backup routing, then compare completed requests.", takeaway: "Inspect a circuit breaker and the availability tradeoff under a controlled simulation." },
+        { slug: "destilacion", name: "Destilación", theme: "ECONOMICS", title: "When does local capacity pay off?", role: "You own the AI product budget.", challenge: "Move request volume to the break-even point, predict the cheaper option, then reveal both costs.", takeaway: "Inspect the capacity assumptions before making an infrastructure decision." },
+    ],
+    es: [
+        { slug: "evidencia", name: "Evidencia", theme: "CONFIANZA", title: "¿Responderías sin evidencia suficiente?", role: "Diriges un equipo de soporte.", challenge: "Prueba evidencia parcial, predice la respuesta y compara políticas de citas estrictas y flexibles.", takeaway: "Inspecciona cómo se puede frenar una respuesta cuando la evidencia disponible está incompleta." },
+        { slug: "compuerta", name: "Compuerta", theme: "CONTINUIDAD", title: "¿Puede tu asistente resistir una caída?", role: "Eres responsable de la continuidad del servicio.", challenge: "Prolonga la caída, decide si activas el respaldo y compara las solicitudes completadas.", takeaway: "Inspecciona un interruptor de circuito y la disponibilidad en una simulación controlada." },
+        { slug: "destilacion", name: "Destilación", theme: "ECONOMÍA", title: "¿Cuándo conviene la capacidad local?", role: "Eres responsable del presupuesto del producto de IA.", challenge: "Lleva el volumen al punto de equilibrio, predice la opción más barata y revela ambos costos.", takeaway: "Inspecciona los supuestos de capacidad antes de elegir infraestructura." },
+    ],
+};
+export function RecruiterJourney({ locale, demos = {}, captures = {} }: {
+    locale: Locale;
+    demos?: Record<string, string>;
+    captures?: Record<string, string>;
+}) {
+    const en = locale === "en";
+    const [active, setActive] = useState(0);
+    const [reviewed, setReviewed] = useState<string[]>([]);
+    const steps = chapters[locale];
+    const step = steps[active];
+    const seen = reviewed.includes(step.slug);
+    const mark = () => setReviewed(items => items.includes(step.slug) ? items.filter(item => item !== step.slug) : [...items, step.slug]);
+    const reset = () => { setActive(0); setReviewed([]); };
+    const demo = demos[step.slug];
+    return <section id="recruiter-journey" data-recruiter-journey className="border-y border-border py-8 sm:py-12">
+    <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="font-mono text-xs uppercase tracking-widest text-accent">{en ? "A suggested two-minute route" : "Un recorrido sugerido de dos minutos"}</p><h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">{en ? "Three decisions. Your turn." : "Tres decisiones. Tu turno."}</h2></div><p data-journey-progress aria-live="polite" className="font-mono text-sm text-muted-foreground">{reviewed.length} / 3 {en ? "marked reviewed" : "marcados como revisados"}</p></div>
+    <div className="mt-6 grid gap-2 sm:grid-cols-3" aria-label={en ? "Choose a decision" : "Elige una decisión"}>{steps.map((item, index) => <button type="button" key={item.slug} data-journey-step aria-pressed={active === index} onClick={() => setActive(index)} className={`flex min-h-16 items-center gap-4 rounded-lg border px-4 py-3 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${active === index ? "border-accent bg-accent/10" : "border-border hover:border-accent/50"}`}><span className="font-mono text-xl text-accent">0{index + 1}</span><span><span className="block text-base font-medium">{item.name}</span><span className="mt-1 block font-mono text-xs text-muted-foreground">{item.theme} {reviewed.includes(item.slug) ? "✓" : ""}</span></span></button>)}</div>
+    <div className="mt-6 grid overflow-hidden rounded-xl border border-border lg:grid-cols-[1fr_1.1fr]">
+      <div className="min-w-0 p-5 sm:p-8" aria-live="polite"><p className="text-sm text-muted-foreground">{step.role}</p><h3 className="mt-4 text-3xl font-medium leading-tight tracking-tight">{step.title}</h3><p className="mt-5 border-l-2 border-accent pl-4 text-base leading-7">{step.challenge}</p><p className="mt-5 text-sm leading-7 text-muted-foreground">{step.takeaway}</p><div className="mt-6 flex flex-wrap gap-3">{demo && <a data-journey-demo href={new URL(`/${locale}/app#mission`, demo).toString()} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-foreground px-5 py-3 text-sm font-medium text-background focus-visible:outline-2 focus-visible:outline-accent">{en ? "Try the decision" : "Probar la decisión"} ↗</a>}<a data-journey-case href={`/${locale}/projects/${step.slug}`} className="rounded-lg border border-border px-5 py-3 text-sm focus-visible:outline-2 focus-visible:outline-accent">{en ? "Read the case" : "Leer el caso"} →</a></div></div>
+      <figure className="min-w-0 border-t border-border bg-surface lg:border-t-0 lg:border-l"><div className="px-5 pt-5 font-mono text-xs text-muted-foreground">{en ? "LOCAL DEMO / COMPUTED SCENE" : "DEMO LOCAL / ESCENA CALCULADA"}</div>{/* Captured evidence is a preview; interaction happens in the linked demo. */}<details data-journey-capture className="p-4"><summary className="cursor-pointer rounded-lg border border-border px-4 py-3 text-sm focus-visible:outline-2 focus-visible:outline-accent">{en ? "Reveal a recorded example (shows an outcome)" : "Revelar un ejemplo grabado (muestra un resultado)"}</summary><div className="mt-4"><Image sizes="(min-width: 1024px) 560px, 100vw" src={captures[step.slug + "." + locale] ?? captures[step.slug] ?? `/project-captures/${step.slug}.stage${en ? "" : ".es"}.png`} alt={en ? `${step.name}: captured local decision scene` : `${step.name}: captura de la escena de decisión local`} width={900} height={500} className="h-auto w-full rounded-lg border border-border"/></div></details><figcaption className="px-5 pb-5 text-sm leading-6 text-muted-foreground">{en ? "Captured local interface. Open the demo to change inputs and calculate a fresh result. These demos use local algorithms and disclosed simulation assumptions." : "Interfaz local capturada. Abre la demo para cambiar datos y calcular un resultado nuevo. Las demos usan algoritmos locales y supuestos de simulación explícitos."}</figcaption></figure>
+    </div>
+    <div className="mt-5 flex flex-wrap items-center gap-3"><button type="button" data-journey-reviewed aria-pressed={seen} onClick={mark} className="rounded-lg border border-border px-4 py-3 text-sm focus-visible:outline-2 focus-visible:outline-accent">{seen ? (en ? "Reviewed ✓" : "Revisado ✓") : (en ? "Mark this case reviewed" : "Marcar este caso como revisado")}</button>{active < 2 && <button type="button" onClick={() => setActive(index => index + 1)} className="rounded-lg px-4 py-3 text-sm text-accent focus-visible:outline-2 focus-visible:outline-accent">{en ? "Next decision" : "Siguiente decisión"} →</button>}<button type="button" data-journey-reset onClick={reset} className="ml-auto rounded-lg px-4 py-3 text-sm text-muted-foreground focus-visible:outline-2 focus-visible:outline-accent">{en ? "Reset route" : "Reiniciar recorrido"}</button></div>
+    <p className="mt-3 text-xs leading-5 text-muted-foreground">{en ? "You mark progress yourself; it stays in this page only. No account or API key is required for the local demos." : "Tú marcas el progreso; solo se conserva en esta página. Las demos locales no requieren cuenta ni llave API."}</p>
+  </section>;
+}

@@ -1,0 +1,91 @@
+---
+title: Destilación
+slug: destilacion
+summary: >-
+  Edita una factura y el volumen mensual para comparar campos extraídos y cruce
+  de costos.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/destilacion'
+liveUrl: 'https://destilacion-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - fine-tuning
+  - LoRA
+  - break-even
+  - coste
+  - extracción
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de producto
+businessDecision: Usar tarifa API o capacidad local.
+businessValue: Hace inspeccionable el cruce de costos antes del gasto recurrente.
+visualMechanism: Campos de factura alimentan dos curvas de costo.
+scenarios:
+  - title: Piloto
+    input: 120000 solicitudes
+    observation: La API cuesta menos.
+  - title: Escala
+    input: 1000000 solicitudes
+    observation: La capacidad local cuesta menos.
+---
+## El problema
+
+Los costos de extracción se vuelven opacos al cambiar el volumen.
+
+**Quién lo usa:** Responsable de producto.
+
+**La decisión:** Usar tarifa API o capacidad local.
+
+## El enfoque
+
+Ingresa evidencia de factura, elige demanda y compara costos calculados.
+
+### Prueba la decisión
+
+**Piloto:** 120000 solicitudes La API cuesta menos.
+
+**Escala:** 1000000 solicitudes La capacidad local cuesta menos.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Campos de factura alimentan dos curvas de costo.
+
+Proxy de estudiante basado en reglas y modelo de costos supuesto, no benchmark de un modelo entrenado.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Prueba el equilibrio exacto de 300,000 solicitudes mensuales, predice qué opción es más barata, calcula y revela la traza completa.
+
+Calcula los costos mensuales de API y capacidad local para la misma factura y demanda. Con 300,000 solicitudes ambas cuestan $1,800 bajo los supuestos ilustrativos; ninguna es más barata. Los cálculos usan centavos enteros.
+
+**Por qué este enfoque:** Un modelo de capacidad transparente expone el cruce antes de elegir infraestructura. La extracción con reglas es un sustituto de estudiante y no demuestra un modelo destilado entrenado ni calidad de extracción equivalente.
+
+**Antes de producción:** Medir calidad en facturas etiquetadas, rendimiento real, utilización, gastos operativos y privacidad. Los supuestos ilustrativos de $6 por 1,000 solicitudes y $1,800 mensuales excluyen mantenimiento, personal y diferencias de calidad.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace inspeccionable el cruce de costos antes del gasto recurrente.
+
+**Límites:** Proxy local basado en reglas; no es una cotización de producción. Estos prototipos de portafolio no afirman impacto medido en producción.

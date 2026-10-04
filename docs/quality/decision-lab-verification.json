@@ -1,0 +1,24 @@
+{
+  "commands": [
+    {
+      "command": "node --test scripts/portfolio-content.test.mjs scripts/ai-sync.test.mjs scripts/brand-sync.test.mjs scripts/lib/sync-kit.test.mjs scripts/lib/propagate.test.mjs scripts/lib/load-config.test.mjs design-system/demo/foundation.node-test.mjs",
+      "exitCode": 0,
+      "log": "decision-lab-test.log"
+    },
+    {
+      "command": "pnpm.cmd run lint",
+      "exitCode": 0,
+      "log": "decision-lab-lint.log"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "log": "decision-lab-types.log"
+    },
+    {
+      "command": "pnpm.cmd run build",
+      "exitCode": 0,
+      "log": "decision-lab-build.log"
+    }
+  ]
+}

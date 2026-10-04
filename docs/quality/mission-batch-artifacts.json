@@ -1,0 +1,11 @@
+{
+  "documentationFilesIdempotent": 12,
+  "generatedInlineScriptsParsed": 8,
+  "newMissionNavigationTargets": [
+    "veredicto",
+    "mesa",
+    "doorman"
+  ],
+  "sharedKitCopiesMatch": true,
+  "scope": "Artifact syntax and file references only; no browser or HTTP claim"
+}

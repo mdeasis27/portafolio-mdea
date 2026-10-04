@@ -1,0 +1,91 @@
+---
+title: Ensayo
+slug: ensayo
+summary: >-
+  Edita muestras de puntuación y nivel de significancia para comparar mejora e
+  intervalos de confianza.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/ensayo'
+liveUrl: 'https://ensayo-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - prompt-engineering
+  - A/B testing
+  - estadística
+  - evaluación
+  - rollout
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de experimento
+businessDecision: 'Avanzar, mantener o detener un cambio.'
+businessValue: Conecta incertidumbre con una decisión de lanzamiento.
+visualMechanism: Dos distribuciones se encuentran en una compuerta.
+scenarios:
+  - title: Lift claro
+    input: Mejor resultado de variante
+    observation: La compuerta puede avanzar.
+  - title: Lift incierto
+    input: Resultados solapados
+    observation: La compuerta mantiene.
+---
+## El problema
+
+Un lift sin incertidumbre puede llevar a lanzar demasiado pronto.
+
+**Quién lo usa:** Responsable de experimento.
+
+**La decisión:** Avanzar, mantener o detener un cambio.
+
+## El enfoque
+
+Elige un experimento, calcula distribuciones e intervalo y lee la compuerta.
+
+### Prueba la decisión
+
+**Lift claro:** Mejor resultado de variante La compuerta puede avanzar.
+
+**Lift incierto:** Resultados solapados La compuerta mantiene.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Dos distribuciones se encuentran en una compuerta.
+
+Distribuciones calculadas y decisiones de avanzar o esperar; explica muestras inválidas o insuficientes.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Carga las muestras de mejora al límite, elige alfa antes de ejecutar, predice opcionalmente avanzar/mantener/revertir y analiza para revelar ambas compuertas.
+
+Calcula una prueba de Welch con las mismas muestras a alfa 0.01 y 0.10. La diferencia observada es 0.15 y p es aproximadamente 0.022 en este reto ilustrativo: mantener con 0.01 y avanzar con 0.10. Las medias y p no cambian; sí cambian los intervalos y decisiones.
+
+**Por qué este enfoque:** La estadística local real separa mejora observada e incertidumbre. Alfa debe elegirse antes de observar resultados; la comparación es análisis de sensibilidad, no permiso para elegir la compuerta que aprueba.
+
+**Antes de producción:** Definir alfa y efecto mínimo útil de antemano; validar muestreo, independencia, tamaño de muestra, pruebas múltiples y límites de impacto al usuario. Significancia estadística no demuestra valor empresarial.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Conecta incertidumbre con una decisión de lanzamiento.
+
+**Límites:** Las muestras son ilustrativas; la estadística de Welch se calcula localmente. Las pruebas indefinidas se rechazan. Estos prototipos de portafolio no afirman impacto medido en producción.

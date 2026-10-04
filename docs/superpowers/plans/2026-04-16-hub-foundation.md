@@ -6,7 +6,7 @@
 
 **Architecture:** Brand kit lives in `design-system/` with tokens + 5 base components + fonts. AI kit lives in `ai-kit/` with model allowlist + client + demo-mode conventions. Sync scripts live in `scripts/`. Filesystem is reorganized to put the hub inside `C:/Proyectos/proyectos-portafolio/` for future sibling projects.
 
-**Tech Stack:** Next.js 16 (App Router, static export), TypeScript, Tailwind CSS v4, base-ui, next-themes, next-mdx-remote, Vercel AI SDK, OpenRouter, Node `node:test` for script tests.
+**Tech Stack:** Next.js 16 (App Router, static export), TypeScript, Tailwind CSS v4, base-ui, next-themes, next-mdx-remote, AI SDK, LLM API, Node `node:test` for script tests.
 
 **Spec reference:** `docs/superpowers/specs/2026-04-16-mdea-brand-design-system.md` — Phases 1, 2, and 3.
 
@@ -1292,8 +1292,8 @@ Open `content/projects/agente-riesgo.mdx`. After the numbered list at the end of
 ```mdx
 <MetricGroup cols={3}>
   <Metric value="65%" label="Umbral de escalamiento" description="Por debajo, el caso se escala a revisión humana." />
-  <Metric value="3" label="Fuentes en paralelo" description="Truora + Exa + razonamiento LLM." />
-  <Metric value="10 min" label="Caché de modelos" description="Discovery dinámico de free models en OpenRouter." />
+  <Metric value="3" label="Fuentes en paralelo" description="Identity verification API + Web search API + razonamiento LLM." />
+  <Metric value="10 min" label="Caché de modelos" description="Discovery dinámico de free models en LLM API." />
 </MetricGroup>
 ```
 
@@ -1313,7 +1313,7 @@ Un sistema binario obliga al modelo a tomar posición en casos ambiguos. El esca
 
 Repeat for:
 - "Por qué búsqueda diferenciada por tipo de caso"
-- "Por qué fallback dinámico de modelos en OpenRouter"
+- "Por qué fallback dinámico de modelos en LLM API"
 - "Por qué casos demo pre-computados"
 
 - [ ] **Step 2: Verify in dev**
@@ -1344,7 +1344,7 @@ git commit -m "content: enrich agente-riesgo with Metric + Tradeoff components"
 
 ```mdx
 <MetricGroup cols={3}>
-  <Metric value="3" label="Fuentes integradas" description="Truora + Tavily + LLM." />
+  <Metric value="3" label="Fuentes integradas" description="Identity verification API + Web search API + LLM." />
   <Metric value="0–100" label="Score sintetizado" description="Perfil de riesgo accionable en segundos." />
   <Metric value="Zod" label="Validación estricta" description="Schema-typed output del LLM, garantía de shape." />
 </MetricGroup>
@@ -1705,7 +1705,7 @@ git commit --allow-empty -m "milestone: Phase 1 — hub brand kit complete"
 
 ```ts
 // ai-kit/models.ts
-// Source of truth for free OpenRouter models used across MDEA portfolio projects.
+// Source of truth for free LLM API models used across MDEA portfolio projects.
 // When a model is deprecated, reorder or replace here and run ai:sync across projects.
 
 export type ModelId = string;
@@ -1828,7 +1828,7 @@ git commit -m "feat(ai-kit): add demo-mode convention + pickDemoCase helper"
 
 ```ts
 // ai-kit/client.ts
-// Shared AI client for MDEA portfolio projects — wraps OpenRouter with:
+// Shared AI client for MDEA portfolio projects — wraps LLM API with:
 //   - dynamic free-model discovery + fallback
 //   - 10-min cache of the discovery result
 //   - structured error when all models unavailable
@@ -1956,7 +1956,7 @@ export function RateLimitNotice({
     >
       <p className="font-medium">Live mode temporarily unavailable.</p>
       <p className="mt-1 text-foreground/70">
-        OpenRouter rate limit reached for this IP
+        LLM API rate limit reached for this IP
         {retryAfterSeconds ? ` — retry in ~${retryAfterSeconds}s` : ""}.
         {" "}
         Switch to demo mode to keep exploring with pre-computed cases.
@@ -2079,14 +2079,14 @@ Shared AI primitives for MDEA portfolio projects that use LLMs. Parallel to `des
 
 ## What's included
 
-- `models.ts` — prioritized allowlist of free OpenRouter models.
+- `models.ts` — prioritized allowlist of free LLM API models.
 - `client.ts` — `createMdeaAi()` with dynamic discovery + 10-min cache + fallback.
 - `demo-mode.ts` — convention and helpers for pre-computed demo cases.
 - `rate-limit.tsx` — UI to recover gracefully when live mode hits a rate limit.
 
 ## Convention — demo mode obligatorio
 
-**Every MDEA portfolio project that uses LLMs must ship a demo mode that works without any API key.** Rationale: OpenRouter free-tier rate limits per IP mean a public demo can break for a visitor if previous visitors exhausted quota. Demo mode guarantees the product always works.
+**Every MDEA portfolio project that uses LLMs must ship a demo mode that works without any API key.** Rationale: LLM API free-tier rate limits per IP mean a public demo can break for a visitor if previous visitors exhausted quota. Demo mode guarantees the product always works.
 
 ```ts
 import { defineDemoCase, pickDemoCase } from "@/ai-kit/demo-mode";
@@ -2107,7 +2107,7 @@ import { createMdeaAi, NoModelAvailableError } from "@/ai-kit/client";
 const ai = createMdeaAi({ apiKey: process.env.OPENROUTER_API_KEY });
 try {
   const { model } = await ai.selectModel();
-  // call OpenRouter with `model`
+  // call LLM API with `model`
 } catch (err) {
   if (err instanceof NoModelAvailableError) {
     // fall back to demo mode
@@ -2232,7 +2232,7 @@ Expected: both succeed.
 ```markdown
 # Proyectos Portafolio — Meta-folder
 
-This folder groups every project that belongs to Manuel's public portfolio. It is NOT a git repo — each subfolder is its own independent repo with its own Vercel deploy.
+This folder groups every project that belongs to Manuel's public portfolio. It is NOT a git repo — each subfolder is its own independent repo with its own deployment platform deploy.
 
 ## Active subprojects
 
@@ -2283,7 +2283,7 @@ Replace the existing `## Project branches` section with:
 ```markdown
 ## Portfolio structure
 
-This repo lives inside the meta-folder `C:/Proyectos/proyectos-portafolio/` alongside every active portfolio project. Each project is its own independent git repo and Vercel deploy.
+This repo lives inside the meta-folder `C:/Proyectos/proyectos-portafolio/` alongside every active portfolio project. Each project is its own independent git repo and deployment platform deploy.
 
 ```
 proyectos-portafolio/
@@ -2345,13 +2345,13 @@ git commit --allow-empty -m "milestone: Phase 3 — meta-folder reorganization c
 git push origin main
 ```
 
-- [ ] **Step 3: Verify Vercel deploy triggers and succeeds**
+- [ ] **Step 3: Verify deployment platform deploy triggers and succeeds**
 
-Open Vercel dashboard for `portafolio-mdea` and confirm the latest deploy builds green with the new brand.
+Open deployment platform dashboard for `portafolio-mdea` and confirm the latest deploy builds green with the new brand.
 
 - [ ] **Step 4: Final visual verification on production**
 
-Open `https://manueldeasis.com` (or the current Vercel URL) and verify:
+Open `https://manueldeasis.com` (or the current deployment platform URL) and verify:
 - [ ] Fraunces serif H1 renders
 - [ ] Zinc + blue palette correct in light + dark
 - [ ] Project cards use new Card style

@@ -1,0 +1,75 @@
+---
+title: Candidate arbitration
+slug: arbitro
+summary: Supply labels and confidence values and change the escalation threshold.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/arbitro'
+liveUrl: 'https://arbitro-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - arbitration
+  - multi-model
+  - agreement
+  - escalation
+  - evaluación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Decision operator handling ambiguous cases
+businessDecision: Resolve a case locally or send it to human review.
+businessValue: >-
+  Shows why ambiguous disagreement is escalated instead of hidden behind a
+  single answer.
+visualMechanism: Candidate ballots converge into an arbitration node and review branch.
+scenarios:
+  - title: Consensus
+    input: 'Three approve ballots at confidence 0.90, 0.80, 0.70; threshold 0.60.'
+    observation: Aligned ballots resolve locally.
+  - title: Disagreement
+    input: Approve / deny / review at 0.90 / 0.55 / 0.55; threshold 0.80.
+    observation: Divergent ballots escalate to review.
+---
+## The problem
+
+Candidate recommendations can disagree without a safe automatic resolution.
+
+**Who uses it:** Decision operator handling ambiguous cases.
+
+**The decision:** Resolve a case locally or send it to human review.
+
+## The approach
+
+Choose consensus or disagreement, inspect local ballots and confidence labels, then resolve or escalate the case.
+
+### Try the decision
+
+**Consensus:** Three approve ballots at confidence 0.90, 0.80, 0.70; threshold 0.60. Aligned ballots resolve locally.
+
+**Disagreement:** Approve / deny / review at 0.90 / 0.55 / 0.55; threshold 0.80. Divergent ballots escalate to review.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Candidate ballots converge into an arbitration node and review branch.
+
+Vote distributions and review branches; supplied confidence is not calibrated probability.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Shows why ambiguous disagreement is escalated instead of hidden behind a single answer.
+
+**Limits:** Confidence labels are scenario values and are not calibrated probabilities. These portfolio prototypes do not claim measured production impact.

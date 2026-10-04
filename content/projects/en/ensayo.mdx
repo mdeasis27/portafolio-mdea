@@ -1,0 +1,91 @@
+---
+title: Release evidence
+slug: ensayo
+summary: >-
+  Edit score samples and significance level to compare lift and confidence
+  intervals.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/ensayo'
+liveUrl: 'https://ensayo-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - prompt-engineering
+  - A/B testing
+  - estadística
+  - evaluación
+  - rollout
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Experiment owner
+businessDecision: 'Advance, hold, or stop a change.'
+businessValue: Connects uncertainty to a concrete release choice.
+visualMechanism: Two distributions meet at a confidence gate.
+scenarios:
+  - title: Clear lift
+    input: Higher variant outcome
+    observation: The gate can advance.
+  - title: Uncertain lift
+    input: Overlapping outcomes
+    observation: The gate holds.
+---
+## The problem
+
+A lift without uncertainty can lead to a premature release.
+
+**Who uses it:** Experiment owner.
+
+**The decision:** Advance, hold, or stop a change.
+
+## The approach
+
+Choose an experiment preset, calculate distributions and confidence interval, then read the gate.
+
+### Try the decision
+
+**Clear lift:** Higher variant outcome The gate can advance.
+
+**Uncertain lift:** Overlapping outcomes The gate holds.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Two distributions meet at a confidence gate.
+
+Computed distributions and advance/hold decisions; invalid or insufficient samples are explained.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Load the borderline-improvement samples, choose alpha before execution, optionally predict advance/hold/rollback, then analyze and reveal both gates.
+
+Compute a Welch test on identical samples at alpha 0.01 and 0.10. The observed difference is 0.15 and p is about 0.022 in this illustrative challenge: hold at 0.01 and advance at 0.10. The means and p-value remain fixed; confidence intervals and decisions change.
+
+**Why this approach:** Real local statistics separate observed improvement from uncertainty. Alpha must be chosen before observing results; this comparison is sensitivity analysis, not permission to choose the gate that passes.
+
+**Before production:** Predefine alpha and minimum useful effect; validate sampling, independence, sample size, multiple testing and user-impact guardrails. Statistical significance does not establish business value.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+The mission pilot updates this implementation. Existing screenshots and browser reports document the previous stage; fresh browser interaction checks and captures are pending because the current environment blocked them.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Connects uncertainty to a concrete release choice.
+
+**Limits:** Sample data is illustrative; Welch statistics are calculated locally. Undefined tests are rejected. These portfolio prototypes do not claim measured production impact.

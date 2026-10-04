@@ -1,0 +1,50 @@
+{
+  "scope": "Local files: real guide opens each local demo, with locale preserved. No Next HTTP route or publication claim.",
+  "passed": true,
+  "checks": [
+    {
+      "project": "evidencia",
+      "locale": "en",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    },
+    {
+      "project": "compuerta",
+      "locale": "en",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    },
+    {
+      "project": "destilacion",
+      "locale": "en",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    },
+    {
+      "project": "evidencia",
+      "locale": "es",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    },
+    {
+      "project": "compuerta",
+      "locale": "es",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    },
+    {
+      "project": "destilacion",
+      "locale": "es",
+      "guideOpensLocalDemo": true,
+      "challengeComputed": true,
+      "mobileNoOverflow": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

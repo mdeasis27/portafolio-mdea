@@ -1,0 +1,212 @@
+[
+  {
+    "repository": "agente-cobranzas",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "agente-riesgo",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "arbitro",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "asedio",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "bandera",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "compuerta",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "destilacion",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "doorman",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "ensayo",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "escaneo",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "evidencia",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "fabrica",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "grafo",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "identidad-360",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "kyc-antifraude",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "mesa",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "radar-proveedores",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "traductor",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "veredicto",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "vigia",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  },
+  {
+    "repository": "warmstart",
+    "exitCode": 0,
+    "reviewedSourceChanges": [
+      "demo/decision-lab.tsx",
+      "demo/playback.ts",
+      "demo/trace-player.tsx",
+      "demo/foundation.node-test.mjs"
+    ]
+  }
+]

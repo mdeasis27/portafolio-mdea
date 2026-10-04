@@ -1,0 +1,91 @@
+---
+title: Agent input guard
+slug: doorman
+summary: >-
+  Edit a document and tool policy to see which rules permit, block or escalate a
+  request.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/doorman'
+liveUrl: 'https://doorman-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - seguridad
+  - prompt-injection
+  - guardrails
+  - red-team
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Document-review operations lead
+businessDecision: Permit or block an external action after document review.
+businessValue: Makes the policy boundary visible before an agent acts.
+visualMechanism: Document instructions pass through a rule gate to an action card.
+scenarios:
+  - title: Policy on
+    input: Hostile document requesting an approval email; policy enabled.
+    observation: Rules block the external action.
+  - title: Benign summary without policy
+    input: Benign document requesting a summary; policy disabled.
+    observation: The local summary action is allowed; no external action is executed.
+---
+## The problem
+
+Instructions embedded in an untrusted document can trigger an unsafe agent action.
+
+**Who uses it:** Document-review operations lead.
+
+**The decision:** Permit or block an external action after document review.
+
+## The approach
+
+Choose policy on or off, inspect hostile document rules, then read the action decision.
+
+### Try the decision
+
+**Policy on:** Hostile document requesting an approval email; policy enabled. Rules block the external action.
+
+**Benign summary without policy:** Benign document requesting a summary; policy disabled. The local summary action is allowed; no external action is executed.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Document instructions pass through a rule gate to an action card.
+
+Inspectable guard paths and fired rules; no tool action executes.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Load unprotected hostile instructions, inspect the document, optionally predict authorization, block or no requested action, then reveal the policy comparison.
+
+Compute policy on and off for the identical document. Inspect requested operations, simulated permitted operations, lexical rule IDs and policy blocks. No email is sent and no ATS write occurs. Benign inputs can produce equal outcomes.
+
+**Why this approach:** Local lexical rules and document-origin action restrictions separate content from authority. The action allowlist can block even when no lexical rule fires; these rules are not a comprehensive injection defense.
+
+**Before production:** Isolate tools, validate permissions, audit decisions and test false positives and missed attacks before connecting a real agent.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Makes the policy boundary visible before an agent acts.
+
+**Limits:** The document and rules are local examples; no external action is attempted. The presets change both document and policy; toggle policy on the same document to isolate its effect. These portfolio prototypes do not claim measured production impact.

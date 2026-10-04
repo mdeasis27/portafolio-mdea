@@ -105,7 +105,7 @@ Proceso: diff de cada archivo `ai-kit/` del sibling vs hub → sobrescribir con 
 
 ## Criterios de éxito
 
-- [ ] Vercel preview de cada sibling carga sin errores
+- [ ] deployment platform preview de cada sibling carga sin errores
 - [ ] Dark mode activo por defecto en todos
 - [ ] ThemeToggle visible arriba a la derecha en todos
 - [ ] Back-link "← Manuel de Asis" funcional en todos

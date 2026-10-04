@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-02T16:47:21.809Z",
+  "repositories": [
+    "veredicto",
+    "mesa",
+    "doorman",
+    "portafolio-mdea"
+  ],
+  "branch": "feat/evaluation-agent-policy-missions",
+  "status": "implementation verified; new owner visual review and browser/HTTP evidence pending",
+  "testsByRepository": {
+    "veredicto": 38,
+    "mesa": 46,
+    "doorman": 14,
+    "portafolio-mdea": 11
+  },
+  "tests": 109,
+  "successfulCommands": 16,
+  "initialMarkupChecks": 6,
+  "policySequenceMarkupChecks": 2,
+  "independentReadOnlyReview": true,
+  "reviewFindingsCorrected": true,
+  "newOwnerVisualApproval": false,
+  "freshCaptures": false,
+  "browserInteractionVerified": false,
+  "nextHttpRoutesVerified": false,
+  "published": false,
+  "secretFilesLoaded": false,
+  "pending": [
+    "owner visual review of this batch",
+    "fresh screenshots",
+    "browser interaction, keyboard, reduced motion and mobile",
+    "full Next routes, integrated homepage and server image optimization"
+  ],
+  "evidence": {
+    "commands": "mission-batch-commands.json",
+    "markup": "mission-batch-markup.json",
+    "ledger": "mission-batch-progress.md"
+  }
+}

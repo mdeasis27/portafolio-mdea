@@ -1,0 +1,75 @@
+---
+title: Evaluation set builder
+slug: fabrica
+summary: >-
+  Paste anonymous logs and adjust similarity and sample settings to inspect
+  grouping and selection.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/fabrica'
+liveUrl: 'https://fabrica-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - eval
+  - data
+  - dedupe
+  - clustering
+  - dataset
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Evaluation owner
+businessDecision: Use a compact evaluation set.
+businessValue: Shows why each selected case represents a distinct intent.
+visualMechanism: Log lines fan in through deduplication into selected cases.
+scenarios:
+  - title: Repeated logs
+    input: Near duplicate refunds
+    observation: Duplicates are removed.
+  - title: Broader labels
+    input: Multiple intents
+    observation: Coverage becomes visible.
+---
+## The problem
+
+Raw logs repeat phrasing and leave intent coverage unclear.
+
+**Who uses it:** Evaluation owner.
+
+**The decision:** Use a compact evaluation set.
+
+## The approach
+
+Choose log evidence, deduplicate it, inspect coverage, and select cases.
+
+### Try the decision
+
+**Repeated logs:** Near duplicate refunds Duplicates are removed.
+
+**Broader labels:** Multiple intents Coverage becomes visible.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Log lines fan in through deduplication into selected cases.
+
+Deduplication, clusters and selected cases; empty input does not claim complete coverage.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Shows why each selected case represents a distinct intent.
+
+**Limits:** Similarity is local and lexical. These portfolio prototypes do not claim measured production impact.

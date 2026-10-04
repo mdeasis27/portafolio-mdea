@@ -1,0 +1,428 @@
+[
+  {
+    "repository": "agente-cobranzas",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Collections queue simulator",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Simulador de cola de cobranza",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "agente-riesgo",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Risk policy simulator",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Simulador de política de riesgo",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "arbitro",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Make disagreement visible.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Hace visible el desacuerdo.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "asedio",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Watch a defence change the test matrix.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Observa cómo una defensa cambia la matriz de pruebas.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "bandera",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Feature flag",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Feature flag",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "compuerta",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Route around an outage.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Enruta alrededor de una caída.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "destilacion",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Distillation",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Distillation",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "doorman",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Stop a document from operating an agent.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Evita que un documento opere un agente.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "ensayo",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Experiment",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Experiment",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "escaneo",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Scan",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Scan",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "evidencia",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Grounded answer workbench",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Mesa de respuestas fundamentadas",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "fabrica",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Evaluation factory",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Evaluation factory",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "grafo",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Relationship traversal",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Recorrido de relaciones",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "identidad-360",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Identity evidence map",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Mapa de evidencia de identidad",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "kyc-antifraude",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Onboarding state machine",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "en",
+        "path": "/admin",
+        "title": "Verification console",
+        "noHorizontalOverflow": false
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Máquina de estados de onboarding",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/admin",
+        "title": "Panel de verificación",
+        "noHorizontalOverflow": false
+      }
+    ],
+    "errors": [],
+    "failure": "AssertionError([{'locale': 'en', 'path': '/', 'title': 'Onboarding state machine', 'noHorizontalOverflow': True}, {'locale': 'en', 'path': '/admin', 'title': 'Verification console', 'noHorizontalOverflow': False}, {'locale': 'es', 'path': '/', 'title': 'Máquina de estados de onboarding', 'noHorizontalOverflow': True}, {'locale': 'es', 'path': '/admin', 'title': 'Panel de verificación', 'noHorizontalOverflow': False}])",
+    "followUp": {
+      "status": "browser-recheck-blocked",
+      "correction": "Metric grid stacks below 420px; wide table retains internal horizontal scrolling.",
+      "verifiedCommands": [
+        "lint",
+        "TypeScript",
+        "production build"
+      ],
+      "reason": "Environment denied the background verification server launch before execution. No alternative launch was attempted.",
+      "originalResultPreserved": true
+    }
+  },
+  {
+    "repository": "mesa",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Make a bounded workflow visible.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Haz visible un flujo acotado.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "radar-proveedores",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Due-diligence signal map",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "en",
+        "path": "/history",
+        "title": "Analysis history",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "en",
+        "path": "/supplier/Example%20Supplier",
+        "title": "Local report unavailable",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Mapa de señales de due diligence",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/history",
+        "title": "Historial de análisis",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/supplier/Example%20Supplier",
+        "title": "Informe local no disponible",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "traductor",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Translator",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Translator",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "veredicto",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Compare retrieval where a release can fail.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Compara recuperación donde una entrega puede fallar.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "vigia",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Documentation watch",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Documentation watch",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "warmstart",
+    "routes": [
+      {
+        "locale": "en",
+        "path": "/",
+        "title": "Trade speed against false matches.",
+        "noHorizontalOverflow": true
+      },
+      {
+        "locale": "es",
+        "path": "/",
+        "title": "Equilibra velocidad y coincidencias falsas.",
+        "noHorizontalOverflow": true
+      }
+    ],
+    "errors": []
+  }
+]

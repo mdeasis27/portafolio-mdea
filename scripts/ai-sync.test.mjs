@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { mkdtempSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { syncKit } from "./brand-sync.mjs";
+import { syncKit } from "./lib/sync-kit.mjs";
 
 test("ai-kit can be synced with the same syncKit helper", () => {
   const source = mkdtempSync(path.join(tmpdir(), "ai-src-"));

@@ -1,0 +1,92 @@
+---
+title: Resilient routing
+slug: compuerta
+summary: 'Change an outage window, workload and routing policy to compare availability.'
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/compuerta'
+liveUrl: 'https://compuerta-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - LLMOps
+  - gateway
+  - circuit-breaker
+  - failover
+  - hedging
+  - observabilidad
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Service continuity owner
+businessDecision: Enable continuity routing or rely on the primary path.
+businessValue: >-
+  Shows the operational consequence of the routing configuration before an
+  outage drill.
+visualMechanism: Traffic moves through a breaker toward primary or fallback lanes.
+scenarios:
+  - title: Failover enabled
+    input: 'Primary outage from tick 8 to 20; fallback enabled, hedging disabled.'
+    observation: Traffic can reroute after breaker events.
+  - title: Failover disabled
+    input: Same outage from tick 8 to 20; fallback disabled.
+    observation: Availability follows only the primary path.
+---
+## The problem
+
+A primary provider outage leaves traffic without an explicit routing decision.
+
+**Who uses it:** Service continuity owner.
+
+**The decision:** Enable continuity routing or rely on the primary path.
+
+## The approach
+
+Choose failover on or off, simulate breaker events, then inspect the route selected for traffic.
+
+### Try the decision
+
+**Failover enabled:** Primary outage from tick 8 to 20; fallback enabled, hedging disabled. Traffic can reroute after breaker events.
+
+**Failover disabled:** Same outage from tick 8 to 20; fallback disabled. Availability follows only the primary path.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Traffic moves through a breaker toward primary or fallback lanes.
+
+Request lanes and breaker transitions on simulated ticks, not real requests.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Try an extended outage without backup, predict whether 24 of 30 requests will complete, simulate and reveal the full trace.
+
+Compare backup routing on and off under the same outage, circuit breaker and seed. The seeded error sequence is consumed differently by each route. This is a controlled simulation, not real service availability.
+
+**Why this approach:** An explicit circuit-breaker state machine makes failure and recovery inspectable. Backup routing can preserve continuity but introduces capacity and correlated-failure concerns.
+
+**Before production:** Validate correlated failures, timeouts, capacity limits, observability and recovery with load and incident tests. Simulator and API monetary fields now use explicit integer cents, with each successful and hedged call rounded upward once; failed attempts remain unbilled. These are illustrative billing assumptions.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+The mission pilot updates this implementation. Existing screenshots and browser reports document the previous stage; fresh browser interaction checks and captures are pending because the current environment blocked them.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Shows the operational consequence of the routing configuration before an outage drill.
+
+**Limits:** The outage and routing events are local simulations, not provider health signals. These portfolio prototypes do not claim measured production impact.

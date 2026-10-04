@@ -1,0 +1,89 @@
+{
+  "scope": "Actual server-rendered initial React components, not browser checks.",
+  "checks": [
+    {
+      "repository": "evidencia",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "evidencia",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "compuerta",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "compuerta",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "destilacion",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "destilacion",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "agente-riesgo",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "agente-riesgo",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "ensayo",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "ensayo",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "warmstart",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "warmstart",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "en",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "es",
+      "initialMarkup": true,
+      "scope": "Static React render only; no browser interaction, layout or HTTP-route claim."
+    }
+  ]
+}

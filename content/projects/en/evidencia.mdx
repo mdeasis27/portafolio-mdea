@@ -1,0 +1,91 @@
+---
+title: Grounded answers
+slug: evidencia
+summary: >-
+  Edit a local corpus, ask a question and inspect retrieved passages and
+  citations.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/evidencia'
+liveUrl: 'https://evidencia-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - RAG
+  - citas
+  - retrieval
+  - compliance
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Evidence reviewer
+businessDecision: Answer or refuse.
+businessValue: Shows exact passage IDs and missing support.
+visualMechanism: Question evidence connects to retrieved passages and citation identifiers.
+scenarios:
+  - title: Supported claim
+    input: Support center question with local support passage
+    observation: The cited local passage supports the answer.
+  - title: Missing evidence
+    input: Refund question with no refund passage
+    observation: The strict workflow refuses the claim.
+---
+## The problem
+
+A claim must be tied to retrieved local passages.
+
+**Who uses it:** Evidence reviewer.
+
+**The decision:** Answer or refuse.
+
+## The approach
+
+Extract terms, retrieve passages, verify citations, then answer or refuse.
+
+### Try the decision
+
+**Supported claim:** Support center question with local support passage The cited local passage supports the answer.
+
+**Missing evidence:** Refund question with no refund passage The strict workflow refuses the claim.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. The mission also computes a simultaneous comparison for the executed inputs.
+
+## Design decisions
+
+Question evidence connects to retrieved passages and citation identifiers.
+
+Lexical retrieval and heuristic grounding; unsupported questions refuse.
+
+{/* recruiter-mission:start */}
+### Your interactive mission
+
+Choose partial evidence, predict whether the selected policy will answer, run retrieval and reveal the full trace.
+
+The same question and corpus are computed under strict and flexible citation coverage. Missing evidence can be refused by both. This is lexical coverage, not proof that a claim is true.
+
+**Why this approach:** Combined lexical retrievers make passages and citations inspectable without API keys. A strict coverage gate trades answer rate for caution, but cannot establish semantic correctness.
+
+**Before production:** Evaluate real support questions, citation quality, privacy, access permissions and unsupported answers before connecting a model.
+
+Editing inputs, choosing a preset or resetting clears the prediction and obsolete results. Comparisons appear only at completed playback; the primary demos need no account or key.
+
+The mission pilot updates this implementation. Existing screenshots and browser reports document the previous stage; fresh browser interaction checks and captures are pending because the current environment blocked them.
+{/* recruiter-mission:end */}
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Shows exact passage IDs and missing support.
+
+**Limits:** Uses lexical retrieval over a local corpus. These portfolio prototypes do not claim measured production impact.

@@ -20,7 +20,7 @@ El reclutador que abra tres URLs distintas debe percibir inmediatamente que vien
 2. El `design-system/` actual del hub define tokens, pero los proyectos individuales no los consumen; existen en islas separadas.
 3. Los case studies en MDX no tienen estructura obligatoria — cada uno puede decorarse diferente.
 4. La paleta actual (`indigo #6366f1 + cyan #22d3ee`) está visualmente "AI-startup genérica": se pierde entre portafolios tech idénticos.
-5. Cada proyecto con AI reimplementa su propia lógica de modelos OpenRouter, fallbacks, y manejo de rate limits — con riesgo de que una demo pública se rompa justo cuando llega un reclutador.
+5. Cada proyecto con AI reimplementa su propia lógica de modelos LLM API, fallbacks, y manejo de rate limits — con riesgo de que una demo pública se rompa justo cuando llega un reclutador.
 6. Los proyectos del portafolio viven dispersos en el filesystem; no hay un "centro de control" desde donde gestionarlos coherentemente.
 
 ## No-objetivos
@@ -39,9 +39,9 @@ El reclutador que abra tres URLs distintas debe percibir inmediatamente que vien
 ```
 C:/Proyectos/
 ├── proyectos-portafolio/              ← carpeta madre (NO es git repo)
-│   ├── portafolio-mdea/               ← hub (git repo propio + Vercel propio)
-│   ├── agente-riesgo/                 ← proyecto (git propio + Vercel propio)
-│   ├── identidad-360/                 ← proyecto (git propio + Vercel propio)
+│   ├── portafolio-mdea/               ← hub (git repo propio + deployment platform propio)
+│   ├── agente-riesgo/                 ← proyecto (git propio + deployment platform propio)
+│   ├── identidad-360/                 ← proyecto (git propio + deployment platform propio)
 │   └── [futuros proyectos]/
 └── experimentos/                      ← proyectos en rough, fuera del portafolio
 ```
@@ -185,13 +185,13 @@ Viven en `src/lib/mdx-components.tsx`. No se distribuyen al kit portable; son ex
 | Modo | Qué hace | Cuándo aparece |
 |---|---|---|
 | **Demo** (default) | Casos pre-computados reproducibles, cero API calls, siempre funciona | Por defecto en producción pública, sin API key. Primero que ve el reclutador. |
-| **Live** | Corre contra OpenRouter con los free models compartidos | Un botón opt-in "Try with real AI". El UI maneja rate limits gracefully y sugiere volver al modo demo si falla. |
+| **Live** | Corre contra LLM API con los free models compartidos | Un botón opt-in "Try with real AI". El UI maneja rate limits gracefully y sugiere volver al modo demo si falla. |
 
-**Por qué obligatorio:** OpenRouter free tier tiene rate limits por IP (~50 requests/día). Un case study que reciba 200 visitas en un día se rompería para el visitante #51+. El modo demo garantiza que la demo nunca está rota, lo cual es la diferencia entre "otro tech bro con API keys" y "alguien que pensó el producto para el mundo real".
+**Por qué obligatorio:** LLM API free tier tiene rate limits por IP (~50 requests/día). Un case study que reciba 200 visitas en un día se rompería para el visitante #51+. El modo demo garantiza que la demo nunca está rota, lo cual es la diferencia entre "otro tech bro con API keys" y "alguien que pensó el producto para el mundo real".
 
 **Implementación obligatoria:** cada caso demo produce un resultado determinista (mismo input → mismo output) usando hash del input + datos pre-computados.
 
-### 10. Modelos OpenRouter compartidos
+### 10. Modelos LLM API compartidos
 
 Lista priorizada viviendo en `ai-kit/models.ts` del hub:
 
@@ -205,7 +205,7 @@ export const FREE_MODELS_PRIORITY = [
 ```
 
 **Flujo runtime:**
-1. `client.ts` consulta OpenRouter `/api/v1/models` para saber qué está disponible.
+1. `client.ts` consulta LLM API `/api/v1/models` para saber qué está disponible.
 2. Cruza con la allowlist priorizada.
 3. Toma el primero disponible.
 4. Cachea la decisión 10 minutos (no consultar en cada request).
@@ -309,7 +309,7 @@ Cada kit tiene su propio `CHANGELOG.md`. Sin semver estricto — solo historial 
 ### Fase 2 — Hub: AI kit (~2–3h)
 
 1. Crear `ai-kit/models.ts` extrayendo la allowlist y lógica de `agente-riesgo` (ya tiene el patrón implementado).
-2. Crear `ai-kit/client.ts` con `createMdeaAi()` que envuelve Vercel AI SDK + OpenRouter + cache + fallback.
+2. Crear `ai-kit/client.ts` con `createMdeaAi()` que envuelve AI SDK + LLM API + cache + fallback.
 3. Crear `ai-kit/rate-limit.tsx` (hook + componente UI "rate limit hit → switch to demo").
 4. Crear `ai-kit/demo-mode.ts` con types y helper `defineDemoCase()`.
 5. Crear `scripts/ai-sync.mjs` (mismo patrón que brand-sync).
@@ -332,7 +332,7 @@ Cada kit tiene su propio `CHANGELOG.md`. Sin semver estricto — solo historial 
 4. Correr `pnpm ai:sync` y reemplazar la lógica actual de modelos por `createMdeaAi()` del kit.
 5. Asegurar que el modo demo (María, Carlos, Ana) sigue funcional con la nueva convención.
 6. Verificar visual y funcional en dev.
-7. Deploy a Vercel y verificar producción con y sin API key.
+7. Deploy a deployment platform y verificar producción con y sin API key.
 8. Commit + push.
 
 ### Fase 5 — Migrar identidad-360 (~3h)
@@ -359,7 +359,7 @@ Al terminar cada fase:
 2. **Paridad entre repos:** abrir los 3 sitios lado a lado — deben percibirse como la misma casa.
 3. **Build pasa:** `pnpm build` sin errores en cada repo.
 4. **Lint pasa:** `pnpm lint` sin warnings.
-5. **Para proyectos AI:** la demo en producción funciona con y sin API key; si OpenRouter está caído, el modo demo sigue viable.
+5. **Para proyectos AI:** la demo en producción funciona con y sin API key; si LLM API está caído, el modo demo sigue viable.
 
 ## Riesgos y mitigaciones
 
@@ -370,9 +370,9 @@ Al terminar cada fase:
 | Cambiar la paleta del `ring` rompe algún focus state en `base-ui` | Verificar focus visible en todos los componentes interactivos tras migración |
 | Los 2 case studies existentes no cumplen exactamente las 5 secciones H2 | Ya cumplen — verificado en brainstorming. Ningún cambio estructural requerido |
 | Al sincronizar a otros repos, rutas de import pueden romper | El kit usa imports relativos dentro de `design-system/`; los repos consumidores usan path alias `@/design-system/...` en `tsconfig.json` |
-| Free models de OpenRouter se deprecan sin aviso | Allowlist centralizada en `ai-kit/models.ts` + lógica de discovery dinámico: si un modelo desaparece, el siguiente de la lista toma su lugar sin cambios en proyectos |
-| Rate limits de OpenRouter rompen demos públicas | Modo demo obligatorio con datos pre-computados — nunca depende de API externa |
-| Mover los repos a carpeta madre rompe deploys Vercel | Vercel se conecta por repo, no por ruta local — mover carpetas en el filesystem no afecta los deploys (mientras el `.git` remote siga apuntando al repo correcto) |
+| Free models de LLM API se deprecan sin aviso | Allowlist centralizada en `ai-kit/models.ts` + lógica de discovery dinámico: si un modelo desaparece, el siguiente de la lista toma su lugar sin cambios en proyectos |
+| Rate limits de LLM API rompen demos públicas | Modo demo obligatorio con datos pre-computados — nunca depende de API externa |
+| Mover los repos a carpeta madre rompe deploys deployment platform | deployment platform se conecta por repo, no por ruta local — mover carpetas en el filesystem no afecta los deploys (mientras el `.git` remote siga apuntando al repo correcto) |
 | `brand:propagate` podría auto-pushear cambios sin revisión | El script requiere confirmación interactiva antes de push; sync + commit son automáticos pero push es manual |
 
 ## Success criteria

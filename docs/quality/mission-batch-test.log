@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: switches locale while retaining path query and hash
+ok 1 - switches locale while retaining path query and hash
+  ---
+  duration_ms: 82.6735
+  type: 'test'
+  ...
+# Subtest: cancel and replacement invalidate obsolete completions
+ok 2 - cancel and replacement invalidate obsolete completions
+  ---
+  duration_ms: 30.9911
+  type: 'test'
+  ...
+# Subtest: new traces restart playback and retain measured event time
+ok 3 - new traces restart playback and retain measured event time
+  ---
+  duration_ms: 16.4811
+  type: 'test'
+  ...
+# Subtest: visual frames follow revealed events and never invent an empty result
+ok 4 - visual frames follow revealed events and never invent an empty result
+  ---
+  duration_ms: 10.2043
+  type: 'test'
+  ...
+# Subtest: ai-kit can be synced with the same syncKit helper
+ok 5 - ai-kit can be synced with the same syncKit helper
+  ---
+  duration_ms: 11.0246
+  type: 'test'
+  ...
+# Subtest: syncKit copies all files from source to target
+ok 6 - syncKit copies all files from source to target
+  ---
+  duration_ms: 17.3877
+  type: 'test'
+  ...
+# Subtest: syncKit removes files in target that no longer exist in source
+ok 7 - syncKit removes files in target that no longer exist in source
+  ---
+  duration_ms: 9.8486
+  type: 'test'
+  ...
+# Subtest: syncKit writes a manifest with timestamp
+ok 8 - syncKit writes a manifest with timestamp
+  ---
+  duration_ms: 10.5102
+  type: 'test'
+  ...
+# Subtest: business stories reject generic role, decision and scenario placeholders
+ok 9 - business stories reject generic role, decision and scenario placeholders
+  ---
+  duration_ms: 57.4319
+  type: 'test'
+  ...
+# Subtest: business cases expose two usable scenarios and a concrete role and decision
+ok 10 - business cases expose two usable scenarios and a concrete role and decision
+  ---
+  duration_ms: 33.7058
+  type: 'test'
+  ...
+# Subtest: all 21 case studies have paired languages with equal source identity and five sections
+ok 11 - all 21 case studies have paired languages with equal source identity and five sections
+  ---
+  duration_ms: 34.7477
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 798.2891

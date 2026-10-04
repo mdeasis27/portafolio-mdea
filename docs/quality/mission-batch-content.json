@@ -1,0 +1,50 @@
+{
+  "veredicto": {
+    "en": {
+      "challenge": "Load empty retrieval, inspect the same benchmark query and top-3 limit, optionally predict the local gate and reveal the terminal ranking comparison.",
+      "comparison": "Selected retrieval and the BM25 reference use identical question, committed corpus and k. Precision counts relevant retrieved slots divided by k; recall divides relevant retrieved passages by the labeled relevant set. Degraded retrieval is an explicitly empty-ranking negative control. Equal outcomes remain equal. The local gate also requires recall of at least 0.5; no relevant labels means unscored, never approved.",
+      "rationale": "Local BM25, TF-IDF and rank fusion make the calculation inspectable without credentials. A one-question gate is not a release certification; existing calibration is reference data rather than evidence of this execution.",
+      "production": "Evaluate a representative labeled query set, segment regressions, citation quality, privacy and production latency before releasing retrieval changes.",
+      "evidence": "This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch."
+    },
+    "es": {
+      "challenge": "Carga recuperación vacía, inspecciona la misma pregunta y límite top 3, predice opcionalmente la compuerta local y revela la comparación final.",
+      "comparison": "La recuperación elegida y la referencia BM25 usan la misma pregunta, corpus y k. Precisión divide los espacios relevantes recuperados entre k; recall divide relevantes recuperados entre el conjunto relevante etiquetado. La recuperación degradada es un control negativo explícitamente vacío. Los empates se conservan. La compuerta local exige además recall de al menos 0.5; sin etiquetas relevantes, el resultado no es evaluable y nunca aprueba.",
+      "rationale": "BM25, TF-IDF y fusión locales hacen inspeccionable el cálculo sin credenciales. Una compuerta de una pregunta no certifica un lanzamiento; la calibración existente es referencia, no evidencia de esta ejecución.",
+      "production": "Evaluar preguntas representativas etiquetadas, regresiones por segmento, calidad de citas, privacidad y latencia real antes de liberar cambios.",
+      "evidence": "Este lote modifica la implementación. Las capturas e informes de navegador existentes documentan la etapa anterior. Capturas nuevas, interacción, móvil y rutas HTTP siguen pendientes por los bloqueos documentados. La aprobación visual previa cubre el piloto anterior de seis misiones, no este lote."
+    }
+  },
+  "mesa": {
+    "en": {
+      "challenge": "Load the one-step challenge with 10,000 modeled token units and one revision allowance. Optionally predict approval, budget stop or review, then reveal the handoffs.",
+      "comparison": "Compare the selected step cap with 12 steps on the same task, token cap and revision allowance. Both may stop when another limit binds. Show consumed steps, modeled token units, draft availability and termination; a draft is not approval.",
+      "rationale": "A bounded local agent graph explains handoffs without live models. Budgets are checked before each step, so a step can exceed the token cap before the next check. These units and latencies are simulation assumptions, not usage billing.",
+      "production": "Reserve resources before real calls, meter actual usage, constrain tools, persist traces and evaluate output quality with reviewers.",
+      "evidence": "This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch."
+    },
+    "es": {
+      "challenge": "Carga el reto de un paso con 10 000 unidades de tokens simuladas y una revisión permitida. Predice opcionalmente aprobación, límite o revisión y revela las transferencias.",
+      "comparison": "Compara el máximo de pasos elegido con 12 pasos manteniendo tarea, tokens y revisiones. Otro límite puede detener ambas opciones. Se muestran pasos, unidades simuladas, borrador y terminación; un borrador no significa aprobación.",
+      "rationale": "El grafo local explica transferencias sin modelos en vivo. El presupuesto se comprueba antes de cada paso: un paso puede superar el límite de tokens antes de la siguiente comprobación. Unidades y latencias son supuestos simulados, no facturación real.",
+      "production": "Reservar recursos antes de llamadas reales, medir uso real, controlar herramientas, persistir trazas y evaluar calidad con revisores.",
+      "evidence": "Este lote modifica la implementación. Las capturas e informes de navegador existentes documentan la etapa anterior. Capturas nuevas, interacción, móvil y rutas HTTP siguen pendientes por los bloqueos documentados. La aprobación visual previa cubre el piloto anterior de seis misiones, no este lote."
+    }
+  },
+  "doorman": {
+    "en": {
+      "challenge": "Load unprotected hostile instructions, inspect the document, optionally predict authorization, block or no requested action, then reveal the policy comparison.",
+      "comparison": "Compute policy on and off for the identical document. Inspect requested operations, simulated permitted operations, lexical rule IDs and policy blocks. No email is sent and no ATS write occurs. Benign inputs can produce equal outcomes.",
+      "rationale": "Local lexical rules and document-origin action restrictions separate content from authority. The action allowlist can block even when no lexical rule fires; these rules are not a comprehensive injection defense.",
+      "production": "Isolate tools, validate permissions, audit decisions and test false positives and missed attacks before connecting a real agent.",
+      "evidence": "This batch changes the implementation. Existing screenshots and browser reports document the previous stage. Fresh captures, browser interaction, mobile and HTTP verification remain pending under the documented tool denials. Prior owner visual approval covers the earlier six-mission pilot, not this batch."
+    },
+    "es": {
+      "challenge": "Carga instrucciones hostiles sin protección, inspecciona el documento, predice opcionalmente autorización, bloqueo o ninguna acción y revela la comparación.",
+      "comparison": "Calcula la política activada y desactivada sobre el mismo documento. Inspecciona operaciones solicitadas, autorizaciones simuladas, reglas léxicas y bloqueos. No se envía correo ni se escribe en ATS. Una entrada benigna puede producir empate.",
+      "rationale": "Reglas léxicas locales y restricciones por origen separan contenido y autoridad. La lista de acciones bloquea incluso sin detección léxica; las reglas no son una defensa completa contra inyección.",
+      "production": "Aislar herramientas, validar permisos, registrar decisiones y probar falsos positivos y ataques no detectados antes de conectar un agente real.",
+      "evidence": "Este lote modifica la implementación. Las capturas e informes de navegador existentes documentan la etapa anterior. Capturas nuevas, interacción, móvil y rutas HTTP siguen pendientes por los bloqueos documentados. La aprobación visual previa cubre el piloto anterior de seis misiones, no este lote."
+    }
+  }
+}

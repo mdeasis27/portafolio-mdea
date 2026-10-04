@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: switches locale while retaining path query and hash
+ok 1 - switches locale while retaining path query and hash
+  ---
+  duration_ms: 98.6266
+  type: 'test'
+  ...
+# Subtest: cancel and replacement invalidate obsolete completions
+ok 2 - cancel and replacement invalidate obsolete completions
+  ---
+  duration_ms: 31.2902
+  type: 'test'
+  ...
+# Subtest: new traces restart playback and retain measured event time
+ok 3 - new traces restart playback and retain measured event time
+  ---
+  duration_ms: 15.0848
+  type: 'test'
+  ...
+# Subtest: visual frames follow revealed events and never invent an empty result
+ok 4 - visual frames follow revealed events and never invent an empty result
+  ---
+  duration_ms: 10.5256
+  type: 'test'
+  ...
+# Subtest: ai-kit can be synced with the same syncKit helper
+ok 5 - ai-kit can be synced with the same syncKit helper
+  ---
+  duration_ms: 12.6882
+  type: 'test'
+  ...
+# Subtest: syncKit copies all files from source to target
+ok 6 - syncKit copies all files from source to target
+  ---
+  duration_ms: 19.4242
+  type: 'test'
+  ...
+# Subtest: syncKit removes files in target that no longer exist in source
+ok 7 - syncKit removes files in target that no longer exist in source
+  ---
+  duration_ms: 12.9799
+  type: 'test'
+  ...
+# Subtest: syncKit writes a manifest with timestamp
+ok 8 - syncKit writes a manifest with timestamp
+  ---
+  duration_ms: 10.0744
+  type: 'test'
+  ...
+# Subtest: loadPortfolioConfig returns siblings array from a valid config
+ok 9 - loadPortfolioConfig returns siblings array from a valid config
+  ---
+  duration_ms: 15.8314
+  type: 'test'
+  ...
+# Subtest: loadPortfolioConfig rejects missing siblings array
+ok 10 - loadPortfolioConfig rejects missing siblings array
+  ---
+  duration_ms: 6.4316
+  type: 'test'
+  ...
+# Subtest: loadPortfolioConfig rejects unknown kit names
+ok 11 - loadPortfolioConfig rejects unknown kit names
+  ---
+  duration_ms: 5.9394
+  type: 'test'
+  ...
+# Subtest: loadPortfolioConfig rejects duplicate sibling names
+ok 12 - loadPortfolioConfig rejects duplicate sibling names
+  ---
+  duration_ms: 6.9601
+  type: 'test'
+  ...
+# Subtest: loadPortfolioConfig rejects non-existent sibling directory
+ok 13 - loadPortfolioConfig rejects non-existent sibling directory
+  ---
+  duration_ms: 6.7725
+  type: 'test'
+  ...
+# Subtest: propagateKit copies brand kit to all siblings with 'brand'
+ok 14 - propagateKit copies brand kit to all siblings with 'brand'
+  ---
+  duration_ms: 683.9481
+  type: 'test'
+  ...
+# Subtest: propagateKit aborts if a sibling has a dirty working tree
+ok 15 - propagateKit aborts if a sibling has a dirty working tree
+  ---
+  duration_ms: 333.2848
+  type: 'test'
+  ...
+# Subtest: propagateKit with dryRun: true lists changes without writing
+ok 16 - propagateKit with dryRun: true lists changes without writing
+  ---
+  duration_ms: 355.8922
+  type: 'test'
+  ...
+# Subtest: propagateKit filters siblings that do not declare the kit
+ok 17 - propagateKit filters siblings that do not declare the kit
+  ---
+  duration_ms: 678.9539
+  type: 'test'
+  ...
+# Subtest: syncKit with dryRun: true does not write to target
+ok 18 - syncKit with dryRun: true does not write to target
+  ---
+  duration_ms: 8.7722
+  type: 'test'
+  ...
+# Subtest: syncKit with dryRun: true reports files that would be deleted
+ok 19 - syncKit with dryRun: true reports files that would be deleted
+  ---
+  duration_ms: 9.6725
+  type: 'test'
+  ...
+# Subtest: business stories reject generic role, decision and scenario placeholders
+ok 20 - business stories reject generic role, decision and scenario placeholders
+  ---
+  duration_ms: 77.6198
+  type: 'test'
+  ...
+# Subtest: business cases expose two usable scenarios and a concrete role and decision
+ok 21 - business cases expose two usable scenarios and a concrete role and decision
+  ---
+  duration_ms: 49.0812
+  type: 'test'
+  ...
+# Subtest: all 21 case studies have paired languages with equal source identity and five sections
+ok 22 - all 21 case studies have paired languages with equal source identity and five sections
+  ---
+  duration_ms: 44.7158
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2284.3058

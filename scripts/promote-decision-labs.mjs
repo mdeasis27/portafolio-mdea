@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+
+const hub = process.cwd();
+const slugs = fs.readdirSync('content/projects/en').filter(name => name.endsWith('.mdx')).map(name => name.slice(0, -4));
+const reports = [];
+const cards = [];
+const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+for (const slug of slugs) {
+  const root = path.resolve(hub, '..', slug);
+  const report = JSON.parse(fs.readFileSync(path.join(root, 'docs/quality/decision-lab-browser.json'), 'utf8'));
+  if (report.failure || report.errors.length || report.checks.length !== 2) throw new Error(`${slug}: browser acceptance incomplete`);
+  reports.push(report);
+  for (const [source, target] of [
+    ['lab.demo.png', 'demo.png'], ['lab.demo.es.png', 'demo.es.png'], ['lab.demo.mobile.png', 'demo.mobile.png'],
+    ['lab.cover.png', 'cover.png'], ['lab.stage.png', 'scenario-a.png'], ['lab.stage.b.png', 'scenario-b.png'],
+    ['lab.stage.es.png', 'scenario-a.es.png'], ['lab.stage.b.es.png', 'scenario-b.es.png'],
+  ]) fs.copyFileSync(path.join(root, 'docs/images', source), path.join(root, 'docs/images', target));
+  for (const [source, suffix] of [['lab.demo.png', '.png'], ['lab.demo.es.png', '.es.png'], ['lab.stage.png', '.stage.png'], ['lab.stage.es.png', '.stage.es.png']]) {
+    fs.copyFileSync(path.join(root, 'docs/images', source), path.join(hub, 'public/project-captures', slug + suffix));
+  }
+  const en = matter(fs.readFileSync(`content/projects/en/${slug}.mdx`, 'utf8')).data;
+  const es = matter(fs.readFileSync(`content/projects/es/${slug}.mdx`, 'utf8')).data;
+  const image = fs.readFileSync(path.join(root, 'docs/images/lab.stage.png')).toString('base64');
+  const imageEs = fs.readFileSync(path.join(root, 'docs/images/lab.stage.es.png')).toString('base64');
+  const previewPath = path.join(hub, 'docs/quality/.component-labs', slug, 'preview.html');
+  fs.writeFileSync(previewPath, fs.readFileSync(previewPath, 'utf8').replace('window.__portfolioLocale="en";', 'window.__portfolioLocale=location.hash==="#es"?"es":"en";'));
+  cards.push(`<a class="card" href="${slug}/preview.html"><img alt="${escape(en.title)} — computed scene" src="data:image/png;base64,${image}" data-en-src="data:image/png;base64,${image}" data-es-src="data:image/png;base64,${imageEs}"><div><p class="number">${String(cards.length + 1).padStart(2, '0')} / ${escape(slug)}</p><h2 data-en="${escape(en.title)}" data-es="${escape(es.title)}">${escape(en.title)}</h2><p data-en="${escape(en.businessDecision)}" data-es="${escape(es.businessDecision)}">${escape(en.businessDecision)}</p><span data-en="Open the interactive lab →" data-es="Abrir laboratorio interactivo →">Open the interactive lab →</span></div></a>`);
+}
+fs.writeFileSync('docs/quality/decision-lab-browser.json', JSON.stringify(reports, null, 2));
+const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Decision labs · Manuel de Asís</title><style>body{margin:0;background:#101112;color:#eeeee9;font:16px system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:48px 24px}nav{display:flex;justify-content:space-between;font:12px monospace;color:#65a2ff}button{border:1px solid #48494d;border-radius:6px;background:transparent;color:inherit;padding:8px 14px;cursor:pointer}h1{font-size:clamp(40px,6vw,76px);font-weight:500;letter-spacing:-.045em;margin:36px 0 20px}.intro{max-width:780px;line-height:1.8;color:#b0b1b6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px;margin-top:40px}.card{border:1px solid #303134;border-radius:12px;overflow:hidden;color:inherit;text-decoration:none;background:#171819;transition:border-color .2s}.card:hover,.card:focus-visible{border-color:#65a2ff}.card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid #303134}.card div{padding:22px}.card h2{font-size:22px;font-weight:500;margin:16px 0}.card p{line-height:1.6;color:#b0b1b6}.number,.card span{font:12px monospace;color:#65a2ff!important}.note{border-left:2px solid #65a2ff;padding-left:16px;color:#b0b1b6;font-size:13px;line-height:1.7;margin-top:24px}@media(prefers-reduced-motion:reduce){.card{transition:none}}</style><body><main><nav><span>MANUEL DE ASÍS / AI PRODUCT</span><div><button onclick="setLocale('en')" aria-label="English">EN</button> <button onclick="setLocale('es')" aria-label="Español">ES</button></div></nav><h1 data-en="Decisions you can explore." data-es="Decisiones que puedes explorar.">Decisions you can explore.</h1><p class="intro" data-en="21 interactive projects. Take a business role, compare two situations, change the inputs and follow the computation to its consequence. Each lab has its own visual mechanism and English / Spanish controls." data-es="21 proyectos interactivos. Asume un papel de negocio, compara dos situaciones, cambia los datos y sigue el cálculo hasta su consecuencia. Cada laboratorio tiene su propio mecanismo visual y controles en inglés / español.">21 interactive projects. Take a business role, compare two situations, change the inputs and follow the computation to its consequence. Each lab has its own visual mechanism and English / Spanish controls.</p><p class="note" data-en="Local review preview: real React components and local algorithms, with controlled navigation. These files do not certify Next routes or a production deployment. No account or API key is needed; no external requests are made. Playback reveals computed events, rather than live model activity." data-es="Vista local de revisión: componentes React y algoritmos locales reales, con navegación controlada. Estos archivos no certifican rutas de Next ni un despliegue de producción. No necesitan cuenta ni clave de API; no realizan solicitudes externas. La reproducción revela eventos calculados, en lugar de actividad de modelos en vivo.">Local review preview: real React components and local algorithms, with controlled navigation. These files do not certify Next routes or a production deployment. No account or API key is needed; no external requests are made. Playback reveals computed events, rather than live model activity.</p><section class="grid">${cards.join('')}</section></main><script>function setLocale(locale){document.documentElement.lang=locale;document.querySelectorAll('[data-en]').forEach(element=>{element.textContent=element.dataset[locale]});document.querySelectorAll('[data-en-src]').forEach(element=>{element.src=element.dataset[locale+'Src']});document.querySelectorAll('a.card').forEach(element=>{element.href=element.href.split('#')[0]+'#'+locale})}</script></body></html>`;
+fs.writeFileSync('docs/quality/.component-labs/index.html', html);
+console.log(`${reports.length} accepted labs: current captures promoted and local interactive index created.`);

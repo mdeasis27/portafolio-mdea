@@ -45,3 +45,7 @@ next-env.d.ts
 
 # claude code
 .claude/
+
+# Local browser-component verification artifacts
+/docs/quality/.component-labs/
+/scripts/__pycache__/
