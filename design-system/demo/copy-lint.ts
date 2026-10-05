@@ -2,7 +2,8 @@
 export const FORBIDDEN: RegExp[] = [/—/, /\bsino\b/i, /en lugar de/i, /\bnot just\b/i, /\binstead of\b/i, /potenciar/i, /robust/i, /de un vistazo/i, /at a glance/i, /seamless/i, /leverag/i, /\bWaze\b/i];
 
 // Sentence functions are exercised with a clear gap, a tie, a gap of one and the reverse case.
-const SAMPLE_ARGS: [number, number][] = [[27, 18], [18, 18], [19, 18], [17, 18]];
+// The 0 also exercises the falsy branch of a boolean control, e.g. question(end, backup).
+const SAMPLE_ARGS: [number, number][] = [[27, 18], [18, 18], [19, 18], [17, 18], [18, 0]];
 
 /** Every string reachable in a story object, including what its sentence functions return. */
 export function storyStrings(value: unknown): string[] {

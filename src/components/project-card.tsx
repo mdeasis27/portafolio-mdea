@@ -40,7 +40,7 @@ export function ProjectCard({ project, locale = "en" }: { project: Project; loca
           <CardDescription className="text-[15px] leading-6 text-foreground/70">{frontmatter.oneLiner}</CardDescription>
         </CardHeader>
         <CardFooter className="flex flex-wrap items-center justify-between gap-3">
-          <span id={`${frontmatter.slug}-cta`} className="text-sm font-medium text-accent">{c.demo} →<span className="sr-only"> ({c.newTab})</span></span>
+          <span id={`${frontmatter.slug}-cta`} className="text-sm font-medium text-accent">{c.demo} <span aria-hidden="true">→</span><span className="sr-only"> ({c.newTab})</span></span>
           <Link href={href} className="relative z-10 text-sm text-foreground/60 underline-offset-4 hover:underline">{c.caseStudy}</Link>
         </CardFooter>
       </Card>

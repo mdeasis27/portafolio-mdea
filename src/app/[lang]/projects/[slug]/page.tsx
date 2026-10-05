@@ -159,6 +159,7 @@ export default async function ProjectPage({
               >
                 <ExternalLink className="mr-2 size-3.5" />
                 {c.demo}
+                <span className="sr-only"> ({c.newTab})</span>
               </a>
             ) : null}
             {frontmatter.repoUrl ? (

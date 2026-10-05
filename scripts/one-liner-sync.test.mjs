@@ -20,7 +20,19 @@ test('reports a hub one-liner the sibling story does not contain, and skips abse
       'content/projects/en/b.mdx': '---\ntitle: B\noneLiner: Not checked.\n---\n',
       'content/projects/en/c.mdx': '---\ntitle: C\n---\n',
     },
-    siblings: {a: 'oneLiner: "A detour for outages.",\noneLiner: "Un desvío viejo.",', c: ''},
+    siblings: {a: 'export const STORY = { en: { oneLiner: "A detour for outages." }, es: { oneLiner: "Un desvío viejo." } };', c: ''},
   });
-  assert.deepEqual(oneLinerProblems(hub), ['a (es): lib/experience/story.ts does not contain the hub oneLiner "Un desvío nuevo."']);
+  assert.deepEqual(oneLinerProblems(hub), ['a (es): lib/experience/story.ts has "Un desvío viejo." but the hub says "Un desvío nuevo."']);
+});
+
+test('compares the story one-liner per language exactly, after YAML folding and quote escapes', () => {
+  const story = 'export const STORY = { en: { oneLiner: "Say \\"hi\\" to outages." }, es: { oneLiner: "Un desvío más largo." } };';
+  const hub = workspace({
+    hub: {
+      'content/projects/en/a.mdx': '---\ntitle: A\noneLiner: >-\n  Say "hi" to\n  outages.\n---\n',
+      'content/projects/es/a.mdx': '---\ntitle: A\noneLiner: Un desvío\n---\n',
+    },
+    siblings: {a: story},
+  });
+  assert.deepEqual(oneLinerProblems(hub), ['a (es): lib/experience/story.ts has "Un desvío más largo." but the hub says "Un desvío"']);
 });

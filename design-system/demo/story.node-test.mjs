@@ -129,3 +129,16 @@ test('copy lint walks nested copy, calls sentence functions, and reports each fo
   assert.ok(violations.some(v => v.includes('—')));
   assert.deepEqual(lintStory({ a: 'Two short lines. Then a longer one about customers.' }), []);
 });
+
+test('copy lint also exercises the falsy branch of boolean controls', () => {
+  const { lintStory } = load('./copy-lint.ts');
+  assert.equal(lintStory({ q: (end, backup) => (backup ? `with backup to ${end}` : `without backup — to ${end}`) }).length > 0, true);
+});
+
+test('flow diagram cards announce each status and mark "off" without color', () => {
+  const { FlowDiagram } = load('./flow-diagram.tsx');
+  const nodes = ['danger', 'success', 'off', 'active', 'idle'].map((tone, i) => ({ id: tone, x: i * 200, y: 0, name: tone, sub: '', analogy: 'a', tone }));
+  const html = renderToStaticMarkup(h(FlowDiagram, { nodes, edges: [], width: 1000, height: 100, ariaLabel: 'r', statusLabels: { danger: 'down', success: 'on', off: 'off', active: 'routing' } }));
+  for (const label of ['down', 'on', 'off', 'routing']) assert.match(html, new RegExp(`<span class="sr-only">[^<]*${label}</span>`), label);
+  assert.match(html, /data-flow-card="off"[\s\S]*?–/);
+});
