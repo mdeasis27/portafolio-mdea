@@ -78,3 +78,31 @@ test('analogy dictionary renders every term with its meaning', () => {
   assert.equal((html.match(/<dt/g) ?? []).length, 2);
   assert.match(html, /the main provider/);
 });
+
+test('flow diagram draws every node in the SVG and as a stacked mobile card, with its analogy', () => {
+  const { FlowDiagram } = load('./flow-diagram.tsx');
+  const nodes = [
+    { id: 'gateway', x: 0, y: 0, name: 'Gateway', sub: 'routes', analogy: 'the GPS', tone: 'active' },
+    { id: 'primary', x: 200, y: 0, name: 'Provider A', sub: 'main', analogy: 'the highway', tone: 'danger' },
+  ];
+  const html = renderToStaticMarkup(h(FlowDiagram, { nodes, edges: [{ from: 'gateway', to: 'primary', tone: 'danger' }], width: 400, height: 100, ariaLabel: 'Route' }));
+  assert.equal((html.match(/data-flow-node=/g) ?? []).length, 2);
+  assert.equal((html.match(/data-flow-card=/g) ?? []).length, 2);
+  assert.match(html, /<svg[^>]*class="[^"]*hidden[^"]*sm:block/);
+  assert.match(html, /<ol[^>]*class="[^"]*sm:hidden/);
+  assert.equal((html.match(/= the GPS/g) ?? []).length, 2);
+  assert.equal((html.match(/data-flow-edge="gateway-primary"/g) ?? []).length, 1);
+});
+
+test('flow diagram marks danger and success with a symbol, not color alone', () => {
+  const { FlowDiagram } = load('./flow-diagram.tsx');
+  const nodes = [
+    { id: 'a', x: 0, y: 0, name: 'A', sub: '', analogy: 'x', tone: 'danger' },
+    { id: 'b', x: 200, y: 0, name: 'B', sub: '', analogy: 'y', tone: 'success' },
+    { id: 'c', x: 400, y: 0, name: 'C', sub: '', analogy: 'z', tone: 'idle' },
+  ];
+  const html = renderToStaticMarkup(h(FlowDiagram, { nodes, edges: [], width: 600, height: 100, ariaLabel: 'r' }));
+  assert.equal((html.match(/✕/g) ?? []).length, 2);
+  assert.equal((html.match(/✓/g) ?? []).length, 2);
+  assert.match(html, /data-flow-card="c"[^>]*data-tone="idle"/);
+});
