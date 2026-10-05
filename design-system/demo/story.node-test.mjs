@@ -116,3 +116,16 @@ test('trace player heading can drop to h3 inside a story section', () => {
   assert.match(renderToStaticMarkup(h(TracePlayer, base)), /<h2[^>]*>Computed trace/);
   assert.match(renderToStaticMarkup(h(TracePlayer, { ...base, headingLevel: 'h3' })), /<h3[^>]*>Computed trace/);
 });
+
+test('copy lint walks nested copy, calls sentence functions, and reports each forbidden pattern', () => {
+  const { lintStory, storyStrings } = load('./copy-lint.ts');
+  const story = { a: 'Plain sentence.', b: ['ok', { c: 'We leverage synergy' }], f: (on, off) => (on < off ? 'fewer — oops' : `served ${on}`) };
+  const strings = storyStrings(story);
+  assert.ok(strings.includes('served 27'));
+  assert.ok(strings.includes('fewer — oops'), 'reverse case is exercised');
+  const violations = lintStory(story);
+  assert.equal(violations.length, 2);
+  assert.ok(violations.some(v => v.includes('leverag')));
+  assert.ok(violations.some(v => v.includes('—')));
+  assert.deepEqual(lintStory({ a: 'Two short lines. Then a longer one about customers.' }), []);
+});

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added `demo/copy-lint.ts` (`FORBIDDEN`, `storyStrings`, `lintStory`): shared check that story copy avoids AI-sounding patterns and brand names.
 - `TracePlayer`: optional `onComplete` (fires once every step is shown, immediately under reduced motion) and `headingLevel` (`h2` default, `h3` inside story sections).
 - Added `demo/flow-diagram.tsx` (FlowDiagram): boxes-and-arrows diagram with an analogy line per node; stacks as cards below `sm`; danger/success carry ✕/✓ besides color.
 - Added `demo/project-story.tsx` (StoryHero, StorySection, AnalogyBlock, WhyIBuiltIt, OutcomeTape, FitGuide, ProvesBlock, EngineerNotes, useReducedMotion) and `demo/outcome-tape.ts` for recruiter-facing story pages.
