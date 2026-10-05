@@ -1,0 +1,75 @@
+---
+title: Vigia
+slug: vigia
+summary: >-
+  Edita textos locales de código y documentación y proporciona mapas de
+  renombrado.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/vigia'
+liveUrl: 'https://vigia-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - documentation
+  - dev-tools
+  - CI
+  - self-healing
+  - staleness
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de documentación
+businessDecision: Aplicar una corrección de documentación revisada.
+businessValue: Separa propuestas seguras de referencias que requieren revisión.
+visualMechanism: Líneas de referencia conectan símbolos y resaltan un cambio.
+scenarios:
+  - title: Renombre conocido
+    input: 'oldName:newName'
+    observation: Se propone un reemplazo.
+  - title: Referencia desconocida
+    input: removedName
+    observation: Se solicita revisión.
+---
+## El problema
+
+El código renombrado deja referencias obsoletas en documentación.
+
+**Quién lo usa:** Responsable de documentación.
+
+**La decisión:** Aplicar una corrección de documentación revisada.
+
+## El enfoque
+
+Elige una instantánea, conecta referencias con símbolos y previsualiza un diff.
+
+### Prueba la decisión
+
+**Renombre conocido:** oldName:newName Se propone un reemplazo.
+
+**Referencia desconocida:** removedName Se solicita revisión.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Líneas de referencia conectan símbolos y resaltan un cambio.
+
+Referencias destacadas y diff propuesto; no escribe archivos ni abre PR externos.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Separa propuestas seguras de referencias que requieren revisión.
+
+**Límites:** La vista previa no cambia archivos. Estos prototipos de portafolio no afirman impacto medido en producción.

@@ -1,0 +1,91 @@
+---
+title: Evidencia
+slug: evidencia
+summary: 'Edita un corpus local, pregunta e inspecciona pasajes recuperados y citas.'
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/evidencia'
+liveUrl: 'https://evidencia-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - RAG
+  - citas
+  - retrieval
+  - compliance
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Persona revisora de evidencia
+businessDecision: Responder o rechazar.
+businessValue: Muestra identificadores de pasaje y soporte faltante.
+visualMechanism: >-
+  La evidencia de la pregunta conecta pasajes recuperados e identificadores de
+  cita.
+scenarios:
+  - title: Afirmación sustentada
+    input: Pregunta sobre soporte con pasaje local de soporte
+    observation: El pasaje local citado respalda la respuesta.
+  - title: Evidencia ausente
+    input: Pregunta sobre reembolso sin pasaje de reembolso
+    observation: El flujo estricto rechaza la afirmación.
+---
+## El problema
+
+Una afirmación debe vincularse con pasajes locales recuperados.
+
+**Quién lo usa:** Persona revisora de evidencia.
+
+**La decisión:** Responder o rechazar.
+
+## El enfoque
+
+Extraer términos, recuperar pasajes, verificar citas y responder o rechazar.
+
+### Prueba la decisión
+
+**Afirmación sustentada:** Pregunta sobre soporte con pasaje local de soporte El pasaje local citado respalda la respuesta.
+
+**Evidencia ausente:** Pregunta sobre reembolso sin pasaje de reembolso El flujo estricto rechaza la afirmación.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+La evidencia de la pregunta conecta pasajes recuperados e identificadores de cita.
+
+Recuperación léxica y fundamentación heurística; rechaza preguntas sin respaldo.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Elige evidencia parcial, predice si la política seleccionada responderá, ejecuta la recuperación y revela la traza completa.
+
+La misma pregunta y el corpus se calculan con cobertura de citas estricta y flexible. Ambas pueden rechazar evidencia ausente. Es cobertura léxica, no una prueba de que la afirmación sea verdadera.
+
+**Por qué este enfoque:** Combinar recuperadores léxicos permite inspeccionar pasajes y citas sin llaves API. Exigir cobertura completa prioriza cautela sobre la tasa de respuestas, pero no establece corrección semántica.
+
+**Antes de producción:** Evaluar preguntas reales de soporte, calidad de citas, privacidad, permisos y respuestas sin evidencia antes de conectar un modelo.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Muestra identificadores de pasaje y soporte faltante.
+
+**Límites:** Usa recuperación léxica sobre un corpus local. Estos prototipos de portafolio no afirman impacto medido en producción.

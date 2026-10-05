@@ -1,0 +1,96 @@
+---
+title: Warmstart
+slug: warmstart
+summary: >-
+  Edita lotes de preguntas, umbrales de similitud y versiones para inspeccionar
+  rutas de caché.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/warmstart'
+liveUrl: 'https://warmstart-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - caching
+  - coste
+  - latencia
+  - semántica
+  - LLMOps
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de producto que gestiona cambios de prompt
+businessDecision: Conservar una entrada de caché o invalidarla para el nuevo prompt.
+businessValue: >-
+  Hace visible la compatibilidad entre costo de caché y versión de prompt antes
+  de reutilizar.
+visualMechanism: >-
+  Las consultas se separan en ramas exacta, semántica y sin acierto con conteos
+  calculados. Los totales finales muestran invalidaciones por versión de prompt
+  y costos del prototipo.
+scenarios:
+  - title: Prompt versión v1
+    input: '48 consultas generadas, similitud 0.65, versión de prompt v1.'
+    observation: Las entradas sembradas pueden seguir la ruta exacta de caché.
+  - title: Prompt versión v2
+    input: Mismas 48 consultas y similitud; el prompt cambia a v2.
+    observation: El cambio de versión invalida las entradas sembradas.
+---
+## El problema
+
+Una entrada de caché puede ser barata de reutilizar pero inválida tras cambiar la versión del prompt.
+
+**Quién lo usa:** Responsable de producto que gestiona cambios de prompt.
+
+**La decisión:** Conservar una entrada de caché o invalidarla para el nuevo prompt.
+
+## El enfoque
+
+Elige prompt v1 o v2, inspecciona la llave de caché sembrada y lee la ruta de acierto o invalidación.
+
+### Prueba la decisión
+
+**Prompt versión v1:** 48 consultas generadas, similitud 0.65, versión de prompt v1. Las entradas sembradas pueden seguir la ruta exacta de caché.
+
+**Prompt versión v2:** Mismas 48 consultas y similitud; el prompt cambia a v2. El cambio de versión invalida las entradas sembradas.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Las consultas se separan en ramas exacta, semántica y sin acierto con conteos calculados. Los totales finales muestran invalidaciones por versión de prompt y costos del prototipo.
+
+Hits exactos y semánticos, misses e invalidación; costos con supuestos explícitos en centavos enteros.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Carga intenciones parecidas, inspecciona los pares consulta | intención, predice opcionalmente un acierto falso y reproduce para comparar tu umbral de similitud con 0.95. Las consultas introducidas sustituyen el lote generado.
+
+El reto usa tres consultas etiquetadas. Con similitud 0.35 produce un acierto semántico falso y costo de lote de 1¢; con 0.95 produce cero aciertos semánticos falsos y costo de 2¢. Consultas, orden, caché inicial y versión no cambian. Un fallo incorpora una entrada, por lo que las rutas posteriores pueden divergir.
+
+**Por qué este enfoque:** La similitud léxica y las etiquetas ficticias explican por qué un acierto barato puede reutilizar la respuesta equivocada. La referencia 0.95 no garantiza corrección; no son embeddings ni salida de un modelo en vivo.
+
+**Antes de producción:** Validar consultas reales etiquetadas, aciertos falsos exactos/semánticos, aislamiento entre usuarios, permisos, caducidad e invalidación. Tarifas ilustrativas: 100¢ por 1,000 aciertos y 1,000¢ por 1,000 fallos, agregadas con un único redondeo superior al centavo entero por lote; precios y latencia reales requieren medición aparte.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace visible la compatibilidad entre costo de caché y versión de prompt antes de reutilizar.
+
+**Límites:** Las llaves y costos de caché son ejemplos locales; no se mide rendimiento ni calidad de caché. Estos prototipos de portafolio no afirman impacto medido en producción.

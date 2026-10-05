@@ -1,0 +1,72 @@
+---
+title: Radar de Proveedores
+slug: radar-proveedores
+summary: >-
+  Ajusta señales de un proveedor y sus pesos para inspeccionar una
+  recomendación.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - REST APIs
+  - LLM API
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-04-14'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/radar-proveedores'
+liveUrl: 'https://radar-proveedores-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - fintech
+  - riesgo-operativo
+  - due-diligence
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Analista de riesgo de proveedores
+businessDecision: Continuar o investigar.
+businessValue: Hace visible la evidencia no resuelta y el trabajo analítico.
+visualMechanism: Un dial de relevancia conecta la señal con tareas de investigación activas.
+scenarios:
+  - title: Evidencia resuelta
+    input: 'sin resolver=false, relevancia=35'
+    observation: El monitoreo continúa.
+  - title: Señal crítica
+    input: 'sin resolver=true, relevancia=85'
+    observation: Las tareas de investigación permanecen abiertas.
+---
+## El problema
+
+Una señal crítica de proveedor puede quedar sin resolver.
+
+**Quién lo usa:** Analista de riesgo de proveedores.
+
+**La decisión:** Continuar o investigar.
+
+## El enfoque
+
+Inspeccionar relevancia, abrir o cerrar tareas y elegir una ruta de monitoreo.
+
+### Prueba la decisión
+
+**Evidencia resuelta:** sin resolver=false, relevancia=35 El monitoreo continúa.
+
+**Señal crítica:** sin resolver=true, relevancia=85 Las tareas de investigación permanecen abiertas.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Un dial de relevancia conecta la señal con tareas de investigación activas.
+
+Evidencia de escenarios anónimos conectada al riesgo y a una lista de decisión.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace visible la evidencia no resuelta y el trabajo analítico.
+
+**Límites:** Usa únicamente evidencia ficticia local. Estos prototipos de portafolio no afirman impacto medido en producción.

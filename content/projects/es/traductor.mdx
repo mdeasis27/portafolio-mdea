@@ -1,0 +1,75 @@
+---
+title: Traductor
+slug: traductor
+summary: >-
+  Haz una pregunta compatible sobre un esquema local con datos de ejemplo e
+  inspecciona resultados validados.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/traductor'
+liveUrl: 'https://traductor-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - text-to-sql
+  - guardrails
+  - hallucination
+  - safety
+  - validación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Analista de negocio
+businessDecision: Usar plantilla validada o rechazar solicitud.
+businessValue: Hace comprensible el acceso local seguro a datos.
+visualMechanism: 'Pregunta, plantilla de esquema y filas forman una ruta visible.'
+scenarios:
+  - title: Clientes
+    input: lista clientes
+    observation: Una plantilla validada devuelve filas.
+  - title: No compatible
+    input: elimina clientes
+    observation: El router local la rechaza.
+---
+## El problema
+
+Las preguntas en lenguaje natural pueden pedir operaciones inseguras.
+
+**Quién lo usa:** Analista de negocio.
+
+**La decisión:** Usar plantilla validada o rechazar solicitud.
+
+## El enfoque
+
+Elige una pregunta compatible, enrútala a una plantilla e inspecciona filas.
+
+### Prueba la decisión
+
+**Clientes:** lista clientes Una plantilla validada devuelve filas.
+
+**No compatible:** elimina clientes El router local la rechaza.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Pregunta, plantilla de esquema y filas forman una ruta visible.
+
+Flujo de pregunta a plantilla y validación; no ejecuta SQL arbitrario ni requiere base de datos.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace comprensible el acceso local seguro a datos.
+
+**Límites:** Solo hay plantillas locales seguras. Estos prototipos de portafolio no afirman impacto medido en producción.

@@ -1,0 +1,89 @@
+---
+title: Agente de Riesgo
+slug: agente-riesgo
+summary: >-
+  Cambia señales de verificación, cobertura de evidencia y umbral de revisión
+  para inspeccionar una decisión de política.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - AI SDK
+  - REST APIs
+  - LLM API
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-04-16'
+featured: true
+repoUrl: 'https://github.com/mdeasis27/agente-riesgo'
+liveUrl: 'https://agente-riesgo-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - fintech
+  - KYC
+  - hiring
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de riesgo
+businessDecision: 'Continuar, revisar o detener.'
+businessValue: Hace inspeccionable la ruta de la política.
+visualMechanism: Tres compuertas revelan la ruta calculada.
+scenarios:
+  - title: Caso limpio
+    input: 'verificación confirmada, sin sanciones, cobertura 85'
+    observation: La política permite continuar.
+  - title: Señal bloqueante
+    input: 'verificación confirmada, sanciones activadas, cobertura 85'
+    observation: La política detiene y prioriza el caso.
+---
+## El problema
+
+Una señal bloqueante puede entrar a una cola operativa.
+
+**Quién lo usa:** Responsable de riesgo.
+
+**La decisión:** Continuar, revisar o detener.
+
+## El enfoque
+
+Verificar, revisar screening y aplicar política.
+
+### Prueba la decisión
+
+**Caso limpio:** verificación confirmada, sin sanciones, cobertura 85 La política permite continuar.
+
+**Señal bloqueante:** verificación confirmada, sanciones activadas, cobertura 85 La política detiene y prioriza el caso.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Tres compuertas revelan la ruta calculada.
+
+Carriles de evidencia y una rama de revisión; simulación de política, no predicción crediticia.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Carga evidencia parcial, inspecciona las señales, predice opcionalmente continuar/revisar/detener y ejecuta para revelar la comparación final.
+
+Compara umbrales de revisión 20 y 50 con la misma verificación, screening y cobertura. Puntaje = 55 si falta verificación + (100 − cobertura) / 2. Con verificación confirmada y 40% de cobertura, el puntaje 30 implica revisar con 20 y continuar con 50. Una señal de sanciones detiene ambas políticas.
+
+**Por qué este enfoque:** Separar evidencia y política permite inspeccionar la decisión de ruta. Esta simulación determinista no predice solvencia ni identifica un umbral de revisión óptimo.
+
+**Antes de producción:** Validar casos etiquetados, falsos positivos/negativos, equidad, privacidad, revisión humana y reglas aplicables con especialistas.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+El piloto de misiones actualiza esta implementación. Las capturas e informes de navegador existentes documentan la etapa anterior; las comprobaciones de interacción y capturas nuevas están pendientes por bloqueos del entorno actual.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace inspeccionable la ruta de la política.
+
+**Límites:** Simulación local; no realiza screening externo. Estos prototipos de portafolio no afirman impacto medido en producción.

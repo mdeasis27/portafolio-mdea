@@ -1,0 +1,95 @@
+---
+title: Doorman
+slug: doorman
+summary: >-
+  Edita un documento y la política de herramientas para ver qué reglas permiten,
+  bloquean o escalan una solicitud.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/doorman'
+liveUrl: 'https://doorman-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - seguridad
+  - prompt-injection
+  - guardrails
+  - red-team
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de operaciones de revisión documental
+businessDecision: Permitir o bloquear una acción externa después de revisar el documento.
+businessValue: Hace visible el límite de política antes de que actúe un agente.
+visualMechanism: >-
+  Instrucciones de documento pasan por una compuerta de reglas hacia una tarjeta
+  de acción.
+scenarios:
+  - title: Política activada
+    input: >-
+      Documento hostil que pide enviar un correo de aprobación; política
+      activada.
+    observation: Las reglas bloquean la acción externa.
+  - title: Resumen benigno sin política
+    input: Documento benigno que pide un resumen; política desactivada.
+    observation: Se permite el resumen local; no se ejecuta ninguna acción externa.
+---
+## El problema
+
+Instrucciones dentro de un documento no confiable pueden activar una acción insegura de agente.
+
+**Quién lo usa:** Responsable de operaciones de revisión documental.
+
+**La decisión:** Permitir o bloquear una acción externa después de revisar el documento.
+
+## El enfoque
+
+Elige política activada o desactivada, inspecciona reglas del documento hostil y lee la decisión de acción.
+
+### Prueba la decisión
+
+**Política activada:** Documento hostil que pide enviar un correo de aprobación; política activada. Las reglas bloquean la acción externa.
+
+**Resumen benigno sin política:** Documento benigno que pide un resumen; política desactivada. Se permite el resumen local; no se ejecuta ninguna acción externa.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Instrucciones de documento pasan por una compuerta de reglas hacia una tarjeta de acción.
+
+Rutas de control y reglas activadas inspeccionables; no ejecuta herramientas.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Carga instrucciones hostiles sin protección, inspecciona el documento, predice opcionalmente autorización, bloqueo o ninguna acción y revela la comparación.
+
+Calcula la política activada y desactivada sobre el mismo documento. Inspecciona operaciones solicitadas, autorizaciones simuladas, reglas léxicas y bloqueos. No se envía correo ni se escribe en ATS. Una entrada benigna puede producir empate.
+
+**Por qué este enfoque:** Reglas léxicas locales y restricciones por origen separan contenido y autoridad. La lista de acciones bloquea incluso sin detección léxica; las reglas no son una defensa completa contra inyección.
+
+**Antes de producción:** Aislar herramientas, validar permisos, registrar decisiones y probar falsos positivos y ataques no detectados antes de conectar un agente real.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+Este lote modifica la implementación. Las capturas e informes de navegador existentes documentan la etapa anterior. Capturas nuevas, interacción, móvil y rutas HTTP siguen pendientes por los bloqueos documentados. La aprobación visual previa cubre el piloto anterior de seis misiones, no este lote.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Hace visible el límite de política antes de que actúe un agente.
+
+**Límites:** El documento y las reglas son ejemplos locales; no se intenta ninguna acción externa. Los escenarios cambian documento y política; alterna la política sobre el mismo documento para aislar su efecto. Estos prototipos de portafolio no afirman impacto medido en producción.

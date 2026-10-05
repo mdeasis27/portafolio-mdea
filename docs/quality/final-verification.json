@@ -1,0 +1,22 @@
+[
+  {
+    "command": "node --test scripts/*.test.mjs design-system/demo/foundation.node-test.mjs",
+    "log": "final-test.log",
+    "exitCode": 0
+  },
+  {
+    "command": "npm run lint",
+    "log": "final-lint.log",
+    "exitCode": 0
+  },
+  {
+    "command": "npx tsc --noEmit",
+    "log": "final-types.log",
+    "exitCode": 0
+  },
+  {
+    "command": "npm run build",
+    "log": "final-build.log",
+    "exitCode": 0
+  }
+]

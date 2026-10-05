@@ -1,0 +1,94 @@
+---
+title: Veredicto
+slug: veredicto
+summary: >-
+  Compara configuraciones y subconjuntos de preguntas para inspeccionar rankings
+  y controles de calidad.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - scikit-learn (reference)
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-28'
+featured: true
+repoUrl: 'https://github.com/mdeasis27/veredicto'
+liveUrl: 'https://veredicto-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - evaluación
+  - RAG
+  - LLM-as-judge
+  - evals
+  - fintech
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de búsqueda de soporte interno
+businessDecision: >-
+  Liberar o bloquear una configuración de recuperación para búsqueda interna de
+  políticas.
+businessValue: Permite revisar evidencia ordenada antes de cambiar la ruta de búsqueda.
+visualMechanism: Pasajes de política ordenados convergen en una compuerta de recuperación.
+scenarios:
+  - title: Recuperación híbrida
+    input: 'Recuperador híbrido, primera pregunta de referencia, top 3 resultados.'
+    observation: Permanece disponible un resultado de política ordenado.
+  - title: Recuperación degradada
+    input: 'Recuperador degradado, misma pregunta y límite de 3 resultados.'
+    observation: La compuerta de recuperación bloquea la ruta.
+---
+## El problema
+
+Una respuesta de soporte puede citar un pasaje de política mal ordenado.
+
+**Quién lo usa:** Responsable de búsqueda de soporte interno.
+
+**La decisión:** Liberar o bloquear una configuración de recuperación para búsqueda interna de políticas.
+
+## El enfoque
+
+Elige recuperación híbrida o degradada, ordena pasajes locales e inspecciona el resultado principal y la compuerta.
+
+### Prueba la decisión
+
+**Recuperación híbrida:** Recuperador híbrido, primera pregunta de referencia, top 3 resultados. Permanece disponible un resultado de política ordenado.
+
+**Recuperación degradada:** Recuperador degradado, misma pregunta y límite de 3 resultados. La compuerta de recuperación bloquea la ruta.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. La misión también calcula una comparación simultánea con los datos ejecutados.
+
+## Decisiones de diseño
+
+Pasajes de política ordenados convergen en una compuerta de recuperación.
+
+Rankings por pregunta y calibración sobre un corpus local explícito.
+
+{/* recruiter-mission:start */}
+### Tu misión interactiva
+
+Carga recuperación vacía, inspecciona la misma pregunta y límite top 3, predice opcionalmente la compuerta local y revela la comparación final.
+
+La recuperación elegida y la referencia BM25 usan la misma pregunta, corpus y k. Precisión divide los espacios relevantes recuperados entre k; recall divide relevantes recuperados entre el conjunto relevante etiquetado. La recuperación degradada es un control negativo explícitamente vacío. Los empates se conservan. La compuerta local exige además recall de al menos 0.5; sin etiquetas relevantes, el resultado no es evaluable y nunca aprueba.
+
+**Por qué este enfoque:** BM25, TF-IDF y fusión locales hacen inspeccionable el cálculo sin credenciales. Una compuerta de una pregunta no certifica un lanzamiento; la calibración existente es referencia, no evidencia de esta ejecución.
+
+**Antes de producción:** Evaluar preguntas representativas etiquetadas, regresiones por segmento, calidad de citas, privacidad y latencia real antes de liberar cambios.
+
+Editar datos, elegir un escenario o reiniciar borra la predicción y los resultados anteriores. La comparación aparece al completar la reproducción; las demos principales no requieren cuenta ni llave.
+
+Este lote modifica la implementación. Las capturas e informes de navegador existentes documentan la etapa anterior. Capturas nuevas, interacción, móvil y rutas HTTP siguen pendientes por los bloqueos documentados. La aprobación visual previa cubre el piloto anterior de seis misiones, no este lote.
+{/* recruiter-mission:end */}
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Permite revisar evidencia ordenada antes de cambiar la ruta de búsqueda.
+
+**Límites:** Los rankings locales son ejemplos deterministas, no mediciones de relevancia con tráfico real de soporte. Estos prototipos de portafolio no afirman impacto medido en producción.

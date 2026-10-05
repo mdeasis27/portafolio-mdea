@@ -1,0 +1,75 @@
+---
+title: Business query translator
+slug: traductor
+summary: >-
+  Ask a supported question over a seeded local schema and inspect validated
+  results.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/traductor'
+liveUrl: 'https://traductor-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - text-to-sql
+  - guardrails
+  - hallucination
+  - safety
+  - validación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Business analyst
+businessDecision: Use a validated template or refuse the request.
+businessValue: Makes safe local data access understandable.
+visualMechanism: 'Question, schema template, and rows form a visible path.'
+scenarios:
+  - title: Customers
+    input: list customers
+    observation: A validated template returns rows.
+  - title: Unsupported
+    input: drop customers
+    observation: The local router refuses it.
+---
+## The problem
+
+Natural language questions can request unsafe data operations.
+
+**Who uses it:** Business analyst.
+
+**The decision:** Use a validated template or refuse the request.
+
+## The approach
+
+Choose a supported question, route it to a template, and inspect returned rows.
+
+### Try the decision
+
+**Customers:** list customers A validated template returns rows.
+
+**Unsupported:** drop customers The local router refuses it.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Question, schema template, and rows form a visible path.
+
+Question-to-template-to-validation flow; no arbitrary SQL execution or database is required.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Makes safe local data access understandable.
+
+**Limits:** Only local safe templates are available. These portfolio prototypes do not claim measured production impact.

@@ -1,0 +1,2976 @@
+{
+  "recordedAt": "2026-10-01T20:20:59.799062+00:00",
+  "repositoryCount": 22,
+  "testCount": 394,
+  "commands": [
+    {
+      "repository": "portafolio-mdea",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 22,
+      "commands": [
+        {
+          "command": "node --test scripts/portfolio-content.test.mjs scripts/ai-sync.test.mjs scripts/brand-sync.test.mjs scripts/lib/sync-kit.test.mjs scripts/lib/propagate.test.mjs scripts/lib/load-config.test.mjs design-system/demo/foundation.node-test.mjs",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "agente-cobranzas",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "agente-riesgo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 4,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "arbitro",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 12,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "asedio",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 23,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "bandera",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 9,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "compuerta",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 29,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "destilacion",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 21,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "doorman",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 8,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "ensayo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 14,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "escaneo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 12,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "evidencia",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 18,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "fabrica",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 8,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "grafo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 51,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "identidad-360",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 18,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "kyc-antifraude",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "mesa",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 40,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "radar-proveedores",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "traductor",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 44,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "veredicto",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 32,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "vigia",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 7,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "warmstart",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 13,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    }
+  ],
+  "browserComponents": [
+    {
+      "repository": "agente-cobranzas",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Standard contact\nBefore the priority boundary.",
+              "outcome": "Standard queue\n\nLocal policy determines priority and previews a message that is not sent."
+            },
+            {
+              "preset": "Priority account\nPast the policy boundary.",
+              "outcome": "Priority queue\n\nLocal policy determines priority and previews a message that is not sent."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Contacto estándar\nAntes del límite de prioridad.",
+              "outcome": "Cola estándar\n\nLa política local determina la prioridad y muestra un mensaje que no se envía."
+            },
+            {
+              "preset": "Cuenta prioritaria\nDespués del límite de política.",
+              "outcome": "Cola prioritaria\n\nLa política local determina la prioridad y muestra un mensaje que no se envía."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "agente-riesgo",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Clear case\nAll three gates permit progress.",
+              "outcome": "Proceed\n\nAll three gates satisfy local policy, so the case can proceed."
+            },
+            {
+              "preset": "Blocking signal\nScreening sends the case to stop.",
+              "outcome": "Stop\n\nThe screening signal blocks progress and requires a human decision."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Caso limpio\nLas tres compuertas permiten el avance.",
+              "outcome": "Continuar\n\nLas tres compuertas cumplen la política local y el caso puede continuar."
+            },
+            {
+              "preset": "Señal bloqueante\nEl screening envía el caso a detener.",
+              "outcome": "Detener\n\nLa señal de screening bloquea el avance y requiere una decisión humana."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "arbitro",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Consensus\nThree approve ballots at confidence 0.90, 0.80, 0.70; threshold 0.60.",
+              "outcome": "Decision resolved\n\n3/3 votes and confidence 0.80 at threshold 0.60."
+            },
+            {
+              "preset": "Disagreement\nApprove / deny / review at 0.90 / 0.55 / 0.55; threshold 0.80.",
+              "outcome": "Escalated to review\n\n1/3 votes and confidence 0.90 at threshold 0.80."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Consenso\nTres votos de aprobar con confianza 0.90, 0.80, 0.70; umbral 0.60.",
+              "outcome": "Decisión resuelta\n\n3/3 votos y confianza 0.80 con umbral 0.60."
+            },
+            {
+              "preset": "Desacuerdo\nAprobar / denegar / revisión con 0.90 / 0.55 / 0.55; umbral 0.80.",
+              "outcome": "Escalado a revisión\n\n1/3 votos y confianza 0.90 con umbral 0.80."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "asedio",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Hardened proxy\nJailbreak family against the hardened local target.",
+              "outcome": "Defense passed\n\n0 failures and 0 review cases for hardened."
+            },
+            {
+              "preset": "Vulnerable proxy\nThe same jailbreak family against the vulnerable local target.",
+              "outcome": "Exposure detected\n\n2 failures and 0 review cases for vulnerable."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Proxy endurecido\nFamilia jailbreak contra el objetivo local endurecido.",
+              "outcome": "Defensa aprobada\n\n0 fallos y 0 casos por revisar para hardened."
+            },
+            {
+              "preset": "Proxy vulnerable\nLa misma familia jailbreak contra el objetivo local vulnerable.",
+              "outcome": "Exposición detectada\n\n2 fallos y 0 casos por revisar para vulnerable."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "bandera",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Healthy variant\nTraffic stages advance",
+              "outcome": "Advance the rollout\n\nThe completed simulated stages meet the configured no-worse margin."
+            },
+            {
+              "preset": "Weak variant\nThe kill switch activates",
+              "outcome": "Kill switch activated\n\nA simulated stage breached the local no-worse rule, so later traffic is stopped."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Variante sana\nLas etapas avanzan",
+              "outcome": "Avanza el despliegue\n\nLas etapas simuladas completadas cumplen el margen configurado de no empeorar."
+            },
+            {
+              "preset": "Variante débil\nSe activa el apagado",
+              "outcome": "Interruptor de apagado activado\n\nUna etapa simulada incumplió la regla local de no empeorar, por lo que se detiene el tráfico posterior."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "compuerta",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Failover enabled\nPrimary outage from tick 8 to 20; fallback enabled, hedging disabled.",
+              "outcome": "Continuity activated\n\nProtected availability: 100%; baseline: 60%."
+            },
+            {
+              "preset": "Failover disabled\nSame outage from tick 8 to 20; fallback disabled.",
+              "outcome": "No alternate route\n\nProtected availability: 57%; baseline: 60%."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Failover activado\nCaída principal de tick 8 a 20; respaldo activado, hedging desactivado.",
+              "outcome": "Continuidad activada\n\nDisponibilidad protegida: 100%; base: 60%."
+            },
+            {
+              "preset": "Failover desactivado\nMisma caída de tick 8 a 20; respaldo desactivado.",
+              "outcome": "Sin ruta alternativa\n\nDisponibilidad protegida: 57%; base: 60%."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "destilacion",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Pilot volume\n120,000 requests: API",
+              "outcome": "Keep the API rate\n\nThe comparison assumes $6 per 1,000 requests and $1,800 monthly local capacity. Operations, maintenance and quality differences are excluded."
+            },
+            {
+              "preset": "Scale volume\n1,000,000 requests: local",
+              "outcome": "Plan local capacity\n\nThe comparison assumes $6 per 1,000 requests and $1,800 monthly local capacity. Operations, maintenance and quality differences are excluded."
+            }
+          ],
+          "localizedValidationError": "Invoice text is required.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Volumen piloto\n120,000 solicitudes: API",
+              "outcome": "Mantén la tarifa API\n\nLa comparación usa una tarifa supuesta de $6 por 1,000 solicitudes y $1,800 de capacidad local mensual. No incluye operación, mantenimiento ni diferencias de calidad."
+            },
+            {
+              "preset": "Volumen a escala\n1,000,000 solicitudes: local",
+              "outcome": "Planea capacidad local\n\nLa comparación usa una tarifa supuesta de $6 por 1,000 solicitudes y $1,800 de capacidad local mensual. No incluye operación, mantenimiento ni diferencias de calidad."
+            }
+          ],
+          "localizedValidationError": "Introduce texto de factura y un volumen mensual entero no negativo.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "doorman",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Policy on\nHostile document requesting an approval email; policy enabled.",
+              "outcome": "Action blocked\n\n2 safeguards prevented the external action."
+            },
+            {
+              "preset": "Benign summary without policy\nBenign document requesting a summary; policy disabled.",
+              "outcome": "Action permitted\n\nNo rule fired for this input."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Política activada\nDocumento hostil que pide enviar un correo de aprobación; política activada.",
+              "outcome": "Acción bloqueada\n\n2 salvaguardas evitaron la acción externa."
+            },
+            {
+              "preset": "Resumen benigno sin política\nDocumento benigno que pide un resumen; política desactivada.",
+              "outcome": "Acción permitida\n\nNo se activó una regla para esta entrada."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "ensayo",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Clear lift\nThe gate can advance",
+              "outcome": "Advance the change\n\nΔ 0.496, p 0.0000; the local gate is advance."
+            },
+            {
+              "preset": "Uncertain lift\nThe gate holds",
+              "outcome": "Hold the change\n\nΔ 0.000, p 1.0000; the local gate is hold."
+            }
+          ],
+          "localizedValidationError": "Provide finite score samples and an alpha between 0 and 1.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Lift claro\nLa compuerta puede avanzar",
+              "outcome": "Avanza el cambio\n\nΔ 0.496, p 0.0000; la compuerta local indica avanzar."
+            },
+            {
+              "preset": "Lift incierto\nLa compuerta mantiene",
+              "outcome": "Mantén el cambio\n\nΔ 0.000, p 1.0000; la compuerta local indica mantener."
+            }
+          ],
+          "localizedValidationError": "Introduce al menos dos puntuaciones finitas por muestra y un alfa entre 0 y 1.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "escaneo",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Valid receipt\nChecks pass",
+              "outcome": "Hold for review\n\nA marked field remains unchanged for review."
+            },
+            {
+              "preset": "Broken account\nRequires review",
+              "outcome": "Hold for review\n\nA marked field remains unchanged for review."
+            }
+          ],
+          "localizedValidationError": "OCR text is required.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Recibo válido\nLas comprobaciones pasan",
+              "outcome": "Retener para revisión\n\nUn campo marcado permanece sin cambios para revisión."
+            },
+            {
+              "preset": "Cuenta dañada\nRequiere revisión",
+              "outcome": "Retener para revisión\n\nUn campo marcado permanece sin cambios para revisión."
+            }
+          ],
+          "localizedValidationError": "Introduce texto OCR para inspeccionar el documento.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "evidencia",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Supported claim\nA local passage is verifiable.",
+              "outcome": "Evidence-backed answer\n\nSupport is available in the help center. [local-1]"
+            },
+            {
+              "preset": "Missing evidence\nStrict mode refuses the claim.",
+              "outcome": "Evidence missing: review required\n\nI cannot support that claim from this local corpus."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Afirmación sustentada\nHay un pasaje local verificable.",
+              "outcome": "Respuesta respaldada\n\nEl soporte está disponible en el centro de ayuda. [local-1] Los cambios de facturación requieren aprobación. [local-2]"
+            },
+            {
+              "preset": "Evidencia ausente\nEl modo estricto rechaza la afirmación.",
+              "outcome": "Falta evidencia: requiere revisión\n\nEl corpus no sustenta la afirmación. La demo rechaza la respuesta en lugar de inventar información."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "fabrica",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Repeated logs\nDeduplication removes similar logs",
+              "outcome": "Review selected cases\n\n2 cases represent 2 of 2 intents."
+            },
+            {
+              "preset": "Diverse intents\nCoverage spans more labels",
+              "outcome": "Review selected cases\n\n3 cases represent 3 of 3 intents."
+            }
+          ],
+          "localizedValidationError": "Provide a 0–1 threshold and positive whole sample size.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Registros repetidos\nLa deduplicación elimina registros similares",
+              "outcome": "Revisa casos seleccionados\n\n2 casos representan 2 de 2 intenciones."
+            },
+            {
+              "preset": "Intenciones diversas\nLa cobertura abarca más etiquetas",
+              "outcome": "Revisa casos seleccionados\n\n3 casos representan 3 de 3 intenciones."
+            }
+          ],
+          "localizedValidationError": "Usa un umbral de 0 a 1 y un tamaño de muestra entero positivo.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "grafo",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Supported path\nCommitted hops exist.",
+              "outcome": "Grounded answer\n\nMexico"
+            },
+            {
+              "preset": "Outside ontology\nThe question is refused.",
+              "outcome": "Out of scope\n\nThis question is outside the committed ontology."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Ruta sustentada\nHay saltos confirmados.",
+              "outcome": "Respuesta sustentada\n\nLa respuesta une las relaciones visibles arriba; abre la comparación para inspeccionar el texto original."
+            },
+            {
+              "preset": "Fuera de ontología\nSe rechaza la pregunta.",
+              "outcome": "Fuera de alcance\n\nNo existe una ruta soportada en la ontología local."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "identidad-360",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Consistent profile\nRegistry and document agree.",
+              "outcome": "Profile assembled\n\nRegistry and document were assembled into the local profile at the shown coverage."
+            },
+            {
+              "preset": "Contradiction\nA signal separates the case for review.",
+              "outcome": "Analyst review\n\nThe source conflict separates the profile and sends it to an analyst."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Perfil consistente\nRegistro y documento coinciden.",
+              "outcome": "Perfil ensamblado\n\nRegistro y documento se integraron en el perfil local con la cobertura mostrada."
+            },
+            {
+              "preset": "Contradicción\nUna señal separa el caso para revisión.",
+              "outcome": "Revisión analítica\n\nLa contradicción entre fuentes separa el perfil y lo envía a una persona analista."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "kyc-antifraude",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Clean document\nThe route proceeds.",
+              "outcome": "Proceed\n\nComplete clean fictional scenario may proceed."
+            },
+            {
+              "preset": "Flag detected\nScreening stops the route.",
+              "outcome": "Reject\n\nA local screening flag rejects the scenario and records a human-review reason."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Documento limpio\nLa ruta continúa.",
+              "outcome": "Continuar\n\nLa ruta se calcula con señales locales ficticias."
+            },
+            {
+              "preset": "Señal detectada\nEl screening detiene la ruta.",
+              "outcome": "Rechazar\n\nLa ruta se calcula con señales locales ficticias."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "mesa",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Enough budget\nAssess identity risk controls: 12 steps, 10,000 tokens, one review allowance.",
+              "outcome": "Termination: approved\n\nSimulated proxy latency is 2100 ms; playback does not measure a live model."
+            },
+            {
+              "preset": "Minimal budget\nSame task with one step and 100 tokens.",
+              "outcome": "Termination: budget exhausted: steps\n\nSimulated proxy latency is 284 ms; playback does not measure a live model."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Presupuesto suficiente\nEvaluar controles de riesgo de identidad: 12 pasos, 10 000 tokens, una revisión permitida.",
+              "outcome": "Terminación: aprobado\n\nLa latencia de proxy simulada es 2100 ms; la reproducción no mide un modelo en vivo."
+            },
+            {
+              "preset": "Presupuesto mínimo\nMisma tarea con un paso y 100 tokens.",
+              "outcome": "Terminación: límite de pasos alcanzado\n\nLa latencia de proxy simulada es 284 ms; la reproducción no mide un modelo en vivo."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "radar-proveedores",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Resolved evidence\nMonitoring can continue.",
+              "outcome": "Proceed\n\nEvidence is resolved; monitoring can continue."
+            },
+            {
+              "preset": "Critical signal\nAn investigation opens.",
+              "outcome": "Investigate\n\nThe high-impact signal keeps analyst tasks open."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Evidencia resuelta\nSe conserva el monitoreo.",
+              "outcome": "Continuar\n\nLa evidencia está resuelta; el monitoreo puede continuar."
+            },
+            {
+              "preset": "Señal crítica\nSe abre una investigación.",
+              "outcome": "Investigar\n\nLa señal de alto impacto conserva tareas abiertas para la persona analista."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "traductor",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Supported question\nReturns local rows",
+              "outcome": "Use the validated local result\n\n2 local rows came from list_all."
+            },
+            {
+              "preset": "Refused request\nNo template runs",
+              "outcome": "Use the validated local result\n\n2 local rows came from list_all."
+            }
+          ],
+          "localizedValidationError": "A question is required.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Pregunta compatible\nDevuelve filas locales",
+              "outcome": "Usa el resultado local validado\n\n2 filas locales provienen de list_all."
+            },
+            {
+              "preset": "Solicitud rechazada\nNo se ejecuta plantilla",
+              "outcome": "Usa el resultado local validado\n\n2 filas locales provienen de list_all."
+            }
+          ],
+          "localizedValidationError": "Introduce una pregunta para interpretarla localmente.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "veredicto",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Hybrid retrieval\nHybrid retriever, first benchmark question, top 3 results.",
+              "outcome": "Release allowed\n\nhybrid changed 0 points against BM25."
+            },
+            {
+              "preset": "Degraded retrieval\nDegraded retriever, same question and top 3 limit.",
+              "outcome": "Release blocked\n\ndegraded changed -100 points against BM25."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Recuperación híbrida\nRecuperador híbrido, primera pregunta de referencia, top 3 resultados.",
+              "outcome": "Liberación permitida\n\nLa configuración hybrid cambió 0 puntos frente a BM25."
+            },
+            {
+              "preset": "Recuperación degradada\nRecuperador degradado, misma pregunta y límite de 3 resultados.",
+              "outcome": "Liberación bloqueada\n\nLa configuración degraded cambió -100 puntos frente a BM25."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "vigia",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Known rename\nA diff is proposed",
+              "outcome": "Review the proposed diff\n\nThe rename map produced a local proposal; no file was changed."
+            },
+            {
+              "preset": "Unmapped removal\nA reviewer is required",
+              "outcome": "Keep this reference in review\n\nNo rename map supports this reference, so it remains a human review item."
+            }
+          ],
+          "localizedValidationError": "Source and documentation text are required.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Renombre conocido\nSe propone un diff",
+              "outcome": "Revisa el diff propuesto\n\nEl mapa de renombres produjo una propuesta local; no se cambió ningún archivo."
+            },
+            {
+              "preset": "Eliminación sin mapa\nSe requiere un revisor",
+              "outcome": "Mantén esta referencia en revisión\n\nNingún mapa de renombres respalda esta referencia, por lo que permanece para revisión humana."
+            }
+          ],
+          "localizedValidationError": "Introduce texto fuente y documentación para preparar la vista previa.",
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "repository": "warmstart",
+      "scope": "Real React component with controlled locale; Next routes not tested.",
+      "checks": [
+        {
+          "locale": "en",
+          "scenarios": [
+            {
+              "preset": "Prompt version v1\n48 generated queries, similarity 0.65, prompt version v1.",
+              "outcome": "Cache balance ready\n\n0 entries invalidated; local cost 15¢ versus 48¢."
+            },
+            {
+              "preset": "Prompt version v2\nSame 48 queries and similarity; prompt changes to v2.",
+              "outcome": "Cache balance ready\n\n16 entries invalidated; local cost 23¢ versus 48¢."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        },
+        {
+          "locale": "es",
+          "scenarios": [
+            {
+              "preset": "Prompt versión v1\n48 consultas generadas, similitud 0.65, versión de prompt v1.",
+              "outcome": "Balance de caché listo\n\n0 entradas invalidadas; coste local 15¢ frente a 48¢."
+            },
+            {
+              "preset": "Prompt versión v2\nMismas 48 consultas y similitud; el prompt cambia a v2.",
+              "outcome": "Balance de caché listo\n\n16 entradas invalidadas; coste local 23¢ frente a 48¢."
+            }
+          ],
+          "mobileNoOverflow": true,
+          "reducedMotion": true,
+          "keyboard": true,
+          "noRequests": true,
+          "sceneChangesWithScenario": true,
+          "editingClearsPresetAndTrace": true,
+          "resetRestoresFirstPreset": true,
+          "cancelControlPresent": true,
+          "presetRestoresAllInputs": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "assets": [
+    {
+      "repository": "agente-cobranzas",
+      "file": "cover.png",
+      "sha256": "a742efd92ec002be579f63a25e79c6f646f69ae44feb2a8f8161344d626c0569",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "demo.png",
+      "sha256": "49d0a2961d4e6cc7485c37f5a25dbd7ff106e3dc758d4352b88c40b5fb0251b1",
+      "width": 1440,
+      "height": 1387
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "demo.es.png",
+      "sha256": "2e61b5f863012793a0947a4ddb682b62f5d9cf6b02259a8a2d81d5f5face162a",
+      "width": 1440,
+      "height": 1413
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "demo.mobile.png",
+      "sha256": "73ea3fd11ef6e98f9dfa990e27564365b872c792450e341fb406c13021221a14",
+      "width": 390,
+      "height": 2458
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "scenario-a.png",
+      "sha256": "bf5c9689502d70cabaa5a8a1a20a0c5ed66614052c2889f838ac7eebf43738f5",
+      "width": 768,
+      "height": 562
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "scenario-b.png",
+      "sha256": "2ce9c899ad9f76a2b7982c6b1cff7f54cc12b1ec790de8700f002d44566e85b9",
+      "width": 768,
+      "height": 562
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "scenario-a.es.png",
+      "sha256": "293932bc8bf1a61112e61ee246cfab4e33c5ec31d30e072f2d8f4f85b28822f6",
+      "width": 768,
+      "height": 576
+    },
+    {
+      "repository": "agente-cobranzas",
+      "file": "scenario-b.es.png",
+      "sha256": "12f04462a9d132485ea33630d2c076c8986bb71311c6e4a44b33aadaceda5994",
+      "width": 768,
+      "height": 576
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "cover.png",
+      "sha256": "386b9bb8131b931f8aa9b469d569c757f56e31faabc101dcd1b98837a25e170e",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "demo.png",
+      "sha256": "086012dd07e4e7edd89f40d48c5799b1b4471e32860c30acea2e214b3f86e100",
+      "width": 1440,
+      "height": 1343
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "demo.es.png",
+      "sha256": "641928446f4dff4c2c3911e09acd7bb43694ae121c2e1a85f713d698c527fbf6",
+      "width": 1440,
+      "height": 1355
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "demo.mobile.png",
+      "sha256": "5e1f3eaab6f978236c750dbbc9f762fb9865ce68ffabfb875fed41928b846f42",
+      "width": 390,
+      "height": 2213
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "scenario-a.png",
+      "sha256": "72482da994b7abff937af79049c056aea94bd060b5448c3fd415e229d36e5cd6",
+      "width": 758,
+      "height": 532
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "scenario-b.png",
+      "sha256": "1d05b05b8fa24f02f5ed70b1c7ca1193cebed4d3db07bfebdd2e1db9a5255be5",
+      "width": 758,
+      "height": 532
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "scenario-a.es.png",
+      "sha256": "f8343abf8e19caab74a94ab15a6239ad665962f308dac47e736f3cb2d0add378",
+      "width": 758,
+      "height": 532
+    },
+    {
+      "repository": "agente-riesgo",
+      "file": "scenario-b.es.png",
+      "sha256": "425577a5ffac8a596a6bd80f2e1d885608a04452a15c1fd5baa7db81ded1e723",
+      "width": 758,
+      "height": 532
+    },
+    {
+      "repository": "arbitro",
+      "file": "cover.png",
+      "sha256": "a3e87bf63a02ebfe52f09f44c3f3817eaa7e75a4c6a05de9c84b901e5f424bb9",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "arbitro",
+      "file": "demo.png",
+      "sha256": "17ec89db9db7f8dbf20a378587545c8a3791c8daa08b565550ad47e1c2c2b8e4",
+      "width": 1440,
+      "height": 1430
+    },
+    {
+      "repository": "arbitro",
+      "file": "demo.es.png",
+      "sha256": "1bafafc885e3b8e18b0c68b173cb3bd76df8e78e56298407c12d676c1c379377",
+      "width": 1440,
+      "height": 1462
+    },
+    {
+      "repository": "arbitro",
+      "file": "demo.mobile.png",
+      "sha256": "806d387561462519d52c2b21a73feac0fe7fcd32b18eaf99db7ee8a24d353e52",
+      "width": 390,
+      "height": 2236
+    },
+    {
+      "repository": "arbitro",
+      "file": "scenario-a.png",
+      "sha256": "e219b63b0eda60f4dc0f7a570817703448a6289fcafd915ce6cacf43399c57e7",
+      "width": 500,
+      "height": 488
+    },
+    {
+      "repository": "arbitro",
+      "file": "scenario-b.png",
+      "sha256": "2949a55a7daf308c9b3dcbc4ad9a8af941a59a58c4978f36966e7c3037d26da0",
+      "width": 500,
+      "height": 488
+    },
+    {
+      "repository": "arbitro",
+      "file": "scenario-a.es.png",
+      "sha256": "1e3c53f92f45656d2bc8636f04ae9ee11375a8080c2e12471c53ccccbec458cf",
+      "width": 500,
+      "height": 488
+    },
+    {
+      "repository": "arbitro",
+      "file": "scenario-b.es.png",
+      "sha256": "480d6db5ef65786230652ac35cb93fe89da3750c6ade35d3d81da7f34a8a5ed7",
+      "width": 500,
+      "height": 488
+    },
+    {
+      "repository": "asedio",
+      "file": "cover.png",
+      "sha256": "b3b6c324573c2a764a93fa34d0b889d4069aca8de4da43e417b142421b7a09fc",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "asedio",
+      "file": "demo.png",
+      "sha256": "5984ce21ace8689a9180ca6c38215ce7a15fdc730f74dd2e6bb7463f67502749",
+      "width": 1440,
+      "height": 1244
+    },
+    {
+      "repository": "asedio",
+      "file": "demo.es.png",
+      "sha256": "976178f1c0f5ef87fd8464325585c317fde1a78e5ae15951185312c8a5f25caa",
+      "width": 1440,
+      "height": 1288
+    },
+    {
+      "repository": "asedio",
+      "file": "demo.mobile.png",
+      "sha256": "0bf210122b6390b653d8616774d19213c386700b8558ad8f7b797c977fe63807",
+      "width": 390,
+      "height": 2065
+    },
+    {
+      "repository": "asedio",
+      "file": "scenario-a.png",
+      "sha256": "d2680dc8e45ed3c7206b63b73c146f956b864046d0ad1d440309f485f24e0929",
+      "width": 500,
+      "height": 326
+    },
+    {
+      "repository": "asedio",
+      "file": "scenario-b.png",
+      "sha256": "2fd5db0961c6f1157e0932f5b739a55d71b8f0456c16095926d9cc50966fa819",
+      "width": 500,
+      "height": 326
+    },
+    {
+      "repository": "asedio",
+      "file": "scenario-a.es.png",
+      "sha256": "c374736e32fd61f4074425420c3c75b6c409fd69af652d46fd4180c3f0ea69cd",
+      "width": 500,
+      "height": 326
+    },
+    {
+      "repository": "asedio",
+      "file": "scenario-b.es.png",
+      "sha256": "7e72fc971f0e4ff37f5e4b085c0fd31eb526b014d7b54a0af95adc07b8b2f3e6",
+      "width": 500,
+      "height": 326
+    },
+    {
+      "repository": "bandera",
+      "file": "cover.png",
+      "sha256": "2094853e2a3892963de4c45a1f1672f93b19602c3b7c194dd3f95b88381e9445",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "bandera",
+      "file": "demo.png",
+      "sha256": "3dd9645ccae6149dcb45ef601da319748b911a5d20604349fcdb07320b2faec4",
+      "width": 1440,
+      "height": 1633
+    },
+    {
+      "repository": "bandera",
+      "file": "demo.es.png",
+      "sha256": "63d252ebf78c4ab09384e32699298beee9611b5dd0edd30c6bbb4cb86142989e",
+      "width": 1440,
+      "height": 1693
+    },
+    {
+      "repository": "bandera",
+      "file": "demo.mobile.png",
+      "sha256": "a191758fdce0cbbd53766e2d1e49e9c16fc35f60054ab6c69a8ae607c9b97d62",
+      "width": 390,
+      "height": 2263
+    },
+    {
+      "repository": "bandera",
+      "file": "scenario-a.png",
+      "sha256": "7c79361806d7e5475b10dd18212809f72f6ac68951d2fc317ee865bccdae7d06",
+      "width": 716,
+      "height": 507
+    },
+    {
+      "repository": "bandera",
+      "file": "scenario-b.png",
+      "sha256": "1d539144999c894d8fab4532d41e18e4399b119e69f5c48b4c130943b5d46abc",
+      "width": 716,
+      "height": 507
+    },
+    {
+      "repository": "bandera",
+      "file": "scenario-a.es.png",
+      "sha256": "dd0adf744e29d6c50b826226795db7bbeb57642cbb4c767863a3792f81eec62e",
+      "width": 716,
+      "height": 507
+    },
+    {
+      "repository": "bandera",
+      "file": "scenario-b.es.png",
+      "sha256": "bdefc30813a15d48fc0f4e13b7cdb0250d099a78de07da9b3a0a2517cf7993e0",
+      "width": 716,
+      "height": 535
+    },
+    {
+      "repository": "compuerta",
+      "file": "cover.png",
+      "sha256": "e0de8037c44d96a0b9a6f96c2d693eec0273a451c19be6c3bc39af234e99749e",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "compuerta",
+      "file": "demo.png",
+      "sha256": "16ac7b7db18b54d6a945fdd435c565d20cd2f53098ee27849dc991796ce5e5a7",
+      "width": 1440,
+      "height": 1612
+    },
+    {
+      "repository": "compuerta",
+      "file": "demo.es.png",
+      "sha256": "4066c6121b835e89b0e8b419c2ea101c6f4cbd794b99094e1efc298bab63b28a",
+      "width": 1440,
+      "height": 1632
+    },
+    {
+      "repository": "compuerta",
+      "file": "demo.mobile.png",
+      "sha256": "fd43964c220d955c11846197333e63c890879841888e8abd63cd424a75c373dd",
+      "width": 390,
+      "height": 2355
+    },
+    {
+      "repository": "compuerta",
+      "file": "scenario-a.png",
+      "sha256": "7fc393358e283c1041f7f8066cab51e6ce84d95d30773d1faeb4bfe0bdba4a98",
+      "width": 635,
+      "height": 468
+    },
+    {
+      "repository": "compuerta",
+      "file": "scenario-b.png",
+      "sha256": "71c9e4f6c7e35c837a8bd375db73d8881cd82ff5ea331a837ccdf873b277f6d1",
+      "width": 635,
+      "height": 468
+    },
+    {
+      "repository": "compuerta",
+      "file": "scenario-a.es.png",
+      "sha256": "e9b5b2437b5cd0565ff95574de0293616ef93bfe4e180d4f06e7d292d0e36b9e",
+      "width": 635,
+      "height": 468
+    },
+    {
+      "repository": "compuerta",
+      "file": "scenario-b.es.png",
+      "sha256": "ff7f8441e4c49448cb0120c3157ba2b0fa7ff4afda30a29bfb8a670bc4632e14",
+      "width": 635,
+      "height": 468
+    },
+    {
+      "repository": "destilacion",
+      "file": "cover.png",
+      "sha256": "2c082f1087d6383dacfc0f7570561604579d6dfa2ce6fc8264bbdc3c3c9649d6",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "destilacion",
+      "file": "demo.png",
+      "sha256": "5b91bc0a05dfb35f82953ae6c97afd3cfa5f7c26a1bb6e838fe4a0bb03d881b4",
+      "width": 1440,
+      "height": 1658
+    },
+    {
+      "repository": "destilacion",
+      "file": "demo.es.png",
+      "sha256": "885857230bd5557083df3906663a406c759a811b7ed350b0502d81b7ed2b6529",
+      "width": 1440,
+      "height": 1658
+    },
+    {
+      "repository": "destilacion",
+      "file": "demo.mobile.png",
+      "sha256": "be5848e0b24ed4270c2f97a79ba34b3972a6ee0f03c5aa480d15494da9a610e4",
+      "width": 390,
+      "height": 2772
+    },
+    {
+      "repository": "destilacion",
+      "file": "scenario-a.png",
+      "sha256": "b3136fd595a2f2d44efbb6882c41672cb1d532d5716fb0ab362b5c638d92e9ca",
+      "width": 716,
+      "height": 596
+    },
+    {
+      "repository": "destilacion",
+      "file": "scenario-b.png",
+      "sha256": "69e374f265bbe3914da79f69f4d25111902027faf6388d30b67b6843bdb83b99",
+      "width": 716,
+      "height": 596
+    },
+    {
+      "repository": "destilacion",
+      "file": "scenario-a.es.png",
+      "sha256": "204b859185d75b2f1c7cb22fe5cc204b975c4c4fe3d912b1cc3cb8d63395659d",
+      "width": 716,
+      "height": 596
+    },
+    {
+      "repository": "destilacion",
+      "file": "scenario-b.es.png",
+      "sha256": "d4c4e665a69dee8da67645eb56575237dc3c709412d0654389b4ed0c466d6723",
+      "width": 716,
+      "height": 596
+    },
+    {
+      "repository": "doorman",
+      "file": "cover.png",
+      "sha256": "cc9e3d50eb2e4775d730d2b63b59e96b465dffa19343b5350f6fab5df5940d8a",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "doorman",
+      "file": "demo.png",
+      "sha256": "ea8490df9775fc6c19c389ac1e22d1316d0f68cb2971656458698224de241b3f",
+      "width": 1440,
+      "height": 1568
+    },
+    {
+      "repository": "doorman",
+      "file": "demo.es.png",
+      "sha256": "cccc3067094c820b70992e4aa314bb5e5b900f752a1ecce8a1dc4af19383d5bf",
+      "width": 1440,
+      "height": 1640
+    },
+    {
+      "repository": "doorman",
+      "file": "demo.mobile.png",
+      "sha256": "7b1e02dcecf6214e4ef62c0b8268f67520bb679ac101a61d41bcc214d0c4aa0e",
+      "width": 390,
+      "height": 2491
+    },
+    {
+      "repository": "doorman",
+      "file": "scenario-a.png",
+      "sha256": "86574251a35acb0da1fbbddb5071e7349a1db548676f103919674515adaabda2",
+      "width": 458,
+      "height": 508
+    },
+    {
+      "repository": "doorman",
+      "file": "scenario-b.png",
+      "sha256": "7a8d0ff81ddecfcfc907e46991a3bc13f5aef5af45a989d8a0e9b9ee4c05f3fe",
+      "width": 458,
+      "height": 508
+    },
+    {
+      "repository": "doorman",
+      "file": "scenario-a.es.png",
+      "sha256": "a592ed4f1d3b9455b0d94c410c63be7b1ce9cbc3b9d578ef38012f219bb1055f",
+      "width": 458,
+      "height": 508
+    },
+    {
+      "repository": "doorman",
+      "file": "scenario-b.es.png",
+      "sha256": "b26f7358333e5616677cac587a94a2f1a31371155f35595070d780ab8699df1f",
+      "width": 458,
+      "height": 508
+    },
+    {
+      "repository": "ensayo",
+      "file": "cover.png",
+      "sha256": "3fd6deb014a4c5d6819c66d0663204489d4899e86d87994886eb0f97ceae2ece",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "ensayo",
+      "file": "demo.png",
+      "sha256": "8b9927af8936d846044a4ebff3266874de8fa79b715b8ce2adae31ab605cd0b6",
+      "width": 1440,
+      "height": 1613
+    },
+    {
+      "repository": "ensayo",
+      "file": "demo.es.png",
+      "sha256": "eee9dcd7896a24b7a13a805d3edf21975b88cb853dbd91c08bb4b5f79c964749",
+      "width": 1440,
+      "height": 1613
+    },
+    {
+      "repository": "ensayo",
+      "file": "demo.mobile.png",
+      "sha256": "e724fa88d94165de153acfba1fe24e44851af01abaf9179877e0ea651950cf45",
+      "width": 390,
+      "height": 2354
+    },
+    {
+      "repository": "ensayo",
+      "file": "scenario-a.png",
+      "sha256": "2c83ebe96eb358abb05014db1a3e5a784d5cd2881719d8693cd8b9110af2fd40",
+      "width": 716,
+      "height": 491
+    },
+    {
+      "repository": "ensayo",
+      "file": "scenario-b.png",
+      "sha256": "d078243b0917dfac9c4f5bc5201a090cc139adecd5f92d6e40c9683acfe6ca24",
+      "width": 716,
+      "height": 491
+    },
+    {
+      "repository": "ensayo",
+      "file": "scenario-a.es.png",
+      "sha256": "6ced5b44db065394d56896488687e7c73e2a8eb3a836fb72812e4e17d3f14492",
+      "width": 716,
+      "height": 491
+    },
+    {
+      "repository": "ensayo",
+      "file": "scenario-b.es.png",
+      "sha256": "a866e2a7a45a2e11a4e9fad6713783038f783e3bb9c32f2ac267f7aea7bda016",
+      "width": 716,
+      "height": 491
+    },
+    {
+      "repository": "escaneo",
+      "file": "cover.png",
+      "sha256": "a4f0bd6804f6739147a79120e86a29849b8ad6b15d42bc1897ba7fd17ed2b74b",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "escaneo",
+      "file": "demo.png",
+      "sha256": "cc5cdc0140f0327ea430887af7ad26f296722df971355ea9ca021bafca8e222c",
+      "width": 1440,
+      "height": 1655
+    },
+    {
+      "repository": "escaneo",
+      "file": "demo.es.png",
+      "sha256": "31c1af71439badc7c5ad2aa2d48c214113fcb06c7f24a5c2a1335ad7d16f7870",
+      "width": 1440,
+      "height": 1697
+    },
+    {
+      "repository": "escaneo",
+      "file": "demo.mobile.png",
+      "sha256": "8c1224afb890677d6942a1a5fc6066b3b9c4e893604a50cc18837e7e96304b1e",
+      "width": 390,
+      "height": 2330
+    },
+    {
+      "repository": "escaneo",
+      "file": "scenario-a.png",
+      "sha256": "eeb25f330ce959acf27ca42332900aa19fbf3b089e615d9c727bd1ca532e393b",
+      "width": 828,
+      "height": 604
+    },
+    {
+      "repository": "escaneo",
+      "file": "scenario-b.png",
+      "sha256": "72d1d0200338fe2d54aa24094e616ef50c40a7a4662370d72f99bbed949e9055",
+      "width": 828,
+      "height": 604
+    },
+    {
+      "repository": "escaneo",
+      "file": "scenario-a.es.png",
+      "sha256": "224c5863c8420cd9d124e386a56ab9c0b209e46602ba3267ad8a65510203968b",
+      "width": 828,
+      "height": 604
+    },
+    {
+      "repository": "escaneo",
+      "file": "scenario-b.es.png",
+      "sha256": "0103f295b60a9a7c228a0fe9579a6943005ac67ce0837dcc2b5f7f806dd01818",
+      "width": 828,
+      "height": 604
+    },
+    {
+      "repository": "evidencia",
+      "file": "cover.png",
+      "sha256": "29cc00ae5576eb22d2b453faa467ac57bfd468f804b4d4424a1f7dafe2269086",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "evidencia",
+      "file": "demo.png",
+      "sha256": "2d35a418b1a2c10cf64e730abfa98b518c8a8c97cfd3570a69545bdeef1d4549",
+      "width": 1440,
+      "height": 1472
+    },
+    {
+      "repository": "evidencia",
+      "file": "demo.es.png",
+      "sha256": "4c143cbc2e0e36adf6256b611e661656e4dc65230edd0bdb5a01669849ec2b06",
+      "width": 1440,
+      "height": 1554
+    },
+    {
+      "repository": "evidencia",
+      "file": "demo.mobile.png",
+      "sha256": "0a19d4a76d6af5a97b84d0476dc35263f3aaa3c23fb20367e9dc0fb21857a5bb",
+      "width": 390,
+      "height": 2512
+    },
+    {
+      "repository": "evidencia",
+      "file": "scenario-a.png",
+      "sha256": "24a95f62ed4ae0ee3db9636165af73b0af4864a0786c3307d903bc2691a5bc89",
+      "width": 728,
+      "height": 614
+    },
+    {
+      "repository": "evidencia",
+      "file": "scenario-b.png",
+      "sha256": "c12c9967fc8a0d347fd9a2ee25cf8c25f20e419654369acd920304b20afe7bc1",
+      "width": 728,
+      "height": 568
+    },
+    {
+      "repository": "evidencia",
+      "file": "scenario-a.es.png",
+      "sha256": "9911b09b40a542f2beabf8b8a07f89c11fd4daa86d33e3000fac2b8d2bc73b81",
+      "width": 728,
+      "height": 696
+    },
+    {
+      "repository": "evidencia",
+      "file": "scenario-b.es.png",
+      "sha256": "b678d5358c3784db3b6b30b4554afafd5ae7af148a56aaf1b2f909f8a796f91d",
+      "width": 728,
+      "height": 668
+    },
+    {
+      "repository": "fabrica",
+      "file": "cover.png",
+      "sha256": "3838bc1fce96e01003c8a18ae281910fdc9f60b70c6fa8116817498eb904549d",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "fabrica",
+      "file": "demo.png",
+      "sha256": "9990742c2ea769f4c0db2b48db32cc35b9c7a44864c848ddf4ebb1cc5d1eb1b7",
+      "width": 1440,
+      "height": 1655
+    },
+    {
+      "repository": "fabrica",
+      "file": "demo.es.png",
+      "sha256": "1c0f0fa4af9fd8c41633d0559d35fae14639267619d9ff0e6bd46f8ba2c9f0bd",
+      "width": 1440,
+      "height": 1655
+    },
+    {
+      "repository": "fabrica",
+      "file": "demo.mobile.png",
+      "sha256": "e270152e808ac418f8aa2f787f52d936d729547c37c008bc5456b4a2130964f6",
+      "width": 390,
+      "height": 2466
+    },
+    {
+      "repository": "fabrica",
+      "file": "scenario-a.png",
+      "sha256": "a2c63d8568671646f608a4c7d8a4648352e0b10a9ef32396295327ac1d95d935",
+      "width": 716,
+      "height": 594
+    },
+    {
+      "repository": "fabrica",
+      "file": "scenario-b.png",
+      "sha256": "c43650f6d9c0812ccda329df49a0910c998d8d51576c5b09125d078658a017b7",
+      "width": 716,
+      "height": 594
+    },
+    {
+      "repository": "fabrica",
+      "file": "scenario-a.es.png",
+      "sha256": "9b39749065eeb78da51e42c618ba52b582fb908c684142db0274fb04e994e405",
+      "width": 716,
+      "height": 594
+    },
+    {
+      "repository": "fabrica",
+      "file": "scenario-b.es.png",
+      "sha256": "e807e4b9da47730e4d2ca4fcd7610e5e67ecae5a344ba8a94f8aaf69d4ca89d8",
+      "width": 716,
+      "height": 594
+    },
+    {
+      "repository": "grafo",
+      "file": "cover.png",
+      "sha256": "8564e889a7f33de876876e86865f3433457bb89d996b74914bfb3be055627f4b",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "grafo",
+      "file": "demo.png",
+      "sha256": "bbf52cd5719afda86339ac17a72e8c3a58710fee678418238ca0c379759777a5",
+      "width": 1440,
+      "height": 1364
+    },
+    {
+      "repository": "grafo",
+      "file": "demo.es.png",
+      "sha256": "8321eccf3d9cc3cb6099e4afa010bbc7109ec5774fc1c77680821d76af8016d6",
+      "width": 1440,
+      "height": 1376
+    },
+    {
+      "repository": "grafo",
+      "file": "demo.mobile.png",
+      "sha256": "ab255971866513abc4d226fbc72a37ec22ecc49af7d3e29b79f9b592266a1ed2",
+      "width": 390,
+      "height": 2070
+    },
+    {
+      "repository": "grafo",
+      "file": "scenario-a.png",
+      "sha256": "2c49bdc02aebca01da1f6481d63a1d9b0adbe64e3964db14bb70be966eb3984e",
+      "width": 748,
+      "height": 597
+    },
+    {
+      "repository": "grafo",
+      "file": "scenario-b.png",
+      "sha256": "973d51e5762366a285fccaaf2d12aa76285201cb75a621e9ac46b65261631b2c",
+      "width": 748,
+      "height": 471
+    },
+    {
+      "repository": "grafo",
+      "file": "scenario-a.es.png",
+      "sha256": "af3c4ae9e0ba967cfa4bf390cfc254f8ad2108191f38096d6c307e2620c318b3",
+      "width": 748,
+      "height": 597
+    },
+    {
+      "repository": "grafo",
+      "file": "scenario-b.es.png",
+      "sha256": "375b0785cacd30acf522922506fc23ac20196a9a41120a2da72b3a5e35e69d12",
+      "width": 748,
+      "height": 471
+    },
+    {
+      "repository": "identidad-360",
+      "file": "cover.png",
+      "sha256": "344e4d723cc67ebaa9902566290a9a60787a58ad0286b120bb772d5cf3335ae8",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "identidad-360",
+      "file": "demo.png",
+      "sha256": "6eb922fb76d2fc9db68f31f34276c00c508f6b8ef2dc492b6fd6ada5bc5affa2",
+      "width": 1440,
+      "height": 1304
+    },
+    {
+      "repository": "identidad-360",
+      "file": "demo.es.png",
+      "sha256": "51b624cd62ce77dd078e722b929ffce65c825af4985e39d8a8aaed312faf6ecf",
+      "width": 1440,
+      "height": 1316
+    },
+    {
+      "repository": "identidad-360",
+      "file": "demo.mobile.png",
+      "sha256": "bee75f48c24ed514b726127ad43e6a73d0a07c036ed5bbb45f949d267cf8258f",
+      "width": 390,
+      "height": 1934
+    },
+    {
+      "repository": "identidad-360",
+      "file": "scenario-a.png",
+      "sha256": "34942632efd8ed6cf254094511c9b340c5d08a9c7da4edb3057954257eb689dc",
+      "width": 768,
+      "height": 544
+    },
+    {
+      "repository": "identidad-360",
+      "file": "scenario-b.png",
+      "sha256": "3b56944e89dd7b21b62fe58707243c232c5ba81353b1f41ffb0804d76d978e9e",
+      "width": 768,
+      "height": 544
+    },
+    {
+      "repository": "identidad-360",
+      "file": "scenario-a.es.png",
+      "sha256": "db0317ee2ad535c16dc23251c7ed4569a2f9e6dfcdc7ac3459bec3b2223f3b73",
+      "width": 768,
+      "height": 544
+    },
+    {
+      "repository": "identidad-360",
+      "file": "scenario-b.es.png",
+      "sha256": "3043eb7c9227a91531af577483f572587ba0ed6b2ae55d0f6e3dd08148c19a11",
+      "width": 768,
+      "height": 544
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "cover.png",
+      "sha256": "9a00ac0b3ceebcf496c3c4fc979c20312b51c6960e3ee0fef27319fe4d0c4e6c",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "demo.png",
+      "sha256": "8d47678f70a000dda259d975c82860a3f2aa492eefd98e51d314a5ad3d944720",
+      "width": 1440,
+      "height": 1350
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "demo.es.png",
+      "sha256": "6cceac22917b702e9c5d727e31e1c3b1411693c9a819aa8323ea7a7decfd8e46",
+      "width": 1440,
+      "height": 1362
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "demo.mobile.png",
+      "sha256": "5b39ffd5203f88a4e26ffc81639192a260b74edeb60421a7af7aebf73de2303a",
+      "width": 390,
+      "height": 1999
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "scenario-a.png",
+      "sha256": "e5b996fe923de92cf031ec1de26d20cbf7d4417efa18f6ed2b138fa4222bfeee",
+      "width": 768,
+      "height": 558
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "scenario-b.png",
+      "sha256": "47a8df7b858f68e45eca12cd381fa69808552298d5b361033cdcac522bf545c2",
+      "width": 768,
+      "height": 558
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "scenario-a.es.png",
+      "sha256": "2da343b27e29e2461a78e73fb596c976ffa20c3094775f8e8891be0331ff881e",
+      "width": 768,
+      "height": 558
+    },
+    {
+      "repository": "kyc-antifraude",
+      "file": "scenario-b.es.png",
+      "sha256": "eddb96af54a2fb3a465c849c5b739862d73308b20f9931f41cc0fafc79741e32",
+      "width": 768,
+      "height": 558
+    },
+    {
+      "repository": "mesa",
+      "file": "cover.png",
+      "sha256": "cfe3151f7d412ec70c7fe9cb317b84bea9a0c41d96cafaeee66dc41b5ddd79b6",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "mesa",
+      "file": "demo.png",
+      "sha256": "a2c6bddcc60ce8f33cce65f77ec100785944115f7d8b50701439f886d516d417",
+      "width": 1440,
+      "height": 1516
+    },
+    {
+      "repository": "mesa",
+      "file": "demo.es.png",
+      "sha256": "eacb903f8d95ca14ad8caaef4b0192da33e6269b74e981e39e051af7aba005fd",
+      "width": 1440,
+      "height": 1648
+    },
+    {
+      "repository": "mesa",
+      "file": "demo.mobile.png",
+      "sha256": "862a62072bcfa7aebf645a30d254841aa730ca469463b20e4a9accaefd9cba3e",
+      "width": 390,
+      "height": 2303
+    },
+    {
+      "repository": "mesa",
+      "file": "scenario-a.png",
+      "sha256": "bdaff5cdcd1c50965f0c78fb866006374055cab18fed6c51519ee5fbb55a0ca0",
+      "width": 500,
+      "height": 466
+    },
+    {
+      "repository": "mesa",
+      "file": "scenario-b.png",
+      "sha256": "abeb6ab7601f53478e95cd2122465f8292490378475820155e9f2c8acdd8633c",
+      "width": 500,
+      "height": 502
+    },
+    {
+      "repository": "mesa",
+      "file": "scenario-a.es.png",
+      "sha256": "bfbacf71440ee6bc31390c50159bcfdbc2399d709685d4a9890d112719126269",
+      "width": 500,
+      "height": 486
+    },
+    {
+      "repository": "mesa",
+      "file": "scenario-b.es.png",
+      "sha256": "7ab7d00312f8c52ca037618300c7c82b786e9e5439ab6913267b471cee2dd045",
+      "width": 500,
+      "height": 522
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "cover.png",
+      "sha256": "9a6ba905590cb868da14d7c4aa94a465cf212e3a6f36307f285ffeb85ee244c6",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "demo.png",
+      "sha256": "538299c26245038f46dd7b26bd363d8e9f4cabd77a60c72aff4c0ec5ba671be3",
+      "width": 1440,
+      "height": 1372
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "demo.es.png",
+      "sha256": "5043058bfdb4b8b5e301cd29b210f26af91529cd1858c882e18be56b28b2afc5",
+      "width": 1440,
+      "height": 1444
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "demo.mobile.png",
+      "sha256": "b218251ffac1adf66ce376a99a0548b254678b660534783cc4dab8dbd86571fe",
+      "width": 390,
+      "height": 2093
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "scenario-a.png",
+      "sha256": "08e672e82285f8acb68e4b0436339e1a2a13bf1b52d78f4a5c1c83beec720c4c",
+      "width": 788,
+      "height": 547
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "scenario-b.png",
+      "sha256": "9b459a133c1ae5b05cd1ba095dc4dcd77a9f79eb53e6d13e98ea3f3c0e963fe6",
+      "width": 788,
+      "height": 547
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "scenario-a.es.png",
+      "sha256": "71d7918c2d54c263298de69249cbd3d0f64053d9f635e90e45a2ada33646412a",
+      "width": 788,
+      "height": 547
+    },
+    {
+      "repository": "radar-proveedores",
+      "file": "scenario-b.es.png",
+      "sha256": "7b1f1ed07a5a2fe69fbabfd64e64c919915d9e6fdeba92678ff87a5c33a9b435",
+      "width": 788,
+      "height": 547
+    },
+    {
+      "repository": "traductor",
+      "file": "cover.png",
+      "sha256": "24d4008479104bae8711645ab2c373c1e7ddce0e9f292d277e0d435534a3a913",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "traductor",
+      "file": "demo.png",
+      "sha256": "2d3c0106e27b850b2a3d639615497e4c9e20d58047df203fd92f3f2ff9366a15",
+      "width": 1440,
+      "height": 1424
+    },
+    {
+      "repository": "traductor",
+      "file": "demo.es.png",
+      "sha256": "6dba26555ca5c097738533e41b573243df8b406f48dcbc31e47785f3a7cf38c1",
+      "width": 1440,
+      "height": 1424
+    },
+    {
+      "repository": "traductor",
+      "file": "demo.mobile.png",
+      "sha256": "06e23c04837fb1045a2d7283c59ef11c73c43df88c47c7aeae0cffc5890837e8",
+      "width": 390,
+      "height": 2389
+    },
+    {
+      "repository": "traductor",
+      "file": "scenario-a.png",
+      "sha256": "184ffcf0202774117d955dc30c3d2765256cf4bf5f993cc5c98bb55b71e3ca3e",
+      "width": 716,
+      "height": 362
+    },
+    {
+      "repository": "traductor",
+      "file": "scenario-b.png",
+      "sha256": "c7aea9b6778468fc1175f72cbed7c505cb326f4eee4ae9af63b8a191a2de48d6",
+      "width": 716,
+      "height": 362
+    },
+    {
+      "repository": "traductor",
+      "file": "scenario-a.es.png",
+      "sha256": "0104fdb82b36982ac73622192e764c476da57233e330f9300ca23d32964915b0",
+      "width": 716,
+      "height": 362
+    },
+    {
+      "repository": "traductor",
+      "file": "scenario-b.es.png",
+      "sha256": "c43d99834cb1179b7e8850f1d11987cce2536007ef58993061b6756587e96009",
+      "width": 716,
+      "height": 362
+    },
+    {
+      "repository": "veredicto",
+      "file": "cover.png",
+      "sha256": "bcf22133f0aff029b1c72f5a6b3ac3453b649c524a717d1909f7fbc0726d7202",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "veredicto",
+      "file": "demo.png",
+      "sha256": "0ea9b230fa8c49b52ace479b469fabcb3079efbd3e61a36ce62adb0e183ab582",
+      "width": 1440,
+      "height": 1560
+    },
+    {
+      "repository": "veredicto",
+      "file": "demo.es.png",
+      "sha256": "83b9a452addec971e44dccfa1b3524e88241051886a075d91cad042804135b6e",
+      "width": 1440,
+      "height": 1664
+    },
+    {
+      "repository": "veredicto",
+      "file": "demo.mobile.png",
+      "sha256": "e84b1cfb50a650239603488bd8c6e4ddfae305a9c37ef57063d2feb18284fd8c",
+      "width": 390,
+      "height": 2401
+    },
+    {
+      "repository": "veredicto",
+      "file": "scenario-a.png",
+      "sha256": "eacc31bdebb26b970e472051b2946b5bcaa035bbce5f9ecb0db5c4674a8477ff",
+      "width": 458,
+      "height": 468
+    },
+    {
+      "repository": "veredicto",
+      "file": "scenario-b.png",
+      "sha256": "03ad9b021950c013f17818c303f51ddbfb12609911d24b05220c3ef9fd37759c",
+      "width": 458,
+      "height": 468
+    },
+    {
+      "repository": "veredicto",
+      "file": "scenario-a.es.png",
+      "sha256": "e581156f628aa4ee23c5656a5819b6c282420845e5fd70982dc83a5586712989",
+      "width": 458,
+      "height": 488
+    },
+    {
+      "repository": "veredicto",
+      "file": "scenario-b.es.png",
+      "sha256": "52384985e24b4ddae4988cf4e671d8ba3a0a4a3b12e66c2e0c2f80ddeb2ce5d8",
+      "width": 458,
+      "height": 516
+    },
+    {
+      "repository": "vigia",
+      "file": "cover.png",
+      "sha256": "bc24b83e5d65c2959e103e08519e06e09ed4af61660fb03985431a3151c4e8e4",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "vigia",
+      "file": "demo.png",
+      "sha256": "7671a89817ad8d7e124a2880d4d7100ac1b691581bcb542cb8221b4c2daa7d54",
+      "width": 1440,
+      "height": 1661
+    },
+    {
+      "repository": "vigia",
+      "file": "demo.es.png",
+      "sha256": "a247c09411428023380b45911a28e0b273a50b186c08420f1ec17d9394fdba81",
+      "width": 1440,
+      "height": 1721
+    },
+    {
+      "repository": "vigia",
+      "file": "demo.mobile.png",
+      "sha256": "2a8e37e67807f91cac95104f0bca54bc69381fff33d91998dc9dd6b4559d57be",
+      "width": 390,
+      "height": 2447
+    },
+    {
+      "repository": "vigia",
+      "file": "scenario-a.png",
+      "sha256": "1cb80dfb357977281dba07fd90312f2a24fd3c16bf1985c8522fb13a7f312ed7",
+      "width": 716,
+      "height": 539
+    },
+    {
+      "repository": "vigia",
+      "file": "scenario-b.png",
+      "sha256": "497f892cbae827f258872fea0f9baa4a86e7b6f2124da2a324e4c7f08912ecaf",
+      "width": 716,
+      "height": 519
+    },
+    {
+      "repository": "vigia",
+      "file": "scenario-a.es.png",
+      "sha256": "c7969f3b1c068242816bb630e8f05002d0e681f4310a18ac64c213749e6b49c7",
+      "width": 716,
+      "height": 539
+    },
+    {
+      "repository": "vigia",
+      "file": "scenario-b.es.png",
+      "sha256": "82cc498adc33bfe6b1e8cc13266de3f4f3601a82e2be4e7f70524147b3ee979f",
+      "width": 716,
+      "height": 519
+    },
+    {
+      "repository": "warmstart",
+      "file": "cover.png",
+      "sha256": "844d3123695c3a4979acac8c3599317355328a7d1624c84a3b0a12ce9547999f",
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "repository": "warmstart",
+      "file": "demo.png",
+      "sha256": "fabc42f841acf879f30433da81e796ea6db8df3d17113c8eecf9574c0694781f",
+      "width": 1440,
+      "height": 1508
+    },
+    {
+      "repository": "warmstart",
+      "file": "demo.es.png",
+      "sha256": "62094e880a724af202ba23d1bb3db40d2075e5bb3098b4f36be3423ca39af2c0",
+      "width": 1440,
+      "height": 1600
+    },
+    {
+      "repository": "warmstart",
+      "file": "demo.mobile.png",
+      "sha256": "c66c9dfdeadf63bb4c1a8273440070bb34af5c2e7505764d14c4a27db4d27b34",
+      "width": 390,
+      "height": 2481
+    },
+    {
+      "repository": "warmstart",
+      "file": "scenario-a.png",
+      "sha256": "9103ade39fcc11530434d4d454ac3b9221c52a42ff5dcfcbbd514996107b7542",
+      "width": 458,
+      "height": 468
+    },
+    {
+      "repository": "warmstart",
+      "file": "scenario-b.png",
+      "sha256": "08ccc27b49e2934b9ec912556af5acc67aa90649742ecf2e226f85808fb644f0",
+      "width": 458,
+      "height": 468
+    },
+    {
+      "repository": "warmstart",
+      "file": "scenario-a.es.png",
+      "sha256": "a983a64f733fe10556402df30306520b3a3aade12609f48a15ab85e82e535eea",
+      "width": 458,
+      "height": 488
+    },
+    {
+      "repository": "warmstart",
+      "file": "scenario-b.es.png",
+      "sha256": "06c46c88d926db2841b00944b2a7d558fcfe94c5f911020bc69d73fcf3ded4e5",
+      "width": 458,
+      "height": 488
+    }
+  ],
+  "localPreviews": {
+    "previews": [
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/agente-cobranzas/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/agente-riesgo/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/arbitro/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/asedio/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/bandera/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/compuerta/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/destilacion/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/doorman/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/ensayo/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/escaneo/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/evidencia/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/fabrica/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/grafo/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/identidad-360/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/kyc-antifraude/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/mesa/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/radar-proveedores/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/traductor/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/veredicto/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/vigia/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      },
+      {
+        "preview": "file:///C:/Proyectos/proyectos-portafolio/portafolio-mdea/docs/quality/.component-labs/warmstart/preview.html#es",
+        "localFileNavigation": true,
+        "computedBothLocales": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  },
+  "scope": "Actual React components and production CSS, controlled locale/navigation. No new Next server, route certification, publication or deployment."
+}

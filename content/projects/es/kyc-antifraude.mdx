@@ -1,0 +1,81 @@
+---
+title: KYC Antifraude
+slug: kyc-antifraude
+summary: >-
+  Cambia documentos y alertas de screening para explorar rutas de continuar,
+  revisar y rechazar.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - REST APIs
+  - LLaMA 3.1
+  - LLM API
+  - Zod
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-04-13'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/kyc-antifraude'
+liveUrl: 'https://kyc-antifraude-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - fintech
+  - KYC
+  - onboarding
+  - antifraude
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Revisor de operaciones de onboarding
+businessDecision: Permitir que la solicitud continúe o retenerla para una decisión humana.
+businessValue: >-
+  Convierte una política de onboarding en un proceso inspeccionable con puntos
+  de detención visibles.
+visualMechanism: >-
+  Una solicitud atraviesa compuertas documentales y de screening; el carril
+  resultante muestra continuar, revisar o detener.
+scenarios:
+  - title: Solicitud completa
+    input: 'Documento completo, sin señal de screening.'
+    observation: La solicitud supera ambas comprobaciones.
+  - title: Solicitud con señal
+    input: 'Documento completo, señal de screening activada.'
+    observation: >-
+      La compuerta detiene la solicitud; no se inicia ninguna comprobación de
+      pago.
+---
+## El problema
+
+Una solicitud no debe continuar cuando faltan campos del documento o el screening activa una señal bloqueante.
+
+**Quién lo usa:** Revisor de operaciones de onboarding.
+
+**La decisión:** Permitir que la solicitud continúe o retenerla para una decisión humana.
+
+## El enfoque
+
+Inspecciona la integridad documental, sigue la rama de screening y decide continuar, revisar o detener.
+
+### Prueba la decisión
+
+**Solicitud completa:** Documento completo, sin señal de screening. La solicitud supera ambas comprobaciones.
+
+**Solicitud con señal:** Documento completo, señal de screening activada. La compuerta detiene la solicitud; no se inicia ninguna comprobación de pago.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Una solicitud atraviesa compuertas documentales y de screening; el carril resultante muestra continuar, revisar o detener.
+
+Máquina de estados local; no inicia consultas de pago.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Convierte una política de onboarding en un proceso inspeccionable con puntos de detención visibles.
+
+**Límites:** Máquina de estados local determinista; no verifica identidad ni predice fraude con probabilidades calibradas. Estos prototipos de portafolio no afirman impacto medido en producción.

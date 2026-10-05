@@ -1,0 +1,75 @@
+---
+title: Agente de Cobranzas
+slug: agente-cobranzas
+summary: >-
+  Cambia días de atraso, importe en centavos enteros, segmento y reglas de
+  contacto.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - PostgreSQL
+  - Drizzle ORM
+  - LLM API
+  - Messaging Bot API
+  - Scheduled jobs
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-04-12'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/agente-cobranzas'
+liveUrl: 'https://agente-cobranzas-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - fintech
+  - cobranzas
+  - automatización
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de operaciones de cobranza
+businessDecision: Usar la cola estándar o prioritaria.
+businessValue: Explica por qué se encola un mensaje local sin enviarlo.
+visualMechanism: Una línea de antigüedad muestra el marcador cruzando el límite de política.
+scenarios:
+  - title: Contacto estándar
+    input: '10 días de atraso, política equilibrada'
+    observation: La cuenta permanece en la cola estándar.
+  - title: Cuenta prioritaria
+    input: '35 días de atraso, política equilibrada'
+    observation: El caso cruza el límite de política y se vuelve prioritario.
+---
+## El problema
+
+Las cuentas requieren una prioridad consistente antes del contacto.
+
+**Quién lo usa:** Responsable de operaciones de cobranza.
+
+**La decisión:** Usar la cola estándar o prioritaria.
+
+## El enfoque
+
+Ubicar una cuenta en la línea de antigüedad, aplicar el límite de política y previsualizar la ruta.
+
+### Prueba la decisión
+
+**Contacto estándar:** 10 días de atraso, política equilibrada La cuenta permanece en la cola estándar.
+
+**Cuenta prioritaria:** 35 días de atraso, política equilibrada El caso cruza el límite de política y se vuelve prioritario.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Una línea de antigüedad muestra el marcador cruzando el límite de política.
+
+Segmentación de cola y vista previa de mensaje; no envía mensajes.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Explica por qué se encola un mensaje local sin enviarlo.
+
+**Límites:** Los mensajes son vistas previas locales y nunca se envían. Estos prototipos de portafolio no afirman impacto medido en producción.

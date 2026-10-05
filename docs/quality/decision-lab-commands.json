@@ -1,0 +1,600 @@
+{
+  "repositories": [
+    {
+      "repository": "portafolio-mdea",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 22,
+      "commands": [
+        {
+          "command": "node --test scripts/portfolio-content.test.mjs scripts/ai-sync.test.mjs scripts/brand-sync.test.mjs scripts/lib/sync-kit.test.mjs scripts/lib/propagate.test.mjs scripts/lib/load-config.test.mjs design-system/demo/foundation.node-test.mjs",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "agente-cobranzas",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "agente-riesgo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 4,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "arbitro",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 12,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "asedio",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 23,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "bandera",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 9,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "compuerta",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 29,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "destilacion",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 21,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "doorman",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 8,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "ensayo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 14,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "escaneo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 12,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "evidencia",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 18,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "fabrica",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 8,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "grafo",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 51,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "identidad-360",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 18,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "kyc-antifraude",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "mesa",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 40,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "radar-proveedores",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 3,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "traductor",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 44,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "veredicto",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 32,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "vigia",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 7,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    },
+    {
+      "repository": "warmstart",
+      "branch": "feat/memorable-decision-labs",
+      "testCount": 13,
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "decision-lab-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "decision-lab-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "decision-lab-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "decision-lab-build.log"
+        }
+      ]
+    }
+  ],
+  "testCount": 394,
+  "repositoryCount": 22
+}

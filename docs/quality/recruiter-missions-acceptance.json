@@ -1,0 +1,382 @@
+{
+  "scope": "Current guided recruiter phase: four repositories. Real browser components and local file previews; Next HTTP routes and deployment remain unverified.",
+  "tests": 96,
+  "commandChecks": 16,
+  "browserChecks": [
+    {
+      "repository": "evidencia",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nStrict citations\n\nRefused\n\nRequires full coverage of the question terms.\n\nFlexible citations\n\nAnswered\n\nAllows partial coverage; this does not mean complete support.\n\nSame question, corpus and retrievers. Only the coverage requirement changes. Both policies refuse when matching evidence is absent. This lexical check does not establish whether a claim is true.\n\nThis run challenges your prediction. Refuses under the selected policy.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "evidencia",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nCitas estrictas\n\nRechaza\n\nExige cobertura completa de los términos de la pregunta.\n\nCitas flexibles\n\nResponde\n\nPermite cobertura parcial; no significa respaldo completo.\n\nMisma pregunta, mismo corpus y mismos recuperadores. Solo cambia la exigencia de cobertura. Ambas políticas rechazan si no hay evidencia compatible. Esta comprobación léxica no demuestra que una afirmación sea verdadera.\n\nEsta ejecución contradice tu predicción. Rechaza con la política elegida.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "compuerta",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nBackup enabled\n\n30 / 30\n\n100.0% simulated availability.\n\nBackup disabled\n\n11 / 30\n\n36.7% simulated availability.\n\nThe outage, 30 requests, circuit breaker and seed stay fixed. Only the backup route changes. The simulator is deterministic, but routing consumes its error sequence differently; this is not a measurement of a real service.\n\nThis run challenges your prediction. Your configuration completes 11 of 30 requests.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "compuerta",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nRespaldo activado\n\n30 / 30\n\n100.0% de disponibilidad simulada.\n\nRespaldo desactivado\n\n11 / 30\n\n36.7% de disponibilidad simulada.\n\nSe conserva la caída, las 30 solicitudes, el interruptor de circuito y la semilla. Solo cambia la ruta de respaldo. El simulador es determinista, pero las rutas consumen su secuencia de errores de forma distinta; esto no es una medición de un servicio real.\n\nEsta ejecución contradice tu predicción. Tu configuración completa 11 de 30 solicitudes.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "destilacion",
+      "locale": "en",
+      "comparison": "SAME INPUTS / ONE DECISION CHANGES\n\nPer-request API\n\n$1,800.00\n\nComputed monthly cost for your volume.\n\nFixed local capacity\n\n$1,800.00\n\nComputed monthly cost under the local-capacity assumption.\n\nSame invoice and monthly volume. Only the cost model changes. Difference: $0.00 per month. This excludes maintenance, staffing, capacity constraints and quality differences.\n\nThis run challenges your prediction. Both options have equal costs.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "destilacion",
+      "locale": "es",
+      "comparison": "MISMOS DATOS / CAMBIA UNA DECISIÓN\n\nAPI por solicitud\n\n$1,800.00\n\nCosto mensual calculado para tu volumen.\n\nCapacidad local fija\n\n$1,800.00\n\nCosto mensual calculado bajo el supuesto de capacidad local.\n\nMisma factura y volumen mensual. Solo cambia el modelo de costo. Diferencia: $0.00 al mes. No incluye mantenimiento, personal, límites de capacidad ni diferencias de calidad.\n\nEsta ejecución contradice tu predicción. Ambas opciones tienen costos iguales.",
+      "predictionLocked": true,
+      "editClearsResultAndPrediction": true,
+      "mobileReadable": true,
+      "reducedMotion": true,
+      "keyboard": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "en",
+      "threeSteps": true,
+      "caseAndDemoLinks": true,
+      "reviewedProgressAndReset": true,
+      "mobileNoOverflow": true,
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "repository": "portafolio-mdea",
+      "locale": "es",
+      "threeSteps": true,
+      "caseAndDemoLinks": true,
+      "reviewedProgressAndReset": true,
+      "mobileNoOverflow": true,
+      "errors": [],
+      "externalRequests": []
+    }
+  ],
+  "commands": [
+    {
+      "commands": [
+        {
+          "command": "node --test scripts/portfolio-content.test.mjs scripts/ai-sync.test.mjs scripts/brand-sync.test.mjs scripts/lib/sync-kit.test.mjs scripts/lib/propagate.test.mjs scripts/lib/load-config.test.mjs design-system/demo/foundation.node-test.mjs",
+          "exitCode": 0,
+          "log": "recruiter-missions-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "recruiter-missions-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "recruiter-missions-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "recruiter-missions-build.log"
+        }
+      ],
+      "repository": "portafolio-mdea",
+      "branch": "feat/guided-recruiter-missions",
+      "scope": "Guided recruiter missions; current tests, lint, strict types and production build."
+    },
+    {
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "recruiter-missions-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "recruiter-missions-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "recruiter-missions-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "recruiter-missions-build.log"
+        }
+      ],
+      "repository": "evidencia",
+      "branch": "feat/guided-recruiter-missions",
+      "scope": "Guided recruiter missions; current tests, lint, strict types and production build."
+    },
+    {
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "recruiter-missions-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "recruiter-missions-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "recruiter-missions-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "recruiter-missions-build.log"
+        }
+      ],
+      "repository": "compuerta",
+      "branch": "feat/guided-recruiter-missions",
+      "scope": "Guided recruiter missions; current tests, lint, strict types and production build."
+    },
+    {
+      "commands": [
+        {
+          "command": "pnpm.cmd test",
+          "exitCode": 0,
+          "log": "recruiter-missions-test.log"
+        },
+        {
+          "command": "pnpm.cmd run lint",
+          "exitCode": 0,
+          "log": "recruiter-missions-lint.log"
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0,
+          "log": "recruiter-missions-types.log"
+        },
+        {
+          "command": "pnpm.cmd run build",
+          "exitCode": 0,
+          "log": "recruiter-missions-build.log"
+        }
+      ],
+      "repository": "destilacion",
+      "branch": "feat/guided-recruiter-missions",
+      "scope": "Guided recruiter missions; current tests, lint, strict types and production build."
+    }
+  ],
+  "assets": [
+    {
+      "path": "docs\\quality\\mission-compuerta.en.comparison.png",
+      "width": 653,
+      "height": 348,
+      "sha256": "3588fe161c4b2ec78b7b9f6c7c0c0825d6c94f73bad1e24542d15391095b42e9"
+    },
+    {
+      "path": "docs\\quality\\mission-compuerta.en.mobile.png",
+      "width": 390,
+      "height": 3042,
+      "sha256": "c8846c471c07680ac0f077ff49f75bbb7d6a23175f2bda163fea6f07e9b63222"
+    },
+    {
+      "path": "docs\\quality\\mission-compuerta.en.png",
+      "width": 1440,
+      "height": 2325,
+      "sha256": "fff66440f0cc926bcf28ad2aa232fc292c2c5a9abc9415e7081179d95560adaf"
+    },
+    {
+      "path": "docs\\quality\\mission-compuerta.es.comparison.png",
+      "width": 653,
+      "height": 348,
+      "sha256": "00ba446717a9fe5cc77b814553e7c431731e6a5048e7c78e57f8ea96e8ea255b"
+    },
+    {
+      "path": "docs\\quality\\mission-compuerta.es.mobile.png",
+      "width": 390,
+      "height": 3128,
+      "sha256": "218cad8f44bec42540a389c03c75b7618c996f017fc4bb10be77a5a710a48041"
+    },
+    {
+      "path": "docs\\quality\\mission-compuerta.es.png",
+      "width": 1440,
+      "height": 2325,
+      "sha256": "125b8510120edd3efef5a535a097413094a742d48af1b1105459af90f744e125"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.en.comparison.png",
+      "width": 728,
+      "height": 344,
+      "sha256": "2c28b270d4df9856611b6e94ed92ad245aaec7b7f4a0845bb0c78375a6d75f19"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.en.mobile.png",
+      "width": 390,
+      "height": 3729,
+      "sha256": "56bf0d1641c0c69608ce8abed04207569df98bceed495d4337491001a78a4585"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.en.png",
+      "width": 1440,
+      "height": 2393,
+      "sha256": "adc41ccdb61ace788dbb612c0480e212868df4ad48e30706b11376286c549d6f"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.es.comparison.png",
+      "width": 728,
+      "height": 344,
+      "sha256": "c78d9ea55db56950c85c3e0a5146b44a1dec7e379ec60928c32ec2a861c1d731"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.es.mobile.png",
+      "width": 390,
+      "height": 3787,
+      "sha256": "600d42b518e674019b841ca49a83a5d53a06f8f992690441cb5bf078359ebf25"
+    },
+    {
+      "path": "docs\\quality\\mission-destilacion.es.png",
+      "width": 1440,
+      "height": 2453,
+      "sha256": "5ffc641d0044ffe5864a09a02a1d8c7564f79d10a05d12ad31fdd332cdfc656d"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.en.comparison.png",
+      "width": 728,
+      "height": 343,
+      "sha256": "60d8598d0c05cb0d4907383b1343ec8bb2bb1efc5d1c185db4e636d43b23875b"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.en.mobile.png",
+      "width": 390,
+      "height": 3313,
+      "sha256": "4564750b79c0aaa9eee7c160739cc70f39c9f86b7f2269443209299efdf87fc5"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.en.png",
+      "width": 1440,
+      "height": 2164,
+      "sha256": "4dc7c4cdbe6ad02edf50216276d19ebee9edf05796db1ded2b548def1e85d974"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.es.comparison.png",
+      "width": 728,
+      "height": 371,
+      "sha256": "17db9612a6ff53b843aba36de90a56b4c83d88db0393085de3a7be8e23ff2b16"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.es.mobile.png",
+      "width": 390,
+      "height": 3493,
+      "sha256": "bef4adb54ae2a60357b3d62dc0de077edfd2c2e4495523515cb6832e815c4052"
+    },
+    {
+      "path": "docs\\quality\\mission-evidencia.es.png",
+      "width": 1440,
+      "height": 2192,
+      "sha256": "5f6f3f093d9d2e16a8d08808ce86872a8b3c4e2b2eb84e47e29521215c02b8fe"
+    },
+    {
+      "path": "docs\\images\\recruiter-journey.es.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ba22c51f5dce222e3dd2d8480d3fe55bd3d487987df568bf9897f1166e7ced92"
+    },
+    {
+      "path": "docs\\images\\recruiter-journey.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fe506fdd84abfac541789833c66bd7eba22af613976c7ea96576774c381b31bd"
+    }
+  ],
+  "localPreview": {
+    "scope": "Local files: real guide opens each local demo, with locale preserved. No Next HTTP route or publication claim.",
+    "passed": true,
+    "checks": [
+      {
+        "project": "evidencia",
+        "locale": "en",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      },
+      {
+        "project": "compuerta",
+        "locale": "en",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      },
+      {
+        "project": "destilacion",
+        "locale": "en",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      },
+      {
+        "project": "evidencia",
+        "locale": "es",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      },
+      {
+        "project": "compuerta",
+        "locale": "es",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      },
+      {
+        "project": "destilacion",
+        "locale": "es",
+        "guideOpensLocalDemo": true,
+        "challengeComputed": true,
+        "mobileNoOverflow": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  },
+  "publication": "Pending; no push, deployment or external publication performed."
+}

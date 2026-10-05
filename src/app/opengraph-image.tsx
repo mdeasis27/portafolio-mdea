@@ -63,7 +63,7 @@ export default async function OpengraphImage() {
               lineHeight: 1.05,
             }}
           >
-            Executive who builds.
+            AI Product.
           </div>
           <div
             style={{
@@ -74,7 +74,7 @@ export default async function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            Finance and operations leader who ships production software.
+            Applied AI for inspectable business decisions.
           </div>
         </div>
 

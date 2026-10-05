@@ -1,0 +1,44 @@
+{
+  "evidencia": {
+    "en": {
+      "challenge": "Choose partial evidence, predict whether the selected policy will answer, run retrieval and reveal the full trace.",
+      "comparison": "The same question and corpus are computed under strict and flexible citation coverage. Missing evidence can be refused by both. This is lexical coverage, not proof that a claim is true.",
+      "rationale": "Combined lexical retrievers make passages and citations inspectable without API keys. A strict coverage gate trades answer rate for caution, but cannot establish semantic correctness.",
+      "production": "Evaluate real support questions, citation quality, privacy, access permissions and unsupported answers before connecting a model."
+    },
+    "es": {
+      "challenge": "Elige evidencia parcial, predice si la política seleccionada responderá, ejecuta la recuperación y revela la traza completa.",
+      "comparison": "La misma pregunta y el corpus se calculan con cobertura de citas estricta y flexible. Ambas pueden rechazar evidencia ausente. Es cobertura léxica, no una prueba de que la afirmación sea verdadera.",
+      "rationale": "Combinar recuperadores léxicos permite inspeccionar pasajes y citas sin llaves API. Exigir cobertura completa prioriza cautela sobre la tasa de respuestas, pero no establece corrección semántica.",
+      "production": "Evaluar preguntas reales de soporte, calidad de citas, privacidad, permisos y respuestas sin evidencia antes de conectar un modelo."
+    }
+  },
+  "compuerta": {
+    "en": {
+      "challenge": "Try an extended outage without backup, predict whether 24 of 30 requests will complete, simulate and reveal the full trace.",
+      "comparison": "Compare backup routing on and off under the same outage, circuit breaker and seed. The seeded error sequence is consumed differently by each route. This is a controlled simulation, not real service availability.",
+      "rationale": "An explicit circuit-breaker state machine makes failure and recovery inspectable. Backup routing can preserve continuity but introduces capacity and correlated-failure concerns.",
+      "production": "Validate correlated failures, timeouts, capacity limits, observability and recovery with load and incident tests."
+    },
+    "es": {
+      "challenge": "Prueba una caída prolongada sin respaldo, predice si se completarán 24 de 30 solicitudes, simula y revela la traza completa.",
+      "comparison": "Compara el respaldo activado y desactivado con la misma caída, interruptor de circuito y semilla. Cada ruta consume de forma distinta la secuencia de errores. Es una simulación controlada, no disponibilidad real de un servicio.",
+      "rationale": "La máquina de estados del interruptor de circuito hace inspeccionables los fallos y la recuperación. El respaldo puede preservar continuidad, pero añade límites de capacidad y riesgo de fallos correlacionados.",
+      "production": "Validar errores correlacionados, tiempos de espera, límites de capacidad, observabilidad y recuperación con pruebas de carga e incidentes."
+    }
+  },
+  "destilacion": {
+    "en": {
+      "challenge": "Try the exact break-even volume of 300,000 monthly requests, predict which option is cheaper, calculate and reveal the full trace.",
+      "comparison": "Compute API and local-capacity monthly costs for the same invoice and demand. At 300,000 requests both cost $1,800 under the illustrative assumptions; neither is cheaper. All calculations use integer cents.",
+      "rationale": "A transparent capacity model exposes the crossover before an infrastructure decision. Rule-based extraction is a student proxy and does not demonstrate a trained distilled model or equal extraction quality.",
+      "production": "Measure labeled-invoice quality, real throughput, utilization, operating expenses and data privacy. The illustrative $6 per 1,000 requests and $1,800 monthly capacity exclude maintenance, staffing and quality differences."
+    },
+    "es": {
+      "challenge": "Prueba el equilibrio exacto de 300,000 solicitudes mensuales, predice qué opción es más barata, calcula y revela la traza completa.",
+      "comparison": "Calcula los costos mensuales de API y capacidad local para la misma factura y demanda. Con 300,000 solicitudes ambas cuestan $1,800 bajo los supuestos ilustrativos; ninguna es más barata. Los cálculos usan centavos enteros.",
+      "rationale": "Un modelo de capacidad transparente expone el cruce antes de elegir infraestructura. La extracción con reglas es un sustituto de estudiante y no demuestra un modelo destilado entrenado ni calidad de extracción equivalente.",
+      "production": "Medir calidad en facturas etiquetadas, rendimiento real, utilización, gastos operativos y privacidad. Los supuestos ilustrativos de $6 por 1,000 solicitudes y $1,800 mensuales excluyen mantenimiento, personal y diferencias de calidad."
+    }
+  }
+}

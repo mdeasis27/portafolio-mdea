@@ -1,0 +1,12 @@
+{
+  "routesBothLanguages": true,
+  "catalogueFilterCount": 3,
+  "actualProjectImages": 21,
+  "legacyRedirectRetainsQuery": true,
+  "unsupportedLocale404": true,
+  "localizedMissingCase404": true,
+  "mobileNoOverflow": true,
+  "reducedMotionChecked": true,
+  "storageUnavailable": true,
+  "errors": []
+}

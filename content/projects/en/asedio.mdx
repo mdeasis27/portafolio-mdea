@@ -1,0 +1,73 @@
+---
+title: Security regression lab
+slug: asedio
+summary: Choose attack families and compare vulnerable and hardened target policies.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/asedio'
+liveUrl: 'https://asedio-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - safety
+  - red-team
+  - adversarial
+  - security
+  - evaluación
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Pre-release security tester
+businessDecision: Fix the target before release or continue validation.
+businessValue: Connects an attack case to a concrete pre-release decision.
+visualMechanism: Attack probes fan into a target shield and failure signals.
+scenarios:
+  - title: Hardened proxy
+    input: Jailbreak family against the hardened local target.
+    observation: Selected attack cases pass the hardened proxy.
+  - title: Vulnerable proxy
+    input: The same jailbreak family against the vulnerable local target.
+    observation: The same attack family exposes failures.
+---
+## The problem
+
+A change can pass ordinary checks while a known attack family still succeeds.
+
+**Who uses it:** Pre-release security tester.
+
+**The decision:** Fix the target before release or continue validation.
+
+## The approach
+
+Choose hardened or vulnerable proxy, run the selected attack family, then inspect failures by case.
+
+### Try the decision
+
+**Hardened proxy:** Jailbreak family against the hardened local target. Selected attack cases pass the hardened proxy.
+
+**Vulnerable proxy:** The same jailbreak family against the vulnerable local target. The same attack family exposes failures.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Attack probes fan into a target shield and failure signals.
+
+An attack matrix against deterministic target proxies; simulation is explicit.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Connects an attack case to a concrete pre-release decision.
+
+**Limits:** The proxy and attack cases are deterministic test fixtures, not a security certification. These portfolio prototypes do not claim measured production impact.

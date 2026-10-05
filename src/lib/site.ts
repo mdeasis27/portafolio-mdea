@@ -1,14 +1,14 @@
 export const site = {
   name: "Manuel De Asís",
   shortName: "MDEA",
-  title: "Manuel De Asís — Executive who builds",
+  title: "Manuel De Asís — AI Product",
   description:
-    "Senior finance and operations executive who ships production software. Case studies, projects, and notes on AI-first operating systems for fintech and SaaS.",
+    "Interactive applied AI prototypes for business decisions, product quality, evidence, and reliable workflows.",
   url: "https://manueldeasis.com",
   locale: "en_US",
   author: {
     name: "Manuel De Asís",
-    role: "Finance & Ops Executive · Builder",
+    role: "AI Product · Applied AI",
     linkedin: "https://www.linkedin.com/in/manuel-de-asis",
     email: "manueldeasis27@gmail.com",
     location: "Remote — LATAM",
@@ -19,7 +19,7 @@ export const site = {
     { href: "/about", label: "About" },
   ] as const,
   thesis: {
-    headline: "Executive who builds.",
+    headline: "From business problem to working AI product.",
     subhead:
       "Finance and operations leader who ships production software. I design, prototype, and deploy the systems I used to brief engineers to build.",
   },

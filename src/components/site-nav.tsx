@@ -1,54 +1,8 @@
 "use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-import { ThemeToggle } from "@/components/theme-toggle";
-import { cn } from "@/lib/utils";
-import { site } from "@/lib/site";
-
-export function SiteNav() {
-  const pathname = usePathname();
-
-  return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6">
-        <Link
-          href="/"
-          className="group flex items-center gap-2 text-sm font-semibold tracking-tight"
-        >
-          <span className="flex size-7 items-center justify-center rounded-md border border-border/60 bg-foreground/5 font-mono text-[11px] text-foreground/80 transition-colors group-hover:border-foreground/40">
-            MdA
-          </span>
-          <span className="hidden text-foreground sm:inline">{site.name}</span>
-        </Link>
-
-        <nav className="flex items-center gap-1">
-          {site.nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "rounded-md px-3 py-1.5 text-sm transition-colors",
-                  active
-                    ? "text-foreground"
-                    : "text-foreground/60 hover:text-foreground",
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <div className="ml-2">
-            <ThemeToggle />
-          </div>
-        </nav>
-      </div>
-    </header>
-  );
-}
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import {ThemeToggle} from './theme-toggle';
+import {LanguageSwitch} from '@/design-system/components/language-switch';
+import {useLocale} from '@/design-system/i18n/context';
+import {dictionary} from '@/lib/i18n';
+export function SiteNav(){const locale=useLocale();const c=dictionary(locale);const pathname=usePathname();return <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md"><div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4"><Link href={'/'+locale} className="font-mono text-sm font-semibold tracking-tight">MdA<span className="ml-3 hidden font-sans font-normal text-foreground/50 sm:inline">AI Product</span></Link><nav className="flex items-center gap-2">{[['',c.home],['/projects',c.projects],['/about',c.about]].map(([path,label])=><Link key={path} href={'/'+locale+path} className={'px-2 py-1 text-sm '+(pathname==='/'+locale+path?'text-foreground':'text-foreground/55')}>{label}</Link>)}<LanguageSwitch locale={locale}/><ThemeToggle/></nav></div></header>;}

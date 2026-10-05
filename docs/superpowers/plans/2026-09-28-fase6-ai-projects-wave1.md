@@ -8,7 +8,7 @@
 ## Decisions (locked with Manuel)
 
 - **Architecture: hybrid.** Each project is one repo containing:
-  - a **Next.js app** (public face, Vercel) with the shared `design-system/` + `ai-kit/`,
+  - a **Next.js app** (public face, deployment platform) with the shared `design-system/` + `ai-kit/`,
     shipped with a **demo mode that runs offline with no API keys** (mandatory per
     `ai-kit/README.md`), plus an optional BYOK live path;
   - a **real backend** in the same repo (`backend/`, Python/FastAPI or equivalent),

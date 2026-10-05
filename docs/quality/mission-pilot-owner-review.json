@@ -1,0 +1,16 @@
+{
+  "reviewDate": "2026-10-02",
+  "reviewer": "Manuel de Asís",
+  "evidenceType": "owner-reported manual visual review",
+  "artifact": ".component-labs/recruiter-journey/preview.html",
+  "browserContext": "Chrome requested by owner; preview opened manually",
+  "ownerStatement": "Ya lo revise se ve bien",
+  "visualPresentationAccepted": true,
+  "languagesExercised": "not specified",
+  "viewportSizesExercised": "not specified",
+  "keyboardAndReducedMotionExercised": "not specified",
+  "interactionCasesExercised": "not specified",
+  "automatedBrowserVerification": false,
+  "freshScreenshotEvidence": false,
+  "publicationAuthorized": false
+}

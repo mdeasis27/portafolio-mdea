@@ -1,0 +1,75 @@
+---
+title: Escaneo
+slug: escaneo
+summary: >-
+  Edita texto OCR e introduce corrupciones controladas para inspeccionar campos
+  y checksums.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/escaneo'
+liveUrl: 'https://escaneo-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - OCR
+  - extracción
+  - validación
+  - multi-modal
+  - pipeline
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Revisor de operaciones
+businessDecision: Aceptar o retener el documento.
+businessValue: Conserva el valor fuente cuando falla una comprobación.
+visualMechanism: Un foco escanea campos y marca fallos.
+scenarios:
+  - title: Recibo válido
+    input: Checksum válido
+    observation: Todos los campos pasan.
+  - title: Cuenta dañada
+    input: Cuenta corrupta
+    observation: El documento se retiene.
+---
+## El problema
+
+Los errores OCR pueden ocultarse en un documento plausible.
+
+**Quién lo usa:** Revisor de operaciones.
+
+**La decisión:** Aceptar o retener el documento.
+
+## El enfoque
+
+Elige un recibo, inspecciona campos y revisa evidencia de checksum.
+
+### Prueba la decisión
+
+**Recibo válido:** Checksum válido Todos los campos pasan.
+
+**Cuenta dañada:** Cuenta corrupta El documento se retiene.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+Un foco escanea campos y marca fallos.
+
+Texto original, valores extraídos y validación; señalado no significa corregido.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Conserva el valor fuente cuando falla una comprobación.
+
+**Límites:** Solo se ejecutan comprobaciones locales proporcionadas. Estos prototipos de portafolio no afirman impacto medido en producción.

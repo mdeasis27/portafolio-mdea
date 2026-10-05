@@ -20,5 +20,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  return ["en", "es"].flatMap(locale => [...staticRoutes, ...projectRoutes].map(entry => ({...entry, url: entry.url.replace(site.url, `${site.url}/${locale}`), alternates: {languages: {en: entry.url.replace(site.url, `${site.url}/en`),es: entry.url.replace(site.url, `${site.url}/es`)}}})));
 }

@@ -1,0 +1,75 @@
+---
+title: Bandera
+slug: bandera
+summary: >-
+  Cambia calidad simulada de variantes y márgenes de no inferioridad para
+  inspeccionar decisiones de rollout.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/bandera'
+liveUrl: 'https://bandera-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - feature-flags
+  - rollout
+  - kill-switch
+  - estadística
+  - deploy
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Responsable de lanzamiento
+businessDecision: 'Avanzar, mantener o activar el apagado.'
+businessValue: Convierte evidencia de despliegue en una acción reversible.
+visualMechanism: El tráfico llena etapas hasta una compuerta o apagado.
+scenarios:
+  - title: Variante sana
+    input: Calidad 0.80
+    observation: Las etapas avanzan.
+  - title: Variante débil
+    input: Calidad baja
+    observation: Se activa el apagado.
+---
+## El problema
+
+Un despliegue necesita una condición observable para detenerse.
+
+**Quién lo usa:** Responsable de lanzamiento.
+
+**La decisión:** Avanzar, mantener o activar el apagado.
+
+## El enfoque
+
+Elige calidad, simula tráfico por etapas y lee cada decisión.
+
+### Prueba la decisión
+
+**Variante sana:** Calidad 0.80 Las etapas avanzan.
+
+**Variante débil:** Calidad baja Se activa el apagado.
+
+Elige un escenario, modifica sus controles y ejecuta el cálculo local. Avanza por la visualización paso a paso o revela todo. Reinicia antes de comparar el segundo escenario.
+
+## Decisiones de diseño
+
+El tráfico llena etapas hasta una compuerta o apagado.
+
+Etapas de tráfico, rutas de esperar, avanzar o detener y supuestos de simulación explícitos.
+
+## Estado actual
+
+La experiencia principal funciona localmente sin clave de API ni base de datos. Los escenarios cambian entradas reales y la reproducción visual revela eventos calculados. Las integraciones en vivo permanecen separadas. Las nuevas rutas públicas están pendientes de despliegue.
+
+## Lo que demuestra
+
+Convierte evidencia de despliegue en una acción reversible.
+
+**Límites:** El tráfico se simula localmente. Estos prototipos de portafolio no afirman impacto medido en producción.

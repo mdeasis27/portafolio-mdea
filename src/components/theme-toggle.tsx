@@ -1,4 +1,5 @@
 "use client";
+import {useLocale} from '@/design-system/i18n/context';
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -15,6 +16,7 @@ function useIsMounted() {
 }
 
 export function ThemeToggle() {
+  const locale = useLocale();
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useIsMounted();
 
@@ -24,7 +26,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={locale === "es" ? (isDark ? "Cambiar a tema claro" : "Cambiar a tema oscuro") : (isDark ? "Switch to light mode" : "Switch to dark mode")}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="size-9"
     >

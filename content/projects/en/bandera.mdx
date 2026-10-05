@@ -1,0 +1,75 @@
+---
+title: Controlled rollout
+slug: bandera
+summary: >-
+  Change simulated variant quality and no-worse margins to inspect rollout
+  decisions.
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - Python
+  - Vitest
+  - pytest
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-09-29'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/bandera'
+liveUrl: 'https://bandera-manueldeasis27-2515s-projects.vercel.app/app'
+tags:
+  - feature-flags
+  - rollout
+  - kill-switch
+  - estadística
+  - deploy
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Release owner
+businessDecision: 'Advance, hold, or activate the kill switch.'
+businessValue: Turns rollout evidence into a reversible action.
+visualMechanism: Traffic fills stages until a gate or kill switch intervenes.
+scenarios:
+  - title: Healthy variant
+    input: Quality 0.80
+    observation: Stages advance.
+  - title: Weak variant
+    input: Low quality
+    observation: Kill switch activates.
+---
+## The problem
+
+A rollout needs an observable stop condition.
+
+**Who uses it:** Release owner.
+
+**The decision:** Advance, hold, or activate the kill switch.
+
+## The approach
+
+Choose a quality preset, simulate staged traffic, and read each decision.
+
+### Try the decision
+
+**Healthy variant:** Quality 0.80 Stages advance.
+
+**Weak variant:** Low quality Kill switch activates.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+Traffic fills stages until a gate or kill switch intervenes.
+
+Traffic stages, hold/advance/kill paths and explicit simulation assumptions.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Turns rollout evidence into a reversible action.
+
+**Limits:** Traffic is simulated locally. These portfolio prototypes do not claim measured production impact.

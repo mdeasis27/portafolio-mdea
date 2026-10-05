@@ -1,4 +1,7 @@
+import type {Locale} from '@/design-system/i18n/locale';
+import {dictionary} from '@/lib/i18n';
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -12,27 +15,26 @@ import {
 } from "@/components/ui/card";
 import type { Project } from "@/lib/projects";
 
-const statusLabels: Record<Project["frontmatter"]["status"], string> = {
-  shipped: "Shipped",
-  beta: "Beta",
-  archived: "Archived",
-};
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, locale = "en" }: { project: Project; locale?: Locale }) {
   const { frontmatter } = project;
-  const href = `/projects/${frontmatter.slug}`;
+  const c = dictionary(locale);
+  const href = `/${locale}/projects/${frontmatter.slug}`;
 
   return (
     <Link
       href={href}
       className="group block focus-visible:outline-none"
-      aria-label={`Read case study: ${frontmatter.title}`}
+      aria-label={`${c.caseStudy}: ${frontmatter.title}`}
     >
       <Card className="h-full transition-all duration-300 hover:border-foreground/30 hover:shadow-sm group-focus-visible:ring-2 group-focus-visible:ring-foreground/40">
+        <div className="relative mx-3 aspect-[16/9] overflow-hidden rounded-lg border border-border/60 bg-muted">
+          <Image src={`/project-captures/${frontmatter.slug}.stage${locale === "es" ? ".es" : ""}.png`} alt={locale === 'en' ? `${frontmatter.title}: actual interactive demo` : `${frontmatter.title}: demo interactiva real`} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none" />
+        </div>
         <CardHeader className="gap-3">
           <div className="flex items-center justify-between gap-3">
             <Badge variant={`status-${frontmatter.status}` as const}>
-              {statusLabels[frontmatter.status]} · {frontmatter.year}
+              {c.status[frontmatter.status]} · {frontmatter.year}
             </Badge>
             <ArrowUpRight className="size-4 text-foreground/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
           </div>
@@ -40,15 +42,15 @@ export function ProjectCard({ project }: { project: Project }) {
             {frontmatter.title}
           </CardTitle>
           <CardDescription className="line-clamp-3 text-[15px] leading-6 text-foreground/70">
-            {frontmatter.summary}
+            {frontmatter.businessDecision ?? frontmatter.summary}
           </CardDescription>
         </CardHeader>
         {frontmatter.role ? (
           <CardContent>
             <p className="text-xs uppercase tracking-wide text-foreground/50">
-              Role
+              {frontmatter.businessRole ? (locale === "es" ? "Quién lo usa" : "Who uses it") : (locale === "es" ? "Responsabilidad" : "Role")}
             </p>
-            <p className="mt-1 text-sm text-foreground/80">{frontmatter.role}</p>
+            <p className="mt-1 text-sm text-foreground/80">{frontmatter.businessRole ?? (locale === 'es' && frontmatter.role === 'Product & Engineering' ? 'Producto e ingeniería' : frontmatter.role)}</p>
           </CardContent>
         ) : null}
         <CardFooter className="flex flex-wrap gap-1.5">

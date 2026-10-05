@@ -1,0 +1,1085 @@
+[
+  {
+    "repository": "agente-cobranzas",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Standard contact\nBefore the priority boundary.",
+            "outcome": "Standard queue\n\nLocal policy determines priority and previews a message that is not sent."
+          },
+          {
+            "preset": "Priority account\nPast the policy boundary.",
+            "outcome": "Priority queue\n\nLocal policy determines priority and previews a message that is not sent."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Contacto estándar\nAntes del límite de prioridad.",
+            "outcome": "Cola estándar\n\nLa política local determina la prioridad y muestra un mensaje que no se envía."
+          },
+          {
+            "preset": "Cuenta prioritaria\nDespués del límite de política.",
+            "outcome": "Cola prioritaria\n\nLa política local determina la prioridad y muestra un mensaje que no se envía."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "agente-riesgo",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Clear case\nAll three gates permit progress.",
+            "outcome": "Proceed\n\nAll three gates satisfy local policy, so the case can proceed."
+          },
+          {
+            "preset": "Blocking signal\nScreening sends the case to stop.",
+            "outcome": "Stop\n\nThe screening signal blocks progress and requires a human decision."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Caso limpio\nLas tres compuertas permiten el avance.",
+            "outcome": "Continuar\n\nLas tres compuertas cumplen la política local y el caso puede continuar."
+          },
+          {
+            "preset": "Señal bloqueante\nEl screening envía el caso a detener.",
+            "outcome": "Detener\n\nLa señal de screening bloquea el avance y requiere una decisión humana."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "arbitro",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Consensus\nThree approve ballots at confidence 0.90, 0.80, 0.70; threshold 0.60.",
+            "outcome": "Decision resolved\n\n3/3 votes and confidence 0.80 at threshold 0.60."
+          },
+          {
+            "preset": "Disagreement\nApprove / deny / review at 0.90 / 0.55 / 0.55; threshold 0.80.",
+            "outcome": "Escalated to review\n\n1/3 votes and confidence 0.90 at threshold 0.80."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Consenso\nTres votos de aprobar con confianza 0.90, 0.80, 0.70; umbral 0.60.",
+            "outcome": "Decisión resuelta\n\n3/3 votos y confianza 0.80 con umbral 0.60."
+          },
+          {
+            "preset": "Desacuerdo\nAprobar / denegar / revisión con 0.90 / 0.55 / 0.55; umbral 0.80.",
+            "outcome": "Escalado a revisión\n\n1/3 votos y confianza 0.90 con umbral 0.80."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "asedio",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Hardened proxy\nJailbreak family against the hardened local target.",
+            "outcome": "Defense passed\n\n0 failures and 0 review cases for hardened."
+          },
+          {
+            "preset": "Vulnerable proxy\nThe same jailbreak family against the vulnerable local target.",
+            "outcome": "Exposure detected\n\n2 failures and 0 review cases for vulnerable."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Proxy endurecido\nFamilia jailbreak contra el objetivo local endurecido.",
+            "outcome": "Defensa aprobada\n\n0 fallos y 0 casos por revisar para hardened."
+          },
+          {
+            "preset": "Proxy vulnerable\nLa misma familia jailbreak contra el objetivo local vulnerable.",
+            "outcome": "Exposición detectada\n\n2 fallos y 0 casos por revisar para vulnerable."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "bandera",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Healthy variant\nTraffic stages advance",
+            "outcome": "Advance the rollout\n\nThe completed simulated stages meet the configured no-worse margin."
+          },
+          {
+            "preset": "Weak variant\nThe kill switch activates",
+            "outcome": "Kill switch activated\n\nA simulated stage breached the local no-worse rule, so later traffic is stopped."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Variante sana\nLas etapas avanzan",
+            "outcome": "Avanza el despliegue\n\nLas etapas simuladas completadas cumplen el margen configurado de no empeorar."
+          },
+          {
+            "preset": "Variante débil\nSe activa el apagado",
+            "outcome": "Interruptor de apagado activado\n\nUna etapa simulada incumplió la regla local de no empeorar, por lo que se detiene el tráfico posterior."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "compuerta",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "With backup\nOutage from tick 8 to 20; alternate route enabled.",
+            "outcome": "Continuity activated\n\nProtected availability: 100%; baseline: 60%."
+          },
+          {
+            "preset": "Without backup\nThe same outage; alternate route disabled.",
+            "outcome": "No alternate route\n\nProtected availability: 57%; baseline: 60%."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Con respaldo\nCaída del tick 8 al 20; ruta alternativa activa.",
+            "outcome": "Continuidad activada\n\nDisponibilidad protegida: 100%; base: 60%."
+          },
+          {
+            "preset": "Sin respaldo\nLa misma caída; ruta alternativa desactivada.",
+            "outcome": "Sin ruta alternativa\n\nDisponibilidad protegida: 57%; base: 60%."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "destilacion",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Pilot volume\n120,000 requests per month.",
+            "outcome": "Keep the API rate\n\nThe comparison assumes $6 per 1,000 requests and $1,800 monthly local capacity. Operations, maintenance and quality differences are excluded."
+          },
+          {
+            "preset": "Scale volume\n1,000,000 requests per month.",
+            "outcome": "Plan local capacity\n\nThe comparison assumes $6 per 1,000 requests and $1,800 monthly local capacity. Operations, maintenance and quality differences are excluded."
+          }
+        ],
+        "localizedValidationError": "Invoice text is required.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Volumen piloto\n120,000 solicitudes al mes.",
+            "outcome": "Mantén la tarifa API\n\nLa comparación usa una tarifa supuesta de $6 por 1,000 solicitudes y $1,800 de capacidad local mensual. No incluye operación, mantenimiento ni diferencias de calidad."
+          },
+          {
+            "preset": "Volumen a escala\n1,000,000 solicitudes al mes.",
+            "outcome": "Planea capacidad local\n\nLa comparación usa una tarifa supuesta de $6 por 1,000 solicitudes y $1,800 de capacidad local mensual. No incluye operación, mantenimiento ni diferencias de calidad."
+          }
+        ],
+        "localizedValidationError": "Introduce texto de factura y un volumen mensual entero no negativo.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "doorman",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Policy on\nHostile document requesting an approval email; policy enabled.",
+            "outcome": "Action blocked\n\n2 safeguards prevented the external action."
+          },
+          {
+            "preset": "Benign summary without policy\nBenign document requesting a summary; policy disabled.",
+            "outcome": "Action permitted\n\nNo rule fired for this input."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Política activada\nDocumento hostil que pide enviar un correo de aprobación; política activada.",
+            "outcome": "Acción bloqueada\n\n2 salvaguardas evitaron la acción externa."
+          },
+          {
+            "preset": "Resumen benigno sin política\nDocumento benigno que pide un resumen; política desactivada.",
+            "outcome": "Acción permitida\n\nNo se activó una regla para esta entrada."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "ensayo",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Clear lift\nThe gate can advance",
+            "outcome": "Advance the change\n\nΔ 0.496, p 0.0000; the local gate is advance."
+          },
+          {
+            "preset": "Uncertain lift\nThe gate holds",
+            "outcome": "Hold the change\n\nΔ 0.000, p 1.0000; the local gate is hold."
+          }
+        ],
+        "localizedValidationError": "Provide finite score samples and an alpha between 0 and 1.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Lift claro\nLa compuerta puede avanzar",
+            "outcome": "Avanza el cambio\n\nΔ 0.496, p 0.0000; la compuerta local indica avanzar."
+          },
+          {
+            "preset": "Lift incierto\nLa compuerta mantiene",
+            "outcome": "Mantén el cambio\n\nΔ 0.000, p 1.0000; la compuerta local indica mantener."
+          }
+        ],
+        "localizedValidationError": "Introduce al menos dos puntuaciones finitas por muestra y un alfa entre 0 y 1.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "escaneo",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Valid receipt\nChecks pass",
+            "outcome": "Hold for review\n\nA marked field remains unchanged for review."
+          },
+          {
+            "preset": "Broken account\nRequires review",
+            "outcome": "Hold for review\n\nA marked field remains unchanged for review."
+          }
+        ],
+        "localizedValidationError": "OCR text is required.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Recibo válido\nLas comprobaciones pasan",
+            "outcome": "Retener para revisión\n\nUn campo marcado permanece sin cambios para revisión."
+          },
+          {
+            "preset": "Cuenta dañada\nRequiere revisión",
+            "outcome": "Retener para revisión\n\nUn campo marcado permanece sin cambios para revisión."
+          }
+        ],
+        "localizedValidationError": "Introduce texto OCR para inspeccionar el documento.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "evidencia",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Supported claim\nA local passage is verifiable.",
+            "outcome": "Evidence-backed answer\n\nSupport is available in the help center. [local-1]"
+          },
+          {
+            "preset": "Missing evidence\nStrict mode refuses the claim.",
+            "outcome": "Evidence missing: review required\n\nI cannot support that claim from this local corpus."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Afirmación sustentada\nHay un pasaje local verificable.",
+            "outcome": "Respuesta respaldada\n\nEl soporte está disponible en el centro de ayuda. [local-1] Los cambios de facturación requieren aprobación. [local-2]"
+          },
+          {
+            "preset": "Evidencia ausente\nEl modo estricto rechaza la afirmación.",
+            "outcome": "Falta evidencia: requiere revisión\n\nEl corpus no sustenta la afirmación. La demo rechaza la respuesta en lugar de inventar información."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "fabrica",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Repeated logs\nDeduplication removes similar logs",
+            "outcome": "Review selected cases\n\n2 cases represent 2 of 2 intents."
+          },
+          {
+            "preset": "Diverse intents\nCoverage spans more labels",
+            "outcome": "Review selected cases\n\n3 cases represent 3 of 3 intents."
+          }
+        ],
+        "localizedValidationError": "Provide a 0–1 threshold and positive whole sample size.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Registros repetidos\nLa deduplicación elimina registros similares",
+            "outcome": "Revisa casos seleccionados\n\n2 casos representan 2 de 2 intenciones."
+          },
+          {
+            "preset": "Intenciones diversas\nLa cobertura abarca más etiquetas",
+            "outcome": "Revisa casos seleccionados\n\n3 casos representan 3 de 3 intenciones."
+          }
+        ],
+        "localizedValidationError": "Usa un umbral de 0 a 1 y un tamaño de muestra entero positivo.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "grafo",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Supported path\nCommitted hops exist.",
+            "outcome": "Grounded answer\n\nMexico"
+          },
+          {
+            "preset": "Outside ontology\nThe question is refused.",
+            "outcome": "Out of scope\n\nThis question is outside the committed ontology."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Ruta sustentada\nHay saltos confirmados.",
+            "outcome": "Respuesta sustentada\n\nLa respuesta une las relaciones visibles arriba; abre la comparación para inspeccionar el texto original."
+          },
+          {
+            "preset": "Fuera de ontología\nSe rechaza la pregunta.",
+            "outcome": "Fuera de alcance\n\nNo existe una ruta soportada en la ontología local."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "identidad-360",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Consistent profile\nRegistry and document agree.",
+            "outcome": "Profile assembled\n\nRegistry and document were assembled into the local profile at the shown coverage."
+          },
+          {
+            "preset": "Contradiction\nA signal separates the case for review.",
+            "outcome": "Analyst review\n\nThe source conflict separates the profile and sends it to an analyst."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Perfil consistente\nRegistro y documento coinciden.",
+            "outcome": "Perfil ensamblado\n\nRegistro y documento se integraron en el perfil local con la cobertura mostrada."
+          },
+          {
+            "preset": "Contradicción\nUna señal separa el caso para revisión.",
+            "outcome": "Revisión analítica\n\nLa contradicción entre fuentes separa el perfil y lo envía a una persona analista."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "kyc-antifraude",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Clean document\nThe route proceeds.",
+            "outcome": "Proceed\n\nComplete clean fictional scenario may proceed."
+          },
+          {
+            "preset": "Flag detected\nScreening stops the route.",
+            "outcome": "Reject\n\nA local screening flag rejects the scenario and records a human-review reason."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Documento limpio\nLa ruta continúa.",
+            "outcome": "Continuar\n\nLa ruta se calcula con señales locales ficticias."
+          },
+          {
+            "preset": "Señal detectada\nEl screening detiene la ruta.",
+            "outcome": "Rechazar\n\nLa ruta se calcula con señales locales ficticias."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "mesa",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Enough budget\nAssess identity risk controls: 12 steps, 10,000 tokens, one review allowance.",
+            "outcome": "Termination: approved\n\nSimulated proxy latency is 2100 ms; playback does not measure a live model."
+          },
+          {
+            "preset": "Minimal budget\nSame task with one step and 100 tokens.",
+            "outcome": "Termination: budget exhausted: steps\n\nSimulated proxy latency is 284 ms; playback does not measure a live model."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Presupuesto suficiente\nEvaluar controles de riesgo de identidad: 12 pasos, 10 000 tokens, una revisión permitida.",
+            "outcome": "Terminación: aprobado\n\nLa latencia de proxy simulada es 2100 ms; la reproducción no mide un modelo en vivo."
+          },
+          {
+            "preset": "Presupuesto mínimo\nMisma tarea con un paso y 100 tokens.",
+            "outcome": "Terminación: límite de pasos alcanzado\n\nLa latencia de proxy simulada es 284 ms; la reproducción no mide un modelo en vivo."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "radar-proveedores",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Resolved evidence\nMonitoring can continue.",
+            "outcome": "Proceed\n\nEvidence is resolved; monitoring can continue."
+          },
+          {
+            "preset": "Critical signal\nAn investigation opens.",
+            "outcome": "Investigate\n\nThe high-impact signal keeps analyst tasks open."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Evidencia resuelta\nSe conserva el monitoreo.",
+            "outcome": "Continuar\n\nLa evidencia está resuelta; el monitoreo puede continuar."
+          },
+          {
+            "preset": "Señal crítica\nSe abre una investigación.",
+            "outcome": "Investigar\n\nLa señal de alto impacto conserva tareas abiertas para la persona analista."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "traductor",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Supported question\nReturns local rows",
+            "outcome": "Use the validated local result\n\n2 local rows came from list_all."
+          },
+          {
+            "preset": "Refused request\nNo template runs",
+            "outcome": "Use the validated local result\n\n2 local rows came from list_all."
+          }
+        ],
+        "localizedValidationError": "A question is required.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Pregunta compatible\nDevuelve filas locales",
+            "outcome": "Usa el resultado local validado\n\n2 filas locales provienen de list_all."
+          },
+          {
+            "preset": "Solicitud rechazada\nNo se ejecuta plantilla",
+            "outcome": "Usa el resultado local validado\n\n2 filas locales provienen de list_all."
+          }
+        ],
+        "localizedValidationError": "Introduce una pregunta para interpretarla localmente.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "veredicto",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Hybrid retrieval\nHybrid retriever, first benchmark question, top 3 results.",
+            "outcome": "Release allowed\n\nhybrid changed 0 points against BM25."
+          },
+          {
+            "preset": "Degraded retrieval\nDegraded retriever, same question and top 3 limit.",
+            "outcome": "Release blocked\n\ndegraded changed -100 points against BM25."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Recuperación híbrida\nRecuperador híbrido, primera pregunta de referencia, top 3 resultados.",
+            "outcome": "Liberación permitida\n\nLa configuración hybrid cambió 0 puntos frente a BM25."
+          },
+          {
+            "preset": "Recuperación degradada\nRecuperador degradado, misma pregunta y límite de 3 resultados.",
+            "outcome": "Liberación bloqueada\n\nLa configuración degraded cambió -100 puntos frente a BM25."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "vigia",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Known rename\nA diff is proposed",
+            "outcome": "Review the proposed diff\n\nThe rename map produced a local proposal; no file was changed."
+          },
+          {
+            "preset": "Unmapped removal\nA reviewer is required",
+            "outcome": "Keep this reference in review\n\nNo rename map supports this reference, so it remains a human review item."
+          }
+        ],
+        "localizedValidationError": "Source and documentation text are required.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Renombre conocido\nSe propone un diff",
+            "outcome": "Revisa el diff propuesto\n\nEl mapa de renombres produjo una propuesta local; no se cambió ningún archivo."
+          },
+          {
+            "preset": "Eliminación sin mapa\nSe requiere un revisor",
+            "outcome": "Mantén esta referencia en revisión\n\nNingún mapa de renombres respalda esta referencia, por lo que permanece para revisión humana."
+          }
+        ],
+        "localizedValidationError": "Introduce texto fuente y documentación para preparar la vista previa.",
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "repository": "warmstart",
+    "scope": "Real React component with controlled locale; Next routes not tested.",
+    "checks": [
+      {
+        "locale": "en",
+        "scenarios": [
+          {
+            "preset": "Prompt version v1\n48 generated queries, similarity 0.65, prompt version v1.",
+            "outcome": "Cache balance ready\n\n0 entries invalidated; local cost 15¢ versus 48¢."
+          },
+          {
+            "preset": "Prompt version v2\nSame 48 queries and similarity; prompt changes to v2.",
+            "outcome": "Cache balance ready\n\n16 entries invalidated; local cost 23¢ versus 48¢."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      },
+      {
+        "locale": "es",
+        "scenarios": [
+          {
+            "preset": "Prompt versión v1\n48 consultas generadas, similitud 0.65, versión de prompt v1.",
+            "outcome": "Balance de caché listo\n\n0 entradas invalidadas; coste local 15¢ frente a 48¢."
+          },
+          {
+            "preset": "Prompt versión v2\nMismas 48 consultas y similitud; el prompt cambia a v2.",
+            "outcome": "Balance de caché listo\n\n16 entradas invalidadas; coste local 23¢ frente a 48¢."
+          }
+        ],
+        "mobileNoOverflow": true,
+        "reducedMotion": true,
+        "keyboard": true,
+        "noRequests": true,
+        "sceneChangesWithScenario": true,
+        "editingClearsPresetAndTrace": true,
+        "resetRestoresFirstPreset": true,
+        "cancelControlPresent": true,
+        "presetRestoresAllInputs": true
+      }
+    ],
+    "errors": []
+  }
+]

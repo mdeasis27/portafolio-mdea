@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-02T15:49:12.135Z",
+  "status": "implementation verified; owner visual presentation accepted; detailed browser, capture and HTTP evidence pending",
+  "tests": 141,
+  "testsByRepository": {
+    "portafolio-mdea": 11,
+    "evidencia": 21,
+    "compuerta": 37,
+    "destilacion": 22,
+    "agente-riesgo": 10,
+    "ensayo": 21,
+    "warmstart": 19
+  },
+  "successfulCommands": 28,
+  "initialMarkupChecks": 14,
+  "additionalRiskSignalRender": true,
+  "browserInteractionVerified": false,
+  "freshCaptures": false,
+  "nextHttpRoutesVerified": false,
+  "published": false,
+  "compuertaIntegerCentMigration": "approved and verified; explicit API cent fields; exact TS/Python fixtures",
+  "commandEvidence": "mission-pilot-commands.json",
+  "markupEvidence": "mission-pilot-markup.json",
+  "pending": [
+    "browser interaction and mobile review",
+    "fresh screenshots",
+    "Next HTTP routes and integrated homepage",
+    "server image optimization"
+  ],
+  "pythonBillingTests": 4,
+  "pythonBillingInterpreter": "3.11; does not certify declared >=3.12 runtime",
+  "additionalChecks": {
+    "previewScriptsParsed": 14,
+    "documentationGeneratorIdempotentFiles": 24,
+    "previewGeneratorLint": true
+  },
+  "ownerVisualReview": {
+    "accepted": true,
+    "date": "2026-10-02",
+    "evidence": "mission-pilot-owner-review.json",
+    "scope": "owner-reported presentation approval; detailed coverage unspecified"
+  }
+}

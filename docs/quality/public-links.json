@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "agente-cobranzas",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/agente-cobranzas"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://agente-cobranzas-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "agente-riesgo",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/agente-riesgo"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://agente-riesgo-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "arbitro",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/arbitro"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://arbitro-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "asedio",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/asedio"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://asedio-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "bandera",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/bandera"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://bandera-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "compuerta",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/compuerta"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://compuerta-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "destilacion",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/destilacion"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://destilacion-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "doorman",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/doorman"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://doorman-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "ensayo",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/ensayo"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://ensayo-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "escaneo",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/escaneo"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://escaneo-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "evidencia",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/evidencia"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://evidencia-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "fabrica",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/fabrica"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://fabrica-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "grafo",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/grafo"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://grafo-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "identidad-360",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/identidad-360"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://identidad-360-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "kyc-antifraude",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/kyc-antifraude"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://kyc-antifraude-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "mesa",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/mesa"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://mesa-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "radar-proveedores",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/radar-proveedores"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://radar-proveedores-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "traductor",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/traductor"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://traductor-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "veredicto",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/veredicto"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://veredicto-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "vigia",
+    "source": {
+      "status": 200,
+      "url": "https://github.com/mdeasis27/vigia"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://vigia-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  },
+  {
+    "slug": "warmstart",
+    "source": {
+      "status": 404,
+      "url": "https://github.com/mdeasis27/warmstart"
+    },
+    "deployedDemo": {
+      "status": 404,
+      "url": "https://warmstart-manueldeasis27-2515s-projects.vercel.app/en/app"
+    }
+  }
+]

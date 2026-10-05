@@ -1,0 +1,996 @@
+[
+  {
+    "repository": "agente-cobranzas",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Route account",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 5,
+        "clicked": "Route account",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Enrutar cuenta",
+          "Cancelar",
+          "Restaurar",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 5,
+        "clicked": "Enrutar cuenta",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "agente-riesgo",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Run scenario",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 5,
+        "clicked": "Run scenario",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Ejecutar escenario",
+          "Cancelar",
+          "Restaurar",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 5,
+        "clicked": "Ejecutar escenario",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "arbitro",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Arbitrate votes",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 7,
+        "clicked": "Arbitrate votes",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Arbitrar votos",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 7,
+        "clicked": "Arbitrar votos",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "asedio",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Run simulated checks",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Run simulated checks",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Ejecutar comprobaciones",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Ejecutar comprobaciones",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "bandera",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Simulate",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Simulate",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Simular",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Simular",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "compuerta",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Simulate routing",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Simulate routing",
+        "traceEvents": 5,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Simular enrutamiento",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Simular enrutamiento",
+        "traceEvents": 5,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "destilacion",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Run extraction",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Run extraction",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Ejecutar extracci\u00f3n",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Ejecutar extracci\u00f3n",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "doorman",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Run guard path",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Run guard path",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Ejecutar protecci\u00f3n",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Ejecutar protecci\u00f3n",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "ensayo",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Analyze",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 3,
+        "clicked": "Analyze",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Analizar",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 3,
+        "clicked": "Analizar",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "escaneo",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Validate",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Validate",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Validar",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Validar",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "evidencia",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Retrieve evidence",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 4,
+        "clicked": "Retrieve evidence",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Recuperar evidencia",
+          "Cancelar",
+          "Restaurar",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 4,
+        "clicked": "Recuperar evidencia",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "fabrica",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Generate",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 3,
+        "clicked": "Generate",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Generar",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 3,
+        "clicked": "Generar",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "grafo",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Traverse graph",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 2,
+        "clicked": "Traverse graph",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Recorrer grafo",
+          "Cancelar",
+          "Restablecer",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 2,
+        "clicked": "Recorrer grafo",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "identidad-360",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Assemble profile",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 4,
+        "clicked": "Assemble profile",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Construir perfil",
+          "Cancelar",
+          "Restablecer",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 4,
+        "clicked": "Construir perfil",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "kyc-antifraude",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Check scenario",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 3,
+        "clicked": "Check scenario",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Revisar escenario",
+          "Cancelar",
+          "Restablecer",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 3,
+        "clicked": "Revisar escenario",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "mesa",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Run local workflow",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 4,
+        "clicked": "Run local workflow",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Ejecutar flujo local",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 4,
+        "clicked": "Ejecutar flujo local",
+        "traceEvents": 4,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "radar-proveedores",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Assess scenario",
+          "Cancel",
+          "Reset",
+          "Play",
+          "Show all"
+        ],
+        "inputs": 3,
+        "clicked": "Assess scenario",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Evaluar escenario",
+          "Cancelar",
+          "Restablecer",
+          "Reproducir",
+          "Ver todo"
+        ],
+        "inputs": 3,
+        "clicked": "Evaluar escenario",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "traductor",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Interpret locally",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 1,
+        "clicked": "Interpret locally",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Interpretar localmente",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 1,
+        "clicked": "Interpretar localmente",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "veredicto",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Evaluate",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 2,
+        "clicked": "Evaluate",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Evaluar",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 2,
+        "clicked": "Evaluar",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "vigia",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Preview",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 3,
+        "clicked": "Preview",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Vista previa",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 3,
+        "clicked": "Vista previa",
+        "traceEvents": 2,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  },
+  {
+    "repository": "warmstart",
+    "checks": [
+      {
+        "locale": "en",
+        "htmlLang": "en",
+        "buttons": [
+          "Replay",
+          "Cancel",
+          "Reset"
+        ],
+        "inputs": 4,
+        "clicked": "Replay",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      },
+      {
+        "locale": "es",
+        "htmlLang": "es",
+        "buttons": [
+          "Reproducir",
+          "Cancelar",
+          "Reiniciar"
+        ],
+        "inputs": 4,
+        "clicked": "Reproducir",
+        "traceEvents": 3,
+        "keyboardFocus": "SELECT",
+        "editingInvalidatesEvidence": true,
+        "resetClearsResult": true,
+        "cancelUsable": true,
+        "languageSwitchWithoutStorage": true
+      }
+    ],
+    "errors": [],
+    "legacyRedirectRetainsQuery": true,
+    "unsupportedLocale404": true,
+    "translatedBodyDiffers": true,
+    "reducedMotionDisablesPlayback": true,
+    "mobileNoOverflow": true,
+    "noExternalOrApiRequests": true
+  }
+]

@@ -6,7 +6,7 @@
 
 **Architecture:** Two phases. First, build the tooling in the hub (Phase A): refactor `syncKit` into a shared lib, add `dryRun`, add `portfolio.config.mjs`, build propagate scripts with TDD. Then migrate siblings sequentially (Phase B: `identidad-360`, Phase C: `agente-riesgo`) using the same recipe — pre-flight, manual mv handoff, local reconciliation, brand adoption, push, watch deploy, update hub config. Phase D validates both propagate scripts against real siblings.
 
-**Tech Stack:** Node.js 22, pnpm 9, `node:test` (no external deps), Next.js 16, Vercel. Tests follow Plan 1's pattern (`mkdtempSync` fixtures, no external mock libs).
+**Tech Stack:** Node.js 22, pnpm 9, `node:test` (no external deps), Next.js 16, deployment platform. Tests follow Plan 1's pattern (`mkdtempSync` fixtures, no external mock libs).
 
 ---
 
@@ -1036,7 +1036,7 @@ git commit -m "chore: migrate to meta-folder + adopt brand v2"
 git push origin main
 ```
 
-Vercel auto-deploys.
+deployment platform auto-deploys.
 
 ---
 
@@ -1050,7 +1050,7 @@ Vercel auto-deploys.
 vercel inspect https://identidad-360.vercel.app 2>&1 | head -30
 ```
 
-Or check the Vercel dashboard. Wait for the latest deploy to transition from BUILDING → READY.
+Or check the deployment platform dashboard. Wait for the latest deploy to transition from BUILDING → READY.
 
 - [ ] **Step 2: If READY → smoke test production**
 
@@ -1066,8 +1066,8 @@ If all good → proceed to Task 14.
 
 - [ ] **Step 3: If ERROR or 500 → rollback**
 
-**Primary rollback (Vercel Instant Rollback):**
-- Open Vercel dashboard → `identidad-360` project → Deployments.
+**Primary rollback (deployment platform Instant Rollback):**
+- Open deployment platform dashboard → `identidad-360` project → Deployments.
 - Find the deploy with the id recorded in Task 10 Step 3.
 - Click "Promote to Production". Production restored in ~5s.
 
@@ -1148,7 +1148,7 @@ git commit -m "feat(config): register identidad-360 as portfolio sibling"
 git push origin main
 ```
 
-Vercel will redeploy the hub. The change is trivial (one file, no code path change) so this is low-risk.
+deployment platform will redeploy the hub. The change is trivial (one file, no code path change) so this is low-risk.
 
 ---
 
@@ -1331,7 +1331,7 @@ Browser check at `https://agente-riesgo.vercel.app`: Fraunces H1, zinc+blue pale
 
 - [ ] **Step 3: If ERROR or 500 → rollback**
 
-Instant Rollback via Vercel dashboard to the deploy id from Task 16 Step 3. Or `git revert HEAD --no-edit && git push origin main`. Investigate, fix, re-deploy.
+Instant Rollback via deployment platform dashboard to the deploy id from Task 16 Step 3. Or `git revert HEAD --no-edit && git push origin main`. Investigate, fix, re-deploy.
 
 Do NOT proceed to Task 20 until production is verified green.
 

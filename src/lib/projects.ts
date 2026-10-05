@@ -1,3 +1,4 @@
+import type {Locale} from '@/design-system/i18n/locale';
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
@@ -22,6 +23,11 @@ export interface ProjectFrontmatter {
   caseStudyUrl?: string;
   tags?: string[];
   cover?: string;
+  businessRole?: string;
+  businessDecision?: string;
+  businessValue?: string;
+  visualMechanism?: string;
+  scenarios?: {title:string;input:string;observation:string}[];
 }
 
 export interface Project {
@@ -29,9 +35,9 @@ export interface Project {
   content: string;
 }
 
-async function readContentDir(): Promise<string[]> {
+async function readContentDir(locale: Locale): Promise<string[]> {
   try {
-    const entries = await fs.readdir(CONTENT_DIR);
+    const entries = await fs.readdir(path.join(CONTENT_DIR, locale));
     return entries.filter((name) => name.endsWith(".mdx"));
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
@@ -64,11 +70,11 @@ function assertFrontmatter(
   }
 }
 
-export async function getAllProjects(): Promise<Project[]> {
-  const files = await readContentDir();
+export async function getAllProjects(locale: Locale = "en"): Promise<Project[]> {
+  const files = await readContentDir(locale);
   const projects = await Promise.all(
     files.map(async (filename) => {
-      const filePath = path.join(CONTENT_DIR, filename);
+      const filePath = path.join(CONTENT_DIR, locale, filename);
       const raw = await fs.readFile(filePath, "utf8");
       const { data, content } = matter(raw);
       assertFrontmatter(data, filename);
@@ -83,17 +89,17 @@ export async function getAllProjects(): Promise<Project[]> {
   });
 }
 
-export async function getProjectBySlug(slug: string): Promise<Project | null> {
-  const all = await getAllProjects();
+export async function getProjectBySlug(slug: string, locale: Locale = "en"): Promise<Project | null> {
+  const all = await getAllProjects(locale);
   return all.find((p) => p.frontmatter.slug === slug) ?? null;
 }
 
-export async function getFeaturedProjects(): Promise<Project[]> {
-  const all = await getAllProjects();
+export async function getFeaturedProjects(locale: Locale = "en"): Promise<Project[]> {
+  const all = await getAllProjects(locale);
   return all.filter((p) => p.frontmatter.featured);
 }
 
-export async function getProjectSlugs(): Promise<string[]> {
-  const all = await getAllProjects();
+export async function getProjectSlugs(locale: Locale = "en"): Promise<string[]> {
+  const all = await getAllProjects(locale);
   return all.map((p) => p.frontmatter.slug);
 }

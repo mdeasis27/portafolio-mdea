@@ -1,0 +1,73 @@
+---
+title: Collections prioritization
+slug: agente-cobranzas
+summary: 'Change overdue days, amount in integer cents, segment and contact rules.'
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - TypeScript
+  - PostgreSQL
+  - Drizzle ORM
+  - LLM API
+  - Messaging Bot API
+  - Scheduled jobs
+  - Tailwind CSS v4
+status: beta
+year: 2026
+publishedAt: '2026-04-12'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/agente-cobranzas'
+liveUrl: 'https://agente-cobranzas-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - fintech
+  - cobranzas
+  - automatización
+  - AI
+updatedAt: '2026-10-01'
+businessRole: Collections operations owner
+businessDecision: Use the standard or priority queue.
+businessValue: Explains why a local message is queued without sending it.
+visualMechanism: An aging timeline shows the case marker crossing the policy boundary.
+scenarios:
+  - title: Standard contact
+    input: '10 days past due, balanced policy'
+    observation: The account remains in the standard queue.
+  - title: Priority account
+    input: '35 days past due, balanced policy'
+    observation: The case crosses the policy boundary and becomes priority.
+---
+## The problem
+
+Accounts need a consistent priority before outreach.
+
+**Who uses it:** Collections operations owner.
+
+**The decision:** Use the standard or priority queue.
+
+## The approach
+
+Place an account on the aging timeline, apply the policy boundary, then preview the route.
+
+### Try the decision
+
+**Standard contact:** 10 days past due, balanced policy The account remains in the standard queue.
+
+**Priority account:** 35 days past due, balanced policy The case crosses the policy boundary and becomes priority.
+
+Choose a scenario, edit its controls and run the local computation. Step through the visual process or reveal all steps. Reset before comparing the second scenario.
+
+## Design decisions
+
+An aging timeline shows the case marker crossing the policy boundary.
+
+Queue segmentation and a message preview; no message is sent.
+
+## Current state
+
+The primary experience runs locally without an API key or database. Scenario presets change actual inputs, and visual playback reveals computed trace events. Live integrations remain separate. The redesigned public routes are pending deployment.
+
+## What this demonstrates
+
+Explains why a local message is queued without sending it.
+
+**Limits:** Messages are local previews and are never sent. These portfolio prototypes do not claim measured production impact.

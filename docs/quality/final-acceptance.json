@@ -1,0 +1,654 @@
+[
+  {
+    "repository": "portafolio-mdea",
+    "tests": 8,
+    "commands": [
+      {
+        "command": "node --test scripts/*.test.mjs design-system/demo/foundation.node-test.mjs",
+        "log": "final-test.log",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run lint",
+        "log": "final-lint.log",
+        "exitCode": 0
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "log": "final-types.log",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run build",
+        "log": "final-build.log",
+        "exitCode": 0
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "agente-cobranzas",
+    "tests": 3,
+    "commands": [
+      {
+        "command": "pnpm test",
+        "exitCode": 0,
+        "testCount": 3,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "pnpm run lint",
+        "exitCode": 0,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "pnpm exec tsc --noEmit",
+        "exitCode": 0,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "pnpm run build",
+        "exitCode": 0,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "agente-riesgo",
+    "tests": 4,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "arbitro",
+    "tests": 12,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 12,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "asedio",
+    "tests": 23,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 23,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "bandera",
+    "tests": 9,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "compuerta",
+    "tests": 29,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 29,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "destilacion",
+    "tests": 21,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "doorman",
+    "tests": 8,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 8,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "ensayo",
+    "tests": 14,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "escaneo",
+    "tests": 12,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "evidencia",
+    "tests": 16,
+    "commands": [
+      {
+        "command": "test",
+        "exitCode": 0
+      },
+      {
+        "command": "lint",
+        "exitCode": 0
+      },
+      {
+        "command": "types",
+        "exitCode": 0
+      },
+      {
+        "command": "build",
+        "exitCode": 0
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "fabrica",
+    "tests": 8,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "grafo",
+    "tests": 50,
+    "commands": [
+      {
+        "command": "pnpm test",
+        "exitCode": 0,
+        "testCount": 50,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "pnpm run lint",
+        "exitCode": 0,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "pnpm exec tsc --noEmit",
+        "exitCode": 0,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "pnpm run build",
+        "exitCode": 0,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "identidad-360",
+    "tests": 16,
+    "commands": [
+      {
+        "command": "test",
+        "exitCode": 0
+      },
+      {
+        "command": "lint",
+        "exitCode": 0
+      },
+      {
+        "command": "types",
+        "exitCode": 0
+      },
+      {
+        "command": "build",
+        "exitCode": 0
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "kyc-antifraude",
+    "tests": 3,
+    "commands": [
+      {
+        "command": "test",
+        "exitCode": 0
+      },
+      {
+        "command": "lint",
+        "exitCode": 0
+      },
+      {
+        "command": "types",
+        "exitCode": 0
+      },
+      {
+        "command": "build",
+        "exitCode": 0
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "mesa",
+    "tests": 40,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 40,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "radar-proveedores",
+    "tests": 3,
+    "commands": [
+      {
+        "command": "test",
+        "exitCode": 0
+      },
+      {
+        "command": "lint",
+        "exitCode": 0
+      },
+      {
+        "command": "types",
+        "exitCode": 0
+      },
+      {
+        "command": "build",
+        "exitCode": 0
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "traductor",
+    "tests": 44,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "veredicto",
+    "tests": 32,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 32,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "vigia",
+    "tests": 7,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "log": "final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "log": "final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "log": "final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  },
+  {
+    "repository": "warmstart",
+    "tests": 13,
+    "commands": [
+      {
+        "command": "npm test",
+        "exitCode": 0,
+        "testCount": 13,
+        "log": "docs/quality/final-test.log"
+      },
+      {
+        "command": "npm run lint",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-lint.log"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-types.log"
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0,
+        "testCount": null,
+        "log": "docs/quality/final-build.log"
+      }
+    ],
+    "branch": "feat/recruiter-portfolio-experience",
+    "dependencyLockMatches": true,
+    "frozenInstallPassed": true
+  }
+]

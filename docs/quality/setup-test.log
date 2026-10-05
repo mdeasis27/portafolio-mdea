@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: switches locale while retaining path query and hash
+ok 1 - switches locale while retaining path query and hash
+  ---
+  duration_ms: 179.7601
+  type: 'test'
+  ...
+# Subtest: cancel and replacement invalidate obsolete completions
+ok 2 - cancel and replacement invalidate obsolete completions
+  ---
+  duration_ms: 95.0558
+  type: 'test'
+  ...
+# Subtest: new traces restart playback and retain measured event time
+ok 3 - new traces restart playback and retain measured event time
+  ---
+  duration_ms: 117.4411
+  type: 'test'
+  ...
+# Subtest: ai-kit can be synced with the same syncKit helper
+ok 4 - ai-kit can be synced with the same syncKit helper
+  ---
+  duration_ms: 13.6512
+  type: 'test'
+  ...
+# Subtest: syncKit copies all files from source to target
+ok 5 - syncKit copies all files from source to target
+  ---
+  duration_ms: 113.4609
+  type: 'test'
+  ...
+# Subtest: syncKit removes files in target that no longer exist in source
+ok 6 - syncKit removes files in target that no longer exist in source
+  ---
+  duration_ms: 15.7539
+  type: 'test'
+  ...
+# Subtest: syncKit writes a manifest with timestamp
+ok 7 - syncKit writes a manifest with timestamp
+  ---
+  duration_ms: 101.9853
+  type: 'test'
+  ...
+# Subtest: all 21 case studies have paired languages with equal source identity and five sections
+ok 8 - all 21 case studies have paired languages with equal source identity and five sections
+  ---
+  duration_ms: 1474.627
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3680.5179

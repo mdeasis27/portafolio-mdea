@@ -22,7 +22,7 @@ retrieval + judge calibrado contra humanos (kappa) + auditoría de sesgos + gate
 
 ```
 veredicto/
-  app/                 # Next.js: landing / y demo /app (Vercel, demo-mode sin keys)
+  app/                 # Next.js: landing / y demo /app (deployment platform, demo-mode sin keys)
   components/
   lib/eval/            # núcleo real y determinista (TS), usado por la demo
   lib/eval/golden/     # corpus, preguntas, etiquetas humanas (committed)
@@ -41,7 +41,7 @@ veredicto/
 | `harness` | `runEval(config)` → `RunResult` reproducible |
 
 **Tradeoff a defender:** la matemática está duplicada en TS (para la demo en el navegador,
-Vercel no corre Python) y en Python (harness autoritativo). Se mitiga con **fixtures de
+deployment platform no corre Python) y en Python (harness autoritativo). Se mitiga con **fixtures de
 respuesta conocida compartidos** (`fixtures/agreement.json`) que ambos tests consumen; el
 test de equivalencia falla si divergen.
 

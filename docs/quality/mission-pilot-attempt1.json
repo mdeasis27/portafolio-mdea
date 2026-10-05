@@ -1,0 +1,184 @@
+[
+  {
+    "repository": "portafolio-mdea",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node --test scripts/ai-sync.test.mjs scripts/brand-sync.test.mjs scripts/portfolio-content.test.mjs design-system/demo/foundation.node-test.mjs",
+        "exitCode": 1,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 1,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 1,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 1,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "evidencia",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/vitest/vitest.mjs run",
+        "exitCode": 1,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 1,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 1,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 1,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "compuerta",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/vitest/vitest.mjs run",
+        "exitCode": 1,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 1,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 1,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 1,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "destilacion",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/vitest/vitest.mjs run",
+        "exitCode": 1,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 1,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 1,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 1,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "agente-riesgo",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/tsx/dist/cli.mjs --test lib/experience/adapter.test.ts lib/experience/mission.test.ts lib/experience/story.test.ts",
+        "exitCode": 0,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 0,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 0,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "ensayo",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/vitest/vitest.mjs run",
+        "exitCode": 1,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 1,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 1,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 1,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  },
+  {
+    "repository": "warmstart",
+    "scope": "Local mission pilot; secret files are not loaded; no route or deployment claim.",
+    "commands": [
+      {
+        "command": "node node_modules/vitest/vitest.mjs run",
+        "exitCode": 0,
+        "log": "mission-pilot-test.log"
+      },
+      {
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "exitCode": 2,
+        "log": "mission-pilot-lint.log"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "exitCode": 0,
+        "log": "mission-pilot-types.log"
+      },
+      {
+        "command": "node node_modules/next/dist/bin/next build",
+        "exitCode": 0,
+        "log": "mission-pilot-build.log"
+      }
+    ]
+  }
+]
