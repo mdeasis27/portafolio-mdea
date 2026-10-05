@@ -142,3 +142,12 @@ test('flow diagram cards announce each status and mark "off" without color', () 
   for (const label of ['down', 'on', 'off', 'routing']) assert.match(html, new RegExp(`<span class="sr-only">[^<]*${label}</span>`), label);
   assert.match(html, /data-flow-card="off"[\s\S]*?–/);
 });
+
+test('outcome tape takes its column count from the caller', () => {
+  const { OutcomeTape } = load('./project-story.tsx');
+  const labels = { served: 's', rerouted: 'r', lost: 'l' };
+  const html = renderToStaticMarkup(h(OutcomeTape, { cells: Array(24).fill('served'), labels, ariaLabel: 'x', columns: 24 }));
+  assert.match(html, /--tape-cols:24/);
+  assert.match(html, /--tape-cols-sm:12/);
+  assert.match(renderToStaticMarkup(h(OutcomeTape, { cells: ['served'], labels, ariaLabel: 'x' })), /--tape-cols:30/);
+});

@@ -1,6 +1,6 @@
 "use client";
 import { useSyncExternalStore } from "react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import type { TapeStatus } from "./outcome-tape";
 
 export interface Heading { before?: string; accent: string; after?: string }
@@ -53,9 +53,11 @@ export function WhyIBuiltIt({ title, text }: { title: string; text: string }) {
 
 const TAPE_COLORS: Record<TapeStatus, string> = { served: "bg-success", rerouted: "bg-info", lost: "bg-danger", pending: "bg-foreground/10" };
 
-export function OutcomeTape({ cells, labels, ariaLabel }: { cells: TapeStatus[]; labels: Record<Exclude<TapeStatus, "pending">, string>; ariaLabel: string }) {
+/** `columns` sets the grid width (default 30); phones under 400px get half when it is above 15. */
+export function OutcomeTape({ cells, labels, ariaLabel, columns = 30 }: { cells: TapeStatus[]; labels: Record<Exclude<TapeStatus, "pending">, string>; ariaLabel: string; columns?: number }) {
+  const style = { "--tape-cols": columns, "--tape-cols-sm": columns > 15 ? Math.ceil(columns / 2) : columns } as CSSProperties;
   return <div data-outcome-tape>
-    <ol aria-label={ariaLabel} className="grid grid-cols-[repeat(15,minmax(0,1fr))] gap-1 min-[400px]:grid-cols-[repeat(30,minmax(0,1fr))]">
+    <ol aria-label={ariaLabel} style={style} className="grid grid-cols-[repeat(var(--tape-cols-sm),minmax(0,1fr))] gap-1 min-[400px]:grid-cols-[repeat(var(--tape-cols),minmax(0,1fr))]">
       {cells.map((cell, i) => <li key={i} data-tape-cell={cell} title={cell === "pending" ? undefined : `${i + 1}: ${labels[cell]}`} className={`flex h-4 items-center justify-center rounded-sm text-[10px] font-bold leading-none text-white transition-colors duration-300 motion-reduce:transition-none ${TAPE_COLORS[cell]}`}>{cell === "lost" ? <span aria-hidden="true">×</span> : null}<span className="sr-only">{cell === "pending" ? "" : `${i + 1}: ${labels[cell]}`}</span></li>)}
     </ol>
     <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">{(["served", "rerouted", "lost"] as const).map(status => <li key={status} className="flex items-center gap-1.5"><span aria-hidden="true" className={`inline-flex size-2.5 items-center justify-center rounded-sm text-[8px] font-bold leading-none text-white ${TAPE_COLORS[status]}`}>{status === "lost" ? "×" : null}</span>{labels[status]}</li>)}</ul>
