@@ -1,5 +1,9 @@
 # Design System Changelog
 
+## Unreleased
+
+- Added `demo/project-story.tsx` (StoryHero, StorySection, AnalogyBlock, WhyIBuiltIt, OutcomeTape, FitGuide, ProvesBlock, EngineerNotes, useReducedMotion) and `demo/outcome-tape.ts` for recruiter-facing story pages.
+
 ## 3.1.0 — 2026-09-28
 
 - New **semantic status tokens**: `--success`, `--warning`, `--danger`, `--info` (theme-aware light/dark). Mapped as `--color-*` in `globals.css`.
