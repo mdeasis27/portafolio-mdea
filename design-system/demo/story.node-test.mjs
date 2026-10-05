@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import ts from 'typescript';
 const require = createRequire(import.meta.url);
@@ -8,7 +8,9 @@ function load(file) {
   const source = readFileSync(new URL(file, import.meta.url), 'utf8');
   const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX } }).outputText;
   const exports = {};
-  new Function('exports', 'require', js)(exports, require);
+  // Sibling TS modules ('./playback') are transpiled the same way; everything else is a real require.
+  const local = spec => ['.ts', '.tsx'].map(ext => spec + ext).find(p => existsSync(new URL(p, import.meta.url)));
+  new Function('exports', 'require', js)(exports, spec => spec.startsWith('./') && local(spec) ? load(local(spec)) : require(spec));
   return exports;
 }
 
@@ -105,4 +107,12 @@ test('flow diagram marks danger and success with a symbol, not color alone', () 
   assert.equal((html.match(/✕/g) ?? []).length, 2);
   assert.equal((html.match(/✓/g) ?? []).length, 2);
   assert.match(html, /data-flow-card="c"[^>]*data-tone="idle"/);
+});
+
+test('trace player heading can drop to h3 inside a story section', () => {
+  const { TracePlayer } = load('./trace-player.tsx');
+  const trace = [{ id: 'a', step: 1, messageKey: 'k' }];
+  const base = { trace, translate: k => k, locale: 'en' };
+  assert.match(renderToStaticMarkup(h(TracePlayer, base)), /<h2[^>]*>Computed trace/);
+  assert.match(renderToStaticMarkup(h(TracePlayer, { ...base, headingLevel: 'h3' })), /<h3[^>]*>Computed trace/);
 });
