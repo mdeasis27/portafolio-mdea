@@ -8,7 +8,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
-import {CaseExperiment} from "@/components/case-experiment";
 import { GitHubIcon } from "@/components/brand-icons";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -122,7 +121,10 @@ export default async function ProjectPage({
         <h1 className="mt-6 text-balance text-4xl font-medium leading-tight tracking-tight sm:text-[48px]">
           {frontmatter.title}
         </h1>
-        <p className="mt-6 text-lg leading-relaxed text-foreground/75">
+        {frontmatter.oneLiner ? (
+          <p className="mt-6 text-balance text-2xl leading-snug tracking-tight">{frontmatter.oneLiner}</p>
+        ) : null}
+        <p className="mt-4 text-lg leading-relaxed text-foreground/75">
           {frontmatter.summary}
         </p>
 
@@ -155,7 +157,7 @@ export default async function ProjectPage({
                 href={demoHref(frontmatter.liveUrl, lang)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ size: "sm", variant: "outline" })}
+                className={buttonVariants({ size: frontmatter.oneLiner ? "lg" : "sm", variant: frontmatter.oneLiner ? "default" : "outline" })}
               >
                 <ExternalLink className="mr-2 size-3.5" />
                 {c.demo}
@@ -178,10 +180,9 @@ export default async function ProjectPage({
       </header>
 
       {frontmatter.businessRole && <section className="mt-8 grid gap-5 border-l-2 border-accent pl-5 sm:grid-cols-2"><div><p className="font-mono text-xs uppercase text-muted-foreground">{lang === 'en' ? 'Put yourself in this role' : 'Ponte en este papel'}</p><p className="mt-2 text-sm leading-6">{frontmatter.businessRole}</p></div><div><p className="font-mono text-xs uppercase text-muted-foreground">{lang === 'en' ? 'Your decision' : 'Tu decisión'}</p><p className="mt-2 text-sm leading-6">{frontmatter.businessDecision}</p></div></section>}
-      {frontmatter.scenarios && frontmatter.visualMechanism && <CaseExperiment scenarios={frontmatter.scenarios} mechanism={frontmatter.visualMechanism} locale={lang}/>}
       <figure className="mt-10 overflow-hidden rounded-xl border border-border">
         <Image src={`/project-captures/${slug}${lang==='es'?'.es':''}.png`} alt={lang === 'en' ? `${frontmatter.title}: actual local demo` : `${frontmatter.title}: demo local real`} width={1440} height={1000} sizes="(min-width: 768px) 720px, 100vw" className="h-auto w-full" />
-        <figcaption className="border-t border-border px-4 py-3 text-xs text-foreground/60">{lang === 'en' ? 'Actual local interface. Open the demo to change inputs and inspect its computed evidence.' : 'Interfaz local real. Abre la demo para cambiar entradas y revisar la evidencia calculada.'}</figcaption>
+        <figcaption className="border-t border-border px-4 py-3 text-xs text-foreground/60">{lang === 'en' ? 'The live demo after a run. Open it to place your own bet and move the control.' : 'La demo real después de correrla. Ábrela para hacer tu propia apuesta y mover el control.'}</figcaption>
       </figure>
       <Separator className="my-12 opacity-60" />
 
