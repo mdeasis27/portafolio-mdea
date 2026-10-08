@@ -10,7 +10,9 @@
 
 21 prototipos interactivos conectan problemas de negocio con procesos de IA inspeccionables. Inglés es el idioma por defecto; español ofrece navegación y casos equivalentes. Cada proyecto distingue cálculo local, simulación determinista e integraciones opcionales. Los prototipos no afirman impacto en producción.
 
-## Empieza con tres decisiones de negocio
+## Recorrido guiado (componente de QA)
+
+La portada ahora destaca ocho proyectos directamente; este recorrido se conserva como componente de QA y ya no está en ella.
 
 El recorrido para reclutadores se centra en **Evidencia** (confianza), **Compuerta** (continuidad) y **Destilación** (costo). Predice un resultado, cambia las condiciones e inspecciona comparaciones calculadas simultáneas. Cada demo explica decisiones de implementación, compromisos y el trabajo necesario antes de producción.
 
