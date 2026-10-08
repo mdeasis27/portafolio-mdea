@@ -51,19 +51,19 @@ export default async function OpengraphImage() {
           >
             MdA
           </div>
-          <span>{site.author.role}</span>
+          <span>Finance · Operations · Applied AI</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 96,
+              fontSize: 76,
               fontWeight: 600,
-              letterSpacing: -3,
+              letterSpacing: -2,
               lineHeight: 1.05,
             }}
           >
-            AI Product.
+            Finance and operations leader who builds AI.
           </div>
           <div
             style={{
@@ -74,7 +74,7 @@ export default async function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            Applied AI for inspectable business decisions.
+            I turn business decisions into working software. 21 live demos, open source, no login.
           </div>
         </div>
 
