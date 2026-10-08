@@ -20,16 +20,16 @@ export default async function HomePage({params}:{params:Promise<{lang:string}>})
       <h1 className="mt-5 max-w-3xl text-4xl font-medium leading-[1.08] tracking-tight sm:text-6xl">{c.homeTitle}</h1>
       <p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground">{c.homeIntro}</p>
       <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-        <a href="#featured" className="inline-flex rounded-lg bg-foreground px-5 py-3 font-medium text-background">{c.seeProjects} ↓</a>
-        <a href={site.author.linkedin} className={link}>{c.linkedin} ↗</a>
-        <a href={site.author.github} className={link}>{c.github} ↗</a>
+        <a href="#featured" className="inline-flex rounded-lg bg-foreground px-5 py-3 font-medium text-background">{c.seeProjects} <span aria-hidden="true">↓</span></a>
+        <a href={site.author.linkedin} target="_blank" rel="noopener noreferrer" className={link}>{c.linkedin} <span aria-hidden="true">↗</span><span className="sr-only"> ({c.newTab})</span></a>
+        <a href={site.author.github} target="_blank" rel="noopener noreferrer" className={link}>{c.github} <span aria-hidden="true">↗</span><span className="sr-only"> ({c.newTab})</span></a>
         <a href={'mailto:'+site.author.email} className={link}>{c.email}</a>
       </div>
     </section>
     <section id="featured" className="scroll-mt-24 py-12">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <h2 className="text-2xl font-medium tracking-tight">{c.featuredHeading}</h2>
-        <Link href={'/'+lang+'/projects'} className="text-sm text-muted-foreground">{c.seeAll} →</Link>
+        <Link href={'/'+lang+'/projects'} className="text-sm text-muted-foreground">{c.seeAll} <span aria-hidden="true">→</span></Link>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{featured.map(p=><ProjectCard key={p.frontmatter.slug} project={p} locale={lang}/>)}</div>
     </section>

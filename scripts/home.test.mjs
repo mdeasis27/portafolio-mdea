@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import matter from 'gray-matter';
 import ts from 'typescript';
 
+// Evaluates a TS file as CommonJS: it cannot handle files that gain an `import`.
 function loadTs(file){const js=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;const exports={};new Function('exports',js)(exports);return exports;}
 
 const {featuredSlugs}=loadTs('src/lib/featured.ts');
@@ -44,4 +45,11 @@ test('shared-link metadata uses the new home intro, not the retired product pitc
  const layout=fs.readFileSync('src/app/[lang]/layout.tsx','utf8');
  assert.ok(!layout.includes('c.intro'),'layout still uses the old intro');
  assert.equal(layout.split('c.homeIntro').length-1,2,'description and openGraph.description must use c.homeIntro');
+});
+
+test('the project count written in the copy matches the content',()=>{
+ for(const [locale,dict] of [['en',en],['es',es]]){
+  const n=fs.readdirSync(`content/projects/${locale}`).filter(f=>f.endsWith('.mdx')).length;
+  for(const key of ['homeIntro','seeAll'])assert.ok(dict[key].includes(String(n)),`${locale}.${key} should mention ${n}`);
+ }
 });

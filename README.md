@@ -10,7 +10,9 @@
 
 21 interactive prototypes connect business problems to inspectable AI workflows. English is the default; Spanish has equivalent navigation and case studies. Each project separates local computation, deterministic simulation and optional live integrations. These prototypes do not claim production impact.
 
-## Start with three business decisions
+## Guided route (QA component)
+
+The homepage now features eight projects directly; this route is kept as a QA component and is no longer mounted there.
 
 The guided recruiter route focuses on **Evidencia** (trust), **Compuerta** (continuity) and **Destilación** (cost). Predict a result, change the conditions and inspect simultaneous computed comparisons. Each demo explains implementation choices, tradeoffs and the work needed before production.
 
