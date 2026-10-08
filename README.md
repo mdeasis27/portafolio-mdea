@@ -4,7 +4,7 @@
 [![CI](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 <!-- /community-badges -->
 
-[Español](README.es.md) · [Portfolio](https://manueldeasis.com/en) · [Source](https://github.com/mdeasis27/portafolio-mdea)
+[Español](README.es.md) · [Portfolio](https://portafolio-mdea.vercel.app/en) · [Source](https://github.com/mdeasis27/portafolio-mdea)
 
 ![Local review gallery of the portfolio decision labs](docs/images/cover.png)
 
