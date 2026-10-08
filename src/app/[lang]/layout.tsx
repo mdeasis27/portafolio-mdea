@@ -17,10 +17,10 @@ export async function generateMetadata({params}:{params:Promise<{lang:string}>})
  return {
   metadataBase:new URL(site.url),
   title:{default:site.name+' · AI Product',template:'%s · '+site.name},
-  description:c.intro,
+  description:c.homeIntro,
   alternates:{languages:{en:'/en',es:'/es'}},
   openGraph:{
-   title:site.name+' · AI Product',description:c.intro,locale:lang==='es'?'es_MX':'en_US',
+   title:site.name+' · AI Product',description:c.homeIntro,locale:lang==='es'?'es_MX':'en_US',
    images:[{url:new URL('/opengraph-image',site.url).toString(),width:1200,height:630,alt:site.name+' · AI Product'}],
   },
  };

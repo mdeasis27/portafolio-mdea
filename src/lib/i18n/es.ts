@@ -1,6 +1,7 @@
 export const es = {
  home:'Inicio',projects:'Proyectos',about:'Acerca de',role:'AI Product · IA aplicada al negocio',
  headline:'Del problema de negocio\na un producto de IA usable.',intro:'Construyo herramientas que convierten evidencia en decisiones. Explora los procesos, cambia los datos y descubre por qué cambia el resultado.',
+ homeTitle:'Líder de finanzas y operaciones que construye IA.',homeIntro:'Convierto decisiones de negocio en software que funciona. 21 demos en vivo, código abierto, sin login.',seeProjects:'Ver proyectos',seeAll:'Ver los 21',featuredHeading:'Proyectos destacados',github:'GitHub',linkedin:'LinkedIn',
  explore:'Explorar los proyectos',selected:'Empieza por una decisión de negocio',catalogue:'21 formas de aplicar IA al trabajo',catalogueIntro:'Prototipos interactivos de operaciones, evidencia, confiabilidad y calidad de producto. Cada caso explica el proceso, sus decisiones de diseño y sus límites.',
  caseStudy:'Leer caso de estudio',demo:'Probar la demo',newTab:'se abre en una pestaña nueva',source:'Código fuente',back:'Todos los proyectos',stack:'Tecnología',scope:'Producto e ingeniería',
  aboutTitle:'Criterio de negocio. Software usable.',aboutIntro:'Soy Manuel de Asís. Mi experiencia en finanzas y operaciones guía mi enfoque de los productos de IA: empezar por la decisión que necesita tomar un equipo, construir un proceso comprensible y permitir examinar su evidencia.',

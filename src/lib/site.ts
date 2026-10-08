@@ -10,6 +10,7 @@ export const site = {
     name: "Manuel De Asís",
     role: "AI Product · Applied AI",
     linkedin: "https://www.linkedin.com/in/manuel-de-asis",
+    github: "https://github.com/mdeasis27",
     email: "manueldeasis27@gmail.com",
     location: "Remote — LATAM",
   },
