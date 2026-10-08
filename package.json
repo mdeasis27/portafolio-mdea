@@ -11,6 +11,7 @@
     "ai:sync": "node scripts/ai-sync.mjs",
     "brand:propagate": "node scripts/brand-propagate.mjs",
     "ai:propagate": "node scripts/ai-propagate.mjs",
+    "community:propagate": "node scripts/community-propagate.mjs",
     "test:scripts": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
