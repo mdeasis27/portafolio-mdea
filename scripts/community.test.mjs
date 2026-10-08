@@ -92,3 +92,33 @@ test('assertClean refuses a dirty tree and a non-git directory',()=>{
  write(dir,'new.txt','x');
  assert.throws(()=>assertClean(dir),/working tree is not clean/);
 });
+
+const KIT='community-kit';
+const KIT_FILES=['LICENSE','CONTRIBUTING.md','CODE_OF_CONDUCT.md','SECURITY.md','.github/PULL_REQUEST_TEMPLATE.md','.github/ISSUE_TEMPLATE/bug_report.yml','.github/ISSUE_TEMPLATE/feature_request.yml','.github/ISSUE_TEMPLATE/config.yml','.github/workflows/ci.yml'];
+
+test('the kit ships every community file and none has leftover placeholders',()=>{
+ for(const rel of KIT_FILES){
+  const text=fs.readFileSync(path.join(KIT,rel),'utf8');
+  assert.ok(text.trim().length>0,rel);
+  assert.doesNotMatch(text,/\[INSERT[^\]]*\]|\[Tu Nombre\]|TODO|TBD/,rel);
+  const unknown=[...text.matchAll(/\{\{(\w+)\}\}/g)].map(m=>m[1]).filter(k=>k!=='name');
+  assert.deepEqual(unknown,[],`${rel}: unknown placeholders`);
+ }
+ assert.deepEqual(fs.readdirSync(KIT,{recursive:true}).filter(f=>fs.statSync(path.join(KIT,f)).isFile()).map(f=>f.split(path.sep).join('/')).sort(),[...KIT_FILES].sort());
+});
+
+test('license is MIT for Manuel De Asís and the code of conduct has a contact',()=>{
+ const lic=fs.readFileSync(path.join(KIT,'LICENSE'),'utf8');
+ assert.match(lic,/^MIT License\n\nCopyright \(c\) 2026 Manuel De Asís\n/);
+ assert.match(fs.readFileSync(path.join(KIT,'CODE_OF_CONDUCT.md'),'utf8'),/manueldeasis27@gmail\.com/);
+ assert.match(fs.readFileSync(path.join(KIT,'SECURITY.md'),'utf8'),/manueldeasis27@gmail\.com/);
+});
+
+test('CI workflow pins pnpm 9 and Node 22 and has the conditional test step',()=>{
+ const ci=fs.readFileSync(path.join(KIT,'.github/workflows/ci.yml'),'utf8');
+ assert.match(ci,/version: 9/);
+ assert.match(ci,/node-version: 22/);
+ assert.match(ci,/pnpm install --frozen-lockfile/);
+ assert.match(ci,/- run: pnpm test # if-test/);
+ for(const cmd of ['pnpm lint','pnpm build'])assert.ok(ci.includes(cmd),cmd);
+});
