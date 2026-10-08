@@ -43,7 +43,7 @@ Success criteria:
 
 ### Featured projects
 
-- Grid: 2 columns on mobile, 4 on large screens; reuses `ProjectCard` (thumbnail, title, one-liner).
+- Grid: 1 column on mobile, 2 on small screens, 4 on large screens (two columns at 390px would shrink thumbnails below legibility); reuses `ProjectCard` (thumbnail, title, one-liner).
 - Heading from the dictionary, plus a link "See all 21 →" to `/[lang]/projects`.
 - Order, finance and operations first, then technical credibility:
   1. agente-cobranzas
