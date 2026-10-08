@@ -155,13 +155,10 @@ export default async function ProjectPage({
             {frontmatter.liveUrl ? (
               <a
                 href={demoHref(frontmatter.liveUrl, lang)}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={buttonVariants({ size: frontmatter.oneLiner ? "lg" : "sm", variant: frontmatter.oneLiner ? "default" : "outline" })}
               >
                 <ExternalLink className="mr-2 size-3.5" />
                 {c.demo}
-                <span className="sr-only"> ({c.newTab})</span>
               </a>
             ) : null}
             {frontmatter.repoUrl ? (
