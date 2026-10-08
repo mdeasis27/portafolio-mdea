@@ -39,3 +39,9 @@ test('contact links for the hero come from site config',()=>{
  assert.equal(site.author.github,'https://github.com/mdeasis27');
  assert.match(site.author.email,/@/);
 });
+
+test('shared-link metadata uses the new home intro, not the retired product pitch',()=>{
+ const layout=fs.readFileSync('src/app/[lang]/layout.tsx','utf8');
+ assert.ok(!layout.includes('c.intro'),'layout still uses the old intro');
+ assert.equal(layout.split('c.homeIntro').length-1,2,'description and openGraph.description must use c.homeIntro');
+});
