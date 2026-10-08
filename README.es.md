@@ -1,5 +1,9 @@
 # Portafolio AI Product — Manuel de Asís
 
+<!-- community-badges -->
+[![CI](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<!-- /community-badges -->
+
 [English](README.md) · [Portafolio](https://manueldeasis.com/es) · [Código](https://github.com/mdeasis27/portafolio-mdea)
 
 ![Galería local de revisión de los laboratorios del portafolio](docs/images/cover.png)
@@ -57,3 +61,9 @@ Stack: Next.js 16.2.3, React 19.2.4, TypeScript estricto, Tailwind CSS 4 y MDX. 
 ## Evidencia y mantenimiento
 
 Consulta [la evidencia de aceptación](docs/quality/decision-lab-acceptance.md). Añade casos en ambos idiomas y ejecuta la prueba de paridad. La propagación compartida rechaza repositorios con cambios; revisa archivos propios antes de `brand:sync` individual. No guardes secretos en archivos locales ni Git.
+
+<!-- community-section -->
+## Licencia y contribución
+
+Publicado bajo la [licencia MIT](LICENSE). Se aceptan issues y pull requests: lee antes [CONTRIBUTING.md](CONTRIBUTING.md) y el [Código de Conducta](CODE_OF_CONDUCT.md). Para reportar una vulnerabilidad, consulta [SECURITY.md](SECURITY.md).
+<!-- /community-section -->
