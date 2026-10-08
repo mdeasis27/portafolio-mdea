@@ -4,7 +4,7 @@ export const site = {
   title: "Manuel De Asís — AI Product",
   description:
     "Interactive applied AI prototypes for business decisions, product quality, evidence, and reliable workflows.",
-  url: "https://manueldeasis.com",
+  url: "https://portafolio-mdea.vercel.app",
   locale: "en_US",
   author: {
     name: "Manuel De Asís",

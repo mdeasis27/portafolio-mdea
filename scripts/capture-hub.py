@@ -17,7 +17,7 @@ with sync_playwright() as p:
             page.add_style_tag(content='nextjs-portal{display:none!important}')
             assert response.status == 200, (locale, route, response.status)
             assert page.locator('html').get_attribute('lang') == locale
-            assert page.locator('meta[property="og:image"]').first.get_attribute('content').startswith('https://manueldeasis.com/')
+            assert page.locator('meta[property="og:image"]').first.get_attribute('content').startswith('https://portafolio-mdea.vercel.app/')
             print(locale, route or '/', page.locator('h1').inner_text())
         page.goto('http://localhost:3100/' + locale)
         page.wait_for_load_state('networkidle')

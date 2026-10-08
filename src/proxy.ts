@@ -5,4 +5,4 @@ export function proxy(request:NextRequest) {
  if(/^\/[a-z]{2}(\/|$)/.test(pathname))return NextResponse.next();
  const url=request.nextUrl.clone();url.pathname=`/en${pathname==='/'?'':pathname}`;return NextResponse.redirect(url);
 }
-export const config={matcher:['/((?!api(?:/|$)|_next(?:/|$)|.*\\.[^/]+$).*)']};
+export const config={matcher:['/((?!api(?:/|$)|_next(?:/|$)|opengraph-image$|.*\\.[^/]+$).*)']};

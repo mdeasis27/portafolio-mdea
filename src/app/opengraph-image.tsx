@@ -90,7 +90,7 @@ export default async function OpengraphImage() {
           <span style={{ color: "#fafafa", fontWeight: 600 }}>
             {site.name}
           </span>
-          <span style={{ fontFamily: "monospace" }}>manueldeasis.com</span>
+          <span style={{ fontFamily: "monospace" }}>portafolio-mdea.vercel.app</span>
         </div>
       </div>
     ),
