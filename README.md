@@ -1,5 +1,9 @@
 # AI Product Portfolio — Manuel de Asís
 
+<!-- community-badges -->
+[![CI](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeasis27/portafolio-mdea/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<!-- /community-badges -->
+
 [Español](README.es.md) · [Portfolio](https://manueldeasis.com/en) · [Source](https://github.com/mdeasis27/portafolio-mdea)
 
 ![Local review gallery of the portfolio decision labs](docs/images/cover.png)
@@ -57,3 +61,9 @@ Stack: Next.js 16.2.3, React 19.2.4, strict TypeScript, Tailwind CSS 4, MDX. Thi
 ## Evidence and maintenance
 
 See [acceptance evidence](docs/quality/decision-lab-acceptance.md). Add case studies in both locale directories and run the content parity check. Shared propagation rejects dirty repositories; review owned changes before individual `brand:sync`. Do not place secrets in local files or Git.
+
+<!-- community-section -->
+## License and contributing
+
+Released under the [MIT License](LICENSE). Issues and pull requests are welcome: read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md) first. To report a vulnerability, see [SECURITY.md](SECURITY.md).
+<!-- /community-section -->
