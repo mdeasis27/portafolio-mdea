@@ -21,6 +21,7 @@ Every portfolio repo should look professional and be safe to make public: a recr
 - Only `identidad-360` has a `LICENSE`, and it still contains the placeholder `[Tu Nombre]` (must be corrected).
 - No repo has `.github/`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` or `SECURITY.md`. All have `README.md` and `README.es.md`.
 - All repos use pnpm with `lint`, `test`, `build` scripts (the hub has no `test`). `package.json` has no `packageManager` field and `"private": true`; none has a `license` field.
+- The local toolchain is pnpm 10.33 and the hub's `pnpm-workspace.yaml` uses pnpm-10-only settings. A first CI draft pinned pnpm 9 and failed on the hub ("packages field missing or empty"), so the kit pins pnpm 10.
 
 ## Design
 
@@ -33,7 +34,7 @@ Files copied into each repo with `{{name}}` / `{{slug}}` substitution (English, 
 - `CODE_OF_CONDUCT.md`: Contributor Covenant 2.1, contact `manueldeasis27@gmail.com`.
 - `SECURITY.md`: report through GitHub private vulnerability reporting or by email; states the demos are simulations over fictional data.
 - `.github/ISSUE_TEMPLATE/bug_report.yml`, `feature_request.yml`, `config.yml` (blank issues disabled, contact link to the email), `.github/PULL_REQUEST_TEMPLATE.md`.
-- `.github/workflows/ci.yml`: on push to `main` and on pull requests: checkout, `pnpm/action-setup` (version 9), Node 22 with pnpm cache, `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm test` (only when the repo's `package.json` has a `test` script), `pnpm build`.
+- `.github/workflows/ci.yml`: on push to `main` and on pull requests: checkout, `pnpm/action-setup` (version 10), Node 22 with pnpm cache, `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm test` (only when the repo's `package.json` has a `test` script), `pnpm build`.
 
 ### Propagation script (hub)
 
@@ -66,5 +67,5 @@ Content of `docs/` beyond the personal-data scan, project code, Vercel settings,
 
 ## Risks
 
-- A repo whose existing CI/Vercel config assumes something different from pnpm 9 / Node 22: the pilot and local builds catch it; Vercel production is unaffected by `.github/` files.
+- A repo whose existing CI/Vercel config assumes something different from pnpm 10 / Node 22: the pilot and local builds catch it; Vercel production is unaffected by `.github/` files.
 - Making repos public exposes commit history and docs permanently: mitigated by the scan above and the per-batch confirmation gate.

@@ -6,7 +6,7 @@
 
 **Architecture:** Templates live in the hub (`community-kit/`). A small library (`scripts/lib/community.mjs`) renders them into a target repo and makes three per-repo edits (package.json license, README badges, README license section). A CLI (`scripts/community-propagate.mjs`) walks the hub plus the siblings from `portfolio.config.mjs`. It writes files only; git, PRs and GitHub settings are separate, manual steps.
 
-**Tech Stack:** Node 22 ESM (`node:test`), GitHub Actions (pnpm 9, Node 22), `gh` CLI.
+**Tech Stack:** Node 22 ESM (`node:test`), GitHub Actions (pnpm 10, Node 22), `gh` CLI.
 
 **Spec:** `docs/superpowers/specs/2026-10-07-community-kit-design.md`
 
@@ -15,7 +15,7 @@
 - License: MIT, `Copyright (c) 2026 Manuel De Asís`. No other holder text, no `[Tu Nombre]`.
 - Community files are in English; READMEs stay bilingual (EN section in `README.md`, ES section in `README.es.md`).
 - The script never runs git, never commits or pushes, refuses a dirty working tree, is idempotent, and `--dry-run` writes nothing.
-- CI uses pnpm `version: 9`, Node `22`, `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm build`, and `pnpm test` only when the repo's `package.json` has a `test` script.
+- CI uses pnpm `version: 10`, Node `22`, `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm build`, and `pnpm test` only when the repo's `package.json` has a `test` script.
 - One branch `chore/community-files` per repo from `origin/main`; one PR each. Commit messages carry `[skip ci]` except the pilot (`bandera`). Never `git push` to `main`; push with `git push origin chore/community-files:chore/community-files` (a command containing the word `main`, e.g. `--base main`, must be a separate call from any `git push`).
 - Do NOT run `gh repo edit`, visibility changes, `gh pr merge` or any repo-settings write without Manuel's explicit confirmation in the conversation (Task 6 prepares them, does not run them).
 - Do not delete files with `rm -rf`; if a command is denied, stop and report BLOCKED.
@@ -303,7 +303,7 @@ test('license is MIT for Manuel De Asís and the code of conduct has a contact',
  assert.match(fs.readFileSync(path.join(KIT,'SECURITY.md'),'utf8'),/manueldeasis27@gmail\.com/);
 });
 
-test('CI workflow pins pnpm 9 and Node 22 and has the conditional test step',()=>{
+test('CI workflow pins pnpm 10 and Node 22 and has the conditional test step',()=>{
  const ci=fs.readFileSync(path.join(KIT,'.github/workflows/ci.yml'),'utf8');
  assert.match(ci,/version: 9/);
  assert.match(ci,/node-version: 22/);
@@ -361,7 +361,7 @@ Thanks for taking the time to improve this project. Issues and pull requests are
 
 ## Set up
 
-You need Node 22 and [pnpm](https://pnpm.io) 9.
+You need Node 22 and [pnpm](https://pnpm.io) 10.
 
 ```bash
 git clone https://github.com/mdeasis27/{{name}}.git

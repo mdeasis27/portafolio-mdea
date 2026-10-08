@@ -114,11 +114,15 @@ test('license is MIT for Manuel De Asís and the code of conduct has a contact',
  assert.match(fs.readFileSync(path.join(KIT,'SECURITY.md'),'utf8'),/manueldeasis27@gmail\.com/);
 });
 
-test('CI workflow pins pnpm 9 and Node 22 and has the conditional test step',()=>{
+test('CI workflow pins pnpm 10 and Node 22 and has the conditional test step',()=>{
  const ci=fs.readFileSync(path.join(KIT,'.github/workflows/ci.yml'),'utf8');
- assert.match(ci,/version: 9/);
+ assert.match(ci,/version: 10/);
  assert.match(ci,/node-version: 22/);
  assert.match(ci,/pnpm install --frozen-lockfile/);
  assert.match(ci,/- run: pnpm test # if-test/);
  for(const cmd of ['pnpm lint','pnpm build'])assert.ok(ci.includes(cmd),cmd);
+});
+
+test('contributing guide asks for the same pnpm major as CI',()=>{
+ assert.match(fs.readFileSync(path.join(KIT,'CONTRIBUTING.md'),'utf8'),/pnpm\]\(https:\/\/pnpm\.io\) 10/);
 });
