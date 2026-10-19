@@ -1,0 +1,72 @@
+---
+title: Refit
+oneLiner: "A deliberately bad signup flow, rebuilt, with a script that measures the difference."
+slug: refit
+summary: "Try the old signup flow and the redesigned one, read the audit, and see the measured accessibility numbers side by side."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Zod
+  - Google GenAI SDK
+  - axe-core
+  - Playwright
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/refit'
+liveUrl: 'https://refit-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - accessibility
+  - UX
+  - WCAG
+  - redesign
+  - testing
+updatedAt: '2026-10-19'
+businessRole: Product owner of a signup flow
+businessDecision: Decide whether the redesigned flow is good enough to replace the old one.
+businessValue: >-
+  Turns "it feels better" into numbers anyone can re-run: violations, affected
+  elements and screens to finish.
+visualMechanism: >-
+  The old flow and the redesign sit side by side; a measurement script runs
+  axe on every step and the page reads the result.
+scenarios:
+  - title: 'Original flow'
+    input: 'Complete the signup in the original flow.'
+    observation: 'Five screens to finish and 9 axe violations on 15 elements.'
+  - title: 'Redesigned flow'
+    input: 'Complete the same task using only the keyboard.'
+    observation: 'Three screens, 0 axe violations, and keyboard-only completion passes.'
+---
+## The problem
+
+A signup flow can look fine and still lock people out: unlabeled fields, errors that only show in red, steps that cannot be completed with a keyboard. Redesigns are usually judged by taste.
+
+**Who uses it:** The product owner of a signup flow.
+
+**The decision:** Is the redesign measurably better, and can the whole task still be finished with a keyboard alone?
+
+## The approach
+
+I took a deliberately broken flow and left it untouched, copied byte for byte at build time. I audited it, tying each finding to a WCAG criterion or a heuristic, rebuilt it, and wrote a script that runs axe-core on the old flow and on every step of the redesign, in English and Spanish.
+
+### Try the decision
+
+Walk through both flows, read the audit, then open the Compare section, which reads the real measurement file produced by `bun run measure`.
+
+## Design decisions
+
+The after count only counts if the whole task, from the first field to the confirmation, can be finished with the keyboard alone, so a browser test does that in both languages. Violations are summed per page, so a rule failing on three pages counts three. Pro is preselected because the task is to choose Pro, and Free and Team stay one arrow key away.
+
+## Current state
+
+Axe violations went from 9 to 0, and affected elements from 15 to 0, measured in-flow on all three steps in English and Spanish. Screens to finish went from 5 to 3. Keyboard-only completion passes. The measurement used axe-core 4.14.0, all rules, with the WCAG 2.0, 2.1 and 2.2 A and AA tags. I did not test with a screen reader.
+
+## What this demonstrates
+
+I can find what is wrong with an interface, fix it, and prove the improvement with a repeatable measurement instead of an opinion.
+
+**Limits:** Automated checks find about a third of real accessibility problems at best. This proves the ones a machine can see, plus keyboard completion.

@@ -1,0 +1,69 @@
+---
+title: Linejump
+oneLiner: "Una lista de espera de lanzamiento donde los referidos te suben, y los tramposos no."
+slug: linejump
+summary: "Repite un registro de altas y mira cómo se reordena la fila al llegar referidos, con las altas sospechosas marcadas y la evidencia a la vista."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - '@noble/hashes'
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/linejump'
+liveUrl: 'https://linejump-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - lista-de-espera
+  - referidos
+  - alertas-de-fraude
+  - crecimiento
+  - motor-de-reglas
+updatedAt: '2026-10-19'
+businessRole: Responsable de crecimiento de una lista de espera de lanzamiento
+businessDecision: Decidir quién sube en la fila y qué altas se marcan como sospechosas.
+businessValue: >-
+  Premia los referidos reales y hace visible el intento de manipular la fila,
+  con la evidencia de cada alerta.
+visualMechanism: >-
+  Una sola función convierte todo el registro de altas en la fila: alertas,
+  códigos de referido, posiciones y evidencia.
+scenarios:
+  - title: 'Repetir el registro'
+    input: 'Recorre el registro de altas una alta a la vez.'
+    observation: 'La fila se reordena cuando llegan referidos válidos.'
+  - title: 'Vista de administración'
+    input: 'Pasa a la vista de administración después de repetir el registro.'
+    observation: 'Cada alta marcada muestra la evidencia detrás de su alerta.'
+---
+## El problema
+
+Una lista de espera que premia los referidos invita a hacer trampa: cuentas duplicadas, correos desechables, ráfagas de altas falsas. Si la fila está mal, personas reales pierden su lugar.
+
+**Quién lo usa:** Un responsable de crecimiento de una lista de espera de lanzamiento.
+
+**La decisión:** Quién sube y qué altas reciben una alerta de fraude.
+
+## El enfoque
+
+Una función pura lee todo el registro de altas y produce la fila: alertas, códigos de referido, posiciones y la evidencia de cada alerta. Todo lo demás la llama, incluida la línea de comandos y la página. Un referido válido sube a quien lo invitó; uno marcado no.
+
+### Prueba la decisión
+
+Repite el registro alta por alta, agrega tus propias altas, pasa a la vista de administración y lee la evidencia de cada alerta. Cuando alguien sube, el mensaje aparece en una bandeja de salida en pantalla.
+
+## Decisiones de diseño
+
+Cada cambio recalcula toda la fila. Es simple y no puede desviarse de la línea de comandos evaluada; sirve para miles de líneas, no para millones. Una biblioteca SHA-256 síncrona reemplaza a Web Crypto para que un solo motor corra en Bun y en el navegador. El estado de la demo vive en el navegador, sin base de datos, porque la app debe funcionar sin configuración.
+
+## Estado actual
+
+La puntuación es 100 en los 7 casos incluidos (`flag_f1` 1, `position_exact` 1), reproducible con `bun run eval`. Los registros ocultos no se ven, así que las reglas están implementadas desde el enunciado y no ajustadas a los casos. El envío real de correo está apagado salvo que haya una clave; sin ella, los mensajes aparecen en la bandeja de salida.
+
+## Lo que demuestra
+
+Puedo implementar un conjunto de reglas a partir de un enunciado escrito, evitar ajustarlo a los ejemplos visibles y mostrar la evidencia detrás de cada juicio automático.
+
+**Límites:** Recalcular todo en cada cambio no escala a millones de líneas, y el estado de la demo no se guarda en un servidor.

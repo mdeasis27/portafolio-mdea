@@ -1,0 +1,70 @@
+---
+title: Ledgerling
+oneLiner: "Ask your bank statement questions. The model answers only by calling tools that do the math."
+slug: ledgerling
+summary: "Ask a plain question about your spending and watch the assistant call typed tools instead of guessing numbers. Saved real traces replay with no API key."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Google GenAI SDK
+  - LLM API
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/ledgerling'
+liveUrl: 'https://ledgerling-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - personal-finance
+  - agents
+  - tool-use
+  - evaluation
+  - AI
+updatedAt: '2026-10-19'
+businessRole: Person reviewing their own bank statement
+businessDecision: Trust an answer about your money only when you can see the tool calls behind it.
+businessValue: >-
+  Keeps the language model away from arithmetic, so every figure it quotes was
+  computed by tested code.
+visualMechanism: >-
+  A question becomes a chain of typed tool calls over the statement; each call
+  and its result is shown before the final answer.
+scenarios:
+  - title: 'Replay a saved question'
+    input: 'Open a saved question with no API key.'
+    observation: 'The recorded real trace plays step by step, and a test re-runs each step against the tools.'
+  - title: 'Multi-month total'
+    input: 'Ask the live agent for April plus May net cash flow.'
+    observation: 'It reported each month and did not add them, a known miss.'
+---
+## The problem
+
+Language models are fluent and bad at arithmetic. If you ask one how much you spent on groceries in March, it can sound certain and be wrong.
+
+**Who uses it:** A person reviewing their own bank statement.
+
+**The decision:** Whether to trust an answer about money. Here you can check, because each answer comes with the tool calls that produced it.
+
+## The approach
+
+The statement is parsed into transactions in integer cents. Five typed tools do all the math. The model replies with either a JSON tool call or an answer, the code runs the tool, and the loop stops after at most 6 rounds. Each tool result carries ready-made money strings, so the model quotes figures instead of converting cents.
+
+### Try the decision
+
+Pick one of the saved questions and step through its trace, or call a tool yourself from the form. Without a key the page replays real traces I recorded; every step is re-run against the tools in a test.
+
+## Design decisions
+
+The tool protocol is plain text rather than native function calling, so it works with every provider the router can pick and leaves the vendored ai-kit untouched, at the cost of an occasional malformed reply and one corrective retry. Income is every positive amount, following the brief literally, so refunds raise income and never lower spend. Money is never a float.
+
+## Current state
+
+Tool exactness is 100 / 100 (23 of 23 sample cases, `bun run eval`). The live agent scores 87 / 100: 13 of 15 held-out questions answered correctly, using Groq `qwen/qwen3.8-27b`. It still misses multi-period totals: asked for April plus May net cash flow it reported each month and did not add them. The demo works without keys, replaying recorded real traces.
+
+## What this demonstrates
+
+I can put a language model to work without trusting it with the numbers, and I measure the agent on questions it has not seen, including the ones it gets wrong.
+
+**Limits:** One statement format, five tools, and a live score from 15 questions. It is a portfolio prototype, not financial advice.

@@ -1,0 +1,70 @@
+---
+title: Dunwell
+oneLiner: "Persigue facturas impagas con un calendario: primero con amabilidad, luego con firmeza."
+slug: dunwell
+summary: "Dale una lista de facturas y una fecha. Decide qué recordatorio recibe cada factura, indica qué regla decidió, redacta el correo y añade un enlace de pago."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Zod
+  - Google GenAI SDK
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/dunwell'
+liveUrl: 'https://dunwell-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - facturación
+  - freelancers
+  - motor-de-reglas
+  - correo
+  - AI
+updatedAt: '2026-10-19'
+businessRole: Freelancer que espera el pago de sus facturas
+businessDecision: Elegir qué recordatorio recibe hoy cada factura vencida, o retenerlo.
+businessValue: >-
+  Sustituye seguimientos incómodos e inconsistentes por un calendario fijo en
+  el que cada recordatorio nombra la regla que lo originó.
+visualMechanism: >-
+  Cada factura pasa por siete reglas en orden; la primera que aplica fija la
+  etapa del recordatorio, desde un aviso previo hasta la escalada.
+scenarios:
+  - title: 'Elige una fecha'
+    input: 'Elige la fecha de hoy para los 8 casos de muestra.'
+    observation: 'Cada factura recibe una etapa de recordatorio y la regla que decidió.'
+  - title: 'Sin clave de API'
+    input: 'Usa la app sin variables de entorno, que es lo normal.'
+    observation: 'Los correos salen de plantillas incluidas, marcadas como plantilla, no texto de un modelo.'
+---
+## El problema
+
+Un freelancer envía una factura y después tiene que recordar quién no ha pagado, cuánto se retrasó y qué tan firme debe ser el siguiente mensaje. Casi todos cobran demasiado tarde, o con demasiada dureza demasiado pronto.
+
+**Quién lo usa:** Un freelancer que espera el pago de sus facturas.
+
+**La decisión:** Qué recordatorio recibe hoy cada factura: un aviso previo, un recordatorio amable, una nota firme, un aviso final, una escalada, una retención, o nada.
+
+## El enfoque
+
+Dunwell recibe las facturas y una fecha, aplica siete reglas en un orden fijo e informa qué regla decidió cada caso. Luego redacta el correo de esa etapa y añade un enlace de pago. La línea de comandos y la página llaman a la misma función de decisión, así que el panel no puede contradecir la salida evaluada.
+
+### Prueba la decisión
+
+Abre la app, elige la fecha y mira en qué etapa cae cada factura. Marca una como pagada y el calendario se recalcula. Cada borrador indica si lo escribió un modelo o si viene de una plantilla.
+
+## Decisiones de diseño
+
+Las fechas se convierten en números de día enteros, así que no hay zonas horarias ni errores de horario de verano. La lógica de decisión es código puro sin dependencias de framework y está probada en cada borde. No hay base de datos: las facturas pagadas y los recordatorios enviados viven en la sesión del navegador y el servidor los vuelve a validar en cada petición. Pagos y correo son llamadas `fetch` simples en lugar de SDK de proveedores, lo que mantiene el paquete pequeño.
+
+## Estado actual
+
+La precisión de decisión es 100 / 100 en los 8 casos dados (49 facturas), reproducible con `bun run eval`. Toda la app funciona sin variables de entorno: los correos salen de plantillas incluidas, el pago es una simulación local y el correo va a una bandeja de salida en pantalla marcada "No enviado". Las rutas reales (modelo de lenguaje, proveedor de pagos, proveedor de correo) solo se probaron con `fetch` simulado, porque no tenía claves.
+
+## Lo que demuestra
+
+Puedo convertir una política de negocio escrita en reglas exactas, ordenadas y probables, y mostrar el razonamiento detrás de cada resultado.
+
+**Límites:** Sirve para una demo, no para facturas reales. No hay base de datos y las integraciones reales no se han ejecutado contra los servicios verdaderos.

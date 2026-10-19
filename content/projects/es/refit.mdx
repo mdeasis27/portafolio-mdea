@@ -1,0 +1,72 @@
+---
+title: Refit
+oneLiner: "Un flujo de registro hecho mal a propósito, reconstruido, con un script que mide la diferencia."
+slug: refit
+summary: "Prueba el flujo de registro viejo y el rediseñado, lee la auditoría y mira lado a lado los números medidos de accesibilidad."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Zod
+  - Google GenAI SDK
+  - axe-core
+  - Playwright
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/refit'
+liveUrl: 'https://refit-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - accesibilidad
+  - UX
+  - WCAG
+  - rediseño
+  - pruebas
+updatedAt: '2026-10-19'
+businessRole: Responsable de producto de un flujo de registro
+businessDecision: Decidir si el flujo rediseñado es suficientemente mejor para reemplazar al viejo.
+businessValue: >-
+  Convierte "se siente mejor" en números que cualquiera puede repetir:
+  violaciones, elementos afectados y pantallas para terminar.
+visualMechanism: >-
+  El flujo viejo y el rediseño van lado a lado; un script de medición corre
+  axe en cada paso y la página lee el resultado.
+scenarios:
+  - title: 'Flujo original'
+    input: 'Completa el registro en el flujo original.'
+    observation: 'Cinco pantallas para terminar y 9 violaciones de axe en 15 elementos.'
+  - title: 'Flujo rediseñado'
+    input: 'Completa la misma tarea usando solo el teclado.'
+    observation: 'Tres pantallas, 0 violaciones de axe, y la finalización solo con teclado pasa.'
+---
+## El problema
+
+Un flujo de registro puede verse bien y aun así dejar gente afuera: campos sin etiqueta, errores que solo se ven en rojo, pasos que no se pueden completar con teclado. Los rediseños suelen juzgarse por gusto.
+
+**Quién lo usa:** El responsable de producto de un flujo de registro.
+
+**La decisión:** ¿El rediseño es mejor de forma medible y la tarea completa se puede terminar solo con el teclado?
+
+## El enfoque
+
+Tomé un flujo roto a propósito y lo dejé intacto, copiado byte por byte durante la compilación. Lo audité, vinculando cada hallazgo a un criterio WCAG o a una heurística, lo reconstruí y escribí un script que corre axe-core sobre el flujo viejo y sobre cada paso del rediseño, en inglés y en español.
+
+### Prueba la decisión
+
+Recorre ambos flujos, lee la auditoría y abre la sección Comparar, que lee el archivo de medición real que genera `bun run measure`.
+
+## Decisiones de diseño
+
+El número de después solo cuenta si la tarea completa, del primer campo a la confirmación, se puede terminar solo con el teclado, así que una prueba en navegador lo hace en los dos idiomas. Las violaciones se suman por página, así que una regla que falla en tres páginas cuenta tres. Pro viene preseleccionado porque la tarea es elegir Pro, y Free y Team quedan a una flecha del teclado.
+
+## Estado actual
+
+Las violaciones de axe pasaron de 9 a 0 y los elementos afectados de 15 a 0, medidos dentro del flujo en los tres pasos, en inglés y en español. Las pantallas para terminar pasaron de 5 a 3. La finalización solo con teclado pasa. La medición usó axe-core 4.14.0, todas las reglas, con las etiquetas WCAG 2.0, 2.1 y 2.2 A y AA. No probé con lector de pantalla.
+
+## Lo que demuestra
+
+Puedo encontrar qué está mal en una interfaz, arreglarlo y demostrar la mejora con una medición repetible en lugar de una opinión.
+
+**Límites:** Las revisiones automáticas encuentran como mucho un tercio de los problemas reales de accesibilidad. Esto prueba los que una máquina puede ver, más la finalización con teclado.

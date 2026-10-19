@@ -8,7 +8,7 @@
 
 ![Local review gallery of the portfolio decision labs](docs/images/cover.png)
 
-21 interactive prototypes connect business problems to inspectable AI workflows. English is the default; Spanish has equivalent navigation and case studies. Each project separates local computation, deterministic simulation and optional live integrations. These prototypes do not claim production impact.
+26 interactive prototypes connect business problems to inspectable AI workflows. English is the default; Spanish has equivalent navigation and case studies. Each project separates local computation, deterministic simulation and optional live integrations. These prototypes do not claim production impact.
 
 ## Guided route (QA component)
 

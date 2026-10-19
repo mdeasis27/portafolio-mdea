@@ -9,6 +9,7 @@ const categories = [
  {id:'evidence',en:'Evidence & documents',es:'Evidencia y documentos',slugs:['evidencia','grafo','destilacion','escaneo','vigia']},
  {id:'quality',en:'Product quality & safety',es:'Calidad y seguridad',slugs:['veredicto','doorman','asedio','arbitro','ensayo','bandera','fabrica']},
  {id:'reliability',en:'Reliable workflows',es:'Procesos confiables',slugs:['compuerta','warmstart','mesa']},
+ {id:'products',en:'Small products',es:'Productos pequeños',slugs:['dunwell','ledgerling','linejump','refit','tablewright']},
 ];
 export function ProjectExplorer({projects,locale}:{projects:Project[];locale:Locale}) {
  const [active,setActive]=useState('all');const category=categories.find(c=>c.id===active)!;
