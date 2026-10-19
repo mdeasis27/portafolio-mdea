@@ -1,0 +1,70 @@
+---
+title: Tablewright
+oneLiner: "Describe un modelo de datos en español o inglés sencillo y obtén tablas SQLite válidas."
+slug: tablewright
+summary: "Escribe unas frases sobre tus datos y obtén definiciones de tablas SQL con comillas, comprobadas en un motor SQLite real, más un diagrama entidad-relación."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - sql.js
+  - SQLite
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/tablewright'
+liveUrl: 'https://tablewright-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - base-de-datos
+  - SQL
+  - esquema
+  - parser
+  - diagrama-ER
+updatedAt: '2026-10-19'
+businessRole: Fundador que esboza la base de datos de un producto nuevo
+businessDecision: Decidir si las tablas y relaciones generadas coinciden con los datos que querías.
+businessValue: >-
+  Pasa de una frase a un esquema comprobado y un diagrama en segundos, con un
+  aviso claro para lo que no pudo entender.
+visualMechanism: >-
+  Las frases se vuelven tablas, columnas y llaves foráneas; el SQL se ejecuta
+  en un motor real y se dibuja un diagrama a partir del resultado.
+scenarios:
+  - title: 'Dos entidades relacionadas'
+    input: 'A Book has a title, an isbn and a published year. Each Book belongs to one Author.'
+    observation: 'Tablas para Book y Author, unidas por una llave foránea, validadas en SQLite y dibujadas como diagrama entidad-relación.'
+  - title: 'Fuera de la gramática'
+    input: 'Escribe una oración que no coincida con ninguna de las cuatro formas.'
+    observation: 'Vuelve como aviso en lugar de una suposición.'
+---
+## El problema
+
+Antes de que un producto tenga base de datos, suele haber un párrafo: un Book tiene un título, cada Book pertenece a un Author. Pasar eso a SQL correcto a mano es lento y fácil de equivocar.
+
+**Quién lo usa:** Un fundador que esboza la base de datos de un producto nuevo.
+
+**La decisión:** Si las tablas y relaciones generadas coinciden con los datos que querías.
+
+## El enfoque
+
+Escribes en un inglés restringido con cuatro formas de oración. Tablewright las analiza con reglas ancladas, construye tablas, columnas y tablas de unión, las ordena para que las llaves foráneas resuelvan y genera SQLite con identificadores entre comillas dobles. Luego ejecuta el SQL en un motor SQLite real para validarlo y dibuja un diagrama entidad-relación. No interviene ningún modelo de lenguaje ni claves de API.
+
+### Prueba la decisión
+
+Escribe unas frases, genera y compara el SQL con el diagrama. Todo lo que queda fuera de la gramática vuelve como aviso en lugar de una suposición.
+
+## Decisiones de diseño
+
+Reglas en lugar de procesamiento de lenguaje: con solo cuatro formas de oración, las reglas son exactas, de tiempo lineal y fáciles de probar. La validación corre en el servidor con sql.js, y el servidor regenera el SQL desde el texto, así que nunca ejecuta SQL enviado por el cliente. Dos motores SQLite implican dos caminos de código, por eso una prueba de paridad corre ambos sobre el mismo SQL. La regla de singularización se aplica al pie de la letra: un `Courses` sin declarar pasa a `cours`, y declarar el singular en otra oración lo corrige.
+
+## Estado actual
+
+La puntuación de evaluación es 100 / 100 en `fixtures/eval.json` (12 casos; tasa de ejecución y F1 de tablas, columnas y llaves foráneas, todos en 1), reproducible con `bun run eval`. No se necesitan variables de entorno. Revisé el diseño a 375 px con emulación de dispositivo; no lo probé en un teléfono físico ni en navegadores que no sean Chromium.
+
+## Lo que demuestra
+
+Puedo construir una herramienta de lenguaje pequeña y determinista, validar su salida contra el sistema real y decir con claridad dónde terminan sus reglas.
+
+**Límites:** La gramática tiene cuatro formas de oración, y el manejo de plurales sigue una sola regla escrita aunque a veces dé nombres extraños.

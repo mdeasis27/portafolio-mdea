@@ -1,0 +1,70 @@
+---
+title: Tablewright
+oneLiner: "Describe a data model in plain English and get valid SQLite tables back."
+slug: tablewright
+summary: "Write a few sentences about your data and get quoted SQL table definitions, checked in a real SQLite engine, plus an ER diagram."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - sql.js
+  - SQLite
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/tablewright'
+liveUrl: 'https://tablewright-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - database
+  - SQL
+  - schema
+  - parser
+  - ER-diagram
+updatedAt: '2026-10-19'
+businessRole: Founder sketching a database for a new product
+businessDecision: Decide whether the generated tables and relationships match the data you meant.
+businessValue: >-
+  Gets from a sentence to a checked schema and a diagram in seconds, with a
+  clear warning for anything it could not understand.
+visualMechanism: >-
+  Sentences become tables, columns and foreign keys; the SQL is run in a real
+  engine and an ER diagram is drawn from the result.
+scenarios:
+  - title: 'Two related entities'
+    input: 'A Book has a title, an isbn and a published year. Each Book belongs to one Author.'
+    observation: 'Tables for Book and Author, linked by a foreign key, validated in SQLite and drawn as an ER diagram.'
+  - title: 'Outside the grammar'
+    input: 'Write a sentence that matches none of the four sentence shapes.'
+    observation: 'It comes back as a warning rather than a guess.'
+---
+## The problem
+
+Before a product has a database, there is usually a paragraph: a Book has a title, each Book belongs to one Author. Turning that into correct SQL by hand is slow and easy to get wrong.
+
+**Who uses it:** A founder sketching the database for a new product.
+
+**The decision:** Whether the generated tables and relationships match the data you meant.
+
+## The approach
+
+You write in a restricted English with four sentence shapes. Tablewright parses them with anchored rules, builds tables, columns and join tables, orders them so foreign keys resolve, and renders double-quoted SQLite. It then executes the SQL in a real SQLite engine to validate it and draws an ER diagram. No language model and no API keys are involved.
+
+### Try the decision
+
+Type a few sentences, generate, and compare the SQL with the diagram. Anything outside the grammar comes back as a warning instead of a guess.
+
+## Design decisions
+
+Rules over language processing: with only four sentence shapes, rules are exact, run in linear time and are easy to test. Validation runs on the server with sql.js, and the server regenerates the SQL from the text, so it never executes SQL sent by the client. Two SQLite engines mean two code paths, so a parity test runs both over the same SQL. The singularisation rule is implemented literally: an undeclared `Courses` becomes `cours`, and declaring the singular elsewhere fixes it.
+
+## Current state
+
+The eval score is 100 / 100 on `fixtures/eval.json` (12 cases; execution rate, table, column and foreign-key F1 all at 1), reproducible with `bun run eval`. No environment variables are needed. I checked a 375 px layout with device emulation; I did not test on a physical phone or in non-Chromium browsers.
+
+## What this demonstrates
+
+I can build a small deterministic language tool, validate its output against the real thing, and say plainly where its rules stop.
+
+**Limits:** The grammar is four sentence shapes, and plural handling follows one written rule even where it gives odd names.

@@ -1,0 +1,70 @@
+---
+title: Dunwell
+oneLiner: "Chases unpaid invoices on a schedule: politely first, then firmly."
+slug: dunwell
+summary: "Give it a list of invoices and a date. It decides which reminder each invoice gets, says which rule decided, drafts the email and attaches a payment link."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Zod
+  - Google GenAI SDK
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/dunwell'
+liveUrl: 'https://dunwell-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - invoicing
+  - freelancers
+  - rules-engine
+  - email
+  - AI
+updatedAt: '2026-10-19'
+businessRole: Freelancer waiting on unpaid invoices
+businessDecision: Choose which reminder each overdue invoice gets today, or hold it back.
+businessValue: >-
+  Replaces awkward, inconsistent follow-ups with a fixed schedule where every
+  reminder names the rule behind it.
+visualMechanism: >-
+  Each invoice moves through seven ordered rules; the first one that applies
+  sets the reminder stage, from a heads-up to escalation.
+scenarios:
+  - title: 'Pick a date'
+    input: 'Choose today''s date for the 8 sample cases.'
+    observation: 'Each invoice gets a reminder stage and the rule that decided it.'
+  - title: 'No API key'
+    input: 'Use the app with no environment variables, the default.'
+    observation: 'Emails come from committed templates, labelled as template, not model output.'
+---
+## The problem
+
+A freelancer sends an invoice and then has to remember who has not paid, how late they are, and how firm the next message should be. Most people chase too late, or too hard too early.
+
+**Who uses it:** A freelancer waiting on unpaid invoices.
+
+**The decision:** Which reminder each invoice gets today: a heads-up, a friendly nudge, a firm note, a final notice, an escalation, a hold, or nothing.
+
+## The approach
+
+Dunwell takes the invoices and a date, runs seven rules in a fixed order, and reports which rule decided each one. It then drafts the email for that stage and attaches a payment link. The command line and the page call the same decision function, so the dashboard cannot disagree with the graded output.
+
+### Try the decision
+
+Open the app, pick the date, and watch each invoice land in a stage. Mark one as paid and the schedule recomputes. Every draft says whether it came from a model or from a template.
+
+## Design decisions
+
+Dates become whole day numbers, so there are no time zones and no daylight-saving bugs. The decision logic is pure code with no framework imports and is tested at every edge. There is no database: paid invoices and sent reminders live in the browser session and the server re-validates them on every request. Payments and mail are plain `fetch` calls instead of provider SDKs, which keeps the bundle small.
+
+## Current state
+
+Decision accuracy is 100 / 100 on the 8 provided cases (49 invoices), reproducible with `bun run eval`. The whole app works with no environment variables: emails come from committed templates, checkout is a local mock, and mail goes to an on-screen outbox marked "Not sent". The live paths (language model, payment provider, mail provider) were tested only with `fetch` stubbed, because I had no keys.
+
+## What this demonstrates
+
+I can turn a written business policy into rules that are exact, ordered and testable, and show the reasoning behind every output.
+
+**Limits:** Good for a demo, not for real invoices. There is no database, and the live integrations have not run against the real services.

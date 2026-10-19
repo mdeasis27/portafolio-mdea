@@ -36,8 +36,8 @@ export async function loadPortfolioConfig(hubDir) {
 
   // Pass 2: validate kits and directory existence
   for (const s of config.siblings) {
-    if (!Array.isArray(s.kits) || s.kits.length === 0) {
-      throw new Error(`portfolio.config.mjs: sibling "${s.name}" must declare at least one kit`);
+    if (!Array.isArray(s.kits)) {
+      throw new Error(`portfolio.config.mjs: sibling "${s.name}" must declare a kits array (may be empty)`);
     }
     for (const k of s.kits) {
       if (!VALID_KITS.has(k)) {

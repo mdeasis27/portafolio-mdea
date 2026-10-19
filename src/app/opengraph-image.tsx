@@ -74,7 +74,7 @@ export default async function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            I turn business decisions into working software. 21 live demos, open source, no login.
+            I turn business decisions into working software. 26 live demos, open source, no login.
           </div>
         </div>
 

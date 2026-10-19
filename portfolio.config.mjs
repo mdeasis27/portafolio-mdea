@@ -32,6 +32,11 @@ const config = {
     { name: 'bandera', kits: ['brand', 'ai'] },
     { name: 'fabrica', kits: ['brand', 'ai'] },
     { name: 'vigia', kits: ['brand', 'ai'] },
+    { name: 'dunwell', kits: [] },
+    { name: 'ledgerling', kits: [] },
+    { name: 'linejump', kits: [] },
+    { name: 'refit', kits: [] },
+    { name: 'tablewright', kits: [] },
   ],
 };
 

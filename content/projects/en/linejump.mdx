@@ -1,0 +1,69 @@
+---
+title: Linejump
+oneLiner: "A launch waitlist where referrals move you up, and cheaters don't."
+slug: linejump
+summary: "Replay a signup log and watch the queue reorder as referrals arrive, with suspicious signups flagged and the evidence shown."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - '@noble/hashes'
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/linejump'
+liveUrl: 'https://linejump-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - waitlist
+  - referrals
+  - fraud-flags
+  - growth
+  - rules-engine
+updatedAt: '2026-10-19'
+businessRole: Growth lead running a launch waitlist
+businessDecision: Decide who moves up the queue and which signups to flag as suspicious.
+businessValue: >-
+  Rewards real referrals while making gaming the queue visible, with the
+  evidence for each flag.
+visualMechanism: >-
+  A single function turns the whole signup log into the queue: flags, referral
+  codes, positions and evidence.
+scenarios:
+  - title: 'Replay the log'
+    input: 'Step through the signup log one signup at a time.'
+    observation: 'The queue reorders as valid referrals arrive.'
+  - title: 'Admin view'
+    input: 'Switch to the admin view after the replay.'
+    observation: 'Each flagged signup shows the evidence behind its flag.'
+---
+## The problem
+
+A waitlist that rewards referrals invites cheating: duplicate accounts, throwaway email addresses, bursts of fake signups. If the queue is wrong, real people lose their place.
+
+**Who uses it:** A growth lead running a launch waitlist.
+
+**The decision:** Who moves up, and which signups get a fraud flag.
+
+## The approach
+
+One pure function reads the entire signup log and produces the queue: flags, referral codes, positions and the evidence behind each flag. Everything else calls it, including the command line and the page. A valid referral moves the referrer up, a flagged one does not.
+
+### Try the decision
+
+Replay the log signup by signup, add your own signups, switch to the admin view and read the evidence for each flag. When someone moves up, the message appears in an on-screen outbox.
+
+## Design decisions
+
+Every change recomputes the whole queue. That is simple and cannot drift from the graded command line, and it is fine for thousands of lines, not millions. A synchronous SHA-256 library replaces Web Crypto so one engine runs in both Bun and the browser. Demo state lives in the browser, with no database, because the app must work with no setup.
+
+## Current state
+
+The score is 100 on the 7 committed cases (`flag_f1` 1, `position_exact` 1), reproducible with `bun run eval`. The hidden logs are unseen, so the rules are implemented from the brief and not fitted to the fixtures. Real email sending is off unless a mail key is set; without it, messages show in the outbox.
+
+## What this demonstrates
+
+I can implement a ruleset from a written brief, resist fitting it to the visible examples, and show the evidence behind every automated judgment.
+
+**Limits:** Recomputing everything on each change does not scale to millions of lines, and demo state is not stored on a server.

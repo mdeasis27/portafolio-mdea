@@ -1,0 +1,70 @@
+---
+title: Ledgerling
+oneLiner: "Hazle preguntas a tu estado de cuenta. El modelo responde solo llamando a herramientas que hacen las cuentas."
+slug: ledgerling
+summary: "Haz una pregunta sencilla sobre tus gastos y mira cómo el asistente llama herramientas tipadas en lugar de adivinar cifras. Las trazas reales guardadas se repiten sin clave de API."
+role: Product & Engineering
+stack:
+  - Next.js 16
+  - React 19
+  - TypeScript
+  - Google GenAI SDK
+  - LLM API
+status: beta
+year: 2026
+publishedAt: '2026-10-19'
+featured: false
+repoUrl: 'https://github.com/mdeasis27/ledgerling'
+liveUrl: 'https://ledgerling-manueldeasis27-2515s-projects.vercel.app'
+tags:
+  - finanzas-personales
+  - agentes
+  - tool-use
+  - evaluación
+  - AI
+updatedAt: '2026-10-19'
+businessRole: Persona que revisa su propio estado de cuenta
+businessDecision: Confiar en una respuesta sobre tu dinero solo cuando puedes ver las llamadas a herramientas que la respaldan.
+businessValue: >-
+  Mantiene al modelo de lenguaje lejos de la aritmética, así que cada cifra que
+  cita fue calculada por código probado.
+visualMechanism: >-
+  Una pregunta se convierte en una cadena de llamadas tipadas sobre el estado
+  de cuenta; cada llamada y su resultado se muestran antes de la respuesta final.
+scenarios:
+  - title: 'Repetir una pregunta guardada'
+    input: 'Abre una pregunta guardada sin clave de API.'
+    observation: 'La traza real grabada se reproduce paso a paso, y una prueba vuelve a ejecutar cada paso contra las herramientas.'
+  - title: 'Total de varios meses'
+    input: 'Pídele al agente en vivo el flujo neto de abril más mayo.'
+    observation: 'Dio cada mes y no los sumó, un fallo conocido.'
+---
+## El problema
+
+Los modelos de lenguaje hablan con fluidez y calculan mal. Si le preguntas cuánto gastaste en supermercado en marzo, puede sonar seguro y estar equivocado.
+
+**Quién lo usa:** Una persona que revisa su propio estado de cuenta.
+
+**La decisión:** Si confiar en una respuesta sobre dinero. Aquí puedes comprobarlo, porque cada respuesta trae las llamadas a herramientas que la produjeron.
+
+## El enfoque
+
+El estado de cuenta se convierte en transacciones en centavos enteros. Cinco herramientas tipadas hacen todas las cuentas. El modelo responde con una llamada JSON a una herramienta o con una respuesta, el código ejecuta la herramienta y el bucle se detiene como máximo a las 6 rondas. Cada resultado trae textos de dinero ya formateados, así que el modelo cita cifras en vez de convertir centavos.
+
+### Prueba la decisión
+
+Elige una de las preguntas guardadas y recorre su traza, o llama tú mismo a una herramienta desde el formulario. Sin clave, la página repite trazas reales que grabé; una prueba vuelve a ejecutar cada paso contra las herramientas.
+
+## Decisiones de diseño
+
+El protocolo de herramientas es texto plano y no llamadas nativas, así que funciona con cualquier proveedor que elija el router y deja intacto el ai-kit incluido, a cambio de alguna respuesta mal formada y un reintento correctivo. El ingreso es todo monto positivo, siguiendo el enunciado al pie de la letra, así que los reembolsos suben el ingreso y nunca bajan el gasto. El dinero nunca es un decimal flotante.
+
+## Estado actual
+
+La exactitud de las herramientas es 100 / 100 (23 de 23 casos de muestra, `bun run eval`). El agente en vivo obtiene 87 / 100: 13 de 15 preguntas reservadas respondidas bien, con Groq `qwen/qwen3.8-27b`. Todavía falla en totales de varios periodos: al pedirle el flujo neto de abril más mayo, dio cada mes y no los sumó. La demo funciona sin claves, repitiendo trazas reales grabadas.
+
+## Lo que demuestra
+
+Puedo poner a trabajar un modelo de lenguaje sin confiarle los números, y mido al agente con preguntas que no ha visto, incluidas las que responde mal.
+
+**Límites:** Un solo formato de estado de cuenta, cinco herramientas y una puntuación en vivo de 15 preguntas. Es un prototipo de portafolio, no asesoría financiera.

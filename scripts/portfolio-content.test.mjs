@@ -20,8 +20,8 @@ test('business cases expose two usable scenarios and a concrete role and decisio
   assert.notEqual(data.scenarios[0].observation,data.scenarios[1].observation);
  }
 });
-test('all 21 case studies have paired languages with equal source identity and five sections',()=>{
- const en=fs.readdirSync('content/projects/en').filter(x=>x.endsWith('.mdx')).sort();const es=fs.readdirSync('content/projects/es').filter(x=>x.endsWith('.mdx')).sort();assert.equal(en.length,21);assert.deepEqual(en,es);const slugs=new Set();
+test('all 26 case studies have paired languages with equal source identity and five sections',()=>{
+ const en=fs.readdirSync('content/projects/en').filter(x=>x.endsWith('.mdx')).sort();const es=fs.readdirSync('content/projects/es').filter(x=>x.endsWith('.mdx')).sort();assert.equal(en.length,26);assert.deepEqual(en,es);const slugs=new Set();
  for(const name of en){const a=matter(fs.readFileSync('content/projects/en/'+name,'utf8'));const b=matter(fs.readFileSync('content/projects/es/'+name,'utf8'));assert.equal(a.data.slug,b.data.slug);assert.equal(a.data.repoUrl,b.data.repoUrl);assert.equal(a.data.liveUrl,b.data.liveUrl);assert.deepEqual(a.data.stack,b.data.stack);assert.equal((a.content.match(/^## /gm)||[]).length,5);assert.equal((b.content.match(/^## /gm)||[]).length,5);assert.ok(a.data.summary!==b.data.summary);assert.ok(!slugs.has(a.data.slug));slugs.add(a.data.slug);}
 });
 
