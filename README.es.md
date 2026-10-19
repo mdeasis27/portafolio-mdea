@@ -8,7 +8,7 @@
 
 ![Galería local de revisión de los laboratorios del portafolio](docs/images/cover.png)
 
-21 prototipos interactivos conectan problemas de negocio con procesos de IA inspeccionables. Inglés es el idioma por defecto; español ofrece navegación y casos equivalentes. Cada proyecto distingue cálculo local, simulación determinista e integraciones opcionales. Los prototipos no afirman impacto en producción.
+26 prototipos interactivos conectan problemas de negocio con procesos de IA inspeccionables. Inglés es el idioma por defecto; español ofrece navegación y casos equivalentes. Cada proyecto distingue cálculo local, simulación determinista e integraciones opcionales. Los prototipos no afirman impacto en producción.
 
 ## Recorrido guiado (componente de QA)
 
